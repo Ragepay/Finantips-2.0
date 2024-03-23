@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinanTips, Educacion Financiera para Novatos.</title>
+  <link rel="stylesheet" href="/Style.css"><!-- Linkeo con Style CSS-->
+  <link rel="icon" href="/imagenes/Logo.png">
+  <title>Calculadora de Plazo Fijo</title>
+
+</head>
+
+
+
+
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <a href="../index.html"><img href="index.html" src="../imagenes/Logo + Finantips.png"></a>
+    </div>
+    <a href="/Pages/calculadoras.html" class="boton"><button>Calculadoras</button></a>
+  </header>
+
+  <main>
+    <section>
+      <div class="containerBox3">
+        <h1>Calculadora de Plazo Fijo en Argentina</h1>
+
+        <div class="monto">
+          <label for="monto" id="labelMonto">Monto:</label>
+          <input type="number" id="inputMonto" step="0.01">
+        </div>
+
+        <div class="tasaInteres">
+          <label for="tasaInteres" id="labelTasaInteres">Tasa de interés (%):</label>
+          <input type="number" id="inputTasaInteres" step="0.01">
+        </div>
+
+        <div class="meses">
+          <label for="meses" id="labelMeses">Meses:</label>
+          <input type="number" id="inputMeses">
+        </div>
+
+        <div class="interesCompuesto">
+          <label for="interesCompuesto" id="labelInteresCompuesto">Interés Compuesto:</label>
+          <input type="checkbox" id="inputInteresCompuesto" onchange="calcularGananciasPlazoFijo()">
+        </div>
+
+        <div>
+          <button onclick="calcularGananciasPlazoFijo()" class="boton3">Calcular</button>
+        </div>
+
+        <div class="resultados">
+          <h2>Resultados:</h2>
+          <p>Ganancias del Plazo Fijo: $ <span id="ganancias"></span></p>
+          <p>Monto total obtenido: $ <span id="montoTotal"></span></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="explicacionPlazoFijo">
+      <div class="tituloExplicacion">
+        <h2>¿Que es un Plazo Fijo?</h2>
+      </div>
+      <p><br>Un plazo fijo, también conocido como depósito a plazo fijo, es una opción de inversión ofrecida por
+        entidades financieras, como bancos o instituciones financieras, en la cual una persona deposita una cierta
+        cantidad de
+        dinero por un período específico de tiempo a cambio de recibir un interés predeterminado. <br>
+        <br>
+        Cuando una persona realiza un plazo fijo, está básicamente prestando su dinero a la institución financiera
+        durante un tiempo determinado. Durante este período, el dinero no puede ser retirado sin penalización, a menos
+        que se llegue a un acuerdo previo con la entidad financiera. A cambio de mantener el dinero invertido, la
+        entidad financiera paga un interés sobre el monto depositado.
+      </p>
+    </div>
+    <div class="explicacionInteresCompuesto">
+      <div class="tituloInteresCompuesto">
+        <h2>¿Que es un Interes Compuesto?</h2>
+      </div>
+      <p><br>El interés compuesto es un concepto financiero que se refiere al cálculo de intereses sobre un monto
+        inicial
+        (principal) que se acumulan y se reinvierten periódicamente. A diferencia del interés simple, donde los
+        intereses se calculan únicamente sobre el monto principal, en el interés compuesto los intereses generados
+        también se suman al principal y se toman en cuenta para el cálculo de los intereses en los períodos futuros.<br>
+        <br>
+        En otras palabras, en el interés compuesto los intereses generados en un período se añaden al monto inicial y a
+        partir de allí se calculan los intereses para el siguiente período. Esto permite que los intereses se acumulen y
+        aumenten de manera exponencial con el paso del tiempo. <br>
+        <br>
+        El efecto del interés compuesto puede ser muy poderoso a largo plazo, ya que el crecimiento se acelera debido a
+        que los intereses generados se reinvierten y generan a su vez más intereses. Este fenómeno es conocido como
+        "intereses sobre intereses" o "capitalización de intereses" <br>
+        <br>
+        El interés compuesto es ampliamente utilizado en diversas áreas financieras, como inversiones, préstamos,
+        hipotecas y cuentas de ahorro. Al calcular los intereses compuestos, se tienen en cuenta factores como la tasa
+        de interés, el período de tiempo y la frecuencia de capitalización (es decir, la frecuencia con la que se
+        reinvierten los intereses generados). <br>
+        <br>
+        En resumen, el interés compuesto es un mecanismo que permite que los intereses generados se acumulen y se
+        reinviertan, lo que puede generar un crecimiento más rápido y significativo de los fondos en comparación con el
+        interés simple. Es una herramienta fundamental en el ámbito financiero y puede tener un impacto significativo en
+        el crecimiento de una inversión o el costo de un préstamo a largo plazo.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <p><a href="../index.html"><img class="footer-finantips" src="/imagenes/Logo + Finantips.png" alt="finantips"></a>
+      </p>
+    </div>
+    <div class="footer-content">
+  
+      <div class="footer-left">
+        <h3>Información de contacto</h3>
+        <ul>
+          <li>
+            <a href="mailto:benjapey99@gmail.com" target="_blank">E-mail
+              <img src="/imagenes/iconogmail.png" alt="Logo Gmail">
+            </a>
+            <a href="https://wa.link/bctsbq" target="_blank">Whatsapp
+              <img src="/imagenes/iconowhatsapp.png" alt="Logo whatsapp">
+            </a>
+          </li>
+          <li>
+            <a href="https://link.mercadopago.com.ar/finanftips" target="_blank"><img id="Mercadopago"
+                src="/imagenes/iconomercadopago.png" alt="Logo Mercadopago"></a>
+          </li>
+          <li>Alias: Ragepay</li>
+          <li>CVU: 0000003100070989140510 </li>
+        </ul>
+      </div>
+  
+      <div class="footer-right">
+        <h3>Enlaces útiles</h3>
+        <ul>
+          <li><a href="#Pesos">Pesos</a></li>
+          <li><a href="#Dólar">Dólar</a></li>
+          <li><a href="/Pages/calculadoras.html">Calculadoras</a></li>
+          <li><a href="https://link.mercadopago.com.ar/finanftips" target="_blank">Donar <img
+                src="/imagenes/iconodonar.png" alt="Logo Mercadopago"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+  
+      <p>Todos los derechos reservados &copy; 2024</p>
+      <div class="footer-container">
+  
+        <div class="version">Version: 1.1.1 </div>
+        <div class="fecha">26.2.2024</div>
+      </div>
+    </div>
+  
+  </footer>
+
+</body>
+
+
+
+</html>

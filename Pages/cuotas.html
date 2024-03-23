@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinanTips, Educacion Financiera para Novatos.</title>
+  <link rel="stylesheet" href="/Style.css"><!-- Linkeo con Style CSS-->
+  <link rel="icon" href="/imagenes/Logo.png">
+  <title>Calculadora de Cuotas/Efectivo</title>
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <a href="../index.html"><img href="index.html" src="../imagenes/Logo + Finantips.png"></a>
+    </div>
+    <a href="/Pages/calculadoras.html" class="boton"><button>Calculadoras</button></a>
+  </header>
+  
+  <main>
+    <section class="containerBox4">
+      <h1>Calculadora de Impuesto a las Ganancias</h1>
+      <form>
+
+        <div class="sueldo">
+          <label for="sueldo" id="labelSueldo">Sueldo Bruto:</label>
+          <input type="number" id="inputSueldo" step="0.01" required>
+        </div>
+
+        <div class="cantidadHijos">
+          <label for="cantidadHijos" id="labelCantidadHijos">Cantidad de Hijos:</label>
+          <input type="number" id="inputCantidadHijos">
+        </div>
+
+        <div class="porcentajeAportes">
+          <label for="porcentajeAportes" id="labelPorcentajeAportes">Porcentaje de Aportes al Sindicato:</label>
+          <input type="number" id="inputPorcentajeAportes">
+        </div>
+
+        <div class="casado">
+          <label for="casado" id="labelCasado">¿Está Casado/a?</label>
+          <input type="checkbox" id="inputCasado">
+        </div>
+
+        <div class="alquiler">
+          <label for="alquiler" id="labelAlquiler">¿Paga Alquiler?</label>
+          <input type="checkbox" id="inputAlquiler">
+        </div>
+
+        <div class="seguroVida">
+          <label for="seguroVida" id="labelSeguroVida">¿Paga Seguro de Vida?</label>
+          <input type="checkbox" id="inputSeguroVida">
+        </div>
+
+        <div class="jubilado">
+          <label for="jubilado" id="labelJubilado">¿Es Jubilado/a?</label>
+          <input type="checkbox" id="inputJubilado">
+        </div>
+
+        <div class="patagonico">
+          <label for="patagonico" id="labelPategonico">¿Es Patagónico/a?</label>
+          <input type="checkbox" id="inputPatagonico">
+        </div>
+
+
+        <button type="button" onclick="calcularImpuesto()" class="boton4">Calcular</button>
+      </form>
+      <div id="resultado"></div>
+    </section>
+
+    <div class="explicacionImpuesto">
+      <div class="tituloExplicacion">
+        <h2>¿Que es el Impuesto a las Ganancias?</h2>
+      </div>
+      <p><br>El impuesto a las ganancias es un impuesto que se aplica sobre los ingresos o ganancias obtenidos por
+        personas
+        físicas o jurídicas en un determinado período fiscal. Es un impuesto directo que grava la renta o utilidad
+        generada por las actividades económicas. <br>
+        <br>
+        En general, el impuesto a las ganancias se calcula tomando en cuenta los ingresos brutos y deduciendo ciertos
+        gastos y deducciones permitidos por la legislación fiscal. El resultado obtenido se multiplica por una tasa
+        impositiva progresiva para determinar el monto del impuesto a pagar. <br>
+        <br>
+        La tasa impositiva varía según el nivel de ingresos o ganancias alcanzado por el contribuyente. Por lo general,
+        a
+        medida que los ingresos aumentan, la tasa impositiva también aumenta. Esto significa que aquellos que tienen
+        mayores ingresos están sujetos a una tasa impositiva más alta. <br>
+        <br>
+        El impuesto a las ganancias puede aplicarse a diferentes fuentes de ingresos, como salarios, honorarios
+        profesionales, alquileres, intereses, dividendos, ganancias de capital, entre otros. Cada país tiene su propia
+        legislación fiscal y reglas específicas para determinar qué ingresos están sujetos al impuesto a las ganancias y
+        cómo se calcula. <br>
+        <br>
+        Es importante tener en cuenta que las leyes fiscales pueden variar según el país y pueden estar sujetas a
+        cambios
+        a lo largo del tiempo. Por lo tanto, es recomendable consultar la legislación fiscal vigente en el país
+        correspondiente y buscar asesoramiento profesional para comprender cómo se aplica el impuesto a las ganancias en
+        cada caso particular.
+      </p>
+    </div>
+  </main>
+
+
+  <footer>
+    <div class="footer-logo">
+      <p><a href="../index.html"><img class="footer-finantips" src="/imagenes/Logo + Finantips.png" alt="finantips"></a>
+      </p>
+    </div>
+    <div class="footer-content">
+
+      <div class="footer-left">
+        <h3>Información de contacto</h3>
+        <ul>
+          <li>
+            <a href="mailto:benjapey99@gmail.com" target="_blank">E-mail
+              <img src="/imagenes/iconogmail.png" alt="Logo Gmail">
+            </a>
+            <a href="https://wa.link/bctsbq" target="_blank">Whatsapp
+              <img src="/imagenes/iconowhatsapp.png" alt="Logo whatsapp">
+            </a>
+          </li>
+          <li>
+            <a href="https://link.mercadopago.com.ar/finanftips" target="_blank"><img id="Mercadopago"
+                src="/imagenes/iconomercadopago.png" alt="Logo Mercadopago"></a>
+          </li>
+          <li>Alias: Ragepay</li>
+          <li>CVU: 0000003100070989140510 </li>
+        </ul>
+      </div>
+
+      <div class="footer-right">
+        <h3>Enlaces útiles</h3>
+        <ul>
+          <li><a href="#Pesos">Pesos</a></li>
+          <li><a href="#Dólar">Dólar</a></li>
+          <li><a href="/Pages/calculadoras.html">Calculadoras</a></li>
+          <li><a href="https://link.mercadopago.com.ar/finanftips" target="_blank">Donar <img
+                src="/imagenes/iconodonar.png" alt="Logo Mercadopago"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+
+      <p>Todos los derechos reservados &copy; 2024</p>
+      <div class="footer-container">
+
+        <div class="version">Version: 1.1.1 </div>
+        <div class="fecha">26.2.2024</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
