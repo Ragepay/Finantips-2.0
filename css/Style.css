@@ -13,27 +13,53 @@
   }
   
   /* Inicio de Header*/
-  .header {
+  
+  header {
     background-color: #14805c;
+    color: #fafafa;
+    margin: 0px;
+    padding: 10 px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 85px;
-    padding: 5px 10%;
+    box-shadow: 5px Black;
   }
+
+  header a img {
+    margin: 20px;
+    height: 4.5vh;
+    transition: all 0.3s;
+  }
+
+  header nav {
+    margin-right: 30px;
+  }
+
+ header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
   
-  .header .logo {
+  }
+
+ header nav ul li {
+  list-style: none;
+  
+}
+header nav ul li a {
+color: #fafafa;
+text-decoration: none;
+font-size: 1.5rem; 
+}
+  header .logo {
     cursor: pointer;
   }
   
-  .header .logo img {
-    height: 5vh;
-    width: auto;
-    transition: all 0.3s;
-  }
-  
-  .header .logo img:hover {
-    transform: scale(1.2);
+  header .logo img:hover {
+    transform: scale(1.15);
   }
   
 
@@ -51,59 +77,35 @@
   .header .boton button:hover {
     transform: scale(1.15);
   }
-  
-  /* Media queries para dispositivos móviles */
-  @media (max-width: 600px) {
-    .header {
-      flex-direction: column;
-      height: auto;
-      padding: 10px;
-    }
-  
-    .nav {
-      max-width: 100%;
-    }
-  
-    .header .menu {
-      display: none;
-    }
-  
-    .header .boton {
-      margin-top: 10px;
-    }
+@media only screen and (max-width: 1200px) {
+  header {
+    flex-wrap: wrap;
+  justify-content: center;
+}
+  header nav ul {
+    gap: 20px;
   }
-  
-  /* Media queries para tablets y dispositivos con pantalla mediana */
-  @media (min-width: 601px) and (max-width: 992px) {
-    .header {
-      height: 70px;
-      padding: 5px 5%;
-    }
-  
-    .nav {
-      max-width: 100%;
-    }
-  
-    .header .menu li {
-      padding: 0 10px;
-    }
+  header nav ul li a {
+    font-size: 2.5vw;
   }
+}
   
-  /* Media queries para pantallas grandes */
-  @media (min-width: 993px) {
-    .header {
-      height: 85px;
-      padding: 5px 10%;
-    }
-  
-    .nav {
-      max-width: 992px;
-    }
-  }
-  
+@media only screen and (max-width: 650px) {
+header a img {
+  height: 3vh;
+}
+header nav ul {
+  gap: 15px;
+}
+header nav ul li a {
+  font-size: 3vw;
+}
+}
+
   /* FIN de Header */
   
-  /* Inicio main */
+
+  
   /* Index main*/
 
   
@@ -116,29 +118,26 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 4em;
-    margin-bottom: 7em;
+    margin-top: 2em;
+    margin-bottom: 3.5em;
   }
   
-  .container-iframe {
+  .item-iframe {
     margin: 1em;
-  }
-  
-  .container-iframe iframe {
-    width: 210px;
-    height: 210px;
+    width:17em;
+    height: 17em;
     border-radius: 20px;
-    display: inline;
     border: 1px solid #14805c;
     transition: transform 0.3s ease;
+    
   }
   
-  .container-iframe:hover iframe {
+  .item-iframe:hover iframe {
     transform: scale(1.1);
   }
   
   @media (max-width: 768px) {
-    .container-iframe {
+    .item-iframe {
       width: 12em;
     }
   }
@@ -233,7 +232,7 @@
   
   .dolar {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../imagenes/Dolares.JPG);
+      url(../img/Dolares.JPG);
     border-radius: 1em;
     margin: 1em 0em;
     padding: 30px;
@@ -249,6 +248,7 @@
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    
   }
   
   .dolar .boton button:hover {
@@ -258,7 +258,7 @@
   
   .pesos {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../imagenes/Pesos.jpg);
+      url(../img/Pesos.jpg);
     background-position: center;
     border-radius: 1em;
     margin: 1em 0em;

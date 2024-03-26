@@ -4,39 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/Style.css"> <!-- Linkeo con Style CSS-->
-    <link rel="shortcut icon" href="/imagenes/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/Style.css"> <!-- Linkeo con Style CSS-->
+    <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
     <title>FinanTips, Educacion Financiera para Novatos.</title>
 </head>
 
 <body>
 
     <header>
+        <a class="logo" href="index.html"><img href="index.html" src="/img/Logo + Finantips.png"></a>
         <nav>
-            <div class="header">
-            <div class="logo">
-                <a href="index.html"><img href="index.html" src="../imagenes/Logo + Finantips.png"></a>
-            </div>
-            <a href="/Pages/calculadoras.html" class="boton"><button>Calculadoras</button></a>
-            </div>
+            <ul> <!-- Container padre flex-->
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pages/pesos.html">Pesos</a></li>
+                <li><a href="pages/dolares.html">Dólares</a></li>
+                <li><a href="pages/calculadoras.html" class="boton"><button>Calculadoras</button></a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <Section id="cotizacionesDolar">
-            <div class="container-iframe">
-                <iframe scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-blue" frameborder="0"></iframe>
-            </div>
-            <div class="container-iframe">
-                <iframe scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-mep" frameborder="0"></iframe>
-            </div>
-            <div class="container-iframe"><iframe scrolling="no"
-                    src="https://dolarhoy.com/i/cotizaciones/dolar-contado-con-liquidacion" frameborder="0"></iframe>
-            </div>
-            <div class="container-iframe"><iframe scrolling="no"
-                    src="https://dolarhoy.com/i/cotizaciones/dolar-bancos-y-casas-de-cambio" frameborder="0"></iframe>
-            </div>
+        <Section id="cotizacionesDolar"> <!-- Flexbox --> 
+            <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-blue" frameborder="0"></iframe>
+            <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-mep" frameborder="0"></iframe>
+            <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-contado-con-liquidacion" frameborder="0"></iframe>
+            <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-bancos-y-casas-de-cambio" frameborder="0"></iframe>
         </section>
+        
         <section>
             <div class="container">
                 <h2>BIENVENIDO</h2>
@@ -67,7 +61,7 @@
 
     <footer>
         <div class="footer-logo">
-            <p><a href="index.html"><img class="footer-finantips" src="/imagenes/Logo + Finantips.png"
+            <p><a href="index.html"><img class="footer-finantips" src="/img/Logo + Finantips.png"
                         alt="finantips"></a></p>
         </div>
         <div class="footer-content">
@@ -77,15 +71,15 @@
                 <ul>
                     <li>
                         <a href="mailto:benjapey99@gmail.com" target="_blank">E-mail
-                            <img src="/imagenes/iconogmail.png" alt="Logo Gmail">
+                            <img src="/img/iconogmail.png" alt="Logo Gmail">
                         </a>
                         <a href="https://wa.link/bctsbq" target="_blank">Whatsapp
-                            <img src="/imagenes/iconowhatsapp.png" alt="Logo whatsapp">
+                            <img src="/img/iconowhatsapp.png" alt="Logo whatsapp">
                         </a>
                     </li>
                     <li>
                         <a href="https://link.mercadopago.com.ar/finanftips" target="_blank"><img id="Mercadopago"
-                                src="/imagenes/iconomercadopago.png" alt="Logo Mercadopago"></a>
+                                src="/img/iconomercadopago.png" alt="Logo Mercadopago"></a>
                     </li>
                     <li>Alias: Ragepay</li>
                     <li>CVU: 0000003100070989140510 </li>
@@ -95,11 +89,11 @@
             <div class="footer-right">
                 <h3>Enlaces útiles</h3>
                 <ul>
-                    <li><a href="#Pesos">Pesos</a></li>
-                    <li><a href="#Dólar">Dólar</a></li>
-                    <li><a href="/Pages/calculadoras.html">Calculadoras</a></li>
+                    <li><a href="pages/pesos.html">Pesos</a></li>
+                    <li><a href="pages/dolares.html">Dólar</a></li>
+                    <li><a href="pages/calculadoras.html">Calculadoras</a></li>
                     <li><a href="https://link.mercadopago.com.ar/finanftips" target="_blank">Donar<img
-                                src="/imagenes/iconodonar.png" alt="Logo Mercadopago"></a>
+                                src="/img/iconodonar.png" alt="Logo Mercadopago"></a>
                     </li>
                 </ul>
             </div>

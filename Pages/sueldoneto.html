@@ -6,21 +6,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FinanTips, Educacion Financiera para Novatos.</title>
-  <link rel="stylesheet" href="/css/Style.css"><!-- Linkeo con Style CSS-->
-  <link rel="icon" href="/imagenes/Logo.png">
-  <title>Calculadora de SueldoNeto</title>
+  <link rel="stylesheet" href="../css/Style.css"> <!-- Linkeo con Style CSS-->
+  <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
+  
 </head>
 
 <body>
   
-  <header class="header">
-    <div class="logo">
-      <a href="../index.html"><img href="index.html" src="../imagenes/Logo + Finantips.png"></a>
-    </div>
-    <a href="/Pages/calculadoras.html" class="boton"><button>Calculadoras</button></a>
-  </header>
+  <header>
+    <a class="logo" href="../index.html"><img href="../index.html" src="../img/Logo + Finantips.png"></a>
+    <nav>
+        <ul> <!-- Container padre flex-->
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../pages/pesos.html">Pesos</a></li>
+            <li><a href="../pages/dolares.html">Dólares</a></li>
+            <li><a href="../pages/calculadoras.html" class="boton"><button>Calculadoras</button></a></li>
+        </ul>
+    </nav>
+</header>
 
-  <main>
+<main>
+    <Section id="cotizacionesDolar"> <!-- Flexbox --> 
+        <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-blue" frameborder="0"></iframe>
+        <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-mep" frameborder="0"></iframe>
+        <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-contado-con-liquidacion" frameborder="0"></iframe>
+        <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-bancos-y-casas-de-cambio" frameborder="0"></iframe>
+    </section>
+
     <section>
       <div class="containerBox2">
         <h1>Calculadora de Sueldo</h1>
@@ -71,54 +83,54 @@
 
   <footer>
     <div class="footer-logo">
-      <p><a href="../index.html"><img class="footer-finantips" src="/imagenes/Logo + Finantips.png" alt="finantips"></a>
-      </p>
+        <p><a href="../index.html"><img class="footer-finantips" src="../img/Logo + Finantips.png"
+                    alt="finantips"></a></p>
     </div>
     <div class="footer-content">
 
-      <div class="footer-left">
-        <h3>Información de contacto</h3>
-        <ul>
-          <li>
-            <a href="mailto:benjapey99@gmail.com" target="_blank">E-mail
-              <img src="/imagenes/iconogmail.png" alt="Logo Gmail">
-            </a>
-            <a href="https://wa.link/bctsbq" target="_blank">Whatsapp
-              <img src="/imagenes/iconowhatsapp.png" alt="Logo whatsapp">
-            </a>
-          </li>
-          <li>
-            <a href="https://link.mercadopago.com.ar/finanftips" target="_blank"><img id="Mercadopago"
-                src="/imagenes/iconomercadopago.png" alt="Logo Mercadopago"></a>
-          </li>
-          <li>Alias: Ragepay</li>
-          <li>CVU: 0000003100070989140510 </li>
-        </ul>
-      </div>
+        <div class="footer-left">
+            <h3>Información de contacto</h3>
+            <ul>
+                <li>
+                    <a href="mailto:benjapey99@gmail.com" target="_blank">E-mail
+                        <img src="../img/iconogmail.png" alt="Logo Gmail">
+                    </a>
+                    <a href="https://wa.link/bctsbq" target="_blank">Whatsapp
+                        <img src="../img/iconowhatsapp.png" alt="Logo whatsapp">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://link.mercadopago.com.ar/finanftips" target="_blank"><img id="Mercadopago"
+                            src="../img/iconomercadopago.png" alt="Logo Mercadopago"></a>
+                </li>
+                <li>Alias: Ragepay</li>
+                <li>CVU: 0000003100070989140510 </li>
+            </ul>
+        </div>
 
-      <div class="footer-right">
-        <h3>Enlaces útiles</h3>
-        <ul>
-          <li><a href="#Pesos">Pesos</a></li>
-          <li><a href="#Dólar">Dólar</a></li>
-          <li><a href="/Pages/calculadoras.html">Calculadoras</a></li>
-          <li><a href="https://link.mercadopago.com.ar/finanftips" target="_blank">Donar <img
-                src="/imagenes/iconodonar.png" alt="Logo Mercadopago"></a>
-          </li>
-        </ul>
-      </div>
+        <div class="footer-right">
+            <h3>Enlaces útiles</h3>
+            <ul>
+                <li><a href="pesos.html">Pesos</a></li>
+                <li><a href="dolares.html">Dólar</a></li>
+                <li><a href="calculadoras.html">Calculadoras</a></li>
+                <li><a href="https://link.mercadopago.com.ar/finanftips" target="_blank">Donar <img
+                            src="../img/iconodonar.png" alt="Logo Mercadopago"></a>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="footer-bottom">
 
-      <p>Todos los derechos reservados &copy; 2024</p>
-      <div class="footer-container">
+        <p>Todos los derechos reservados &copy; 2024</p>
+        <div class="footer-container">
 
-        <div class="version">Version: 1.1.1 </div>
-        <div class="fecha">26.2.2024</div>
-      </div>
+            <div class="version">Version: 1.1.1 </div>
+            <div class="fecha">26.2.2024</div>
+        </div>
     </div>
 
-  </footer>
+</footer>
 
 </body>
 
