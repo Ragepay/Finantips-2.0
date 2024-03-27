@@ -12,58 +12,62 @@
     scroll-behavior: smooth;
   }
   
-  /* Inicio de Header*/
-  
-  header {
+
+/* Estilos para el header */
+header {
     background-color: #14805c;
     color: #fafafa;
     margin: 0px;
-    padding: 10 px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 5px Black;
-  }
+}
 
-  header a img {
+header a img {
     margin: 20px;
     height: 4.5vh;
     transition: all 0.3s;
-  }
+    margin-left: 30px;
+}
 
-  header nav {
+header nav {
     margin-right: 30px;
-  }
-
- header nav ul {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  
-  }
-
- header nav ul li {
-  list-style: none;
-  
 }
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
 header nav ul li a {
-color: #fafafa;
-text-decoration: none;
-font-size: 1.5rem; 
+    color: #fafafa;
+    text-decoration: none;
+    font-size: 1.5rem; 
 }
-  header .logo {
-    cursor: pointer;
-  }
-  
-  header .logo img:hover {
-    transform: scale(1.15);
-  }
-  
 
-  .boton button {
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+header .logo {
+    cursor: pointer;
+}
+
+header .logo img:hover {
+    transform: scale(1.15);
+}
+
+.boton button {
     font-weight: 700;
     color: #14805c;
     padding: 9px 25px;
@@ -72,35 +76,14 @@ font-size: 1.5rem;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-  }
-  
-  .header .boton button:hover {
+}
+
+header .boton button:hover {
     transform: scale(1.15);
-  }
-@media only screen and (max-width: 1200px) {
-  header {
-    flex-wrap: wrap;
-  justify-content: center;
 }
-  header nav ul {
-    gap: 20px;
-  }
-  header nav ul li a {
-    font-size: 2.5vw;
-  }
-}
+
   
-@media only screen and (max-width: 650px) {
-header a img {
-  height: 3vh;
-}
-header nav ul {
-  gap: 15px;
-}
-header nav ul li a {
-  font-size: 3vw;
-}
-}
+
 
   /* FIN de Header */
   
@@ -135,15 +118,8 @@ header nav ul li a {
   .item-iframe:hover iframe {
     transform: scale(1.1);
   }
-  
-  @media (max-width: 768px) {
-    .item-iframe {
-      width: 12em;
-    }
-  }
 
-  
-  h3 {
+  #containerInformacion div h3 {
     color: #14805c;
     font-size: 7vh;
   }
@@ -156,21 +132,21 @@ header nav ul li a {
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 2px 2px 2em rgba(0, 0, 0, 0.5);
+    box-shadow: px 5px 2em rgba(0, 0, 0, 0.5);
     background-color: #14805c;
   }
   
   .container h2{
-    font-size: 2.5em;
+    font-size: 6.5vw;
     color: #fafafa;
+    font-weight: bold;
   
   }
   
   .container p{
-    font-size: 1em;
+    font-size: 2em;
     color: #fafafa;
-    font-weight: bold;
-    max-width: 700px;
+    max-width: 1200px;
     margin: 2em;
     
   }
@@ -194,36 +170,7 @@ header nav ul li a {
   #sectionInformacion{
     margin: 6em 1em 6em 1em;
   }
-  
-  @media (min-width: 977px){
-    #sectionInformacion{
-      display: flex;
-      justify-content: center;
-      height: 70vh;
-      
-    }
-  
-    #containerInformacion{
-      display:contents;
-      align-items: center; 
-    }
-  
-    #containerInformacion .dolar{
-      padding: 9em;
-      margin: 2em;
-      background-position: center;
-      
-    }
-  
-    #containerInformacion .pesos{
-      padding: 9em;
-      margin: 2em;
-      background-position: center;
-    }
-  
-  }
-  
-  
+
   #containerInformacion{
     justify-content: center;
     align-items: center;
@@ -286,69 +233,85 @@ header nav ul li a {
   /* calculadoras main */
 
 
-  .container-box {
+  main .container-box {
     text-align: center;
     margin: 1em;
     margin-bottom: 2em;
     padding: 2em;
     border: 5px solid #14805c;
     border-radius: 1em;
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:15px
   }
   
-  .container-box h2 {
+  main .container-box h2 {
     color: #14805c;
     font-size: 4.5vw;
     height: auto;
+    font-weight: bold;
+    
+    grid-column: 1/4
   }
+
+ @media only screen and (max-width:600px) {
+  main .container-box h2{
+    font-size: 7vw;
+  }
+ }
   
+ .box1, .box2, .box3 {
+  height: 500px;
+  width: auto;
+  border-radius: 1em;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  transition: 0.5s;
+  color: #14805c;
+  font-weight: bold;
+  margin: 15px;
+
+ }
+
   .box1 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../imagenes/fotoSueldoNeto.jpg);
-    height: 250px;
-    width: 30%;
-    border-radius: 1em;
-    background-size: cover;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 5em;
-    margin-top: 10vh;
-    transition: 0.5s;
+      url(../img/fotoSueldoNeto.jpg);
+      
   }
   
   
   .box2 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../imagenes/fotoPlazoFijo.jpeg);
-    height: 250px;
-    width: 30%;
-    border-radius: 1em;
-    background-size: cover;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 5em;
-    margin-top: 10vh;
-    transition: 0.5s;
+      url(../img/fotoPlazoFijo.jpeg);
+      
   }
   
   .box3 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../imagenes/fotoImpuestoGanancias.jpeg);
-    height: 250px;
-    width: 30%;
-    border-radius: 1em;
-    background-size: cover;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 5em;
-    margin-top: 10vh;
-    transition: 0.5s;
+      url(../img/fotoImpuestoGanancias.jpeg);
+
   }
+
+  @media only screen and (max-width:1000px) {
+    main .container-box{display:flex;
+      flex-direction: column;
+      
+    }
+    .box1, .box2, .box3 {
+      height: 250px;
+
+    }
+   }
+
+   @media only screen and (max-width:600px) {
+    .box1, .box2, .box3 {
+      height: 150px;
+      font-size: 0.8em;
+    }
+  }
+    
   
   .box1:hover {
     transform: scale(1.02);
@@ -371,6 +334,7 @@ header nav ul li a {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    font-size: 1.2em;
   }
   
   .box2 .boton button {
@@ -382,6 +346,7 @@ header nav ul li a {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    font-size: 1.2em;
   }
   
   .box3 .boton button {
@@ -393,6 +358,7 @@ header nav ul li a {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    font-size: 1.2em;
   }
   
   .box1 .boton button:hover {
@@ -407,55 +373,7 @@ header nav ul li a {
     transform: scale(1.1);
   }
   
-  @media (max-width: 1090px) {
-    .box1 {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-        url(../imagenes/Dolares.JPG);
-      height: 250px;
-      width: 100%;
-      border-radius: 1em;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      margin-bottom: 5em;
-      margin-top: 10vh;
-      transition: 0.5s;
-    }
   
-    .box2 {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-        url(../imagenes/Dolares.JPG);
-      height: 250px;
-      width: 100%;
-      border-radius: 1em;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      margin-bottom: 5em;
-      margin-top: 10vh;
-      transition: 0.5s;
-    }
-  
-    .box3 {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-        url(../imagenes/Dolares.JPG);
-      height: 250px;
-      width: 100%;
-      border-radius: 1em;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      margin-bottom: 5em;
-      margin-top: 10vh;
-      transition: 0.5s;
-    }
-  }
   
   .plazoFijo {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
@@ -1132,18 +1050,35 @@ header nav ul li a {
     background-color: #14805c;
     padding: 20px 0;
     color: #fafafa;
-    font-size: 14px;
+    font-size: 1em;
     box-shadow: 20px 0px 0px 0px;
   
   }
-  
+
+@media only screen and (min-width:1200px) {
+footer { font-size: 1.2em;
+
+}
+footer img {
+  width: 2em;
+  height: auto;
+}
+}
+
+@media only screen and (max-width:900px) {
+.Mercadopago {
+  width: 7em;
+  height: auto;
+} 
+
+}
   footer img {
-    width: 2vw;
+    width: 1.5em;
     height: auto;
   }
   
-  #Mercadopago {
-    width: 8vw;
+  .Mercadopago {
+    width: 10em;
     height: auto;
   }
   
@@ -1158,6 +1093,22 @@ header nav ul li a {
     height: auto;
   }
   
+  @media only screen and (max-width:480px){
+    .footer-finantips {
+      width: 55vw;
+      height: auto;
+      margin: 20px;
+    }
+    .footer-left,
+  .footer-right {
+    margin: 20px;
+  }
+ 
+  header nav ul li a {
+    font-size: 0.8em;
+  }
+
+  }
   
   .footer-content {
     display: flex;
@@ -1177,7 +1128,7 @@ header nav ul li a {
   .footer-left h3,
   .footer-right h3 {
     color: #e4e3e3;
-    font-size: 1.25rem;
+    font-size: 1.5em;
     margin-bottom: 10px;
   }
   
@@ -1223,13 +1174,17 @@ header nav ul li a {
   .footer-right ul li a:hover {
     text-decoration: underline;
   }
+  .footer-left ul li a:hover {
+    text-decoration: underline;
+  }
+  
   
   
   .footer-bottom {
     background-color: #111111;
     padding: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 1em;
     text-align: center;
     color: #adadad;
   }
@@ -1250,3 +1205,96 @@ header nav ul li a {
   
   
   /* FIN Footer */
+
+
+  /* Media Querys */
+
+  @media only screen and (max-width: 1200px) {
+    header {
+      flex-wrap: wrap;
+    justify-content: center;
+  }
+    header nav ul {
+      gap: 20px;
+    }
+    header nav ul li a {
+      font-size: 2.5vw;
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    header a img {
+      height: 4vh;
+    }
+    header nav ul {
+      gap: 15px;
+    }
+    header nav ul li a {
+      font-size: 3vw;
+    }
+    }
+
+    @media (max-width: 768px) {
+      .item-iframe {
+        width: 12em;
+        height: 12em;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .item-iframe {
+        width: 10em;
+        height: 10em;
+      }
+    }
+
+    @media only screen and (max-width:1200px) {
+    
+      .container p{
+        font-size: 1.5em;
+      }
+    }
+  
+    @media only screen and (max-width:960px) {
+      
+      .container p{
+        font-size: 1em;
+      }
+    }
+  
+    @media only screen and (max-width:600px) {
+      
+      .container p{
+        font-size: 0.8em;
+      }
+    }
+
+    @media (min-width: 977px){
+      #sectionInformacion{
+        display: flex;
+        justify-content: center;
+        height: 70vh;
+        
+      }
+    
+      #containerInformacion{
+        display:contents;
+        align-items: center; 
+      }
+    
+      #containerInformacion .dolar{
+        padding: 9em;
+        margin: 2em;
+        background-position: center;
+        
+      }
+    
+      #containerInformacion .pesos{
+        padding: 9em;
+        margin: 2em;
+        background-position: center;
+      }
+    
+    }
+
+    
