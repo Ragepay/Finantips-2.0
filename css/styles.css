@@ -288,7 +288,7 @@ footer .footer-left ul li a:hover {
 
 /*FIN de Index main*/
 /* calculadoras main */
-main .container-box {
+.container-box {
   text-align: center;
   margin: 1em;
   margin-bottom: 2em;
@@ -299,16 +299,16 @@ main .container-box {
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
-
-main .container-box h2 {
+.container-box h2 {
   color: #14805c;
   font-size: 4.5vw;
   height: auto;
   font-weight: bold;
   grid-column: 1/4;
 }
-
-.box1, .box2, .box3 {
+.container-box .box1,
+.container-box .box2,
+.container-box .box3 {
   height: 500px;
   width: auto;
   border-radius: 1em;
@@ -321,32 +321,25 @@ main .container-box h2 {
   font-weight: bold;
   margin: 15px;
 }
-
-.box1 {
+.container-box .box1:hover {
+  transform: scale(1.02);
+}
+.container-box .box2:hover {
+  transform: scale(1.02);
+}
+.container-box .box3:hover {
+  transform: scale(1.02);
+}
+.container-box .box1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/fotoSueldoNeto.jpg);
 }
-
-.box2 {
+.container-box .box2 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/fotoPlazoFijo.jpeg);
 }
-
-.box3 {
+.container-box .box3 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/fotoImpuestoGanancias.jpeg);
 }
-
-.box1:hover {
-  transform: scale(1.02);
-}
-
-.box2:hover {
-  transform: scale(1.02);
-}
-
-.box3:hover {
-  transform: scale(1.02);
-}
-
-.box1 .boton button {
+.container-box .box1 .boton button {
   font-weight: 700;
   color: #14805c;
   padding: 9px 25px;
@@ -357,8 +350,10 @@ main .container-box h2 {
   transition: all 0.3s ease 0s;
   font-size: 1.2em;
 }
-
-.box2 .boton button {
+.container-box .box1 .boton button:hover {
+  transform: scale(1.1);
+}
+.container-box .box2 .boton button {
   font-weight: 700;
   color: #14805c;
   padding: 9px 25px;
@@ -369,8 +364,10 @@ main .container-box h2 {
   transition: all 0.3s ease 0s;
   font-size: 1.2em;
 }
-
-.box3 .boton button {
+.container-box .box2 .boton button:hover {
+  transform: scale(1.1);
+}
+.container-box .box3 .boton button {
   font-weight: 700;
   color: #14805c;
   padding: 9px 25px;
@@ -381,49 +378,7 @@ main .container-box h2 {
   transition: all 0.3s ease 0s;
   font-size: 1.2em;
 }
-
-.box1 .boton button:hover {
-  transform: scale(1.1);
-}
-
-.box2 .boton button:hover {
-  transform: scale(1.1);
-}
-
-.box3 .boton button:hover {
-  transform: scale(1.1);
-}
-
-.plazoFijo {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../imagenes/Pesos.jpg);
-  height: 700px;
-  width: 100%;
-  overflow: hidden;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 100px;
-  transition: 0.5s;
-}
-
-.plazoFijo:hover {
-  transform: scale(1.02);
-}
-
-.plazoFijo .boton button {
-  font-weight: 700;
-  color: #14805c;
-  padding: 9px 25px;
-  background-color: #fafafa;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-
-.plazoFijo .boton button:hover {
+.container-box .box3 .boton button:hover {
   transform: scale(1.1);
 }
 

@@ -1,162 +1,87 @@
+/* calculadoras main */
 
-  /* calculadoras main */
 
+.container-box {
 
-  main .container-box {
-    text-align: center;
-    margin: 1em;
-    margin-bottom: 2em;
-    padding: 2em;
-    border: 5px solid #14805c;
-    border-radius: 1em;
-    display: grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:15px
-  }
-  
-  main .container-box h2 {
+  text-align: center;
+  margin: 1em;
+  margin-bottom: 2em;
+  padding: 2em;
+  border: 5px solid #14805c;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+
+  h2 {
     color: #14805c;
     font-size: 4.5vw;
     height: auto;
     font-weight: bold;
-    
     grid-column: 1/4
   }
 
- 
-  
- .box1, .box2, .box3 {
-  height: 500px;
-  width: auto;
-  border-radius: 1em;
-  background-size: cover;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  transition: 0.5s;
-  color: #14805c;
-  font-weight: bold;
-  margin: 15px;
+  .box1,
+  .box2,
+  .box3 {
+    @include box;
+  }
 
- }
+  .box1:hover {
+    @include boxhover;
+  }
+
+  .box2:hover {
+    @include boxhover;
+  }
+
+  .box3:hover {
+    @include boxhover;
+  }
 
   .box1 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
       url(../img/fotoSueldoNeto.jpg);
-      
+
   }
-  
-  
+
+
   .box2 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
       url(../img/fotoPlazoFijo.jpeg);
-      
+
   }
-  
+
   .box3 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
       url(../img/fotoImpuestoGanancias.jpeg);
 
   }
 
-  
-    
-  
-  .box1:hover {
-    transform: scale(1.02);
-  }
-  
-  .box2:hover {
-    transform: scale(1.02);
-  }
-  
-  .box3:hover {
-    transform: scale(1.02);
-  }
-  
   .box1 .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    font-size: 1.2em;
-  }
-  
-  .box2 .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    font-size: 1.2em;
-  }
-  
-  .box3 .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    font-size: 1.2em;
-  }
-  
-  .box1 .boton button:hover {
-    transform: scale(1.1);
-  }
-  
-  .box2 .boton button:hover {
-    transform: scale(1.1);
-  }
-  
-  .box3 .boton button:hover {
-    transform: scale(1.1);
-  }
-  
-  
-  
-  .plazoFijo {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../imagenes/Pesos.jpg);
-    height: 700px;
-    width: 100%;
-    overflow: hidden;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 100px;
-    transition: 0.5s;
-  }
-  
-  .plazoFijo:hover {
-    transform: scale(1.02);
-  }
-  
-  .plazoFijo .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-  }
-  
-  .plazoFijo .boton button:hover {
-    transform: scale(1.1);
+    @include boxboton;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
+  .box2 .boton button {
+    @include boxboton;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .box3 .boton button {
+    @include boxboton;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+}
 
 /* FIN de calculadoras */

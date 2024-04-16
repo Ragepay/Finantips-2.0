@@ -1,0 +1,29 @@
+@mixin box {
+height: 500px;
+  width: auto;
+  border-radius: 1em;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  transition: 0.5s;
+  color: #14805c;
+  font-weight: bold;
+  margin: 15px;
+}
+
+@mixin boxhover {
+    transform: scale(1.02);
+}
+
+@mixin boxboton {
+    font-weight: 700;
+    color: #14805c;
+    padding: 9px 25px;
+    background-color: #fafafa;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 1.2em;
+}
