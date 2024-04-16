@@ -9,16 +9,6 @@
     border-radius: 1em;
 }
 
-@media (max-width: 413px) {
-    .containerBox3 {
-        text-align: left;
-        margin: 4em;
-        padding: 1.5em;
-        border: 5px solid #14805c;
-        border-radius: 1em;
-    }
-}
-
 .containerBox3 h1 {
     display: flex;
     font-size: 1.6em;
@@ -35,12 +25,6 @@
 .monto {
     justify-content: space-between;
     padding: .3em;
-}
-
-@media (min-width: 350px) {
-    .monto {
-        display: flex;
-    }
 }
 
 #labelMonto {
@@ -68,12 +52,6 @@
     padding: .3em;
 }
 
-@media (min-width: 350px) {
-    .tasaInteres {
-        display: flex;
-    }
-}
-
 #labelTasaInteres {
     color: #14805c;
     font-weight: bold;
@@ -96,12 +74,6 @@
 .meses {
     justify-content: space-between;
     padding: .3em;
-}
-
-@media (min-width: 350px) {
-    .meses {
-        display: flex;
-    }
 }
 
 #labelMeses {

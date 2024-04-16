@@ -23,11 +23,7 @@
     grid-column: 1/4
   }
 
- @media only screen and (max-width:600px) {
-  main .container-box h2{
-    font-size: 7vw;
-  }
- }
+ 
   
  .box1, .box2, .box3 {
   height: 500px;
@@ -63,23 +59,7 @@
 
   }
 
-  @media only screen and (max-width:1000px) {
-    main .container-box{display:flex;
-      flex-direction: column;
-      
-    }
-    .box1, .box2, .box3 {
-      height: 250px;
-
-    }
-   }
-
-   @media only screen and (max-width:600px) {
-    .box1, .box2, .box3 {
-      height: 150px;
-      font-size: 0.8em;
-    }
-  }
+  
     
   
   .box1:hover {

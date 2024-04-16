@@ -28,11 +28,7 @@
     padding: .3em;
   }
   
-  @media (min-width: 350px) {
-    .sueldo{
-      display: flex;
-    }
-  }
+  
   
   
   #labelSueldo {
@@ -59,13 +55,6 @@
     padding: .3em;
   }
   
-  @media (min-width: 350px) {
-    .cantidadHijos{
-      display: flex;
-    }
-  }
-  
-  
   #labelCantidadHijos {
     color: #14805c;
     font-weight: bold;
@@ -88,12 +77,6 @@
   .porcentajeAportes {
     justify-content: space-between;
     padding: .3em;
-  }
-  
-  @media (min-width: 350px) {
-    .porcentajeAportes{
-      display: flex;
-    }
   }
   
   

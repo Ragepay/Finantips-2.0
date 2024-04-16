@@ -27,13 +27,6 @@
     padding: .3em;
   }
   
-  @media (min-width: 350px) {
-    .horasNormales{
-      display: flex;
-    }
-  }
-  
-  
   #labelHorasNormales {
     color: #14805c;
     font-weight: bold;
@@ -59,12 +52,6 @@
     padding: .3em;
   }
   
-  @media (min-width: 350px) {
-    .horasExtras{
-      display: flex;
-    }
-  }
-  
   #labelHorasExtras {
     color: #14805c;
     font-weight: bold;
@@ -88,12 +75,6 @@
     padding: .3em;
   }
   
-  @media (min-width: 350px) {
-    .precioHoraNormal{
-      display: flex;
-    }
-  }
-  
   #labelPrecioHoraNormal {
     color: #14805c;
     font-weight: bold;
@@ -115,13 +96,6 @@
   .precioHoraExtra {
     justify-content: space-between;
     padding: .3em;
-  }
-  
-  @media (min-width: 350px) {
-    .precioHoraExtra{
-      display: flex;
-      text-align: left;
-    }
   }
   
   #labelPrecioHoraExtra {

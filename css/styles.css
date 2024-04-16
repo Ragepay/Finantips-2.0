@@ -308,11 +308,6 @@ main .container-box h2 {
   grid-column: 1/4;
 }
 
-@media only screen and (max-width: 600px) {
-  main .container-box h2 {
-    font-size: 7vw;
-  }
-}
 .box1, .box2, .box3 {
   height: 500px;
   width: auto;
@@ -339,21 +334,6 @@ main .container-box h2 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/fotoImpuestoGanancias.jpeg);
 }
 
-@media only screen and (max-width: 1000px) {
-  main .container-box {
-    display: flex;
-    flex-direction: column;
-  }
-  .box1, .box2, .box3 {
-    height: 250px;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .box1, .box2, .box3 {
-    height: 150px;
-    font-size: 0.8em;
-  }
-}
 .box1:hover {
   transform: scale(1.02);
 }
@@ -475,11 +455,6 @@ main .container-box h2 {
   padding: 0.3em;
 }
 
-@media (min-width: 350px) {
-  .sueldo {
-    display: flex;
-  }
-}
 #labelSueldo {
   color: #14805c;
   font-weight: bold;
@@ -503,11 +478,6 @@ main .container-box h2 {
   padding: 0.3em;
 }
 
-@media (min-width: 350px) {
-  .cantidadHijos {
-    display: flex;
-  }
-}
 #labelCantidadHijos {
   color: #14805c;
   font-weight: bold;
@@ -531,11 +501,6 @@ main .container-box h2 {
   padding: 0.3em;
 }
 
-@media (min-width: 350px) {
-  .porcentajeAportes {
-    display: flex;
-  }
-}
 #labelPorcentajeAportes {
   color: #14805c;
   font-weight: bold;
@@ -703,15 +668,6 @@ main .container-box h2 {
   border-radius: 1em;
 }
 
-@media (max-width: 413px) {
-  .containerBox3 {
-    text-align: left;
-    margin: 4em;
-    padding: 1.5em;
-    border: 5px solid #14805c;
-    border-radius: 1em;
-  }
-}
 .containerBox3 h1 {
   display: flex;
   font-size: 1.6em;
@@ -730,11 +686,6 @@ main .container-box h2 {
   padding: 0.3em;
 }
 
-@media (min-width: 350px) {
-  .monto {
-    display: flex;
-  }
-}
 #labelMonto {
   color: #14805c;
   font-weight: bold;
@@ -758,11 +709,6 @@ main .container-box h2 {
   padding: 0.3em;
 }
 
-@media (min-width: 350px) {
-  .tasaInteres {
-    display: flex;
-  }
-}
 #labelTasaInteres {
   color: #14805c;
   font-weight: bold;
@@ -786,11 +732,6 @@ main .container-box h2 {
   padding: 0.3em;
 }
 
-@media (min-width: 350px) {
-  .meses {
-    display: flex;
-  }
-}
 #labelMeses {
   color: #14805c;
   font-weight: bold;
@@ -903,11 +844,6 @@ main .container-box h2 {
   padding: 0.3em;
 }
 
-@media (min-width: 350px) {
-  .horasNormales {
-    display: flex;
-  }
-}
 #labelHorasNormales {
   color: #14805c;
   font-weight: bold;
@@ -931,11 +867,6 @@ main .container-box h2 {
   padding: 0.3em;
 }
 
-@media (min-width: 350px) {
-  .horasExtras {
-    display: flex;
-  }
-}
 #labelHorasExtras {
   color: #14805c;
   font-weight: bold;
@@ -959,11 +890,6 @@ main .container-box h2 {
   padding: 0.3em;
 }
 
-@media (min-width: 350px) {
-  .precioHoraNormal {
-    display: flex;
-  }
-}
 #labelPrecioHoraNormal {
   color: #14805c;
   font-weight: bold;
@@ -987,12 +913,6 @@ main .container-box h2 {
   padding: 0.3em;
 }
 
-@media (min-width: 350px) {
-  .precioHoraExtra {
-    display: flex;
-    text-align: left;
-  }
-}
 #labelPrecioHoraExtra {
   color: #14805c;
   font-weight: bold;
@@ -1040,43 +960,28 @@ main .container-box h2 {
   header nav ul li a {
     font-size: 2.5vw;
   }
-}
-@media only screen and (max-width: 650px) {
-  header a img {
-    height: 4vh;
-  }
-  header nav ul {
-    gap: 15px;
-  }
-  header nav ul li a {
-    font-size: 3vw;
-  }
-}
-@media (max-width: 768px) {
-  .item-iframe {
-    width: 12em;
-    height: 12em;
-  }
-}
-@media (max-width: 480px) {
-  .item-iframe {
-    width: 10em;
-    height: 10em;
-  }
-}
-@media only screen and (max-width: 1200px) {
   .container p {
     font-size: 1.5em;
   }
 }
-@media only screen and (max-width: 960px) {
-  .container p {
-    font-size: 1em;
+@media only screen and (min-width: 1200px) {
+  footer {
+    font-size: 1.2em;
+  }
+  footer img {
+    width: 2em;
+    height: auto;
   }
 }
-@media only screen and (max-width: 600px) {
-  .container p {
-    font-size: 0.8em;
+@media only screen and (max-width: 1000px) {
+  main .container-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .box1,
+  .box2,
+  .box3 {
+    height: 250px;
   }
 }
 @media (min-width: 977px) {
@@ -1100,9 +1005,52 @@ main .container-box h2 {
     background-position: center;
   }
 }
-@media only screen and (min-width: 1200px) {
-  footer {
-    font-size: 1.2em;
+@media only screen and (max-width: 960px) {
+  .container p {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .Mercadopago {
+    width: 7em;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .item-iframe {
+    width: 12em;
+    height: 12em;
+  }
+}
+@media only screen and (max-width: 650px) {
+  header a img {
+    height: 4vh;
+  }
+  header nav ul {
+    gap: 15px;
+  }
+  header nav ul li a {
+    font-size: 3vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container p {
+    font-size: 0.8em;
+  }
+  main .container-box h2 {
+    font-size: 7vw;
+  }
+  .box1,
+  .box2,
+  .box3 {
+    height: 150px;
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 480px) {
+  .item-iframe {
+    width: 10em;
+    height: 10em;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -1119,21 +1067,46 @@ main .container-box h2 {
     font-size: 0.8em;
   }
 }
-@media only screen and (max-width: 900px) {
-  .Mercadopago {
-    width: 7em;
-    height: auto;
+@media (max-width: 413px) {
+  .containerBox3 {
+    text-align: left;
+    margin: 4em;
+    padding: 1.5em;
+    border: 5px solid #14805c;
+    border-radius: 1em;
   }
 }
-@media only screen and (min-width: 1200px) {
-  
-  footer {
-    font-size: 1.2em;
+@media (min-width: 350px) {
+  .monto {
+    display: flex;
   }
-
-  footer img {
-    width: 2em;
-    height: auto;
+  .tasaInteres {
+    display: flex;
+  }
+  .meses {
+    display: flex;
+  }
+  .horasNormales {
+    display: flex;
+  }
+  .horasExtras {
+    display: flex;
+  }
+  .porcentajeAportes {
+    display: flex;
+  }
+  .cantidadHijos {
+    display: flex;
+  }
+  .sueldo {
+    display: flex;
+  }
+  .precioHoraExtra {
+    display: flex;
+    text-align: left;
+  }
+  .precioHoraNormal {
+    display: flex;
   }
 }
 
