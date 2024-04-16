@@ -1,0 +1,106 @@
+/* Estilos para el header */
+
+
+body {
+    background-color: $colorblanco;
+  }
+
+header {
+    background-color: $colorverde;
+    color: #fafafa;
+    margin: 0px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 5px Black;
+
+    .logo{
+        cursor: pointer;
+
+        img:hover{
+            transform: scale(1.15);
+        }
+    }
+
+    a {
+        img{
+            margin: 20px;
+            height: 4.5vh;
+            transition: all 0.3s;
+            margin-left: 30px;
+        }
+    }
+    nav{
+        margin-right: 30px;
+
+        ul{
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+
+            li{
+                list-style: none;
+                a{
+                    color: $colorblanco;
+                    text-decoration: none;
+                    font-size: 1.5rem; 
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .boton{
+
+        button{
+            font-weight: 700;
+            color: $colorverde;
+            padding: 9px 25px;
+            background-color: $colorblanco;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+
+            &:hover{
+                transform: scale(1.15);
+            }
+        }
+    }
+}
+
+
+
+// Cotizaciones Dolar, es parte del header pero no esta dentro.
+
+#cotizacionesDolar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    margin-bottom: 3.5em;
+
+    .item-iframe {
+        margin: 1em;
+        width:17em;
+        height: 17em;
+        border-radius: 20px;
+        border: 1px solid $colorverde;
+        transition: transform 0.3s ease;
+        
+        &:hover iframe {
+            transform: scale(1.1);
+        }
+      }
+
+  }
+  
+
+  /* FIN de Header */

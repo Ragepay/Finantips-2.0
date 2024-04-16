@@ -1,0 +1,136 @@
+
+
+  /* Media Querys */
+
+  @media only screen and (max-width: 1200px) {
+    header {
+      flex-wrap: wrap;
+    justify-content: center;
+  }
+    header nav ul {
+      gap: 20px;
+    }
+    header nav ul li a {
+      font-size: 2.5vw;
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    header a img {
+      height: 4vh;
+    }
+    header nav ul {
+      gap: 15px;
+    }
+    header nav ul li a {
+      font-size: 3vw;
+    }
+    }
+
+    @media (max-width: 768px) {
+      .item-iframe {
+        width: 12em;
+        height: 12em;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .item-iframe {
+        width: 10em;
+        height: 10em;
+      }
+    }
+
+    @media only screen and (max-width:1200px) {
+    
+      .container p{
+        font-size: 1.5em;
+      }
+    }
+  
+    @media only screen and (max-width:960px) {
+      
+      .container p{
+        font-size: 1em;
+      }
+    }
+  
+    @media only screen and (max-width:600px) {
+      
+      .container p{
+        font-size: 0.8em;
+      }
+    }
+
+    @media (min-width: 977px){
+      #sectionInformacion{
+        display: flex;
+        justify-content: center;
+        height: 70vh;
+        
+      }
+    
+      #containerInformacion{
+        display:contents;
+        align-items: center; 
+      }
+    
+      #containerInformacion .dolar{
+        padding: 9em;
+        margin: 2em;
+        background-position: center;
+        
+      }
+    
+      #containerInformacion .pesos{
+        padding: 9em;
+        margin: 2em;
+        background-position: center;
+      }
+    
+    }
+
+    @media only screen and (min-width:1200px) {
+      footer { font-size: 1.2em;
+      
+      }
+    }
+
+    @media only screen and (max-width:480px) {
+      .footer-finantips {
+        width: 55vw;
+        height: auto;
+        margin: 20px;
+      }
+  
+      .footer-left,
+      .footer-right {
+        margin: 20px;
+      }
+  
+      header nav ul li a {
+        font-size: 0.8em;
+      }
+  
+    }
+
+    @media only screen and (max-width:900px) {
+      .Mercadopago {
+        width: 7em;
+        height: auto;
+      }
+  
+    }
+
+    @media only screen and (min-width:1200px) {
+      footer {
+        font-size: 1.2em;
+  
+      }
+  
+      footer img {
+        width: 2em;
+        height: auto;
+      }
+    }
+  

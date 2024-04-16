@@ -1,0 +1,133 @@
+  /*Footer*/
+
+  footer {
+    background-color: $colorverde;
+    padding: 20px 0;
+    color: $colorblanco;
+    font-size: 1em;
+    box-shadow: 20px 0px 0px 0px;
+
+    img {
+      width: 1.5em;
+      height: auto;
+    }
+
+    .Mercadopago {
+      width: 10em;
+      height: auto;
+    }
+
+    .footer-logo {
+      text-align: center;
+      border: 1px $colorblanco;
+    }
+
+    .footer-finantips {
+
+      width: 40vw;
+      height: auto;
+    }
+
+    .footer-content {
+
+      display: flex;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-left {
+      flex: 1;
+
+      h3 {
+        color: #e4e3e3;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      ul {
+
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          list-style: none;
+          margin-bottom: 5px;
+
+          a {
+            color: #252525;
+            text-decoration: none;
+
+            &:hover{
+              text-decoration: underline;
+            }
+
+          }
+        }
+      }
+
+    }
+  }
+
+  .footer-right {
+
+    h3 {
+      color: #e4e3e3;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    flex: 1;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 5px;
+
+        a {
+          color: #252525;
+          text-decoration: none;
+
+          &:hover{
+            text-decoration: underline;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .footer-bottom {
+    background-color: #111111;
+    padding: 10px;
+    text-align: center;
+    font-size: 1em;
+    text-align: center;
+    color: #adadad;
+
+    .footer-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .version {
+      margin-right: 10px;
+    }
+
+    .fecha {
+      margin-left: 10px;
+    }
+
+  }
+
+  /* FIN Footer */

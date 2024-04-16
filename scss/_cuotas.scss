@@ -1,0 +1,268 @@
+
+
+/*Inicio cuotas mian */
+
+.containerBox4 {
+    text-align: center;
+    margin: 4em;
+    padding: 1.5em;
+    border: 5px solid #14805c;
+    border-radius: 1em;
+  }
+  
+  .containerBox4 h1 {
+    display: flex;
+    font-size: 1.6em;
+    color: #14805c;
+    justify-content: center;
+    padding-bottom: .5em;
+  }
+  
+  .containerBox4 h2 {
+    font-size: 1.3em;
+    color: #14805c;
+  }
+
+  .sueldo {
+    justify-content: space-between;
+    padding: .3em;
+  }
+  
+  @media (min-width: 350px) {
+    .sueldo{
+      display: flex;
+    }
+  }
+  
+  
+  #labelSueldo {
+    color: #14805c;
+    font-weight: bold;
+  }
+  
+  #inputSueldo {
+    height: 2em;
+    width: 8em;
+    border-radius: 4em;
+    appearance: none;
+    text-align: center;
+  
+  }
+  
+  #inputSueldo::-webkit-inner-spin-button,
+  #inputSueldo::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .cantidadHijos {
+    justify-content: space-between;
+    padding: .3em;
+  }
+  
+  @media (min-width: 350px) {
+    .cantidadHijos{
+      display: flex;
+    }
+  }
+  
+  
+  #labelCantidadHijos {
+    color: #14805c;
+    font-weight: bold;
+  }
+  
+  #inputCantidadHijos {
+    height: 2em;
+    width: 8em;
+    border-radius: 4em;
+    appearance: none;
+    text-align: center;
+  
+  }
+  
+  #inputCantidadHijos::-webkit-inner-spin-button,
+  #inputCantidadHijos::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  
+  .porcentajeAportes {
+    justify-content: space-between;
+    padding: .3em;
+  }
+  
+  @media (min-width: 350px) {
+    .porcentajeAportes{
+      display: flex;
+    }
+  }
+  
+  
+  #labelPorcentajeAportes {
+    color: #14805c;
+    font-weight: bold;
+  }
+  
+  #inputPorcentajeAportes {
+    height: 2em;
+    width: 8em;
+    border-radius: 4em;
+    appearance: none;
+    text-align: center;
+  
+  }
+  
+  #inputPorcentajeAportes::-webkit-inner-spin-button,
+  #inputPorcentajeAportes::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  
+  .casado input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #14805c;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+
+  .casado input[type="checkbox"]:checked {
+    background-color: #14805c;
+  }
+
+  .casado label {
+    margin-left: 10px;
+    color: #14805c;
+    font-weight: bold;
+  }
+
+
+
+  .alquiler input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #14805c;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+
+  .alquiler input[type="checkbox"]:checked {
+    background-color: #14805c;
+  }
+
+  .alquiler label {
+    margin-left: 10px;
+    color: #14805c;
+    font-weight: bold;
+  }
+
+
+
+
+  .seguroVida input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #14805c;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+
+  .seguroVida input[type="checkbox"]:checked {
+    background-color: #14805c;
+  }
+
+  .seguroVida label {
+    margin-left: 10px;
+    color: #14805c;
+    font-weight: bold;
+  }
+
+
+
+  .jubilado input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #14805c;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+
+  .jubilado input[type="checkbox"]:checked {
+    background-color: #14805c;
+  }
+
+  .jubilado label {
+    margin-left: 10px;
+    color: #14805c;
+    font-weight: bold;
+  }
+
+
+
+  .patagonico input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #14805c;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+
+  .patagonico input[type="checkbox"]:checked {
+    background-color: #14805c;
+  }
+
+  .patagonico label {
+    margin-left: 10px;
+    color: #14805c;
+    font-weight: bold;
+  }
+
+  .boton4 {
+    font-weight: 700;
+    color: #fafafa;
+    padding: 9px 25px;
+    background-color: #14805c;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    
+  }
+  
+  .boton4:hover {
+    transform: scale(1.1);
+  }
+
+  .explicacionImpuesto{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin: 2em;
+    margin-bottom: 5em;
+  }
+
+  .tituloExplicacion{
+    font-size: 1.3em;
+  }
+
+/*FIN cuotas main*/

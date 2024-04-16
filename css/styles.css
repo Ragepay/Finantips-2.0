@@ -1,266 +1,319 @@
-* {
-    font-size: 1em;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-  
-  html{
-    scroll-behavior: smooth;
-  }
-  
-
 /* Estilos para el header */
+body {
+  background-color: #fafafa;
+}
+
 header {
-    background-color: #14805c;
-    color: #fafafa;
-    margin: 0px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 5px Black;
+  background-color: #14805c;
+  color: #fafafa;
+  margin: 0px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 5px Black;
 }
-
-header a img {
-    margin: 20px;
-    height: 4.5vh;
-    transition: all 0.3s;
-    margin-left: 30px;
-}
-
-header nav {
-    margin-right: 30px;
-}
-
-header nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-}
-
-header nav ul li {
-    list-style: none;
-}
-
-header nav ul li a {
-    color: #fafafa;
-    text-decoration: none;
-    font-size: 1.5rem; 
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
 header .logo {
-    cursor: pointer;
+  cursor: pointer;
 }
-
 header .logo img:hover {
-    transform: scale(1.15);
+  transform: scale(1.15);
 }
-
-.boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
+header a img {
+  margin: 20px;
+  height: 4.5vh;
+  transition: all 0.3s;
+  margin-left: 30px;
 }
-
+header nav {
+  margin-right: 30px;
+}
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+header nav ul li {
+  list-style: none;
+}
+header nav ul li a {
+  color: #fafafa;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+header .boton button {
+  font-weight: 700;
+  color: #14805c;
+  padding: 9px 25px;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
 header .boton button:hover {
-    transform: scale(1.15);
+  transform: scale(1.15);
 }
 
-  
+#cotizacionesDolar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2em;
+  margin-bottom: 3.5em;
+}
+#cotizacionesDolar .item-iframe {
+  margin: 1em;
+  width: 17em;
+  height: 17em;
+  border-radius: 20px;
+  border: 1px solid #14805c;
+  transition: transform 0.3s ease;
+}
+#cotizacionesDolar .item-iframe:hover iframe {
+  transform: scale(1.1);
+}
 
+/* FIN de Header */
+/*Footer*/
+footer {
+  background-color: #14805c;
+  padding: 20px 0;
+  color: #fafafa;
+  font-size: 1em;
+  box-shadow: 20px 0px 0px 0px;
+}
+footer img {
+  width: 1.5em;
+  height: auto;
+}
+footer .Mercadopago {
+  width: 10em;
+  height: auto;
+}
+footer .footer-logo {
+  text-align: center;
+  border: 1px #fafafa;
+}
+footer .footer-finantips {
+  width: 40vw;
+  height: auto;
+}
+footer .footer-content {
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+footer .footer-left {
+  flex: 1;
+}
+footer .footer-left h3 {
+  color: #e4e3e3;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+footer .footer-left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+footer .footer-left ul li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+footer .footer-left ul li a {
+  color: #252525;
+  text-decoration: none;
+}
+footer .footer-left ul li a:hover {
+  text-decoration: underline;
+}
 
-  /* FIN de Header */
-  
+.footer-right {
+  flex: 1;
+}
+.footer-right h3 {
+  color: #e4e3e3;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-right ul li {
+  margin-bottom: 5px;
+}
+.footer-right ul li a {
+  color: #252525;
+  text-decoration: none;
+}
+.footer-right ul li a:hover {
+  text-decoration: underline;
+}
 
-  
-  /* Index main*/
+.footer-bottom {
+  background-color: #111111;
+  padding: 10px;
+  text-align: center;
+  font-size: 1em;
+  text-align: center;
+  color: #adadad;
+}
+.footer-bottom .footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-bottom .version {
+  margin-right: 10px;
+}
+.footer-bottom .fecha {
+  margin-left: 10px;
+}
 
-  
-  body {
-    background-color: #fafafa;
-  }
-  
-  #cotizacionesDolar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 2em;
-    margin-bottom: 3.5em;
-  }
-  
-  .item-iframe {
-    margin: 1em;
-    width:17em;
-    height: 17em;
-    border-radius: 20px;
-    border: 1px solid #14805c;
-    transition: transform 0.3s ease;
-    
-  }
-  
-  .item-iframe:hover iframe {
-    transform: scale(1.1);
-  }
+/* FIN Footer */
+/* Index main*/
+#containerInformacion div h3 {
+  color: #14805c;
+  font-size: 7vh;
+}
 
-  #containerInformacion div h3 {
-    color: #14805c;
-    font-size: 7vh;
-  }
-  
-  .container {
-    display: flex;
-    height: 80vh;
-    width: auto;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: px 5px 2em rgba(0, 0, 0, 0.5);
-    background-color: #14805c;
-  }
-  
-  .container h2{
-    font-size: 6.5vw;
-    color: #fafafa;
-    font-weight: bold;
-  
-  }
-  
-  .container p{
-    font-size: 2em;
-    color: #fafafa;
-    max-width: 1200px;
-    margin: 2em;
-    
-  }
-  
-  .container button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    margin: 1em;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-  }
-  
-  .container button:hover {
-    transform: scale(1.1);
-  }
-  
-  #sectionInformacion{
-    margin: 6em 1em 6em 1em;
-  }
+.container {
+  display: flex;
+  height: 80vh;
+  width: auto;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: px 5px 2em rgba(0, 0, 0, 0.5);
+  background-color: #14805c;
+}
 
-  #containerInformacion{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .dolar {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../img/Dolares.JPG);
-    border-radius: 1em;
-    margin: 1em 0em;
-    padding: 30px;
-  }
-  
-  
-  .dolar .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    
-  }
-  
-  .dolar .boton button:hover {
-    transform: scale(1.1);
-  }
-  
-  
-  .pesos {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../img/Pesos.jpg);
-    background-position: center;
-    border-radius: 1em;
-    margin: 1em 0em;
-    padding: 30px;
-  }
-  
-  .pesos .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-  }
-  
-  .pesos .boton button:hover {
-    transform: scale(1.1);
-  }
-  
+.container h2 {
+  font-size: 6.5vw;
+  color: #fafafa;
+  font-weight: bold;
+}
 
-  /*FIN de Index main*/
+.container p {
+  font-size: 2em;
+  color: #fafafa;
+  max-width: 1200px;
+  margin: 2em;
+}
 
-  /* calculadoras main */
+.container button {
+  font-weight: 700;
+  color: #14805c;
+  padding: 9px 25px;
+  margin: 1em;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
 
+.container button:hover {
+  transform: scale(1.1);
+}
 
-  main .container-box {
-    text-align: center;
-    margin: 1em;
-    margin-bottom: 2em;
-    padding: 2em;
-    border: 5px solid #14805c;
-    border-radius: 1em;
-    display: grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:15px
-  }
-  
+#sectionInformacion {
+  margin: 6em 1em 6em 1em;
+}
+
+#containerInformacion {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dolar {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/Dolares.JPG);
+  border-radius: 1em;
+  margin: 1em 0em;
+  padding: 30px;
+}
+
+.dolar .boton button {
+  font-weight: 700;
+  color: #14805c;
+  padding: 9px 25px;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.dolar .boton button:hover {
+  transform: scale(1.1);
+}
+
+.pesos {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/Pesos.jpg);
+  background-position: center;
+  border-radius: 1em;
+  margin: 1em 0em;
+  padding: 30px;
+}
+
+.pesos .boton button {
+  font-weight: 700;
+  color: #14805c;
+  padding: 9px 25px;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.pesos .boton button:hover {
+  transform: scale(1.1);
+}
+
+/*FIN de Index main*/
+/* calculadoras main */
+main .container-box {
+  text-align: center;
+  margin: 1em;
+  margin-bottom: 2em;
+  padding: 2em;
+  border: 5px solid #14805c;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+main .container-box h2 {
+  color: #14805c;
+  font-size: 4.5vw;
+  height: auto;
+  font-weight: bold;
+  grid-column: 1/4;
+}
+
+@media only screen and (max-width: 600px) {
   main .container-box h2 {
-    color: #14805c;
-    font-size: 4.5vw;
-    height: auto;
-    font-weight: bold;
-    
-    grid-column: 1/4
-  }
-
- @media only screen and (max-width:600px) {
-  main .container-box h2{
     font-size: 7vw;
   }
- }
-  
- .box1, .box2, .box3 {
+}
+.box1, .box2, .box3 {
   height: 500px;
   width: auto;
   border-radius: 1em;
@@ -272,1029 +325,816 @@ header .boton button:hover {
   color: #14805c;
   font-weight: bold;
   margin: 15px;
+}
 
- }
+.box1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/fotoSueldoNeto.jpg);
+}
 
-  .box1 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../img/fotoSueldoNeto.jpg);
-      
-  }
-  
-  
-  .box2 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../img/fotoPlazoFijo.jpeg);
-      
-  }
-  
-  .box3 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../img/fotoImpuestoGanancias.jpeg);
+.box2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/fotoPlazoFijo.jpeg);
+}
 
-  }
+.box3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/fotoImpuestoGanancias.jpeg);
+}
 
-  @media only screen and (max-width:1000px) {
-    main .container-box{display:flex;
-      flex-direction: column;
-      
-    }
-    .box1, .box2, .box3 {
-      height: 250px;
-
-    }
-   }
-
-   @media only screen and (max-width:600px) {
-    .box1, .box2, .box3 {
-      height: 150px;
-      font-size: 0.8em;
-    }
-  }
-    
-  
-  .box1:hover {
-    transform: scale(1.02);
-  }
-  
-  .box2:hover {
-    transform: scale(1.02);
-  }
-  
-  .box3:hover {
-    transform: scale(1.02);
-  }
-  
-  .box1 .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    font-size: 1.2em;
-  }
-  
-  .box2 .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    font-size: 1.2em;
-  }
-  
-  .box3 .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    font-size: 1.2em;
-  }
-  
-  .box1 .boton button:hover {
-    transform: scale(1.1);
-  }
-  
-  .box2 .boton button:hover {
-    transform: scale(1.1);
-  }
-  
-  .box3 .boton button:hover {
-    transform: scale(1.1);
-  }
-  
-  
-  
-  .plazoFijo {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../imagenes/Pesos.jpg);
-    height: 700px;
-    width: 100%;
-    overflow: hidden;
-    background-size: cover;
+@media only screen and (max-width: 1000px) {
+  main .container-box {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin-bottom: 100px;
-    transition: 0.5s;
   }
-  
-  .plazoFijo:hover {
-    transform: scale(1.02);
+  .box1, .box2, .box3 {
+    height: 250px;
   }
-  
-  .plazoFijo .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
+}
+@media only screen and (max-width: 600px) {
+  .box1, .box2, .box3 {
+    height: 150px;
+    font-size: 0.8em;
   }
-  
-  .plazoFijo .boton button:hover {
-    transform: scale(1.1);
-  }
+}
+.box1:hover {
+  transform: scale(1.02);
+}
 
+.box2:hover {
+  transform: scale(1.02);
+}
+
+.box3:hover {
+  transform: scale(1.02);
+}
+
+.box1 .boton button {
+  font-weight: 700;
+  color: #14805c;
+  padding: 9px 25px;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-size: 1.2em;
+}
+
+.box2 .boton button {
+  font-weight: 700;
+  color: #14805c;
+  padding: 9px 25px;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-size: 1.2em;
+}
+
+.box3 .boton button {
+  font-weight: 700;
+  color: #14805c;
+  padding: 9px 25px;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-size: 1.2em;
+}
+
+.box1 .boton button:hover {
+  transform: scale(1.1);
+}
+
+.box2 .boton button:hover {
+  transform: scale(1.1);
+}
+
+.box3 .boton button:hover {
+  transform: scale(1.1);
+}
+
+.plazoFijo {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../imagenes/Pesos.jpg);
+  height: 700px;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 100px;
+  transition: 0.5s;
+}
+
+.plazoFijo:hover {
+  transform: scale(1.02);
+}
+
+.plazoFijo .boton button {
+  font-weight: 700;
+  color: #14805c;
+  padding: 9px 25px;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.plazoFijo .boton button:hover {
+  transform: scale(1.1);
+}
 
 /* FIN de calculadoras */
+/*Inicio cuotas mian */
+.containerBox4 {
+  text-align: center;
+  margin: 4em;
+  padding: 1.5em;
+  border: 5px solid #14805c;
+  border-radius: 1em;
+}
 
-/* Inicio sueldoneto main */
+.containerBox4 h1 {
+  display: flex;
+  font-size: 1.6em;
+  color: #14805c;
+  justify-content: center;
+  padding-bottom: 0.5em;
+}
 
-.containerBox2 {
-    text-align: center;
-    margin: 3em;
-    padding: 1.5em;
-    border: 5px solid #14805c;
-    border-radius: 1em;
-  }
-  
-  .containerBox2 h1 {
+.containerBox4 h2 {
+  font-size: 1.3em;
+  color: #14805c;
+}
+
+.sueldo {
+  justify-content: space-between;
+  padding: 0.3em;
+}
+
+@media (min-width: 350px) {
+  .sueldo {
     display: flex;
-    font-size: 1.6em;
-    color: #14805c;
-    justify-content: center;
-    padding-bottom: .5em;
   }
-  
-  .containerBox2 h2 {
-    font-size: 1.3em;
-    color: #14805c;
-  }
-  
-  .horasNormales {
-    justify-content: space-between;
-    padding: .3em;
-  }
-  
-  @media (min-width: 350px) {
-    .horasNormales{
-      display: flex;
-    }
-  }
-  
-  
-  #labelHorasNormales {
-    color: #14805c;
-    font-weight: bold;
-  }
-  
-  #inputHorasNormales {
-    height: 2em;
-    width: 5em;
-    border-radius: 4em;
-    appearance: none;
-    text-align: center;
-  
-  }
-  
-  #inputHorasNormales::-webkit-inner-spin-button,
-  #inputHorasNormales::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-  }
-  
-  
-  .horasExtras {
-    justify-content: space-between;
-    padding: .3em;
-  }
-  
-  @media (min-width: 350px) {
-    .horasExtras{
-      display: flex;
-    }
-  }
-  
-  #labelHorasExtras {
-    color: #14805c;
-    font-weight: bold;
-  }
-  
-  #inputHorasExtras {
-    height: 2em;
-    width: 5em;
-    border-radius: 4em;
-    appearance: none;
-    text-align: center;
-  }
-  
-  #inputHorasExtras::-webkit-inner-spin-button,
-  #inputHorasExtras::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-  
-  .precioHoraNormal {
-    justify-content: space-between;
-    padding: .3em;
-  }
-  
-  @media (min-width: 350px) {
-    .precioHoraNormal{
-      display: flex;
-    }
-  }
-  
-  #labelPrecioHoraNormal {
-    color: #14805c;
-    font-weight: bold;
-  }
-  
-  #inputPrecioHoraNormal {
-    height: 2em;
-    width: 5em;
-    border-radius: 4em;
-    appearance: none;
-    text-align: center;
-  }
-  
-  #inputPrecioHoraNormal::-webkit-inner-spin-button,
-  #inputPrecioHoraNormal::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-  
-  .precioHoraExtra {
-    justify-content: space-between;
-    padding: .3em;
-  }
-  
-  @media (min-width: 350px) {
-    .precioHoraExtra{
-      display: flex;
-      text-align: left;
-    }
-  }
-  
-  #labelPrecioHoraExtra {
-    color: #14805c;
-    font-weight: bold;
-  
-  }
-  
-  #inputPrecioHoraExtra {
-    height: 2em;
-    width: 5em;
-    border-radius: 4em;
-    appearance: none;
-    text-align: center;
-  }
-  
-  #inputPrecioHoraExtra::-webkit-inner-spin-button,
-  #inputPrecioHoraExtra::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-  
-  .resultados {
-    margin: 1em;
-  }
-
- .boton2 {
-    font-weight: 700;
-    color: #fafafa;
-    padding: 9px 25px;
-    background-color: #14805c;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    transform: scale(1.15);
-  }
-
-  
-
-
-/* FIN sueldoneto main */
-
-/* Inicio plazofijo main */
-
-.containerBox3 {
-    text-align: center;
-    margin: 3em;
-    padding: 1.5em;
-    border: 5px solid #14805c;
-    border-radius: 1em;
+}
+#labelSueldo {
+  color: #14805c;
+  font-weight: bold;
 }
 
-@media (max-width: 413px) {
-    .containerBox3 {
-        text-align: left;
-        margin: 4em;
-        padding: 1.5em;
-        border: 5px solid #14805c;
-        border-radius: 1em;
-    }
+#inputSueldo {
+  height: 2em;
+  width: 8em;
+  border-radius: 4em;
+  appearance: none;
+  text-align: center;
 }
 
-.containerBox3 h1 {
+#inputSueldo::-webkit-inner-spin-button,
+#inputSueldo::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.cantidadHijos {
+  justify-content: space-between;
+  padding: 0.3em;
+}
+
+@media (min-width: 350px) {
+  .cantidadHijos {
     display: flex;
-    font-size: 1.6em;
-    color: #14805c;
-    justify-content: center;
-    padding-bottom: .5em;
+  }
+}
+#labelCantidadHijos {
+  color: #14805c;
+  font-weight: bold;
 }
 
-.containerBox3 h2 {
-    font-size: 1.3em;
-    color: #14805c;
+#inputCantidadHijos {
+  height: 2em;
+  width: 8em;
+  border-radius: 4em;
+  appearance: none;
+  text-align: center;
 }
 
-.monto {
-    justify-content: space-between;
-    padding: .3em;
+#inputCantidadHijos::-webkit-inner-spin-button,
+#inputCantidadHijos::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
-@media (min-width: 350px) {
-    .monto {
-        display: flex;
-    }
-}
-
-#labelMonto {
-    color: #14805c;
-    font-weight: bold;
-}
-
-#inputMonto {
-    height: 2em;
-    width: 5em;
-    border-radius: 4em;
-    appearance: none;
-    text-align: center;
-
-}
-
-#inputMonto::-webkit-inner-spin-button,
-#inputMonto::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-}
-
-
-.tasaInteres {
-    justify-content: space-between;
-    padding: .3em;
+.porcentajeAportes {
+  justify-content: space-between;
+  padding: 0.3em;
 }
 
 @media (min-width: 350px) {
-    .tasaInteres {
-        display: flex;
-    }
+  .porcentajeAportes {
+    display: flex;
+  }
+}
+#labelPorcentajeAportes {
+  color: #14805c;
+  font-weight: bold;
 }
 
-#labelTasaInteres {
-    color: #14805c;
-    font-weight: bold;
+#inputPorcentajeAportes {
+  height: 2em;
+  width: 8em;
+  border-radius: 4em;
+  appearance: none;
+  text-align: center;
 }
 
-#inputTasaInteres {
-    height: 2em;
-    width: 5em;
-    border-radius: 4em;
-    appearance: none;
-    text-align: center;
-
+#inputPorcentajeAportes::-webkit-inner-spin-button,
+#inputPorcentajeAportes::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
-#inputTasaInteres::-webkit-inner-spin-button,
-#inputTasaInteres::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+.casado input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #14805c;
+  border-radius: 4px;
+  outline: none;
+  transition: background-color 0.3s;
 }
 
-.meses {
-    justify-content: space-between;
-    padding: .3em;
+.casado input[type=checkbox]:checked {
+  background-color: #14805c;
 }
 
-@media (min-width: 350px) {
-    .meses {
-        display: flex;
-    }
+.casado label {
+  margin-left: 10px;
+  color: #14805c;
+  font-weight: bold;
 }
 
-#labelMeses {
-    color: #14805c;
-    font-weight: bold;
+.alquiler input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #14805c;
+  border-radius: 4px;
+  outline: none;
+  transition: background-color 0.3s;
 }
 
-#inputMeses {
-    height: 2em;
-    width: 5em;
-    border-radius: 4em;
-    appearance: none;
-    text-align: center;
-
+.alquiler input[type=checkbox]:checked {
+  background-color: #14805c;
 }
 
-#inputMeses::-webkit-inner-spin-button,
-#inputMeses::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+.alquiler label {
+  margin-left: 10px;
+  color: #14805c;
+  font-weight: bold;
 }
 
-.interesCompuesto input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #14805c;
-    border-radius: 4px;
-    outline: none;
-    transition: background-color 0.3s;
+.seguroVida input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #14805c;
+  border-radius: 4px;
+  outline: none;
+  transition: background-color 0.3s;
 }
 
-.interesCompuesto input[type="checkbox"]:checked {
-    background-color: #14805c;
+.seguroVida input[type=checkbox]:checked {
+  background-color: #14805c;
 }
 
-.interesCompuesto label {
-    margin-left: 10px;
-    color: #14805c;
-    font-weight: bold;
+.seguroVida label {
+  margin-left: 10px;
+  color: #14805c;
+  font-weight: bold;
 }
 
-.boton3 {
-    margin-top: 1em;
-    font-weight: 700;
-    color: #fafafa;
-    padding: 9px 25px;
-    background-color: #14805c;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
+.jubilado input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #14805c;
+  border-radius: 4px;
+  outline: none;
+  transition: background-color 0.3s;
 }
 
-
-.resultados {
-    margin: 1em;
+.jubilado input[type=checkbox]:checked {
+  background-color: #14805c;
 }
 
-
-.boton3:hover {
-    transform: scale(1.1);
+.jubilado label {
+  margin-left: 10px;
+  color: #14805c;
+  font-weight: bold;
 }
 
-.explicacionPlazoFijo {
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.1em;
-    margin: 2em;
-    margin-bottom: 5em;
+.patagonico input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #14805c;
+  border-radius: 4px;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.patagonico input[type=checkbox]:checked {
+  background-color: #14805c;
+}
+
+.patagonico label {
+  margin-left: 10px;
+  color: #14805c;
+  font-weight: bold;
+}
+
+.boton4 {
+  font-weight: 700;
+  color: #fafafa;
+  padding: 9px 25px;
+  background-color: #14805c;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.boton4:hover {
+  transform: scale(1.1);
+}
+
+.explicacionImpuesto {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin: 2em;
+  margin-bottom: 5em;
 }
 
 .tituloExplicacion {
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 
-.explicacionInteresCompuesto {
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.1em;
-    margin: 2em;
-    margin-bottom: 5em;
+/*FIN cuotas main*/
+/* Inicio plazofijo main */
+.containerBox3 {
+  text-align: center;
+  margin: 3em;
+  padding: 1.5em;
+  border: 5px solid #14805c;
+  border-radius: 1em;
 }
 
-.tituloInteresCompuesto {
-    font-size: 1.3em;
-}
-
-/* FIN plazofijo main */
-
-/*Inicio cuotas mian */
-
-.containerBox4 {
-    text-align: center;
+@media (max-width: 413px) {
+  .containerBox3 {
+    text-align: left;
     margin: 4em;
     padding: 1.5em;
     border: 5px solid #14805c;
     border-radius: 1em;
   }
-  
-  .containerBox4 h1 {
+}
+.containerBox3 h1 {
+  display: flex;
+  font-size: 1.6em;
+  color: #14805c;
+  justify-content: center;
+  padding-bottom: 0.5em;
+}
+
+.containerBox3 h2 {
+  font-size: 1.3em;
+  color: #14805c;
+}
+
+.monto {
+  justify-content: space-between;
+  padding: 0.3em;
+}
+
+@media (min-width: 350px) {
+  .monto {
     display: flex;
-    font-size: 1.6em;
-    color: #14805c;
+  }
+}
+#labelMonto {
+  color: #14805c;
+  font-weight: bold;
+}
+
+#inputMonto {
+  height: 2em;
+  width: 5em;
+  border-radius: 4em;
+  appearance: none;
+  text-align: center;
+}
+
+#inputMonto::-webkit-inner-spin-button,
+#inputMonto::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.tasaInteres {
+  justify-content: space-between;
+  padding: 0.3em;
+}
+
+@media (min-width: 350px) {
+  .tasaInteres {
+    display: flex;
+  }
+}
+#labelTasaInteres {
+  color: #14805c;
+  font-weight: bold;
+}
+
+#inputTasaInteres {
+  height: 2em;
+  width: 5em;
+  border-radius: 4em;
+  appearance: none;
+  text-align: center;
+}
+
+#inputTasaInteres::-webkit-inner-spin-button,
+#inputTasaInteres::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.meses {
+  justify-content: space-between;
+  padding: 0.3em;
+}
+
+@media (min-width: 350px) {
+  .meses {
+    display: flex;
+  }
+}
+#labelMeses {
+  color: #14805c;
+  font-weight: bold;
+}
+
+#inputMeses {
+  height: 2em;
+  width: 5em;
+  border-radius: 4em;
+  appearance: none;
+  text-align: center;
+}
+
+#inputMeses::-webkit-inner-spin-button,
+#inputMeses::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.interesCompuesto input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #14805c;
+  border-radius: 4px;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.interesCompuesto input[type=checkbox]:checked {
+  background-color: #14805c;
+}
+
+.interesCompuesto label {
+  margin-left: 10px;
+  color: #14805c;
+  font-weight: bold;
+}
+
+.boton3 {
+  margin-top: 1em;
+  font-weight: 700;
+  color: #fafafa;
+  padding: 9px 25px;
+  background-color: #14805c;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.resultados {
+  margin: 1em;
+}
+
+.boton3:hover {
+  transform: scale(1.1);
+}
+
+.explicacionPlazoFijo {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin: 2em;
+  margin-bottom: 5em;
+}
+
+.tituloExplicacion {
+  font-size: 1.3em;
+}
+
+.explicacionInteresCompuesto {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin: 2em;
+  margin-bottom: 5em;
+}
+
+.tituloInteresCompuesto {
+  font-size: 1.3em;
+}
+
+/* FIN plazofijo main */
+/* Inicio sueldoneto main */
+.containerBox2 {
+  text-align: center;
+  margin: 3em;
+  padding: 1.5em;
+  border: 5px solid #14805c;
+  border-radius: 1em;
+}
+
+.containerBox2 h1 {
+  display: flex;
+  font-size: 1.6em;
+  color: #14805c;
+  justify-content: center;
+  padding-bottom: 0.5em;
+}
+
+.containerBox2 h2 {
+  font-size: 1.3em;
+  color: #14805c;
+}
+
+.horasNormales {
+  justify-content: space-between;
+  padding: 0.3em;
+}
+
+@media (min-width: 350px) {
+  .horasNormales {
+    display: flex;
+  }
+}
+#labelHorasNormales {
+  color: #14805c;
+  font-weight: bold;
+}
+
+#inputHorasNormales {
+  height: 2em;
+  width: 5em;
+  border-radius: 4em;
+  appearance: none;
+  text-align: center;
+}
+
+#inputHorasNormales::-webkit-inner-spin-button,
+#inputHorasNormales::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.horasExtras {
+  justify-content: space-between;
+  padding: 0.3em;
+}
+
+@media (min-width: 350px) {
+  .horasExtras {
+    display: flex;
+  }
+}
+#labelHorasExtras {
+  color: #14805c;
+  font-weight: bold;
+}
+
+#inputHorasExtras {
+  height: 2em;
+  width: 5em;
+  border-radius: 4em;
+  appearance: none;
+  text-align: center;
+}
+
+#inputHorasExtras::-webkit-inner-spin-button,
+#inputHorasExtras::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.precioHoraNormal {
+  justify-content: space-between;
+  padding: 0.3em;
+}
+
+@media (min-width: 350px) {
+  .precioHoraNormal {
+    display: flex;
+  }
+}
+#labelPrecioHoraNormal {
+  color: #14805c;
+  font-weight: bold;
+}
+
+#inputPrecioHoraNormal {
+  height: 2em;
+  width: 5em;
+  border-radius: 4em;
+  appearance: none;
+  text-align: center;
+}
+
+#inputPrecioHoraNormal::-webkit-inner-spin-button,
+#inputPrecioHoraNormal::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.precioHoraExtra {
+  justify-content: space-between;
+  padding: 0.3em;
+}
+
+@media (min-width: 350px) {
+  .precioHoraExtra {
+    display: flex;
+    text-align: left;
+  }
+}
+#labelPrecioHoraExtra {
+  color: #14805c;
+  font-weight: bold;
+}
+
+#inputPrecioHoraExtra {
+  height: 2em;
+  width: 5em;
+  border-radius: 4em;
+  appearance: none;
+  text-align: center;
+}
+
+#inputPrecioHoraExtra::-webkit-inner-spin-button,
+#inputPrecioHoraExtra::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.resultados {
+  margin: 1em;
+}
+
+.boton2 {
+  font-weight: 700;
+  color: #fafafa;
+  padding: 9px 25px;
+  background-color: #14805c;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  transform: scale(1.15);
+}
+
+/* FIN sueldoneto main */
+/* Media Querys */
+@media only screen and (max-width: 1200px) {
+  header {
+    flex-wrap: wrap;
     justify-content: center;
-    padding-bottom: .5em;
   }
-  
-  .containerBox4 h2 {
-    font-size: 1.3em;
-    color: #14805c;
+  header nav ul {
+    gap: 20px;
   }
-
-  .sueldo {
-    justify-content: space-between;
-    padding: .3em;
+  header nav ul li a {
+    font-size: 2.5vw;
   }
-  
-  @media (min-width: 350px) {
-    .sueldo{
-      display: flex;
-    }
-  }
-  
-  
-  #labelSueldo {
-    color: #14805c;
-    font-weight: bold;
-  }
-  
-  #inputSueldo {
-    height: 2em;
-    width: 8em;
-    border-radius: 4em;
-    appearance: none;
-    text-align: center;
-  
-  }
-  
-  #inputSueldo::-webkit-inner-spin-button,
-  #inputSueldo::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-  }
-
-  .cantidadHijos {
-    justify-content: space-between;
-    padding: .3em;
-  }
-  
-  @media (min-width: 350px) {
-    .cantidadHijos{
-      display: flex;
-    }
-  }
-  
-  
-  #labelCantidadHijos {
-    color: #14805c;
-    font-weight: bold;
-  }
-  
-  #inputCantidadHijos {
-    height: 2em;
-    width: 8em;
-    border-radius: 4em;
-    appearance: none;
-    text-align: center;
-  
-  }
-  
-  #inputCantidadHijos::-webkit-inner-spin-button,
-  #inputCantidadHijos::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-  }
-  
-  .porcentajeAportes {
-    justify-content: space-between;
-    padding: .3em;
-  }
-  
-  @media (min-width: 350px) {
-    .porcentajeAportes{
-      display: flex;
-    }
-  }
-  
-  
-  #labelPorcentajeAportes {
-    color: #14805c;
-    font-weight: bold;
-  }
-  
-  #inputPorcentajeAportes {
-    height: 2em;
-    width: 8em;
-    border-radius: 4em;
-    appearance: none;
-    text-align: center;
-  
-  }
-  
-  #inputPorcentajeAportes::-webkit-inner-spin-button,
-  #inputPorcentajeAportes::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-  }
-  
-  .casado input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #14805c;
-    border-radius: 4px;
-    outline: none;
-    transition: background-color 0.3s;
-  }
-
-  .casado input[type="checkbox"]:checked {
-    background-color: #14805c;
-  }
-
-  .casado label {
-    margin-left: 10px;
-    color: #14805c;
-    font-weight: bold;
-  }
-
-
-
-  .alquiler input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #14805c;
-    border-radius: 4px;
-    outline: none;
-    transition: background-color 0.3s;
-  }
-
-  .alquiler input[type="checkbox"]:checked {
-    background-color: #14805c;
-  }
-
-  .alquiler label {
-    margin-left: 10px;
-    color: #14805c;
-    font-weight: bold;
-  }
-
-
-
-
-  .seguroVida input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #14805c;
-    border-radius: 4px;
-    outline: none;
-    transition: background-color 0.3s;
-  }
-
-  .seguroVida input[type="checkbox"]:checked {
-    background-color: #14805c;
-  }
-
-  .seguroVida label {
-    margin-left: 10px;
-    color: #14805c;
-    font-weight: bold;
-  }
-
-
-
-  .jubilado input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #14805c;
-    border-radius: 4px;
-    outline: none;
-    transition: background-color 0.3s;
-  }
-
-  .jubilado input[type="checkbox"]:checked {
-    background-color: #14805c;
-  }
-
-  .jubilado label {
-    margin-left: 10px;
-    color: #14805c;
-    font-weight: bold;
-  }
-
-
-
-  .patagonico input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #14805c;
-    border-radius: 4px;
-    outline: none;
-    transition: background-color 0.3s;
-  }
-
-  .patagonico input[type="checkbox"]:checked {
-    background-color: #14805c;
-  }
-
-  .patagonico label {
-    margin-left: 10px;
-    color: #14805c;
-    font-weight: bold;
-  }
-
-  .boton4 {
-    font-weight: 700;
-    color: #fafafa;
-    padding: 9px 25px;
-    background-color: #14805c;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    
-  }
-  
-  .boton4:hover {
-    transform: scale(1.1);
-  }
-
-  .explicacionImpuesto{
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.1em;
-    margin: 2em;
-    margin-bottom: 5em;
-  }
-
-  .tituloExplicacion{
-    font-size: 1.3em;
-  }
-
-/*FIN cuotas main*/
-
-/* Fin Main */
-
-
-
-
-  /*Footer*/
-
-
-  footer {
-    background-color: #14805c;
-    padding: 20px 0;
-    color: #fafafa;
-    font-size: 1em;
-    box-shadow: 20px 0px 0px 0px;
-  
-  }
-
-@media only screen and (min-width:1200px) {
-footer { font-size: 1.2em;
-
 }
-footer img {
-  width: 2em;
-  height: auto;
-}
-}
-
-@media only screen and (max-width:900px) {
-.Mercadopago {
-  width: 7em;
-  height: auto;
-} 
-
-}
-  footer img {
-    width: 1.5em;
-    height: auto;
+@media only screen and (max-width: 650px) {
+  header a img {
+    height: 4vh;
   }
-  
-  .Mercadopago {
+  header nav ul {
+    gap: 15px;
+  }
+  header nav ul li a {
+    font-size: 3vw;
+  }
+}
+@media (max-width: 768px) {
+  .item-iframe {
+    width: 12em;
+    height: 12em;
+  }
+}
+@media (max-width: 480px) {
+  .item-iframe {
     width: 10em;
-    height: auto;
+    height: 10em;
   }
-  
-  .footer-logo {
-    text-align: center;
-    border: 1px #fafafa;
-  
+}
+@media only screen and (max-width: 1200px) {
+  .container p {
+    font-size: 1.5em;
   }
-  
+}
+@media only screen and (max-width: 960px) {
+  .container p {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container p {
+    font-size: 0.8em;
+  }
+}
+@media (min-width: 977px) {
+  #sectionInformacion {
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+  }
+  #containerInformacion {
+    display: contents;
+    align-items: center;
+  }
+  #containerInformacion .dolar {
+    padding: 9em;
+    margin: 2em;
+    background-position: center;
+  }
+  #containerInformacion .pesos {
+    padding: 9em;
+    margin: 2em;
+    background-position: center;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  footer {
+    font-size: 1.2em;
+  }
+}
+@media only screen and (max-width: 480px) {
   .footer-finantips {
-    width: 40vw;
+    width: 55vw;
     height: auto;
+    margin: 20px;
   }
-  
-  @media only screen and (max-width:480px){
-    .footer-finantips {
-      width: 55vw;
-      height: auto;
-      margin: 20px;
-    }
-    .footer-left,
+  .footer-left,
   .footer-right {
     margin: 20px;
   }
- 
   header nav ul li a {
     font-size: 0.8em;
   }
-
+}
+@media only screen and (max-width: 900px) {
+  .Mercadopago {
+    width: 7em;
+    height: auto;
   }
+}
+@media only screen and (min-width: 1200px) {
   
-  .footer-content {
-    display: flex;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-    flex-wrap: wrap;
-  }
-  
-  
-  .footer-left,
-  .footer-right {
-    flex: 1;
-  }
-  
-  .footer-left h3,
-  .footer-right h3 {
-    color: #e4e3e3;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .footer-right ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  
-  }
-  
-  .footer-right ul li {
-    margin-bottom: 5px;
-  }
-  
-  .footer-right ul li a {
-    color: #252525;
-    text-decoration: none;
-  
-  }
-  
-  .footer-left li {
-    color: #252525;
-    text-decoration: none;
-    list-style: none;
-  }
-  
-  .footer-left ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  
-  }
-  
-  .footer-left ul li {
-    margin-bottom: 5px;
-  }
-  
-  .footer-left ul li a {
-    color: #252525;
-    text-decoration: none;
-  }
-  
-  .footer-right ul li a:hover {
-    text-decoration: underline;
-  }
-  .footer-left ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  
-  
-  .footer-bottom {
-    background-color: #111111;
-    padding: 10px;
-    text-align: center;
-    font-size: 1em;
-    text-align: center;
-    color: #adadad;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .version {
-    margin-right: 10px;
-  }
-  
-  .fecha {
-    margin-left: 10px;
-  }
-  
-  
-  /* FIN Footer */
-
-
-  /* Media Querys */
-
-  @media only screen and (max-width: 1200px) {
-    header {
-      flex-wrap: wrap;
-    justify-content: center;
-  }
-    header nav ul {
-      gap: 20px;
-    }
-    header nav ul li a {
-      font-size: 2.5vw;
-    }
+  footer {
+    font-size: 1.2em;
   }
 
-  @media only screen and (max-width: 650px) {
-    header a img {
-      height: 4vh;
-    }
-    header nav ul {
-      gap: 15px;
-    }
-    header nav ul li a {
-      font-size: 3vw;
-    }
-    }
+  footer img {
+    width: 2em;
+    height: auto;
+  }
+}
 
-    @media (max-width: 768px) {
-      .item-iframe {
-        width: 12em;
-        height: 12em;
-      }
-    }
-  
-    @media (max-width: 480px) {
-      .item-iframe {
-        width: 10em;
-        height: 10em;
-      }
-    }
-
-    @media only screen and (max-width:1200px) {
-    
-      .container p{
-        font-size: 1.5em;
-      }
-    }
-  
-    @media only screen and (max-width:960px) {
-      
-      .container p{
-        font-size: 1em;
-      }
-    }
-  
-    @media only screen and (max-width:600px) {
-      
-      .container p{
-        font-size: 0.8em;
-      }
-    }
-
-    @media (min-width: 977px){
-      #sectionInformacion{
-        display: flex;
-        justify-content: center;
-        height: 70vh;
-        
-      }
-    
-      #containerInformacion{
-        display:contents;
-        align-items: center; 
-      }
-    
-      #containerInformacion .dolar{
-        padding: 9em;
-        margin: 2em;
-        background-position: center;
-        
-      }
-    
-      #containerInformacion .pesos{
-        padding: 9em;
-        margin: 2em;
-        background-position: center;
-      }
-    
-    }
-
-    
+/*# sourceMappingURL=styles.css.map */
