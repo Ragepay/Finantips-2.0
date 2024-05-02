@@ -132,7 +132,7 @@ function calcularSueldo() {
 
     let horas50Total = horas50 * ((base / a) * (1.5) * (1.04 + 0.01 * (antiguedad-1))) ;
     let horas100Total = horas100 * ((base / a) * (2) * (1.04 + 0.01 * (antiguedad-1)));
-    let horas200Total = horas100 * ((base / a) * (4) * (1.04 + 0.01 * (antiguedad-1)));
+    let horas200Total = horas200 * ((base / a) * (4) * (1.04 + 0.01 * (antiguedad-1)));
     let horasNocturnasTotal = horasNocturnas * (base / a) * 0.36 * (1.04 + 0.01 * (antiguedad-1));
 
 
@@ -152,8 +152,18 @@ function calcularSueldo() {
 
     // Sueldo Neto
 
-    sueldoNeto = sueldoBruto * 0.79;
-    //ganancias = sueldoBruto - sueldoNeto;
+    
+    //208.174,81
+    //Bruto maximo: 1.892.498,29
+    
+    if (sueldoBruto <= 1892498.29){
+        sueldoNeto = sueldoBruto * 0.79;
+    } else {
+        sueldoNeto = sueldoBruto - (1892498*0.21);
+    }
+    
+
+    
 
     // Mostrar los resultados en el formulario
     document.getElementById("sueldoBrutoResultado").innerText = "$ " + sueldoBruto.toFixed(2);

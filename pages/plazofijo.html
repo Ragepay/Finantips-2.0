@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="../css/styles.css"> <!-- Linkeo con Style CSS-->
   <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script refer src="../js/plazofijo.js"></script>
 </head>
 
 
@@ -43,21 +44,21 @@
 
     <section>
       <div class="containerBox3">
-        <h1>Calculadora de Plazo Fijo en Argentina</h1>
+        <h1>Calculadora de Plazo Fijo</h1>
 
         <div class="monto">
-          <label for="monto" id="labelMonto">Monto:</label>
-          <input type="number" id="inputMonto" step="0.01">
+          <label for="monto" id="labelMonto">Capital/Monto:</label>
+          <input type="number" id="inputMonto" step="0.01" placeholder="100.000" oninput="formatearNumero(this)">
         </div>
 
         <div class="tasaInteres">
-          <label for="tasaInteres" id="labelTasaInteres">Tasa de interés (%):</label>
-          <input type="number" id="inputTasaInteres" step="0.01">
+          <label for="tasaInteres" id="labelTasaInteres">TNA/Interés (%):</label>
+          <input type="number" id="inputTasaInteres" step="0.01" placeholder="100">
         </div>
 
         <div class="meses">
-          <label for="meses" id="labelMeses">Meses:</label>
-          <input type="number" id="inputMeses">
+          <label for="meses" id="labelMeses">Días:</label>
+          <input type="number" id="inputMeses" placeholder="30">
         </div>
 
         <div class="interesCompuesto">
@@ -174,9 +175,8 @@
 
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous">
-  </script>
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 </body>
 
 

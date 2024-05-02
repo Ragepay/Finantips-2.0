@@ -10,8 +10,7 @@
   <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  
-
+  <script refer src="../js/cuotas.js"></script>
 </head>
 
 <body>
@@ -37,49 +36,33 @@
     </section>
 
     <section class="containerBox4">
-      <h1>Calculadora de Impuesto a las Ganancias</h1>
+      <h1> En Cuotas S/Interés o al Contado ?</h1>
       <form>
 
         <div class="sueldo">
-          <label for="sueldo" id="labelSueldo">Sueldo Bruto:</label>
+          <label for="sueldo" id="labelSueldo">Al Contado:</label>
           <input type="number" id="inputSueldo" step="0.01" required>
         </div>
 
         <div class="cantidadHijos">
-          <label for="cantidadHijos" id="labelCantidadHijos">Cantidad de Hijos:</label>
+          <label for="cantidadHijos" id="labelCantidadHijos">En cuotas:</label>
           <input type="number" id="inputCantidadHijos">
         </div>
 
         <div class="porcentajeAportes">
-          <label for="porcentajeAportes" id="labelPorcentajeAportes">Porcentaje de Aportes al Sindicato:</label>
+          <label for="porcentajeAportes" id="labelPorcentajeAportes">Cuotas S/Interés:</label>
           <input type="number" id="inputPorcentajeAportes">
         </div>
 
-        <div class="casado">
-          <label for="casado" id="labelCasado">¿Está Casado/a?</label>
-          <input type="checkbox" id="inputCasado">
+        <div class="porcentajeAportes">
+          <label for="porcentajeAportes" id="labelPorcentajeAportes">TNA Plazo Fijo:</label>
+          <input type="number" id="inputPorcentajeAportes">
         </div>
 
-        <div class="alquiler">
-          <label for="alquiler" id="labelAlquiler">¿Paga Alquiler?</label>
-          <input type="checkbox" id="inputAlquiler">
+        <div class="porcentajeAportes">
+          <label for="porcentajeAportes" id="labelPorcentajeAportes">Inflacion:</label>
+          <input type="number" id="inputPorcentajeAportes">
         </div>
-
-        <div class="seguroVida">
-          <label for="seguroVida" id="labelSeguroVida">¿Paga Seguro de Vida?</label>
-          <input type="checkbox" id="inputSeguroVida">
-        </div>
-
-        <div class="jubilado">
-          <label for="jubilado" id="labelJubilado">¿Es Jubilado/a?</label>
-          <input type="checkbox" id="inputJubilado">
-        </div>
-
-        <div class="patagonico">
-          <label for="patagonico" id="labelPategonico">¿Es Patagónico/a?</label>
-          <input type="checkbox" id="inputPatagonico">
-        </div>
-
 
         <button type="button" onclick="calcularImpuesto()" class="boton4">Calcular</button>
       </form>
@@ -88,33 +71,12 @@
 
     <div class="explicacionImpuesto">
       <div class="tituloExplicacion">
-        <h2>¿Que es el Impuesto a las Ganancias?</h2>
+        <h2>Explicacion del Calculo</h2>
       </div>
-      <p><br>El impuesto a las ganancias es un impuesto que se aplica sobre los ingresos o ganancias obtenidos por
-        personas
-        físicas o jurídicas en un determinado período fiscal. Es un impuesto directo que grava la renta o utilidad
-        generada por las actividades económicas. <br>
-        <br>
-        En general, el impuesto a las ganancias se calcula tomando en cuenta los ingresos brutos y deduciendo ciertos
-        gastos y deducciones permitidos por la legislación fiscal. El resultado obtenido se multiplica por una tasa
-        impositiva progresiva para determinar el monto del impuesto a pagar. <br>
-        <br>
-        La tasa impositiva varía según el nivel de ingresos o ganancias alcanzado por el contribuyente. Por lo general,
-        a
-        medida que los ingresos aumentan, la tasa impositiva también aumenta. Esto significa que aquellos que tienen
-        mayores ingresos están sujetos a una tasa impositiva más alta. <br>
-        <br>
-        El impuesto a las ganancias puede aplicarse a diferentes fuentes de ingresos, como salarios, honorarios
-        profesionales, alquileres, intereses, dividendos, ganancias de capital, entre otros. Cada país tiene su propia
-        legislación fiscal y reglas específicas para determinar qué ingresos están sujetos al impuesto a las ganancias y
-        cómo se calcula. <br>
-        <br>
-        Es importante tener en cuenta que las leyes fiscales pueden variar según el país y pueden estar sujetas a
-        cambios
-        a lo largo del tiempo. Por lo tanto, es recomendable consultar la legislación fiscal vigente en el país
-        correspondiente y buscar asesoramiento profesional para comprender cómo se aplica el impuesto a las ganancias en
-        cada caso particular.
+      <p>
+        Aqui va la explicacion del calculo, como se calculo, como y porque.
       </p>
+      
     </div>
   </main>
 
