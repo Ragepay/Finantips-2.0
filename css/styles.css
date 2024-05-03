@@ -473,12 +473,12 @@ form {
   text-align: center;
   margin: 3em;
   padding: 1.5em;
-  border: 5px solid #14805c;
   border-radius: 1em;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
+  border: 5px solid #14805c;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 .containerBox2 h1 {
@@ -502,9 +502,6 @@ form {
   align-items: center;
   justify-content: center;
   width: 100%;
-}
-.containerBox2 .formulario-box .sabadoM {
-  color: chocolate;
 }
 .containerBox2 .sabadoM {
   color: chocolate;
@@ -576,6 +573,63 @@ button {
 }
 
 /* FIN sueldoneto main */
+/* Inicio de pesos */
+.financial-main {
+  margin: 3em;
+  border-radius: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2em;
+  border: 5px solid #14805c;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+@media only screen and (max-width: 768px) {
+  .financial-main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.instrument {
+  background-color: #fafafa;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  width: calc(33.33% - 20px);
+}
+@media only screen and (max-width: 1024px) {
+  .instrument {
+    width: calc(50% - 20px);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .instrument {
+    width: calc(100% - 20px);
+  }
+}
+
+.instrument img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.instrument h2 {
+  color: #14805c;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.instrument p {
+  color: #333;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Fin de Pesos */
 /* Media Querys */
 @media only screen and (max-width: 1200px) {
   header {
@@ -667,6 +721,9 @@ button {
     font-size: 3vw;
   }
   .containerBox2 {
+    margin: 1em;
+  }
+  .financial-main {
     margin: 1em;
   }
 }

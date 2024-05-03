@@ -1,0 +1,57 @@
+/* Inicio de pesos */
+
+.financial-main {
+    margin: 3em;
+    border-radius: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em;
+    border: 5px solid $colorverde;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.instrument {
+    background-color: $colorblanco;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+
+    @media only screen and (max-width: 1024px) {
+        width: calc(50% - 20px);
+    }
+
+    @media only screen and (max-width: 768px) {
+        width: calc(100% - 20px);
+    }
+}
+
+.instrument img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.instrument h2 {
+    color: $colorverde;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.instrument p {
+    color: #333;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+
+
+/* Fin de Pesos */

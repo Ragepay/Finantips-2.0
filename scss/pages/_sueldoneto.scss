@@ -8,12 +8,12 @@ form {
   text-align: center;
   margin: 3em;
   padding: 1.5em;
-  border: 5px solid $colorverde;
   border-radius: 1em;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
+  border: 5px solid $colorverde;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 
   h1 {
