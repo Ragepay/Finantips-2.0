@@ -1,27 +1,26 @@
-// Declaracion de variables
-$colorverde:#14805c;
-$colorblanco:#fafafa; 
-
 // Imoportacion de modulos con @import para poder utilizar variables y mixins.
 
-//mixins
-@import 'mixins';
+//Variables.
+@import 'utilities/variables';
+
+//mixins.
+@import 'utilities/mixins';
 
 // layout
-@import 'header';
-@import 'footer';
+@import 'components/header';
+@import 'components/footer';
 
 //pages
-@import 'index';
-@import 'calculadoras';
-@import 'cuotas';
-@import 'plazofijo';
-@import 'sueldoneto';
-@import 'dolares';
-@import 'pesos';
+@import 'pages/index';
+@import 'pages/calculadoras';
+@import 'pages/cuotas';
+@import 'pages/plazofijo';
+@import 'pages/sueldoneto';
+@import 'pages/dolares';
+@import 'pages/pesos';
 
 //media querys
-@import 'mediaquerys';
+@import 'utilities/mediaquerys';
 
 
 

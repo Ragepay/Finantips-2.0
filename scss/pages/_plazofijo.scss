@@ -1,0 +1,54 @@
+/* Inicio plazofijo main */
+
+.interesCompuesto input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $colorverde;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.interesCompuesto input[type="checkbox"]:checked {
+    background-color: $colorverde;
+}
+
+.interesCompuesto {
+    margin-left: 10px;
+    font-weight: bold;
+    margin-top: 1.5em;
+    border-bottom: 2px solid lightgrey;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.explicacionPlazoFijo {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin: 2em;
+    margin-bottom: 5em;
+}
+
+.tituloExplicacion {
+    font-size: 1.3em;
+}
+
+.explicacionInteresCompuesto {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin: 2em;
+    margin-bottom: 5em;
+}
+
+.tituloInteresCompuesto {
+    font-size: 1.3em;
+}
+
+/* FIN plazofijo main */

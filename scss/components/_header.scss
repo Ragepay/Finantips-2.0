@@ -45,6 +45,7 @@ header {
             li{
                 list-style: none;
                 a{
+                    
                     color: $colorblanco;
                     text-decoration: none;
                     font-size: 1.5rem; 
@@ -87,20 +88,20 @@ header {
     margin-top: 2em;
     margin-bottom: 3.5em;
 
-    .item-iframe {
+    
+
+  }
+  .item-iframe {
         margin: 1em;
-        width:17em;
+        width: 17em;
         height: 17em;
         border-radius: 20px;
         border: 1px solid $colorverde;
         transition: transform 0.3s ease;
         
-        &:hover iframe {
+        &:hover {
             transform: scale(1.1);
         }
       }
-
-  }
-  
 
   /* FIN de Header */

@@ -43,38 +43,40 @@
     </section>
 
     <section>
-      <div class="containerBox3">
+      <div class="containerBox2">
         <h1>Calculadora de Plazo Fijo</h1>
+        <form>
 
-        <div class="monto">
-          <label for="monto" id="labelMonto">Capital/Monto:</label>
-          <input type="number" id="inputMonto" step="0.01" placeholder="100.000" oninput="formatearNumero(this)">
-        </div>
+          <div class="formulario-box">
+            <label for="monto">Capital/Monto:</label>
+            <input type="number" id="inputMonto" step="0.01" placeholder="100.000" oninput="formatearNumero(this)">
+          </div>
 
-        <div class="tasaInteres">
-          <label for="tasaInteres" id="labelTasaInteres">TNA/Interés (%):</label>
-          <input type="number" id="inputTasaInteres" step="0.01" placeholder="100">
-        </div>
+          <div class="formulario-box">
+            <label for="tasaInteres">TNA/Interés (%):</label>
+            <input type="number" id="inputTasaInteres" step="0.01" placeholder="100">
+          </div>
 
-        <div class="meses">
-          <label for="meses" id="labelMeses">Meses:</label>
-          <input type="number" id="inputMeses" placeholder="1">
-        </div>
+          <div class="formulario-box">
+            <label for="meses">Meses:</label>
+            <input type="number" id="inputMeses" placeholder="1">
+          </div>
 
-        <div class="interesCompuesto">
-          <label for="interesCompuesto" id="labelInteresCompuesto">Con Interés Compuesto:</label>
-          <input type="checkbox" id="inputInteresCompuesto" onchange="calcularPlazoFijo()">
-        </div>
+          <div class="interesCompuesto">
+            <label for="interesCompuesto">Con Interés Compuesto:</label>
+            <input type="checkbox" id="inputInteresCompuesto" onchange="calcularPlazoFijo()">
+          </div>
 
-        <div>
-          <button onclick="calcularPlazoFijo()" class="boton3">Calcular</button>
-        </div>
+          <div>
+            <button onclick="calcularPlazoFijo()" class="boton4">Calcular</button>
+          </div>
 
-        <div class="resultados">
-          <h2>Resultados:</h2>
-          <p>Interés:<span id="ganancias"></span></p>
-          <p>Capital + Interés:<span id="montoTotal"></span></p>
-        </div>
+          <div class="resultados">
+            <h2>Resultados:</h2>
+            <p>Interés:<span id="ganancias"></span></p>
+            <p>Capital + Interés:<span id="montoTotal"></span></p>
+          </div>
+        </form>
       </div>
     </section>
 

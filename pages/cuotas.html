@@ -39,41 +39,43 @@
         src="https://dolarhoy.com/i/cotizaciones/dolar-bancos-y-casas-de-cambio" frameborder="0"></iframe>
     </section>
 
-    <section class="containerBox4">
+    <section >
+      <div class="containerBox2">
 
-      <h1>Calculadora Comparativa</h1>
+        <h1>Calculadora Comparativa</h1>
 
-      <form>
+        <form>
 
-        <h2>Efectivo</h2>
+          <h2>Efectivo</h2>
 
-        <div class="formulario-box">
-          <label for="contado">Precio al Contado:</label>
-          <input type="number" id="contado" step="0.01" required>
-        </div>
+          <div class="formulario-box">
+            <label for="contado">Precio al Contado:</label>
+            <input type="number" id="contado" step="0.01" required>
+          </div>
 
-        <h2> VS </h2>
+          <h2> VS </h2>
 
-        <h2>Cuotas S/Interés</h2>
+          <h2>Cuotas S/Interés</h2>
 
-        <div class="formulario-box">
-          <label for="cuotas">Precio total en cuotas:</label>
-          <input type="number" id="cuotas">
-        </div>
+          <div class="formulario-box">
+            <label for="cuotas">Precio total en cuotas:</label>
+            <input type="number" id="cuotas">
+          </div>
 
-        <div class="formulario-box">
-          <label for="cantcuotas" >Cantidad de Cuotas S/I:</label>
-          <input type="number" id="cantcuotas">
-        </div>
+          <div class="formulario-box">
+            <label for="cantcuotas">Cantidad de Cuotas S/I:</label>
+            <input type="number" id="cantcuotas">
+          </div>
 
-        <div class="formulario-box">
-          <label for="TNA">TNA Plazo Fijo:</label>
-          <input type="number" id="TNA">
-        </div>
+          <div class="formulario-box">
+            <label for="TNA">TNA Plazo Fijo:</label>
+            <input type="number" id="TNA">
+          </div>
 
-        <button type="button" onclick="Comparar()" class="boton4">Calcular</button>
-      </form>
-      <div id="resultado"></div>
+          <button type="button" onclick="Comparar()" class="boton4">Calcular</button>
+        </form>
+        <div class="resultados" id="resultado"></div>
+      </div>
     </section>
 
     <div class="explicacionImpuesto">

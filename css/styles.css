@@ -69,7 +69,8 @@ header .boton button:hover {
   margin-top: 2em;
   margin-bottom: 3.5em;
 }
-#cotizacionesDolar .item-iframe {
+
+.item-iframe {
   margin: 1em;
   width: 17em;
   height: 17em;
@@ -77,7 +78,7 @@ header .boton button:hover {
   border: 1px solid #14805c;
   transition: transform 0.3s ease;
 }
-#cotizacionesDolar .item-iframe:hover iframe {
+.item-iframe:hover {
   transform: scale(1.1);
 }
 
@@ -384,223 +385,6 @@ footer .footer-left ul li a:hover {
 
 /* FIN de calculadoras */
 /*Inicio cuotas mian */
-.containerBox4 {
-  text-align: center;
-  margin: 4em;
-  padding: 1.5em;
-  border: 5px solid #14805c;
-  border-radius: 1em;
-}
-
-.containerBox4 h1 {
-  display: flex;
-  font-size: 1.6em;
-  color: #14805c;
-  justify-content: center;
-  padding-bottom: 0.5em;
-}
-
-.containerBox4 h2 {
-  font-size: 1.3em;
-  color: #14805c;
-}
-
-.sueldo {
-  justify-content: space-between;
-  padding: 0.3em;
-}
-
-#labelSueldo {
-  color: #14805c;
-  font-weight: bold;
-}
-
-#inputSueldo {
-  height: 2em;
-  width: 8em;
-  border-radius: 4em;
-  appearance: none;
-  text-align: center;
-}
-
-#inputSueldo::-webkit-inner-spin-button,
-#inputSueldo::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
-
-.cantidadHijos {
-  justify-content: space-between;
-  padding: 0.3em;
-}
-
-#labelCantidadHijos {
-  color: #14805c;
-  font-weight: bold;
-}
-
-#inputCantidadHijos {
-  height: 2em;
-  width: 8em;
-  border-radius: 4em;
-  appearance: none;
-  text-align: center;
-}
-
-#inputCantidadHijos::-webkit-inner-spin-button,
-#inputCantidadHijos::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
-
-.porcentajeAportes {
-  justify-content: space-between;
-  padding: 0.3em;
-}
-
-#labelPorcentajeAportes {
-  color: #14805c;
-  font-weight: bold;
-}
-
-#inputPorcentajeAportes {
-  height: 2em;
-  width: 8em;
-  border-radius: 4em;
-  appearance: none;
-  text-align: center;
-}
-
-#inputPorcentajeAportes::-webkit-inner-spin-button,
-#inputPorcentajeAportes::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
-
-.casado input[type=checkbox] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #14805c;
-  border-radius: 4px;
-  outline: none;
-  transition: background-color 0.3s;
-}
-
-.casado input[type=checkbox]:checked {
-  background-color: #14805c;
-}
-
-.casado label {
-  margin-left: 10px;
-  color: #14805c;
-  font-weight: bold;
-}
-
-.alquiler input[type=checkbox] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #14805c;
-  border-radius: 4px;
-  outline: none;
-  transition: background-color 0.3s;
-}
-
-.alquiler input[type=checkbox]:checked {
-  background-color: #14805c;
-}
-
-.alquiler label {
-  margin-left: 10px;
-  color: #14805c;
-  font-weight: bold;
-}
-
-.seguroVida input[type=checkbox] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #14805c;
-  border-radius: 4px;
-  outline: none;
-  transition: background-color 0.3s;
-}
-
-.seguroVida input[type=checkbox]:checked {
-  background-color: #14805c;
-}
-
-.seguroVida label {
-  margin-left: 10px;
-  color: #14805c;
-  font-weight: bold;
-}
-
-.jubilado input[type=checkbox] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #14805c;
-  border-radius: 4px;
-  outline: none;
-  transition: background-color 0.3s;
-}
-
-.jubilado input[type=checkbox]:checked {
-  background-color: #14805c;
-}
-
-.jubilado label {
-  margin-left: 10px;
-  color: #14805c;
-  font-weight: bold;
-}
-
-.patagonico input[type=checkbox] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #14805c;
-  border-radius: 4px;
-  outline: none;
-  transition: background-color 0.3s;
-}
-
-.patagonico input[type=checkbox]:checked {
-  background-color: #14805c;
-}
-
-.patagonico label {
-  margin-left: 10px;
-  color: #14805c;
-  font-weight: bold;
-}
-
-.boton4 {
-  font-weight: 700;
-  color: #fafafa;
-  padding: 9px 25px;
-  background-color: #14805c;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-.boton4:hover {
-  transform: scale(1.1);
-}
-
 .explicacionImpuesto {
   text-align: center;
   font-weight: 600;
@@ -615,96 +399,6 @@ footer .footer-left ul li a:hover {
 
 /*FIN cuotas main*/
 /* Inicio plazofijo main */
-.containerBox3 {
-  text-align: center;
-  margin: 3em;
-  padding: 1.5em;
-  border: 5px solid #14805c;
-  border-radius: 1em;
-}
-
-.containerBox3 h1 {
-  display: flex;
-  font-size: 1.6em;
-  color: #14805c;
-  justify-content: center;
-  padding-bottom: 0.5em;
-}
-
-.containerBox3 h2 {
-  font-size: 1.3em;
-  color: #14805c;
-}
-
-.monto {
-  justify-content: space-between;
-  padding: 0.3em;
-}
-
-#labelMonto {
-  color: #14805c;
-  font-weight: bold;
-}
-
-#inputMonto {
-  height: 2em;
-  width: 5em;
-  border-radius: 4em;
-  appearance: none;
-  text-align: center;
-}
-
-#inputMonto::-webkit-inner-spin-button,
-#inputMonto::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
-
-.tasaInteres {
-  justify-content: space-between;
-  padding: 0.3em;
-}
-
-#labelTasaInteres {
-  color: #14805c;
-  font-weight: bold;
-}
-
-#inputTasaInteres {
-  height: 2em;
-  width: 5em;
-  border-radius: 4em;
-  appearance: none;
-  text-align: center;
-}
-
-#inputTasaInteres::-webkit-inner-spin-button,
-#inputTasaInteres::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
-
-.meses {
-  justify-content: space-between;
-  padding: 0.3em;
-}
-
-#labelMeses {
-  color: #14805c;
-  font-weight: bold;
-}
-
-#inputMeses {
-  height: 2em;
-  width: 5em;
-  border-radius: 4em;
-  appearance: none;
-  text-align: center;
-}
-
-#inputMeses::-webkit-inner-spin-button,
-#inputMeses::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
-
 .interesCompuesto input[type=checkbox] {
   appearance: none;
   -webkit-appearance: none;
@@ -721,30 +415,15 @@ footer .footer-left ul li a:hover {
   background-color: #14805c;
 }
 
-.interesCompuesto label {
+.interesCompuesto {
   margin-left: 10px;
-  color: #14805c;
   font-weight: bold;
-}
-
-.boton3 {
-  margin-top: 1em;
-  font-weight: 700;
-  color: #fafafa;
-  padding: 9px 25px;
-  background-color: #14805c;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-
-.resultados {
-  margin: 1em;
-}
-
-.boton3:hover {
-  transform: scale(1.1);
+  margin-top: 1.5em;
+  border-bottom: 2px solid lightgrey;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .explicacionPlazoFijo {
@@ -773,133 +452,104 @@ footer .footer-left ul li a:hover {
 
 /* FIN plazofijo main */
 /* Inicio sueldoneto main */
+form {
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+}
+
 .containerBox2 {
   text-align: center;
   margin: 3em;
   padding: 1.5em;
   border: 5px solid #14805c;
   border-radius: 1em;
-}
-
-.containerBox2 h1 {
+  align-items: center;
+  justify-content: center;
   display: flex;
+  flex-direction: column;
+}
+.containerBox2 h1 {
+  font-size: 2em;
+  color: #14805c;
+  justify-content: center;
+  padding-bottom: 0.5em;
+  border-bottom: 3px solid #14805c;
+}
+.containerBox2 h2 {
   font-size: 1.6em;
   color: #14805c;
   justify-content: center;
   padding-bottom: 0.5em;
+  text-decoration: underline;
 }
-
-.containerBox2 h2 {
-  font-size: 1.3em;
-  color: #14805c;
+.containerBox2 .formulario-box {
+  margin-top: 1.5em;
+  border-bottom: 2px solid lightgrey;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
-
-.horasNormales {
-  justify-content: space-between;
-  padding: 0.3em;
-}
-
-#labelHorasNormales {
-  color: #14805c;
+.containerBox2 label {
+  display: inline-block;
+  width: 200px;
   font-weight: bold;
 }
 
-#inputHorasNormales {
-  height: 2em;
-  width: 5em;
-  border-radius: 4em;
-  appearance: none;
-  text-align: center;
-}
-
-#inputHorasNormales::-webkit-inner-spin-button,
-#inputHorasNormales::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
-
-.horasExtras {
-  justify-content: space-between;
-  padding: 0.3em;
-}
-
-#labelHorasExtras {
+/* Estilo para los resultados */
+.resultados h2 {
+  font-size: 1.6em;
   color: #14805c;
+  justify-content: center;
+  padding-bottom: 0.5em;
+  text-decoration: underline;
+}
+.resultados div {
+  margin-bottom: 10px;
+}
+.resultados label {
   font-weight: bold;
 }
-
-#inputHorasExtras {
-  height: 2em;
-  width: 5em;
-  border-radius: 4em;
-  appearance: none;
-  text-align: center;
+.resultados span {
+  font-weight: normal;
+  margin-left: 10px;
 }
-
-#inputHorasExtras::-webkit-inner-spin-button,
-#inputHorasExtras::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-.precioHoraNormal {
-  justify-content: space-between;
-  padding: 0.3em;
-}
-
-#labelPrecioHoraNormal {
-  color: #14805c;
+.resultados p {
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
-#inputPrecioHoraNormal {
-  height: 2em;
-  width: 5em;
-  border-radius: 4em;
-  appearance: none;
-  text-align: center;
+/* Estilo para los resultados span con ID sabadoM y feriado */
+#sabadoM,
+#feriado {
+  font-style: italic;
 }
 
-#inputPrecioHoraNormal::-webkit-inner-spin-button,
-#inputPrecioHoraNormal::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+select,
+input[type=number],
+input[type=radio],
+button {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
 }
 
-.precioHoraExtra {
-  justify-content: space-between;
-  padding: 0.3em;
-}
-
-#labelPrecioHoraExtra {
-  color: #14805c;
-  font-weight: bold;
-}
-
-#inputPrecioHoraExtra {
-  height: 2em;
-  width: 5em;
-  border-radius: 4em;
-  appearance: none;
-  text-align: center;
-}
-
-#inputPrecioHoraExtra::-webkit-inner-spin-button,
-#inputPrecioHoraExtra::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-.resultados {
-  margin: 1em;
-}
-
-.boton2 {
+.boton4 {
   font-weight: 700;
   color: #fafafa;
-  padding: 9px 25px;
+  padding: 12px 35px;
   background-color: #14805c;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
-  transform: scale(1.15);
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.boton4:hover {
+  transform: scale(1.1);
 }
 
 /* FIN sueldoneto main */
@@ -1004,8 +654,8 @@ footer .footer-left ul li a:hover {
 }
 @media (max-width: 480px) {
   .item-iframe {
-    width: 10em;
-    height: 10em;
+    width: 8.5em;
+    height: 8.5em;
   }
 }
 @media only screen and (max-width: 480px) {

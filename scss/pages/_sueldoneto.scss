@@ -1,0 +1,119 @@
+/* Inicio sueldoneto main */
+form {
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.containerBox2 {
+  text-align: center;
+  margin: 3em;
+  padding: 1.5em;
+  border: 5px solid $colorverde;
+  border-radius: 1em;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 2em;
+    color: $colorverde;
+    justify-content: center;
+    padding-bottom: .5em;
+    border-bottom: 3px solid $colorverde;
+  }
+
+  h2 {
+    font-size: 1.6em;
+    color: $colorverde;
+    justify-content: center;
+    padding-bottom: .5em;
+    text-decoration: underline;
+
+  }
+
+  .formulario-box {
+    margin-top: 1.5em;
+    border-bottom: 2px solid lightgrey;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  label {
+    display: inline-block;
+    width: 200px;
+    font-weight: bold;
+  }
+}
+
+/* Estilo para los resultados */
+.resultados {
+  h2 {
+    font-size: 1.6em;
+    color: $colorverde;
+    justify-content: center;
+    padding-bottom: .5em;
+    text-decoration: underline;
+
+  }
+
+  div {
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  span {
+    font-weight: normal;
+    margin-left: 10px;
+  }
+
+  p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Estilo para los resultados span con ID sabadoM y feriado */
+#sabadoM,
+#feriado {
+  font-style: italic;
+}
+
+
+select,
+input[type="number"],
+input[type="radio"],
+button {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+
+
+.boton4 {
+  font-weight: 700;
+  color: $colorblanco;
+  padding: 12px 35px;
+  background-color: $colorverde;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+}
+
+.boton4:hover {
+  transform: scale(1.1);
+}
+
+/* FIN sueldoneto main */
