@@ -1,116 +1,112 @@
+/* Index main*/
 
-  /* Index main*/
+#containerInformacion div h3 {
+  color: #14805c;
+  font-size: 7vh;
+}
 
-  
-  
+.container {
+  display: flex;
+  height: 80vh;
+  width: auto;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: px 5px 2em rgba(0, 0, 0, 0.5);
+  background-color: #14805c;
+}
 
-  #containerInformacion div h3 {
-    color: #14805c;
-    font-size: 7vh;
-  }
-  
-  .container {
-    display: flex;
-    height: 80vh;
-    width: auto;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: px 5px 2em rgba(0, 0, 0, 0.5);
-    background-color: #14805c;
-  }
-  
-  .container h2{
-    font-size: 6.5vw;
-    color: #fafafa;
-    font-weight: bold;
-  
-  }
-  
-  .container p{
-    font-size: 2em;
-    color: #fafafa;
-    max-width: 1200px;
-    margin: 2em;
-    
-  }
-  
-  .container button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    margin: 1em;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-  }
-  
-  .container button:hover {
-    transform: scale(1.1);
-  }
-  
-  #sectionInformacion{
-    margin: 6em 1em 6em 1em;
-  }
+.container h2 {
+  font-size: 6.5vw;
+  color: #fafafa;
+  font-weight: bold;
 
-  #containerInformacion{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .dolar {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../img/Dolares.JPG);
-    border-radius: 1em;
-    margin: 1em 0em;
-    padding: 30px;
-  }
-  
-  
-  .dolar .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    
-  }
-  
-  .dolar .boton button:hover {
-    transform: scale(1.1);
-  }
-  
-  
-  .pesos {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url(../img/Pesos.jpg);
-    background-position: center;
-    border-radius: 1em;
-    margin: 1em 0em;
-    padding: 30px;
-  }
-  
-  .pesos .boton button {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-  }
-  
-  .pesos .boton button:hover {
-    transform: scale(1.1);
-  }
-  
+}
 
-  /*FIN de Index main*/
+.container p {
+  font-size: 2em;
+  color: #fafafa;
+  max-width: 1200px;
+  margin: 2em;
+
+}
+
+.container button {
+  font-weight: 700;
+  color: #14805c;
+  padding: 9px 25px;
+  margin: 1em;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.container button:hover {
+  transform: scale(1.1);
+}
+
+#sectionInformacion {
+  margin: 6em 1em 6em 1em;
+}
+
+#containerInformacion {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dolar {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+    url(../img/Dolares.JPG);
+  border-radius: 1em;
+  margin: 1em 0em;
+  padding: 30px;
+}
+
+
+.dolar .boton button {
+  font-weight: 700;
+  color: #14805c;
+  padding: 9px 25px;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+
+}
+
+.dolar .boton button:hover {
+  transform: scale(1.1);
+}
+
+
+.pesos {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+    url(../img/Pesos.jpg);
+  background-position: center;
+  border-radius: 1em;
+  margin: 1em 0em;
+  padding: 30px;
+}
+
+.pesos .boton button {
+  font-weight: 700;
+  color: #14805c;
+  padding: 9px 25px;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.pesos .boton button:hover {
+  transform: scale(1.1);
+}
+
+
+/*FIN de Index main*/

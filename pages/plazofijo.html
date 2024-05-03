@@ -57,23 +57,23 @@
         </div>
 
         <div class="meses">
-          <label for="meses" id="labelMeses">Días:</label>
-          <input type="number" id="inputMeses" placeholder="30">
+          <label for="meses" id="labelMeses">Meses:</label>
+          <input type="number" id="inputMeses" placeholder="1">
         </div>
 
         <div class="interesCompuesto">
-          <label for="interesCompuesto" id="labelInteresCompuesto">Interés Compuesto:</label>
-          <input type="checkbox" id="inputInteresCompuesto" onchange="calcularGananciasPlazoFijo()">
+          <label for="interesCompuesto" id="labelInteresCompuesto">Con Interés Compuesto:</label>
+          <input type="checkbox" id="inputInteresCompuesto" onchange="calcularPlazoFijo()">
         </div>
 
         <div>
-          <button onclick="calcularGananciasPlazoFijo()" class="boton3">Calcular</button>
+          <button onclick="calcularPlazoFijo()" class="boton3">Calcular</button>
         </div>
 
         <div class="resultados">
           <h2>Resultados:</h2>
-          <p>Ganancias del Plazo Fijo: $ <span id="ganancias"></span></p>
-          <p>Monto total obtenido: $ <span id="montoTotal"></span></p>
+          <p>Interés:<span id="ganancias"></span></p>
+          <p>Capital + Interés:<span id="montoTotal"></span></p>
         </div>
       </div>
     </section>

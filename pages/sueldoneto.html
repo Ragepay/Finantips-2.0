@@ -10,7 +10,7 @@
   <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<script refer src="../js/sueldoneto.js"></script>
+  <script refer src="../js/sueldoneto.js"></script>
 </head>
 
 <body>
@@ -40,77 +40,112 @@
     </section>
 
     <section>
+
       <div class="containerBox2">
+
         <h1>Calculadora de Sueldo</h1>
 
-        <form id="calculadoraForm">
+        <form>
 
-          <label for="categoria">Categoría:</label>
-          <select id="categoria" name="categoria">
-            <option value="">Seleccionar categoría</option>
-            <option value="T/M 0-6">T/M 0-6</option>
-            <option value="T/M 7-12">T/M 7-12</option>
-            <option value="T/M 1">T/M 1</option>
-            <option value="T/M 2">T/M 2</option>
-            <option value="T/M 3">T/M 3</option>
-            <option value="T/M 3 A">T/M 3 A</option>
-            <option value="T/M 3 B">T/M 3 B</option>
-            <option value="T/L 1">T/L 1</option>
-            <option value="T/L 2">T/L 2</option>
-            <option value="T/L 3">T/L 3</option>
-            <option value="T/L 3 A">T/L 3 A</option>
-          </select>
-          <br>
-          <label for="sueldoBruto">Sueldo Bruto (si no tiene categoría):</label>
-          <input type="number" id="sueldoBruto" name="sueldoBruto">
-          <br>
-          <label>PRODUCTIVIDAD:</label>
-          <input type="radio" id="productividadSi" name="productividad" value="si">
-          <label for="productividadSi">Sí</label>
-          <input type="radio" id="productividadNo" name="productividad" value="no">
-          <label for="productividadNo">No</label>
-          <br>
-          <label>PRESENTISMO:</label>
-          <input type="radio" id="presentismoSi" name="presentismo" value="si">
-          <label for="presentismoSi">Sí</label>
-          <input type="radio" id="presentismodNo" name="presentismo" value="no">
-          <label for="presentismoNo">No</label>
-          <br>
-          <label for="antigüedad">Antigüedad (años):</label>
-          <input type="number" id="antigüedad" name="antigüedad">
-          <br>
-          <label for="horas-50">Horas 50%:</label>
-          <input type="number" id="horas-50" name="horas-50">
-          <br>
-          <label for="horas-100">Horas 100%:</label>
-          <input type="number" id="horas-100" name="horas-100">
-          <br>
-          <label for="horas-200">Horas 200%:</label>
-          <input type="number" id="horas-200" name="horas-200">
-          <br>
-          <label for="horas-nocturnas">Horas nocturnas:</label>
-          <input type="number" id="horas-nocturnas" name="horas-nocturnas">
+          <div class="formulario-box">
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" name="categoria" onchange="habilitarInput()">
+              <option value="">Seleccionar categoría</option>
+              <option value="T/M 0-6">T/M 0-6</option>
+              <option value="T/M 7-12">T/M 7-12</option>
+              <option value="T/M 1">T/M 1</option>
+              <option value="T/M 2">T/M 2</option>
+              <option value="T/M 3">T/M 3</option>
+              <option value="T/M 3 A">T/M 3 A</option>
+              <option value="T/M 3 B">T/M 3 B</option>
+              <option value="T/L 1">T/L 1</option>
+              <option value="T/L 2">T/L 2</option>
+              <option value="T/L 3">T/L 3</option>
+              <option value="T/L 3 A">T/L 3 A</option>
+            </select>
+          </div>
+
+          <div class="formulario-box">
+            <label for="sueldoBruto">Sueldo Bruto (si no tiene categoría):</label>
+            <input type="number" id="sueldoBruto" name="sueldoBruto">
+          </div>
+
+          <div class="formulario-box">
+            <label>PRODUCTIVIDAD:</label>
+            <input type="radio" id="productividadSi" name="productividad" value="si" onchange="calcularSueldo()">
+            <label for="productividadSi">Sí</label>
+            <input type="radio" id="productividadNo" name="productividad" value="no" onchange="calcularSueldo()">
+            <label for="productividadNo">No</label>
+          </div>
+
+          <div class="formulario-box">
+            <label>PRESENTISMO:</label>
+            <input type="radio" id="presentismoSi" name="presentismo" value="si" onchange="calcularSueldo()">
+            <label for="presentismoSi">Sí</label>
+            <input type="radio" id="presentismodNo" name="presentismo" value="no" onchange="calcularSueldo()">
+            <label for="presentismoNo">No</label>
+          </div>
+
+          <div class="formulario-box">
+            <label for="antigüedad">Antigüedad (años):</label>
+            <input type="number" id="antigüedad" name="antigüedad">
+          </div>
+
+          <div class="formulario-box">
+            <label for="horas-50">Horas 50%:</label>
+            <input type="number" id="horas-50" name="horas-50">
+          </div>
+
+          <div class="formulario-box">
+            <label for="horas-100">Horas 100%:</label>
+            <input type="number" id="horas-100" name="horas-100">
+          </div>
+
+          <div class="formulario-box">
+            <label for="horas-200">Horas 200%:</label>
+            <input type="number" id="horas-200" name="horas-200">
+          </div>
+
+          <div class="formulario-box">
+            <label for="horas-nocturnas">Horas nocturnas:</label>
+            <input type="number" id="horas-nocturnas" name="horas-nocturnas">
+          </div>
           <!--<input type="radio" id="horas-nocturnas" name="horas-nocturnas" value="si">
           <label for="horas-nocturnas">T. Naranja</label>
           <input type="radio" id="horas-nocturnas" name="horas-nocturnas" value="si">
           <label for="horas-nocturnas">T. Blanco</label>
           <input type="radio" id="horas-nocturnas" name="horas-nocturnas" value="si">
           <label for="horas-nocturnas">T. Amarillo</label> -->
-          
-          <br>
-          <button type="button" onclick="calcularSueldo()">Calcular Sueldo</button>
-          <br>
-          <label for="sueldoBruto">Sueldo Bruto:</label>
-          <span id="sueldoBrutoResultado"></span>
-          <br>
-          <label for="sueldoNeto">Sueldo Neto:</label>
-          <span id="sueldoNetoResultado"></span>
-          <br>
-          <label for="sabadoM">Sabado produccion mañana:</label>
-          <span id="sabadoM"></span>
-          <br>
-          <label for="feriado">Feriado/Domingo/Sabado de Tarde:</label>
-          <span id="feriado"></span>
+
+          <div class="formulario-box">
+            <button class="boton4" type="button" onclick="calcularSueldo()">Calcular Sueldo</button>
+          </div>
+
+          <div class="resultados">
+
+            <div>
+              <label for="sueldoBruto">Sueldo Bruto:</label>
+              <span id="sueldoBrutoResultado"></span>
+            </div>
+
+            <div>
+              <label for="sueldoNeto">Sueldo Neto:</label>
+              <span id="sueldoNetoResultado"></span>
+            </div>
+
+            <div>
+              <label for="sabadoM">Sabado produccion mañana:</label>
+              <span id="sabadoM"></span>
+            </div>
+            
+            <div>
+              <label for="feriado">Feriado/Domingo/Sabado de Tarde:</label>
+              <span id="feriado"></span>
+            </div>
+
+          </div>
+
+
           <!--<label for="ganancias">Ganancias:</label>
           <span id="gananciasResultado"></span>-->
         </form>

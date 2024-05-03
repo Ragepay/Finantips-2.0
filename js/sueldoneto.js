@@ -1,16 +1,18 @@
 // Declaracion de variables que van a ser actualizadas.
-let tm16m = 918760;
-let tm712m = 1050120;
-let tm1 = 1266784;
-let tm2 = 1304782;
-let tm3 = 1369919;
-let tm3a = 1438007;
-let tm3b = 1509967;
-let tl1 = 1585963;
-let tl2 = 1664749;
-let tl3 = 1748806;
-let tl3a = 1835811;
-let a = 192.025294117647;
+const AUMENTO = 1.00;
+let tm16m = 918760 * AUMENTO;
+let tm712m = 1050120 * AUMENTO;
+let tm1 = 1266784 * AUMENTO;
+let tm2 = 1304782 * AUMENTO;
+let tm3 = 1369919 * AUMENTO;
+let tm3a = 1438007 * AUMENTO;
+let tm3b = 1509967 * AUMENTO;
+let tl1 = 1585963 * AUMENTO;
+let tl2 = 1664749 * AUMENTO;
+let tl3 = 1748806 * AUMENTO;
+let tl3a = 1835811 * AUMENTO;
+let constante192 = 192.025294117647;
+let a = constante192;
 
 function calcularSueldo() {
 
@@ -36,6 +38,7 @@ function calcularSueldo() {
         case "T/M 0-6":
             sueldoBase = tm16m;
             base = parseFloat(tm16m);
+
             break;
         case "T/M 7-12":
             sueldoBase = tm712m;
@@ -94,7 +97,7 @@ function calcularSueldo() {
         // Si se seleccionó "Sí", incrementar sueldoBase en un 30%
         sueldoBase *= 1.281;
     } else if ((radioProductividadSi.checked) || (radioPresentismoSi.checked)) {
-        sueldoBase *= 1.14;
+        sueldoBase *= 1.1405;
 
     } else {
         sueldoBase = sueldoBase;
@@ -172,3 +175,15 @@ function calcularSueldo() {
     document.getElementById("feriado").innerText = "$ " + feriado.toFixed(2);
     //document.getElementById("gananciasResultado").innerText = "Ganancias: $" + ganancias.toFixed(2);
 }
+
+function habilitarInput() {
+    categoria = document.getElementById("categoria");
+    datoInput = document.getElementById("sueldoBruto");
+  
+    if (categoria.value !== "") {
+      datoInput.disabled = true;
+    } else {
+      datoInput.disabled = false;
+    }
+  }
+  
