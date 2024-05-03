@@ -27,6 +27,15 @@
   .box2,
   .box3 {
     @include box;
+    height: 500px;
+
+    h3{
+      color: #14805c;
+    font-size: 2vw;
+    height: auto;
+    font-weight: bold;
+    grid-column: 1/4
+    }
   }
 
   .box1:hover {
@@ -42,20 +51,20 @@
   }
 
   .box1 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
       url(../img/fotoSueldoNeto.jpg);
 
   }
 
 
   .box2 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
       url(../img/fotoPlazoFijo.jpeg);
 
   }
 
   .box3 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
       url(../img/fotoImpuestoGanancias.jpeg);
 
   }

@@ -314,7 +314,6 @@ footer .footer-left ul li a:hover {
 .container-box .box1,
 .container-box .box2,
 .container-box .box3 {
-  height: 500px;
   width: auto;
   border-radius: 1em;
   background-size: cover;
@@ -326,6 +325,16 @@ footer .footer-left ul li a:hover {
   font-weight: bold;
   margin: 15px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  height: 500px;
+}
+.container-box .box1 h3,
+.container-box .box2 h3,
+.container-box .box3 h3 {
+  color: #14805c;
+  font-size: 2vw;
+  height: auto;
+  font-weight: bold;
+  grid-column: 1/4;
 }
 .container-box .box1:hover {
   transform: scale(1.02);
@@ -337,13 +346,13 @@ footer .footer-left ul li a:hover {
   transform: scale(1.02);
 }
 .container-box .box1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/fotoSueldoNeto.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../img/fotoSueldoNeto.jpg);
 }
 .container-box .box2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/fotoPlazoFijo.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../img/fotoPlazoFijo.jpeg);
 }
 .container-box .box3 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/fotoImpuestoGanancias.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../img/fotoImpuestoGanancias.jpeg);
 }
 .container-box .box1 .boton button {
   font-weight: 700;
@@ -590,10 +599,16 @@ button {
     display: flex;
     flex-direction: column;
   }
-  .box1,
-  .box2,
-  .box3 {
+  .container-box .box1,
+  .container-box .box2,
+  .container-box .box3 {
     height: 250px;
+    width: auto;
+  }
+  .container-box .box1 h3,
+  .container-box .box2 h3,
+  .container-box .box3 h3 {
+    font-size: 4vw;
   }
 }
 @media (min-width: 977px) {
@@ -643,6 +658,9 @@ button {
   }
   header nav ul li a {
     font-size: 3vw;
+  }
+  .containerBox2 {
+    margin: 1em;
   }
 }
 @media only screen and (max-width: 600px) {

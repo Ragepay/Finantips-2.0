@@ -41,11 +41,16 @@
 
   }
 
-  .box1,
-  .box2,
-  .box3 {
-    height: 250px;
+.container-box .box1,
+.container-box .box2,
+.container-box .box3 {
 
+    height: 250px;
+    width: auto;
+
+    h3{
+      font-size: 4vw;
+    }
   }
 
 }
@@ -118,7 +123,9 @@
   header nav ul li a {
     font-size: 3vw;
   }
-
+  .containerBox2{
+    margin: 1em;
+  }
 }
 
 @media only screen and (max-width:600px) {
