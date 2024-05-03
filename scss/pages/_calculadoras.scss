@@ -11,6 +11,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1),
+                0 0 20px rgba(0, 0, 0, 0.2),
+                0 0 30px rgba(0, 0, 0, 0.3);
 
   h2 {
     color: #14805c;

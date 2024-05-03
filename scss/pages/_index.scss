@@ -1,10 +1,5 @@
 /* Index main*/
 
-#containerInformacion div h3 {
-  color: #14805c;
-  font-size: 7vh;
-}
-
 .container {
   display: flex;
   height: 80vh;
@@ -15,6 +10,7 @@
   flex-direction: column;
   box-shadow: px 5px 2em rgba(0, 0, 0, 0.5);
   background-color: #14805c;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .container h2 {
@@ -48,6 +44,11 @@
   transform: scale(1.1);
 }
 
+#containerInformacion div h3 {
+  color: #14805c;
+  font-size: 7vh;
+}
+
 #sectionInformacion {
   margin: 6em 1em 6em 1em;
 }
@@ -64,6 +65,7 @@
   border-radius: 1em;
   margin: 1em 0em;
   padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -91,6 +93,7 @@
   border-radius: 1em;
   margin: 1em 0em;
   padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .pesos .boton button {
@@ -107,6 +110,5 @@
 .pesos .boton button:hover {
   transform: scale(1.1);
 }
-
 
 /*FIN de Index main*/

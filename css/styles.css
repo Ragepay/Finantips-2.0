@@ -72,8 +72,8 @@ header .boton button:hover {
 
 .item-iframe {
   margin: 1em;
-  width: 13em;
-  height: 13em;
+  width: 15em;
+  height: 15em;
   border-radius: 20px;
   border: 1px solid #14805c;
   transition: transform 0.3s ease;
@@ -186,11 +186,6 @@ footer .footer-left ul li a:hover {
 
 /* FIN Footer */
 /* Index main*/
-#containerInformacion div h3 {
-  color: #14805c;
-  font-size: 7vh;
-}
-
 .container {
   display: flex;
   height: 80vh;
@@ -201,6 +196,7 @@ footer .footer-left ul li a:hover {
   flex-direction: column;
   box-shadow: px 5px 2em rgba(0, 0, 0, 0.5);
   background-color: #14805c;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .container h2 {
@@ -232,6 +228,11 @@ footer .footer-left ul li a:hover {
   transform: scale(1.1);
 }
 
+#containerInformacion div h3 {
+  color: #14805c;
+  font-size: 7vh;
+}
+
 #sectionInformacion {
   margin: 6em 1em 6em 1em;
 }
@@ -247,6 +248,7 @@ footer .footer-left ul li a:hover {
   border-radius: 1em;
   margin: 1em 0em;
   padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .dolar .boton button {
@@ -270,6 +272,7 @@ footer .footer-left ul li a:hover {
   border-radius: 1em;
   margin: 1em 0em;
   padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .pesos .boton button {
@@ -299,6 +302,7 @@ footer .footer-left ul li a:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.3);
 }
 .container-box h2 {
   color: #14805c;
@@ -321,6 +325,7 @@ footer .footer-left ul li a:hover {
   color: #14805c;
   font-weight: bold;
   margin: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 .container-box .box1:hover {
   transform: scale(1.02);
@@ -467,6 +472,7 @@ form {
   justify-content: center;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 .containerBox2 h1 {
   font-size: 2em;
@@ -546,6 +552,7 @@ button {
   transition: all 0.3s ease 0s;
   margin-top: 1em;
   margin-bottom: 1em;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .boton4:hover {
@@ -566,7 +573,7 @@ button {
     font-size: 2.5vw;
   }
   .container p {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 }
 @media only screen and (min-width: 1200px) {
