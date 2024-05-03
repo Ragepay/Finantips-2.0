@@ -18,4 +18,5 @@ function calcularPlazoFijo() {
   // Mostrar los resultados.
   document.getElementById("ganancias").textContent = " $ " + ganancias.toFixed(2);
   document.getElementById("montoTotal").textContent = " $ " + montoTotal.toFixed(2);
+console.log(ganancias +" "+ montoTotal);
 }

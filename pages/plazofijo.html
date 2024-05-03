@@ -43,8 +43,11 @@
     </section>
 
     <section>
+
       <div class="containerBox2">
+
         <h1>Calculadora de Plazo Fijo</h1>
+
         <form>
 
           <div class="formulario-box">
@@ -64,11 +67,11 @@
 
           <div class="interesCompuesto">
             <label for="interesCompuesto">Con Interés Compuesto:</label>
-            <input type="checkbox" id="inputInteresCompuesto" onchange="calcularPlazoFijo()">
+            <input type="checkbox" id="inputInteresCompuesto" onchange="calcularPlazoFijo()" >
           </div>
 
           <div>
-            <button onclick="calcularPlazoFijo()" class="boton4">Calcular</button>
+            <button onclick="calcularPlazoFijo()" type="button" class="boton4">Calcular</button>
           </div>
 
           <div class="resultados">
@@ -76,8 +79,11 @@
             <p>Interés:<span id="ganancias"></span></p>
             <p>Capital + Interés:<span id="montoTotal"></span></p>
           </div>
+
         </form>
+
       </div>
+
     </section>
 
     <div class="explicacionPlazoFijo">
