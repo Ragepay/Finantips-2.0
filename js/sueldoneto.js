@@ -169,10 +169,10 @@ function calcularSueldo() {
     
 
     // Mostrar los resultados en el formulario
-    document.getElementById("sueldoBrutoResultado").innerText = "$ " + sueldoBruto.toFixed(2);
-    document.getElementById("sueldoNetoResultado").innerText = "$ " + sueldoNeto.toFixed(2);
-    document.getElementById("sabadoM").innerText = "$ " + sabadoM.toFixed(2);
-    document.getElementById("feriado").innerText = "$ " + feriado.toFixed(2);
+    document.getElementById("sueldoBrutoResultado").innerText = sueldoBruto.toFixed(2);
+    document.getElementById("sueldoNetoResultado").innerText = sueldoNeto.toFixed(2);
+    document.getElementById("sabadoM").innerText = sabadoM.toFixed(2);
+    document.getElementById("feriado").innerText = feriado.toFixed(2);
     //document.getElementById("gananciasResultado").innerText = "Ganancias: $" + ganancias.toFixed(2);
 }
 

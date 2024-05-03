@@ -188,13 +188,11 @@ footer .footer-left ul li a:hover {
 /* Index main*/
 .container {
   display: flex;
-  height: 80vh;
   width: auto;
   align-items: center;
   text-align: center;
   justify-content: center;
   flex-direction: column;
-  box-shadow: px 5px 2em rgba(0, 0, 0, 0.5);
   background-color: #14805c;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
@@ -504,6 +502,15 @@ form {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+.containerBox2 .formulario-box .sabadoM {
+  color: chocolate;
+}
+.containerBox2 .sabadoM {
+  color: chocolate;
+}
+.containerBox2 .feriado {
+  color: blue;
 }
 .containerBox2 label {
   display: inline-block;

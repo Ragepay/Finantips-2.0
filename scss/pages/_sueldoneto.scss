@@ -40,14 +40,30 @@ form {
     align-items: center;
     justify-content: center;
     width: 100%;
+
+    .sabadoM {
+      color:chocolate
+    }
+
+    #feriado {}
+
   }
+
+  .sabadoM {
+    color:chocolate
+  }
+
+  .feriado {
+    color: blue;
+  }
+
 
   label {
     display: inline-block;
     width: 200px;
     font-weight: bold;
   }
-  
+
 }
 
 /* Estilo para los resultados */
