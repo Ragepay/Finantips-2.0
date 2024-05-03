@@ -72,8 +72,8 @@ header .boton button:hover {
 
 .item-iframe {
   margin: 1em;
-  width: 17em;
-  height: 17em;
+  width: 13em;
+  height: 13em;
   border-radius: 20px;
   border: 1px solid #14805c;
   transition: transform 0.3s ease;
@@ -623,8 +623,8 @@ button {
 }
 @media (max-width: 768px) {
   .item-iframe {
-    width: 12em;
-    height: 12em;
+    width: 11em;
+    height: 13em;
   }
 }
 @media only screen and (max-width: 650px) {
@@ -655,7 +655,7 @@ button {
 @media (max-width: 480px) {
   .item-iframe {
     width: 8.5em;
-    height: 8.5em;
+    height: 13em;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -679,39 +679,6 @@ button {
     padding: 1.5em;
     border: 5px solid #14805c;
     border-radius: 1em;
-  }
-}
-@media (min-width: 350px) {
-  .monto {
-    display: flex;
-  }
-  .tasaInteres {
-    display: flex;
-  }
-  .meses {
-    display: flex;
-  }
-  .horasNormales {
-    display: flex;
-  }
-  .horasExtras {
-    display: flex;
-  }
-  .porcentajeAportes {
-    display: flex;
-  }
-  .cantidadHijos {
-    display: flex;
-  }
-  .sueldo {
-    display: flex;
-  }
-  .precioHoraExtra {
-    display: flex;
-    text-align: left;
-  }
-  .precioHoraNormal {
-    display: flex;
   }
 }
 
