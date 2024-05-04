@@ -9,38 +9,47 @@
   flex-direction: column;
   background-color: #14805c;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+  h2 {
+    font-size: 6.5vw;
+    color: #fafafa;
+    font-weight: bold;
+
+  }
+
+  p {
+    font-size: 2em;
+    color: #fafafa;
+    max-width: 1200px;
+    margin: 2em;
+
+  }
+
+  button {
+    font-weight: 700;
+    color: #14805c;
+    padding: 9px 25px;
+    margin: 1em;
+    background-color: #fafafa;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+  }
+
+
+
+
+
 }
 
-.container h2 {
-  font-size: 6.5vw;
-  color: #fafafa;
-  font-weight: bold;
 
-}
 
-.container p {
-  font-size: 2em;
-  color: #fafafa;
-  max-width: 1200px;
-  margin: 2em;
-
-}
-
-.container button {
-  font-weight: 700;
-  color: #14805c;
-  padding: 9px 25px;
-  margin: 1em;
-  background-color: #fafafa;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-
-.container button:hover {
-  transform: scale(1.1);
-}
 
 #containerInformacion div h3 {
   color: #14805c;
