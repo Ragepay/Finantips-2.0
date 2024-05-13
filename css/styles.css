@@ -738,9 +738,14 @@ button {
   }
 }
 @media (max-width: 480px) {
+  #cotizacionesDolar {
+    margin-top: 1em;
+    margin-bottom: 2.5em;
+  }
   .item-iframe {
-    width: 8.5em;
+    width: 10em;
     height: 13em;
+    margin: 0.5em;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -764,6 +769,17 @@ button {
     padding: 1.5em;
     border: 5px solid #14805c;
     border-radius: 1em;
+  }
+}
+@media (max-width: 353px) {
+  #cotizacionesDolar {
+    margin-top: 1em;
+    margin-bottom: 2.5em;
+  }
+  .item-iframe {
+    width: 8.5em;
+    height: 13em;
+    margin: 0.5em;
   }
 }
 
