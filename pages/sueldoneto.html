@@ -12,7 +12,7 @@
   <meta name="keywords" content="finanzas personales, consejos financieros, sueldo neto, calculadora de sueldo, 
     salario bruto, horas extras, horas nocturnas, antigüedad laboral, 
     gestión de ingresos, planificación financiera">
-    <meta name="google-adsense-account" content="ca-pub-1304377583650825">
+  <meta name="google-adsense-account" content="ca-pub-1304377583650825">
   <title>FinanTips, Educacion Financiera para Novatos.</title>
   <link rel="stylesheet" href="../css/styles.css"> <!-- Linkeo con Style CSS-->
   <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
@@ -20,7 +20,7 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script refer src="../js/sueldoneto.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1304377583650825"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -57,6 +57,10 @@
         <h1>Calculadora de Sueldo</h1>
 
         <form>
+          <div class="formulario-box">
+            <label for="sueldoBruto">Sueldo Bruto (si no tiene categoría):</label>
+            <input type="number" id="sueldoBruto" name="sueldoBruto">
+          </div>
 
           <div class="formulario-box">
             <label for="categoria">Categoría:</label>
@@ -77,8 +81,15 @@
           </div>
 
           <div class="formulario-box">
-            <label for="sueldoBruto">Sueldo Bruto (si no tiene categoría):</label>
-            <input type="number" id="sueldoBruto" name="sueldoBruto">
+            <label>SINDICATO (4%):</label>
+            <div>
+              <input type="radio" id="sindicatoSi" name="sindicato" value="si" onchange="calcularSueldo()">
+              <label for="sindicatoSi">Sí</label>
+            </div>
+            <div>
+              <input type="radio" id="sindicatoNo" name="sindicato" value="no" onchange="calcularSueldo()">
+              <label for="sindicatoNo">No</label>
+            </div>
           </div>
 
           <div class="formulario-box">
@@ -148,6 +159,26 @@
             </div>
 
             <div>
+              <label for="jubilacion">Jubilacion: $</label>
+              <span id="jubilacionResultado"></span>
+            </div>
+
+            <div>
+              <label for="ley">Ley 19032: $</label>
+              <span id="leyResultado"></span>
+            </div>
+
+            <div>
+              <label for="obraSocial">Obra social: $</label>
+              <span id="obraSocialResultado"></span>
+            </div>
+
+            <div>
+              <label for="sindicato">Sindicato: $</label>
+              <span id="sindicatoResultado"></span>
+            </div>
+
+            <div>
               <label for="sueldoNeto">Sueldo Neto: $</label>
               <span id="sueldoNetoResultado"></span>
             </div>
@@ -164,9 +195,52 @@
 
           </div>
 
+          <br>
+          <!-- 
+          <h2>Impuesto a las Ganancias</h2>
 
-          <!--<label for="ganancias">Ganancias:</label>
-          <span id="gananciasResultado"></span>-->
+          <div class="formulario-box">
+            <label>CONYUGE:</label>
+            <div>
+              <input type="radio" id="conyugeSi" name="conyuge" value="si" onchange="calcularSueldo()">
+              <label for="conyugeSi">Sí</label>
+            </div>
+            <div>
+              <input type="radio" id="conyugeNo" name="conyuge" value="no" onchange="calcularSueldo()">
+              <label for="conyugeNo">No</label>
+            </div>
+          </div>
+
+          <div class="formulario-box">
+            <label for="hijos">Hijos:</label>
+            <select id="hijos" name="hijos" onchange="calcularSueldo()">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+
+          <div class="formulario-box">
+            <label for="montoImponible">Monto Imponible: $</label>
+            <span id="montoImponibleResultado"></span>
+          </div>
+
+          <div class="formulario-box">
+            <label for="retencion">Retencion Mensual: $</label>
+            <span id="retencionResultado"></span>
+          </div>
+
+          <div></div>
+
+          <div>
+            <label for="bolsillo">Bolsillo: $</label>
+            <span id="bolsilloResultado"></span>
+          </div>
+          -->
         </form>
     </section>
   </main>
