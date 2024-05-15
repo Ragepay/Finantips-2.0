@@ -124,7 +124,7 @@ function calcularSueldo() {
     } else if (antiguedad == 0) {
         antiguedadTotal = 0;
     } else {
-        antiguedadTotal = base * (0.04 + 0.01 * (antiguedad - 1));
+        antiguedadTotal = (base + sueldoBase) * (0.04 + 0.01 * (antiguedad - 1));
     }
 
     // Horas Extra
