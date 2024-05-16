@@ -758,7 +758,7 @@ button {
   }
   .item-iframe-blue {
     width: auto;
-    height: 50%;
+    height: 15em;
   }
 }
 @media only screen and (max-width: 480px) {
