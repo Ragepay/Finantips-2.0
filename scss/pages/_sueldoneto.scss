@@ -44,7 +44,7 @@ form {
   }
 
   .sabadoM {
-    color:chocolate
+    color: chocolate
   }
 
   .feriado {
@@ -127,6 +127,17 @@ button {
 
 .boton4:hover {
   transform: scale(1.1);
+}
+
+.donar-container {
+  border: 2px solid $colorverde;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #f9f9f9;
+
 }
 
 /* FIN sueldoneto main */

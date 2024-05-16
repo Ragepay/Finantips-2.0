@@ -169,7 +169,7 @@ function calcularSueldo() {
 
     // Sueldo Neto
     /* Jubilacion máxima de Abril, Mayo y Junio :208.174,81 Bruto maximo: 1.892.498,29*/
-    let maxCargasSociales = 1892498.29;
+    let maxCargasSociales = 1874838.91;
 
     if ((sueldoBruto <= maxCargasSociales) && (sindicato == true)) {
         jubilacion = sueldoBruto * 0.11;
@@ -255,16 +255,16 @@ function calcularSueldo() {
 
     let retencion = montoImponible;
     */
-/*
-    for(let i = 0;i>length.escala;i++){
-        if (montoImponible>0){
-            retencion =
+    /*
+        for(let i = 0;i>length.escala;i++){
+            if (montoImponible>0){
+                retencion =
+            }
         }
-    }
-
-    let bolsillo = montoImponible;
-    */
     
+        let bolsillo = montoImponible;
+        */
+
 
     // Mostrar los resultados en el formulario.
     document.getElementById("sueldoBrutoResultado").innerText = sueldoBruto.toFixed(2);
@@ -275,12 +275,21 @@ function calcularSueldo() {
     document.getElementById("sueldoNetoResultado").innerText = sueldoNeto.toFixed(2);
     document.getElementById("sabadoM").innerText = sabadoM.toFixed(2);
     document.getElementById("feriado").innerText = feriado.toFixed(2);
-/*
-    // Mostrar los resultados de Ganancias en el formulario.
-    document.getElementById("montoImponibleResultado").innerText = montoImponible.toFixed(2);
-    document.getElementById("retencionResultado").innerText = retencion.toFixed(2);
-    document.getElementById("bolsilloResultado").innerText = bolsillo.toFixed(2);
-    */
+
+    document.getElementById('donar-container').innerHTML = `
+
+    <div class="donar-container">
+    ¡Apoya nuestro trabajo para seguir actualizando!
+    </div>
+    <a href="https://link.mercadopago.com.ar/finanftips" target="_blank"><button class="boton4">¡DONAR!</button></a>
+    `;
+
+    /*
+        // Mostrar los resultados de Ganancias en el formulario.
+        document.getElementById("montoImponibleResultado").innerText = montoImponible.toFixed(2);
+        document.getElementById("retencionResultado").innerText = retencion.toFixed(2);
+        document.getElementById("bolsilloResultado").innerText = bolsillo.toFixed(2);
+        */
 }
 
 
