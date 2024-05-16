@@ -1,5 +1,5 @@
 // Declaracion de variables que van a ser actualizadas.
-const AUMENTO = 1.20768;
+const AUMENTO = 1.2248;
 let tm16m = 918760 * AUMENTO;
 let tm712m = 1050120 * AUMENTO;
 let tm1 = 1266784 * AUMENTO;
@@ -201,6 +201,7 @@ function calcularSueldo() {
         obraSocial = maxCargasSociales * 0.03;
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial;
     }
+
     /*
     // Valores de deduccion de hijo y Conyuge
     let conyuge = 242594.4;
@@ -265,7 +266,7 @@ function calcularSueldo() {
     */
     
 
-    // Mostrar los resultados en el formulario
+    // Mostrar los resultados en el formulario.
     document.getElementById("sueldoBrutoResultado").innerText = sueldoBruto.toFixed(2);
     document.getElementById("jubilacionResultado").innerText = - jubilacion.toFixed(2);
     document.getElementById("leyResultado").innerText = - ley.toFixed(2);
@@ -275,7 +276,7 @@ function calcularSueldo() {
     document.getElementById("sabadoM").innerText = sabadoM.toFixed(2);
     document.getElementById("feriado").innerText = feriado.toFixed(2);
 /*
-    // Mostrar los resultados de Ganancias en el formulario
+    // Mostrar los resultados de Ganancias en el formulario.
     document.getElementById("montoImponibleResultado").innerText = montoImponible.toFixed(2);
     document.getElementById("retencionResultado").innerText = retencion.toFixed(2);
     document.getElementById("bolsilloResultado").innerText = bolsillo.toFixed(2);

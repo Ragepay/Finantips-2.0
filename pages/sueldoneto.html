@@ -58,7 +58,7 @@
 
         <form>
           <div class="formulario-box">
-            <label for="sueldoBruto">Sueldo Bruto (si no tiene categoría):</label>
+            <label for="sueldoBruto">Sueldo Bruto (Fuera de Convenio):</label>
             <input type="number" id="sueldoBruto" name="sueldoBruto">
           </div>
 
@@ -78,18 +78,6 @@
               <option value="T/L 3">T/L 3</option>
               <option value="T/L 3 A">T/L 3 A</option>
             </select>
-          </div>
-
-          <div class="formulario-box">
-            <label>SINDICATO (4%):</label>
-            <div>
-              <input type="radio" id="sindicatoSi" name="sindicato" value="si" onchange="calcularSueldo()">
-              <label for="sindicatoSi">Sí</label>
-            </div>
-            <div>
-              <input type="radio" id="sindicatoNo" name="sindicato" value="no" onchange="calcularSueldo()">
-              <label for="sindicatoNo">No</label>
-            </div>
           </div>
 
           <div class="formulario-box">
@@ -113,6 +101,18 @@
             <div>
               <input type="radio" id="presentismodNo" name="presentismo" value="no" onchange="calcularSueldo()">
               <label for="presentismoNo">No</label>
+            </div>
+          </div>
+
+          <div class="formulario-box">
+            <label>SINDICATO (4%):</label>
+            <div>
+              <input type="radio" id="sindicatoSi" name="sindicato" value="si" onchange="calcularSueldo()">
+              <label for="sindicatoSi">Sí</label>
+            </div>
+            <div>
+              <input type="radio" id="sindicatoNo" name="sindicato" value="no" onchange="calcularSueldo()">
+              <label for="sindicatoNo">No</label>
             </div>
           </div>
 
