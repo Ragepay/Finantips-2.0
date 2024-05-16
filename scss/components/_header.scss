@@ -89,7 +89,7 @@ header {
     margin-bottom: 3.5em;
   }
 
-  .item-iframe {
+  .item-iframe, .item-iframe-blue {
         margin: 1em;
         width: 15em;
         height: 15em;
@@ -100,6 +100,7 @@ header {
         &:hover {
             transform: scale(1.1);
         }
+        
       }
 
   /* FIN de Header */

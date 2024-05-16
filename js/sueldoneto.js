@@ -281,7 +281,9 @@ function calcularSueldo() {
     <div class="donar-container">
     ¡Apoya nuestro trabajo para seguir actualizando!
     </div>
-    <a href="https://link.mercadopago.com.ar/finanftips" target="_blank"><button class="boton4">¡DONAR!</button></a>
+    <br>
+    <a class="boton4"  href="https://link.mercadopago.com.ar/finantips" target="_blank">¡Donar!</a>
+                    
     `;
 
     /*

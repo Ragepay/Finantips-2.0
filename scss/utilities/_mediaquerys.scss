@@ -103,7 +103,7 @@
 
 @media (max-width: 768px) {
 
-  .item-iframe {
+  .item-iframe, .item-iframe-blue {
     width: 11em;
     height: 13em;
   }
@@ -159,9 +159,12 @@
   }
 
   .item-iframe {
-    width: 10em;
-    height: 13em;
-    margin: 0.5em;
+    display: none;
+  }
+  .item-iframe-blue {
+    width: auto;
+    height: 50%;
+    
   }
 
 }

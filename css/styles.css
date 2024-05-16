@@ -70,7 +70,7 @@ header .boton button:hover {
   margin-bottom: 3.5em;
 }
 
-.item-iframe {
+.item-iframe, .item-iframe-blue {
   margin: 1em;
   width: 15em;
   height: 15em;
@@ -78,7 +78,7 @@ header .boton button:hover {
   border: 1px solid #14805c;
   transition: transform 0.3s ease;
 }
-.item-iframe:hover {
+.item-iframe:hover, .item-iframe-blue:hover {
   transform: scale(1.1);
 }
 
@@ -569,6 +569,7 @@ button {
 }
 
 .donar-container {
+  margin: 0.8em;
   border: 2px solid #14805c;
   border-radius: 10px;
   padding: 20px;
@@ -711,7 +712,7 @@ button {
   }
 }
 @media (max-width: 768px) {
-  .item-iframe {
+  .item-iframe, .item-iframe-blue {
     width: 11em;
     height: 13em;
   }
@@ -753,9 +754,11 @@ button {
     margin-bottom: 2.5em;
   }
   .item-iframe {
-    width: 10em;
-    height: 13em;
-    margin: 0.5em;
+    display: none;
+  }
+  .item-iframe-blue {
+    width: auto;
+    height: 50%;
   }
 }
 @media only screen and (max-width: 480px) {
