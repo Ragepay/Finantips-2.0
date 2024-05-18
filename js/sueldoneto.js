@@ -202,13 +202,14 @@ function calcularSueldo() {
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial;
     }
 
-    /*
+    //SEGUNDA PARTE: GANANCIAS.    
+
     // Valores de deduccion de hijo y Conyuge
     let conyuge = 242594.4;
     let hijo = 128702.8;
     //Calculando Monto Imponible.
     let montoImponible = sueldoBruto - 1800000;
-    
+
 
     // Conyuge e Hijos
     let conyugeSi = document.getElementById("conyugeSi");
@@ -217,8 +218,8 @@ function calcularSueldo() {
     if (conyugeSi.checked) {
         // Si se seleccionó "Sí" sumar el
         montoImponible -= conyuge;
-
     }
+
 
     switch (hijos) {
         case "0":
@@ -251,20 +252,34 @@ function calcularSueldo() {
         montoImponible = 0;
     }
 
-    const escala =[0,100000,200000,300000,450000,900000,1350000,2050000,3037500]
+    // Construccion calculo de retencion con escalas.
 
-    let retencion = montoImponible;
-    */
-    /*
-        for(let i = 0;i>length.escala;i++){
-            if (montoImponible>0){
-                retencion =
+
+    const escala = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2050000, 3037500, 1000000000000000];
+    const numRet = [5, 9, 12, 15, 19, 23, 27, 31, 35];
+
+    let retencion = 0;
+
+    for (let i = 0; i < escala.length; i++) {
+        if (montoImponible <= escala[i]) {
+            // Calcular la retención del tramo actual
+            retencion += (montoImponible - (i > 0 ? escala[i - 1] : 0)) * (numRet[i - 1] / 100);
+            break;
+        } else {
+            // Calcular la retención de todo el tramo
+            if (i > 0) {
+                retencion += (escala[i] - escala[i - 1]) * (numRet[i - 1] / 100);
+            } else {
+                retencion += escala[i] * (numRet[0] / 100);
             }
         }
-    
-        let bolsillo = montoImponible;
-        */
+    }
 
+    if (isNaN(retencion)) {
+        retencion = 0;
+    }
+    
+    let bolsillo = sueldoNeto - retencion;
 
     // Mostrar los resultados en el formulario.
     document.getElementById("sueldoBrutoResultado").innerText = sueldoBruto.toFixed(2);
@@ -276,6 +291,15 @@ function calcularSueldo() {
     document.getElementById("sabadoM").innerText = sabadoM.toFixed(2);
     document.getElementById("feriado").innerText = feriado.toFixed(2);
 
+
+
+
+    // Mostrar los resultados de Ganancias en el formulario.
+    document.getElementById("montoImponibleResultado").innerText = montoImponible.toFixed(2);
+    document.getElementById("retencionResultado").innerText = - retencion.toFixed(2);
+    document.getElementById("bolsilloResultado").innerText = bolsillo.toFixed(2);
+
+
     document.getElementById('donar-container').innerHTML = `
 
     <div class="donar-container">
@@ -285,19 +309,7 @@ function calcularSueldo() {
     <a class="boton4"  href="https://link.mercadopago.com.ar/finantips" target="_blank">¡Donar!</a>
                     
     `;
-
-    /*
-        // Mostrar los resultados de Ganancias en el formulario.
-        document.getElementById("montoImponibleResultado").innerText = montoImponible.toFixed(2);
-        document.getElementById("retencionResultado").innerText = retencion.toFixed(2);
-        document.getElementById("bolsilloResultado").innerText = bolsillo.toFixed(2);
-        */
 }
-
-
-
-
-
 
 function habilitarInput() {
     categoria = document.getElementById("categoria");
