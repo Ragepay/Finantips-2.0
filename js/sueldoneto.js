@@ -36,7 +36,7 @@ function calcularSueldo() {
     let ley = 0.00;
     let obraSocial = 0.00;
     let sindicatoTotal = 0.00;
-
+    
 
     // Calcular el sueldo neto y las ganancias según la categoría
     switch (categoria) {
@@ -90,6 +90,7 @@ function calcularSueldo() {
                 sueldoBase = 0;
             }
             base = 0
+
     }
 
     //Sindicato
@@ -107,6 +108,7 @@ function calcularSueldo() {
     let radioProductividadSi = document.getElementById("productividadSi");
     let radioPresentismoSi = document.getElementById("presentismoSi");
 
+
     if ((radioProductividadSi.checked) && (radioPresentismoSi.checked)) {
         // Si se seleccionó "Sí", incrementar sueldoBase en un 30%
         sueldoBase *= 1.281;
@@ -116,6 +118,7 @@ function calcularSueldo() {
     } else {
         sueldoBase = sueldoBase;
     }
+
 
     // Antiguedad
     antiguedad = parseFloat(document.getElementById("antigüedad").value);
@@ -278,7 +281,7 @@ function calcularSueldo() {
     if (isNaN(retencion)) {
         retencion = 0;
     }
-    
+
     let bolsillo = sueldoNeto - retencion;
 
     // Mostrar los resultados en el formulario.
