@@ -1,5 +1,12 @@
 // Declaracion de variables que van a ser actualizadas.
 const AUMENTO = 1.2248;
+
+// Valores de deduccion de hijo, Conyuge y minino Imponible.
+const conyuge = 242594.4;
+const hijo = 128702.8;
+const minimoImponible = 1800000;
+
+
 let tm16m = 918760 * AUMENTO;
 let tm712m = 1050120 * AUMENTO;
 let tm1 = 1266784 * AUMENTO;
@@ -23,6 +30,7 @@ function calcularSueldo() {
     let sueldoBase;
     let sueldoBruto = 0.00;
     let sueldoNeto = 0.00;
+    let mantenimiento = 0.00;
 
     let horas50;
     let horas100;
@@ -36,7 +44,7 @@ function calcularSueldo() {
     let ley = 0.00;
     let obraSocial = 0.00;
     let sindicatoTotal = 0.00;
-    
+
 
     // Calcular el sueldo neto y las ganancias según la categoría
     switch (categoria) {
@@ -93,6 +101,35 @@ function calcularSueldo() {
 
     }
 
+    // Productividad y presentismo.
+    let radioProductividadSi = document.getElementById("productividadSi");
+    let radioPresentismoSi = document.getElementById("presentismoSi");
+    let presentismoYproductividad = 0;
+   
+
+
+    if ((radioProductividadSi.checked) && (radioPresentismoSi.checked)) {
+        // Si se seleccionó "Sí", incrementar sueldoBase en un 28-30%.
+        presentismoYproductividad = sueldoBase * 0.281;
+    } else if ((radioProductividadSi.checked) || (radioPresentismoSi.checked)) {
+        presentismoYproductividad = sueldoBase * 0.1405;
+
+    } else {
+        sueldoBase = sueldoBase;
+    }
+
+    //Plus Mantenimiento.
+    let radioMantenimientoSi = document.getElementById("mantenimientoSi");
+    let radioMantenimientoNo = document.getElementById("mantenimientoNo");
+
+    if (radioMantenimientoSi.checked){
+        mantenimiento = sueldoBase * 0.26;
+        console.log(mantenimiento);
+
+    } else if (radioMantenimientoNo.checked) {
+        mantenimiento = 0;
+    }
+
     //Sindicato
     let sindicatoSi = document.getElementById("sindicatoSi");
     let sindicatoNo = document.getElementById("sindicatoNo");
@@ -104,22 +141,6 @@ function calcularSueldo() {
         sindicato = false;
     }
 
-    // Productividad y presentismo
-    let radioProductividadSi = document.getElementById("productividadSi");
-    let radioPresentismoSi = document.getElementById("presentismoSi");
-
-
-    if ((radioProductividadSi.checked) && (radioPresentismoSi.checked)) {
-        // Si se seleccionó "Sí", incrementar sueldoBase en un 30%
-        sueldoBase *= 1.281;
-    } else if ((radioProductividadSi.checked) || (radioPresentismoSi.checked)) {
-        sueldoBase *= 1.1405;
-
-    } else {
-        sueldoBase = sueldoBase;
-    }
-
-
     // Antiguedad
     antiguedad = parseFloat(document.getElementById("antigüedad").value);
     if (isNaN(antiguedad)) {
@@ -127,7 +148,8 @@ function calcularSueldo() {
     } else if (antiguedad == 0) {
         antiguedadTotal = 0;
     } else {
-        antiguedadTotal = (base + sueldoBase) * (0.04 + 0.01 * (antiguedad - 1));
+        antiguedadTotal = (base) * (0.04 + 0.01 * (antiguedad - 1));
+        console.log(antiguedadTotal);
     }
 
     // Horas Extra
@@ -165,7 +187,7 @@ function calcularSueldo() {
     }
 
 
-    sueldoBruto = sueldoBase + antiguedadTotal + horas50Total + horas100Total + horas200Total + horasNocturnasTotal;
+    sueldoBruto = sueldoBase + antiguedadTotal + horas50Total + horas100Total + horas200Total + horasNocturnasTotal + mantenimiento + presentismoYproductividad;
     let sabadoM = (7 * ((base / a) * (1.5) * (1.04 + 0.01 * (antiguedad - 1)))) + (1.5 * ((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1))));
     let feriado = 8.5 * (((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1))));
 
@@ -206,12 +228,8 @@ function calcularSueldo() {
     }
 
     //SEGUNDA PARTE: GANANCIAS.    
-
-    // Valores de deduccion de hijo y Conyuge
-    let conyuge = 242594.4;
-    let hijo = 128702.8;
     //Calculando Monto Imponible.
-    let montoImponible = sueldoBruto - 1800000;
+    let montoImponible = sueldoBruto - minimoImponible;
 
 
     // Conyuge e Hijos

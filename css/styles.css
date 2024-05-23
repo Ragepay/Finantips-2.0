@@ -579,6 +579,17 @@ button {
   background-color: #f9f9f9;
 }
 
+.actualizacion {
+  margin: 1em auto;
+  border: 2px solid rgb(82, 79, 79);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  max-width: 400px;
+  color: rgb(56, 55, 55);
+  background-color: #bbcbf8;
+}
+
 /* FIN sueldoneto main */
 /* Inicio de pesos */
 .financial-main {

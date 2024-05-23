@@ -64,6 +64,9 @@
       <div class="containerBox2">
 
         <h1>Calculadora de Sueldo</h1>
+        <div class="actualizacion">
+          Incluye aumento de mayo del 22,48%.
+        </div>
 
         <form>
           <div class="formulario-box">
@@ -110,6 +113,18 @@
             <div>
               <input type="radio" id="presentismodNo" name="presentismo" value="no" onchange="calcularSueldo()">
               <label for="presentismoNo">No</label>
+            </div>
+          </div>
+
+          <div class="formulario-box">
+            <label>PLUS MANTENIMIENTO:</label>
+            <div>
+              <input type="radio" id="mantenimientoSi" name="mantenimiento" value="si" onchange="calcularSueldo()">
+              <label for="mantenimientoSi">Sí</label>
+            </div>
+            <div>
+              <input type="radio" id="mantenimientoNo" name="mantenimiento" value="no" onchange="calcularSueldo()">
+              <label for="mantenimientoNo">No</label>
             </div>
           </div>
 
@@ -281,6 +296,8 @@
             <a href="mailto:benjapey99@gmail.com" target="_blank">E-mail
               <img src="../img/iconogmail.png" alt="Logo Gmail">
             </a>
+          </li>
+          <li>
             <a href="https://wa.link/bctsbq" target="_blank">Whatsapp
               <img src="../img/iconowhatsapp.png" alt="Logo whatsapp">
             </a>
