@@ -1,10 +1,17 @@
 // Declaracion de variables que van a ser actualizadas.
 const AUMENTO = 1.2248;
 
+// Maxima retencion de las cargas sociales.
+const maxCargasSociales = 2265033.81;
+
+// Minimos no Imponibles de Impuesto a las ganancias.
+const minimoNoImponible = 257586.25;
+const deduccionEspecial = 1236414.00;
+
 // Valores de deduccion de hijo, Conyuge y minino Imponible.
 const conyuge = 242594.4;
 const hijo = 128702.8;
-const minimoImponible = 1800000;
+let minimoImponible = minimoNoImponible + deduccionEspecial;
 
 
 let tm16m = 918760 * AUMENTO;
@@ -194,7 +201,7 @@ function calcularSueldo() {
 
     // Sueldo Neto
     /* Jubilacion máxima de Abril, Mayo y Junio :208.174,81 Bruto maximo: 1.892.498,29*/
-    let maxCargasSociales = 1874838.91;
+    
 
     if ((sueldoBruto <= maxCargasSociales) && (sindicato == true)) {
         jubilacion = sueldoBruto * 0.11;
@@ -229,7 +236,7 @@ function calcularSueldo() {
 
     //SEGUNDA PARTE: GANANCIAS.    
     //Calculando Monto Imponible.
-    let montoImponible = sueldoBruto - minimoImponible;
+    let montoImponible = sueldoBruto - minimoImponible - jubilacion - ley - obraSocial -sindicatoTotal;
 
 
     // Conyuge e Hijos
