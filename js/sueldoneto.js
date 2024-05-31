@@ -2,7 +2,8 @@
 const AUMENTO = 1.2248;
 
 // Maxima retencion de las cargas sociales.
-const maxCargasSociales = 2265033.81;
+const maxCargasSociales = 2081258.63;
+// calcularsueldo.com const maxCargasSociales = 2265033.81;
 
 // Minimos no Imponibles de Impuesto a las ganancias.
 const minimoNoImponible = 257586.25;
@@ -117,13 +118,15 @@ function calcularSueldo() {
 
     if ((radioProductividadSi.checked) && (radioPresentismoSi.checked)) {
         // Si se seleccionó "Sí", incrementar sueldoBase en un 28-30%.
-        presentismoYproductividad = sueldoBase * 0.281;
+        presentismoYproductividad = sueldoBase * 0.30;
     } else if ((radioProductividadSi.checked) || (radioPresentismoSi.checked)) {
-        presentismoYproductividad = sueldoBase * 0.1405;
+        presentismoYproductividad = sueldoBase * 0.15;
 
     } else {
         sueldoBase = sueldoBase;
     }
+
+    console.log("Sueldo base + produc y present" + presentismoYproductividad);
 
     //Plus Mantenimiento.
     let radioMantenimientoSi = document.getElementById("mantenimientoSi");
@@ -156,8 +159,10 @@ function calcularSueldo() {
         antiguedadTotal = 0;
     } else {
         antiguedadTotal = (base) * (0.04 + 0.01 * (antiguedad - 1));
-        console.log(antiguedadTotal);
+        
     }
+
+    console.log("Antiguedad" + antiguedadTotal);
 
     // Horas Extra
     horas50 = parseFloat(document.getElementById("horas-50").value);
@@ -184,6 +189,7 @@ function calcularSueldo() {
     let horas200Total = horas200 * ((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1)));
     let horasNocturnasTotal = horasNocturnas * (base / a) * 0.36 * (1.04 + 0.01 * (antiguedad - 1));
 
+    
 
     // Calcular el sueldo bruto
     if (antiguedad == 0) {
@@ -193,6 +199,7 @@ function calcularSueldo() {
         horasNocturnasTotal = horasNocturnas * (base / a) * 0.36;
     }
 
+    console.log("Horas nocturnas: " + horasNocturnasTotal);
 
     sueldoBruto = sueldoBase + antiguedadTotal + horas50Total + horas100Total + horas200Total + horasNocturnasTotal + mantenimiento + presentismoYproductividad;
     let sabadoM = (7 * ((base / a) * (1.5) * (1.04 + 0.01 * (antiguedad - 1)))) + (1.5 * ((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1))));
