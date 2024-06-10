@@ -111,6 +111,9 @@
 }
 
 @media only screen and (max-width: 650px) {
+  .anuncioPrivado {
+    display: block;
+  }
 
   header a img {
     height: 4vh;
@@ -132,6 +135,10 @@
 }
 
 @media only screen and (max-width:600px) {
+  .anuncioPrivado {
+    display: block;
+    
+  }
 
   .container p {
     font-size: 0.8em;
@@ -151,6 +158,10 @@
 }
 
 @media (max-width: 480px) {
+  .anuncioPrivado {
+    display: block;
+  
+  }
 
   #cotizacionesDolar {
     margin-top: 1em;
@@ -170,6 +181,10 @@
 }
 
 @media only screen and (max-width:480px) {
+  .anuncioPrivado {
+    display: block;
+    
+  }
 
   .footer-finantips {
     width: 55vw;
@@ -190,6 +205,10 @@
 
 @media (max-width: 413px) {
 
+  .anuncioPrivado {
+    display: block;
+  }
+
   .containerBox3 {
     text-align: left;
     margin: 4em;
@@ -203,6 +222,9 @@
 }
 
 @media (max-width: 353px) {
+  .anuncioPrivado {
+    display: block;
+  }
 
   
 

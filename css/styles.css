@@ -590,6 +590,19 @@ button {
   background-color: #bbcbf8;
 }
 
+.anuncioPrivado {
+  display: none;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+.anuncioPrivado img {
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
 /* FIN sueldoneto main */
 /* Inicio de pesos */
 .financial-main {
@@ -729,6 +742,9 @@ button {
   }
 }
 @media only screen and (max-width: 650px) {
+  .anuncioPrivado {
+    display: block;
+  }
   header a img {
     height: 4vh;
   }
@@ -746,6 +762,9 @@ button {
   }
 }
 @media only screen and (max-width: 600px) {
+  .anuncioPrivado {
+    display: block;
+  }
   .container p {
     font-size: 0.8em;
   }
@@ -760,6 +779,9 @@ button {
   }
 }
 @media (max-width: 480px) {
+  .anuncioPrivado {
+    display: block;
+  }
   #cotizacionesDolar {
     margin-top: 1em;
     margin-bottom: 2.5em;
@@ -773,6 +795,9 @@ button {
   }
 }
 @media only screen and (max-width: 480px) {
+  .anuncioPrivado {
+    display: block;
+  }
   .footer-finantips {
     width: 55vw;
     height: auto;
@@ -787,6 +812,9 @@ button {
   }
 }
 @media (max-width: 413px) {
+  .anuncioPrivado {
+    display: block;
+  }
   .containerBox3 {
     text-align: left;
     margin: 4em;
@@ -796,6 +824,9 @@ button {
   }
 }
 @media (max-width: 353px) {
+  .anuncioPrivado {
+    display: block;
+  }
   #cotizacionesDolar {
     margin-top: 1em;
     margin-bottom: 2.5em;

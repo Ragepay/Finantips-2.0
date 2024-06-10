@@ -151,6 +151,19 @@ button {
   background-color: #bbcbf8;
 }
 
+.anuncioPrivado {
+  display: none;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  
+  img {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 
 
