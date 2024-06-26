@@ -2,7 +2,7 @@
 const AUMENTO = 1.2248;
 
 // Maxima retencion de las cargas sociales.
-const maxCargasSociales = 2081258.63;
+const maxCargasSociales = 2265033.81;
 // calcularsueldo.com const maxCargasSociales = 2265033.81;
 
 // Minimos no Imponibles de Impuesto a las ganancias.
@@ -125,8 +125,6 @@ function calcularSueldo() {
     } else {
         sueldoBase = sueldoBase;
     }
-
-    console.log("Sueldo base + produc y present" + presentismoYproductividad);
 
     //Plus Mantenimiento.
     let radioMantenimientoSi = document.getElementById("mantenimientoSi");
