@@ -1,8 +1,8 @@
 // Declaracion de variables que van a ser actualizadas.
-const AUMENTO = 1.2248;
+const AUMENTO = 1.2248 * 1.09;
 
 // Maxima retencion de las cargas sociales.
-const maxCargasSociales = 2265033.81;
+const maxCargasSociales = 2359712.22;//2265033.81;
 // calcularsueldo.com const maxCargasSociales = 2265033.81;
 
 // Minimos no Imponibles de Impuesto a las ganancias.
@@ -11,7 +11,7 @@ const deduccionEspecial = 1236414.00;
 
 // Valores de deduccion de hijo, Conyuge y minino Imponible.
 const conyuge = 242594.4;
-const hijo = 128702.8;
+const hijo = 122341.33;
 let minimoImponible = minimoNoImponible + deduccionEspecial;
 
 
