@@ -331,12 +331,13 @@ async function calcularSueldo() {
     //  Creacion de los Objetos "reciboSueldo" por propiedad que ingrese, para poder almacenar y mostar por localstorage.
 
 
-    function ReciboSueldo(categoria, id, salarioBase, presentismo, produtivdad, horasNocturnas, horas50, horas200, antiguedad, retencionValesComedor, jubilacion, ley, obraSocial, aporteSindical, sueldoBruto, sueldoNeto, sabadoM, feriado, retencion) {
+    function ReciboSueldo(categoria, id, salarioBase, presentismo, produtivdad, plusMantenimiento, horasNocturnas, horas50, horas200, antiguedad, retencionValesComedor, jubilacion, ley, obraSocial, aporteSindical, sueldoBruto, sueldoNeto, sabadoM, feriado, retencion) {
         this.categoria = categoria || "Sin categoria";
         this.id = id;
         this.salarioBase = salarioBase;
         this.presentismo = presentismo;
         this.productividad = produtivdad;
+        this.plusMantenimiento = plusMantenimiento;
         this.horasNocturnas = horasNocturnas;
         this.horas50 = horas50;
         this.horas200 = horas200;
@@ -355,7 +356,7 @@ async function calcularSueldo() {
 
     //  Creacion del Objeto literal y despues se almacena en el array de objetos.
     let id = Date.now();
-    const recibo = new ReciboSueldo(categoria, id, sueldoBase, calcularPresentismo(), calcularProductividad(), horasNocturnasTotal, horas50Total, horas200Total, antiguedadTotal, valesComedorTotal, jubilacion, ley, obraSocial, sindicatoTotal, sueldoBruto, sueldoNeto, sabadoM, feriado, retencion)
+    const recibo = new ReciboSueldo(categoria, id, sueldoBase, calcularPresentismo(), calcularProductividad(), calcularMantenimiento(), horasNocturnasTotal, horas50Total, horas200Total, antiguedadTotal, valesComedorTotal, jubilacion, ley, obraSocial, sindicatoTotal, sueldoBruto, sueldoNeto, sabadoM, feriado, retencion)
     recibos.unshift(recibo);
 
 
@@ -397,6 +398,11 @@ async function calcularSueldo() {
                     <tr>
                         <td colspan="2">Productividad</td>
                         <td>${recibo.productividad.toFixed(2)}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Mantenimiento</td>
+                        <td>${recibo.plusMantenimiento.toFixed(2)}</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -478,7 +484,7 @@ async function calcularSueldo() {
     }
 
     mostrarResultados();
-    
+
     /*Swal.fire({
         title: '¿Desea hacer un screenshot?',
         imageUrl: "../img/ejemploScreen.png",
@@ -501,7 +507,7 @@ async function calcularSueldo() {
     });
     */
 
-    
+
     document.getElementById('donar-container').innerHTML = `
 
     <div class="donar-container">
@@ -509,7 +515,7 @@ async function calcularSueldo() {
     <a class="boton4"  href="https://link.mercadopago.com.ar/finantips" target="_blank">¡Donar!</a>   
     </div>           
     `;
-   mostrarHistorialRecibos();
+    mostrarHistorialRecibos();
 }
 
 // Función para mostrar el historial de recibos
@@ -552,6 +558,11 @@ function mostrarHistorialRecibos() {
                         <tr>
                             <td colspan="2">Productividad</td>
                             <td>${recibo.productividad.toFixed(2)}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Horas Nocturnas</td>
+                            <td>${recibo.horasNocturnas.toFixed(2)}</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -634,24 +645,26 @@ function mostrarHistorialRecibos() {
     }
     document.getElementById('historial-recibos').innerHTML = historialHTML;
 
-    function takeScreenshot() {
-        console.log("Ejecutando takeScreenshot");
-        const element = document.getElementById('resultados'); // Cambia por el ID correcto
-        if (!element) {
-            console.error('El elemento no existe');
-            return;
-        }
-        console.log('Elemento encontrado:', element);
-    
-        html2canvas(element).then(canvas => {
-            const link = document.createElement('a');
-            link.href = canvas.toDataURL('image/png');
-            link.download = 'ReciboSueldo(Finantips).png';
-            link.click();
-        });
-    }
-}
 
+}
+/*
+function takeScreenshot() {
+    console.log("Ejecutando takeScreenshot");
+    const element = document.getElementById('resultados'); // Cambia por el ID correcto
+    if (!element) {
+        console.error('El elemento no existe');
+        return;
+    }
+    console.log('Elemento encontrado:', element);
+
+    html2canvas(element).then(canvas => {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'ReciboSueldo(Finantips).png';
+        link.click();
+    });
+}
+*/
 
 function eliminarRecibo(id) {
     // Filtrar el array recibos para excluir el recibo con el ID dado.
@@ -683,9 +696,6 @@ function habilitarInput() {
     }
 
 }
-
-
-
 
 // Cargar historial al cargar la página
 document.addEventListener('DOMContentLoaded', function () {
