@@ -463,6 +463,7 @@ footer .footer-left ul li a:hover {
 .containerBox2 {
   text-align: center;
   margin: 1em;
+  margin-bottom: 2em;
   padding: 1em;
   border-radius: 1em;
   justify-content: center;
@@ -950,7 +951,8 @@ button {
     font-size: 0.8em;
   }
   .containerBox2 {
-    margin: 0em;
+    margin: 0.4em;
+    margin-bottom: 1.2em;
   }
 }
 @media (max-width: 480px) {
@@ -967,6 +969,10 @@ button {
   .item-iframe-blue {
     width: auto;
     height: 15em;
+  }
+  .containerBox2 {
+    margin: 0.2em;
+    margin-bottom: 1em;
   }
 }
 @media only screen and (max-width: 480px) {
