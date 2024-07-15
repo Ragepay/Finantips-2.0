@@ -1,8 +1,11 @@
-// Declaracion de variables que van a ser actualizadas.
+/* Declaracion de variables que van a ser actualizadas. */
+//----------------------------------------------------------------------------------
+// Aumento de    Mayo  | Julio  
 const AUMENTO = 1.2248 * 1.09;
 
 // Maxima retencion de las cargas sociales.
-const maxCargasSociales = 2359712.22;//2265033.81;
+const maxCargasSociales = 2359712.22;
+
 // calcularsueldo.com const maxCargasSociales = 2265033.81;
 
 // Minimos no Imponibles de Impuesto a las ganancias.
@@ -14,22 +17,32 @@ const conyuge = 242594.4;
 const hijo = 122341.33;
 let minimoImponible = minimoNoImponible + deduccionEspecial;
 
+//  Retencion vales de comedro.
+const valesComedorTotal = 22 * 827;
+//----------------------------------------------------------------------------------
 
-let tm16m = 918760 * AUMENTO;
-let tm712m = 1050120 * AUMENTO;
-let tm1 = 1266784 * AUMENTO;
-let tm2 = 1304782 * AUMENTO;
-let tm3 = 1369919 * AUMENTO;
-let tm3a = 1438007 * AUMENTO;
-let tm3b = 1509967 * AUMENTO;
-let tl1 = 1585963 * AUMENTO;
-let tl2 = 1664749 * AUMENTO;
-let tl3 = 1748806 * AUMENTO;
-let tl3a = 1835811 * AUMENTO;
-let constante192 = 192.025294117647;
-let a = constante192;
+// Declaracion de array y obtencion de elementos guardados en localStorage.
+let recibos = JSON.parse(localStorage.getItem('recibos')) || [];
+
+
+
 
 function calcularSueldo() {
+
+    //  Categorias con su respectivo aumento.
+    let tm16m = 918760 * AUMENTO;
+    let tm712m = 1050120 * AUMENTO;
+    let tm1 = 1266784 * AUMENTO;
+    let tm2 = 1304782 * AUMENTO;
+    let tm3 = 1369919 * AUMENTO;
+    let tm3a = 1438007 * AUMENTO;
+    let tm3b = 1509967 * AUMENTO;
+    let tl1 = 1585963 * AUMENTO;
+    let tl2 = 1664749 * AUMENTO;
+    let tl3 = 1748806 * AUMENTO;
+    let tl3a = 1835811 * AUMENTO;
+    let constante192 = 192.025294117647;
+    let a = constante192;
 
     // Declaracion Variables de la funcion
     let categoria = document.getElementById("categoria").value;
@@ -38,10 +51,8 @@ function calcularSueldo() {
     let sueldoBase;
     let sueldoBruto = 0.00;
     let sueldoNeto = 0.00;
-    let mantenimiento = 0.00;
 
     let horas50;
-    let horas100;
     let horas200;
     let horasNocturnas;
 
@@ -54,7 +65,8 @@ function calcularSueldo() {
     let sindicatoTotal = 0.00;
 
 
-    // Calcular el sueldo neto y las ganancias según la categoría
+    //  Categoria y asignación de sueldoBase y base para otros calculos. Default para ingresar sueldo bruto de fuera de convenio.
+    //---------------------------------------------------------------------------------------------------------------------------
     switch (categoria) {
         case "T/M 0-6":
             sueldoBase = tm16m;
@@ -108,48 +120,58 @@ function calcularSueldo() {
             base = 0
 
     }
+    //----------------------------------------------------------------------------------
+
 
     // Productividad y presentismo.
-    let radioProductividadSi = document.getElementById("productividadSi");
-    let radioPresentismoSi = document.getElementById("presentismoSi");
-    let presentismoYproductividad = 0;
-   
-
-
-    if ((radioProductividadSi.checked) && (radioPresentismoSi.checked)) {
-        // Si se seleccionó "Sí", incrementar sueldoBase en un 28-30%.
-        presentismoYproductividad = sueldoBase * 0.30;
-    } else if ((radioProductividadSi.checked) || (radioPresentismoSi.checked)) {
-        presentismoYproductividad = sueldoBase * 0.15;
-
-    } else {
-        sueldoBase = sueldoBase;
+    //----------------------------------------------------------------------------------
+    //  Productividad.
+    function calcularProductividad() {
+        let radioProductividadSi = document.getElementById("productividadSi");
+        if (radioProductividadSi.checked) {
+            return sueldoBase * 0.15
+        }
+        return 0
     }
-
-    //Plus Mantenimiento.
-    let radioMantenimientoSi = document.getElementById("mantenimientoSi");
-    let radioMantenimientoNo = document.getElementById("mantenimientoNo");
-
-    if (radioMantenimientoSi.checked){
-        mantenimiento = sueldoBase * 0.26;
-        console.log(mantenimiento);
-
-    } else if (radioMantenimientoNo.checked) {
-        mantenimiento = 0;
+    //  Presentismo.
+    function calcularPresentismo() {
+        let radioPresentismoSi = document.getElementById("presentismoSi");
+        if (radioPresentismoSi.checked) {
+            return sueldoBase * 0.15
+        }
+        return 0
     }
+    //----------------------------------------------------------------------------------
 
-    //Sindicato
-    let sindicatoSi = document.getElementById("sindicatoSi");
-    let sindicatoNo = document.getElementById("sindicatoNo");
-    let sindicato = false;
 
-    if (sindicatoSi.checked) { // Verificar si el radio button 'Sí' está marcado
-        sindicato = true;
-    } else if (sindicatoNo.checked) { // Verificar si el radio button 'No' está marcado
-        sindicato = false;
+    //  Plus Mantenimiento.
+    //----------------------------------------------------------------------------------
+    function calcularMantenimiento() {
+        let radioMantenimientoSi = document.getElementById("mantenimientoSi");
+        if (radioMantenimientoSi.checked) {
+            return sueldoBase * 0.26
+
+        }
+        return 0
     }
+    //----------------------------------------------------------------------------------
+
+
+    //  Sindicato
+    //----------------------------------------------------------------------------------
+    function chequearSindicato() {
+        let sindicatoSi = document.getElementById("sindicatoSi");
+        if (sindicatoSi.checked) {
+            return true;
+        } else {
+            return false
+        }
+    }
+    //----------------------------------------------------------------------------------
+
 
     // Antiguedad
+    //----------------------------------------------------------------------------------
     antiguedad = parseFloat(document.getElementById("antigüedad").value);
     if (isNaN(antiguedad)) {
         antiguedad = 0;
@@ -157,22 +179,19 @@ function calcularSueldo() {
         antiguedadTotal = 0;
     } else {
         antiguedadTotal = (base) * (0.04 + 0.01 * (antiguedad - 1));
-        
-    }
 
-    console.log("Antiguedad" + antiguedadTotal);
+    }
+    //----------------------------------------------------------------------------------
+
 
     // Horas Extra
+    //----------------------------------------------------------------------------------
     horas50 = parseFloat(document.getElementById("horas-50").value);
-    horas100 = parseFloat(document.getElementById("horas-100").value);
     horas200 = parseFloat(document.getElementById("horas-200").value);
     horasNocturnas = parseFloat(document.getElementById("horas-nocturnas").value);
 
     if (isNaN(horas50)) {
         horas50 = 0;
-    }
-    if (isNaN(horas100)) {
-        horas100 = 0;
     }
     if (isNaN(horas200)) {
         horas200 = 0;
@@ -183,65 +202,62 @@ function calcularSueldo() {
 
 
     let horas50Total = horas50 * ((base / a) * (1.5) * (1.04 + 0.01 * (antiguedad - 1)));
-    let horas100Total = horas100 * ((base / a) * (2) * (1.04 + 0.01 * (antiguedad - 1)));
     let horas200Total = horas200 * ((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1)));
     let horasNocturnasTotal = horasNocturnas * (base / a) * 0.36 * (1.04 + 0.01 * (antiguedad - 1));
 
-    
-
-    // Calcular el sueldo bruto
+    // Con antiguedad 0.
     if (antiguedad == 0) {
         horas50Total = horas50 * (base / a) * (1.5);
-        horas100Total = horas100 * (base / a) * (2);
-        horas200Total = horas100 * (base / a) * (4);
+        horas200Total = horas200 * (base / a) * (4);
         horasNocturnasTotal = horasNocturnas * (base / a) * 0.36;
     }
 
-    console.log("Horas nocturnas: " + horasNocturnasTotal);
 
-    sueldoBruto = sueldoBase + antiguedadTotal + horas50Total + horas100Total + horas200Total + horasNocturnasTotal + mantenimiento + presentismoYproductividad;
+
+
+    sueldoBruto = sueldoBase + antiguedadTotal + horas50Total + horas200Total + horasNocturnasTotal + calcularMantenimiento() + calcularProductividad() + calcularPresentismo();
     let sabadoM = (7 * ((base / a) * (1.5) * (1.04 + 0.01 * (antiguedad - 1)))) + (1.5 * ((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1))));
     let feriado = 8.5 * (((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1))));
 
 
-    // Sueldo Neto
-    /* Jubilacion máxima de Abril, Mayo y Junio :208.174,81 Bruto maximo: 1.892.498,29*/
-    
+    //  Sueldo Neto.
+    //  Calculo de las "Cargas Sociales/Retenciones".
 
-    if ((sueldoBruto <= maxCargasSociales) && (sindicato == true)) {
+
+    if ((sueldoBruto <= maxCargasSociales) && (chequearSindicato() == true)) {
         jubilacion = sueldoBruto * 0.11;
         ley = sueldoBruto * 0.03;
         obraSocial = sueldoBruto * 0.03;
         sindicatoTotal = sueldoBruto * 0.04;
-        sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - sindicatoTotal;
+        sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - sindicatoTotal - valesComedorTotal;
     }
 
-    if ((sueldoBruto <= maxCargasSociales) && (sindicato == false)) {
+    if ((sueldoBruto <= maxCargasSociales) && (chequearSindicato() == false)) {
         jubilacion = sueldoBruto * 0.11;
         ley = sueldoBruto * 0.03;
         obraSocial = sueldoBruto * 0.03;
-        sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial;
+        sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - valesComedorTotal;
     }
 
-    if ((sueldoBruto > maxCargasSociales) && (sindicato == true)) {
+    if ((sueldoBruto > maxCargasSociales) && (chequearSindicato() == true)) {
         jubilacion = maxCargasSociales * 0.11;
         ley = maxCargasSociales * 0.03;
         obraSocial = maxCargasSociales * 0.03;
         sindicatoTotal = sueldoBruto * 0.04;
-        sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - sindicatoTotal;
+        sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - sindicatoTotal - valesComedorTotal;
 
     }
 
-    if ((sueldoBruto > maxCargasSociales) && (sindicato == false)) {
+    if ((sueldoBruto > maxCargasSociales) && (chequearSindicato == false)) {
         jubilacion = maxCargasSociales * 0.11;
         ley = maxCargasSociales * 0.03;
         obraSocial = maxCargasSociales * 0.03;
-        sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial;
+        sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - valesComedorTotal;
     }
 
     //SEGUNDA PARTE: GANANCIAS.    
     //Calculando Monto Imponible.
-    let montoImponible = sueldoBruto - minimoImponible - jubilacion - ley - obraSocial -sindicatoTotal;
+    let montoImponible = sueldoBruto - minimoImponible - jubilacion - ley - obraSocial - sindicatoTotal;
 
 
     // Conyuge e Hijos
@@ -312,36 +328,330 @@ function calcularSueldo() {
         retencion = 0;
     }
 
-    let bolsillo = sueldoNeto - retencion;
+    //  Creacion de los Objetos "reciboSueldo" por propiedad que ingrese, para poder almacenar y mostar por localstorage.
+
+
+    function ReciboSueldo(categoria, id, salarioBase, presentismo, produtivdad, horasNocturnas, horas50, horas200, antiguedad, retencionValesComedor, jubilacion, ley, obraSocial, aporteSindical, sueldoBruto, sueldoNeto, sabadoM, feriado, retencion) {
+        this.categoria = categoria || "Sin categoria";
+        this.id = id;
+        this.salarioBase = salarioBase;
+        this.presentismo = presentismo;
+        this.productividad = produtivdad;
+        this.horasNocturnas = horasNocturnas;
+        this.horas50 = horas50;
+        this.horas200 = horas200;
+        this.antiguedad = antiguedad;
+        this.retencionValesComedor = retencionValesComedor;
+        this.jubilacion = jubilacion;
+        this.ley = ley;
+        this.obraSocial = obraSocial;
+        this.aporteSindical = aporteSindical;
+        this.sueldoBruto = sueldoBruto;
+        this.sueldoNeto = sueldoNeto;
+        this.sabadoM = sabadoM;
+        this.feriado = feriado;
+        this.retencion = retencion;
+    }
+
+    //  Creacion del Objeto literal y despues se almacena en el array de objetos.
+    let id = Date.now();
+    const recibo = new ReciboSueldo(categoria, id, sueldoBase, calcularPresentismo(), calcularProductividad(), horasNocturnasTotal, horas50Total, horas200Total, antiguedadTotal, valesComedorTotal, jubilacion, ley, obraSocial, sindicatoTotal, sueldoBruto, sueldoNeto, sabadoM, feriado, retencion)
+    recibos.unshift(recibo);
+
+
+
+    //  Almacenamos el array de objetos en el localStorage.
+    localStorage.setItem("recibos", JSON.stringify(recibos));
 
     // Mostrar los resultados en el formulario.
-    document.getElementById("sueldoBrutoResultado").innerText = sueldoBruto.toFixed(2);
-    document.getElementById("jubilacionResultado").innerText = - jubilacion.toFixed(2);
-    document.getElementById("leyResultado").innerText = - ley.toFixed(2);
-    document.getElementById("obraSocialResultado").innerText = - obraSocial.toFixed(2);
-    document.getElementById("sindicatoResultado").innerText = - sindicatoTotal.toFixed(2);
-    document.getElementById("sueldoNetoResultado").innerText = sueldoNeto.toFixed(2);
-    document.getElementById("sabadoM").innerText = sabadoM.toFixed(2);
-    document.getElementById("feriado").innerText = feriado.toFixed(2);
+    function mostrarResultados() {
+        document.getElementById("resultados").innerHTML = `
+        <div class="caja-resultados">
 
+            <h3>Resultados</h3>
 
+            <table class="ResultadosCalculo">
+                <thead>
+                    <tr>
+                        <th colspan="2">Categoria: ${recibo.categoria}</th>
+                        <th colspan="2">Fecha: ${new Date(recibo.id).toLocaleString()}</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Descripción</th>
+                        <th>Haberes</th>
+                        <th>Deducciones</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    <tr>
+                        <td colspan="2">Salario Base</td>
+                        <td>${recibo.salarioBase.toFixed(2)}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Presentismo</td>
+                        <td>${recibo.presentismo.toFixed(2)}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Productividad</td>
+                        <td>${recibo.productividad.toFixed(2)}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Horas Nocturnas</td>
+                        <td>${recibo.horasNocturnas.toFixed(2)}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Horas 50%</td>
+                        <td>${recibo.horas50.toFixed(2)}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Horas 200%</td>
+                        <td>${recibo.horas200.toFixed(2)}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Antigüedad</td>
+                        <td>${recibo.antiguedad.toFixed(2)}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Jubilación</td>
+                        <td></td>
+                        <td>-${recibo.jubilacion.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Ley 19032</td>
+                        <td></td>
+                        <td>-${recibo.ley.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Obra Social</td>
+                        <td></td>
+                        <td>-${recibo.obraSocial.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Smata</td>
+                        <td></td>
+                        <td>-${recibo.aporteSindical.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Vales de Comedor</td>
+                        <td></td>
+                        <td>-${recibo.retencionValesComedor.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">IIGG</td>
+                        <td></td>
+                        <td>-${recibo.retencion.toFixed(2)}</td>
+                    </tr>
+                </tbody>
 
-    // Mostrar los resultados de Ganancias en el formulario.
-    document.getElementById("montoImponibleResultado").innerText = montoImponible.toFixed(2);
-    document.getElementById("retencionResultado").innerText = - retencion.toFixed(2);
-    document.getElementById("bolsilloResultado").innerText = bolsillo.toFixed(2);
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Sueldo Bruto</td>
+                        <td colspan="2" style=" text-align: center;">${recibo.sueldoBruto.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Sueldo Neto</td>
+                        <td colspan="2" style=" text-align: center;">${recibo.sueldoNeto.toFixed(2)}</td>
+                    </tr>
+                </tfoot>
+            </table>
 
+            <div class="horasExtra">
+                <div class="sabadoM">
+                    <label for="sabadoM">Produccion Sábado de mañana:</label>
+                    <div id="sabadoM">${recibo.sabadoM.toFixed(2)}</div>
+                </div>
+                <div class="feriado">
+                    <label for="feriado">Feriado/Domingo/Sabado de tarde:</label>
+                    <div id="feriado">${recibo.feriado.toFixed(2)}</div>
+                </div>
+            </div>
+        </div>
+        `;
+    }
 
+    mostrarResultados();
+    mostrarHistorialRecibos();
+    Swal.fire({
+        title: '¿Desea hacer un screenshot?',
+        imageUrl: "../img/ejemploScreen.png",
+        imageAlt: 'Imagen de ejemplo',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No',
+        customClass: {
+            container: 'swal2-container',
+            popup: 'swal2-modal',
+            title: 'swal2-title',
+            content: 'swal2-content',
+            image: 'swal2-image'
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            takeScreenshot();
+        }
+    });
+
+    
     document.getElementById('donar-container').innerHTML = `
 
     <div class="donar-container">
     ¡Apoya nuestro trabajo para seguir actualizando!
     </div>
-    <br>
     <a class="boton4"  href="https://link.mercadopago.com.ar/finantips" target="_blank">¡Donar!</a>
                     
     `;
+    
+}
+
+// Función para mostrar el historial de recibos
+function mostrarHistorialRecibos() {
+
+    let historialHTML = '<h2>Historial de Recibos</h2>';
+
+    if (recibos.length === 0) {
+        historialHTML += '<p>No hay recibos calculados.</p>';
+    } else {
+        historialHTML += `
+        <div class="caja-resultados">
+            <table class="ResultadosCalculo">
+        `;
+        recibos.forEach(recibo => {
+            historialHTML += `
+                    <thead >
+                        <tr>
+                            <th colspan="2">Categoria: ${recibo.categoria}</th>
+                            <th colspan="2">Fecha: ${new Date(recibo.id).toLocaleString()}</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Descripción</th>
+                            <th>Haberes</th>
+                            <th>Deducciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="2">Salario Base</td>
+                            <td>${recibo.salarioBase.toFixed(2)}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Presentismo</td>
+                            <td>${recibo.presentismo.toFixed(2)}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Productividad</td>
+                            <td>${recibo.productividad.toFixed(2)}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Horas Nocturnas</td>
+                            <td>${recibo.horasNocturnas.toFixed(2)}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Horas 50%</td>
+                            <td>${recibo.horas50.toFixed(2)}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Horas 200%</td>
+                            <td>${recibo.horas200.toFixed(2)}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Antigüedad</td>
+                            <td>${recibo.antiguedad.toFixed(2)}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Jubilación</td>
+                            <td></td>
+                            <td>-${recibo.jubilacion.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Ley 19032</td>
+                            <td></td>
+                            <td>-${recibo.ley.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Obra Social</td>
+                            <td></td>
+                            <td>-${recibo.obraSocial.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">SMATA</td>
+                            <td></td>
+                            <td>-${recibo.aporteSindical.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Vales de Comedor</td>
+                            <td></td>
+                            <td>-${recibo.retencionValesComedor.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">IIGG</td>
+                            <td></td>
+                            <td>-${recibo.retencion.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Sueldo Bruto</td>
+                            <td colspan="2" style=" text-align: center;">${recibo.sueldoBruto.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Sueldo Neto</td>
+                            <td colspan="2" style=" text-align: center;">${recibo.sueldoNeto.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <div class="item-historial">
+                                    <button id="eliminar-recibo" class="eliminar-recibo" onclick="eliminarRecibo(${recibo.id})" style="text-align: center;">
+                                        <img src="../img/basurero.png" alt="Eliminar">
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </div>
+            `;
+        });
+        historialHTML += `
+            </div>    
+            </table> 
+                    <div>
+                        <button id="eliminar-historial" class="eliminar-historial" onclick="eliminarHistorial()">Eliminar Historial</button>
+                    </div>`;
+    }
+    document.getElementById('historial-recibos').innerHTML = historialHTML;
+}
+
+
+function eliminarRecibo(id) {
+    // Filtrar el array recibos para excluir el recibo con el ID dado.
+    recibos = recibos.filter(recibo => recibo.id !== id);
+
+    // Actualizar el localStorage con el nuevo array de recibos.
+    localStorage.setItem('recibos', JSON.stringify(recibos));
+
+    // Volver a mostrar el historial actualizado.
+    mostrarHistorialRecibos();
+}
+
+function eliminarHistorial() {
+    console.log("Ejecutando eliminarHisotrial")
+    localStorage.removeItem("recibos");
+    recibos = [];
+    mostrarHistorialRecibos();
 }
 
 function habilitarInput() {
@@ -354,4 +664,35 @@ function habilitarInput() {
     } else {
         datoInput.disabled = false;
     }
+
 }
+
+function takeScreenshot() {
+    console.log("Ejecutando takeScreenshot");
+    const element = document.getElementById('resultados'); // Cambia por el ID correcto
+    if (!element) {
+        console.error('El elemento no existe');
+        return;
+    }
+    console.log('Elemento encontrado:', element);
+
+    html2canvas(element).then(canvas => {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'ReciboSueldo(Finantips).png';
+        link.click();
+    });
+}
+
+
+// Cargar historial al cargar la página
+document.addEventListener('DOMContentLoaded', function () {
+    mostrarHistorialRecibos();
+    const botonCalcular = document.getElementById('calcularSueldo');
+
+    // Agregar un event listener para el evento click
+    botonCalcular.addEventListener('click', function () {
+        calcularSueldo(); // Llamar a la función calcularSueldo() cuando se haga clic en el botón
+    });
+
+});

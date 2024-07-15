@@ -18,6 +18,8 @@
   <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script refer src="../js/sueldoneto.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1304377583650825"
     crossorigin="anonymous"></script>
@@ -78,6 +80,7 @@
       <div class="containerBox2">
 
         <h1>Calculadora de Sueldo</h1>
+
         <div class="actualizacion">
           Incluye aumento de julio del 9,00% aproximado. <br> NO OFICIAL.
         </div>
@@ -165,11 +168,6 @@
           </div>
 
           <div class="formulario-box">
-            <label for="horas-100">Horas 100%:</label>
-            <input type="number" id="horas-100" name="horas-100">
-          </div>
-
-          <div class="formulario-box">
             <label for="horas-200">Horas 200%:</label>
             <input type="number" id="horas-200" name="horas-200">
           </div>
@@ -178,68 +176,8 @@
             <label for="horas-nocturnas">Horas Nocturnas:</label>
             <input type="number" id="horas-nocturnas" name="horas-nocturnas">
           </div>
-          <!--<input type="radio" id="horas-nocturnas" name="horas-nocturnas" value="si">
-          <label for="horas-nocturnas">T. Naranja</label>
-          <input type="radio" id="horas-nocturnas" name="horas-nocturnas" value="si">
-          <label for="horas-nocturnas">T. Blanco</label>
-          <input type="radio" id="horas-nocturnas" name="horas-nocturnas" value="si">
-          <label for="horas-nocturnas">T. Amarillo</label> -->
 
-          <div class="formulario-box">
-            <button class="boton4" type="button" onclick="calcularSueldo()">Calcular Sueldo</button>
-          </div>
-
-          <div class="resultados">
-
-            <div>
-              <label for="sueldoBruto">Sueldo Bruto: $</label>
-              <span id="sueldoBrutoResultado"></span>
-            </div>
-
-            <div>
-              <label for="jubilacion">Jubilacion: $</label>
-              <span id="jubilacionResultado"></span>
-            </div>
-
-            <div>
-              <label for="ley">Ley 19032: $</label>
-              <span id="leyResultado"></span>
-            </div>
-
-            <div>
-              <label for="obraSocial">Obra social: $</label>
-              <span id="obraSocialResultado"></span>
-            </div>
-
-            <div>
-              <label for="sindicato">Sindicato: $</label>
-              <span id="sindicatoResultado"></span>
-            </div>
-
-            <div>
-              <label for="sueldoNeto">Sueldo Neto: $</label>
-              <span id="sueldoNetoResultado"></span>
-            </div>
-
-            <div class="sabadoM">
-              <label for="sabadoM">Sábado produccion de mañana: $</label>
-              <span id="sabadoM"></span>
-            </div>
-
-            <div class="feriado">
-              <label for="feriado">Feriado/Domingo/Sabado de Tarde: $</label>
-              <span id="feriado"></span>
-            </div>
-
-
-
-          </div>
-
-
-
-          <br>
-
-          <h2>Impuesto a las Ganancias</h2>
+          <h2 >Impuesto a las Ganancias</h2>
 
           <div class="formulario-box">
             <label>CONYUGE:</label>
@@ -266,25 +204,20 @@
             </select>
           </div>
 
-          <div class="formulario-box">
-            <label for="montoImponible">Monto Imponible: $</label>
-            <span id="montoImponibleResultado"></span>
-          </div>
+          <button id="calcularSueldo" class="boton4" type="button">Calcular Sueldo</button>
 
-          <div class="formulario-box">
-            <label for="retencion">Retencion Mensual: $</label>
-            <span id="retencionResultado" style="color: red;"></span>
-          </div>
+          <div class="resultados" id="resultados">
 
-
-
-          <div>
-            <label for="bolsillo">Bolsillo: $</label>
-            <span id="bolsilloResultado"></span>
           </div>
 
           <div id="donar-container">
           </div>
+
+          <div id="historial-recibos">
+
+          </div>
+
+
 
         </form>
 
@@ -299,7 +232,7 @@
 
 
     </section>
-    
+
     <section>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1304377583650825"
         crossorigin="anonymous"></script>

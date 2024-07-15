@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Estilos para el header */
 body {
   background-color: #fafafa;
@@ -467,8 +468,8 @@ form {
 
 .containerBox2 {
   text-align: center;
-  margin: 3em;
-  padding: 1.5em;
+  margin: 1em;
+  padding: 1em;
   border-radius: 1em;
   align-items: center;
   justify-content: center;
@@ -477,33 +478,100 @@ form {
   border: 5px solid #14805c;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
+.containerBox2 .actualizacion {
+  margin: 1em auto;
+  border: 2px solid rgb(82, 79, 79);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  max-width: 400px;
+  color: rgb(56, 55, 55);
+  background-color: #bbcbf8;
+}
 .containerBox2 h1 {
   font-size: 2em;
   color: #14805c;
-  justify-content: center;
   padding-bottom: 0.5em;
   border-bottom: 3px solid #14805c;
 }
 .containerBox2 h2 {
+  margin-top: 1em;
   font-size: 1.6em;
   color: #14805c;
-  justify-content: center;
-  padding-bottom: 0.5em;
+  padding-bottom: 1.5em;
   text-decoration: underline;
+  font-weight: 500;
 }
 .containerBox2 .formulario-box {
   margin-top: 1.5em;
+  padding-bottom: 0.5em;
   border-bottom: 2px solid lightgrey;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
+.containerBox2 .caja-resultados {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.containerBox2 .horasExtra {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5em;
+  flex-wrap: wrap;
+}
 .containerBox2 .sabadoM {
-  color: chocolate;
+  background-color: chocolate;
+  color: white;
+  padding: 1em;
+  margin: 0.5em;
+  flex: 1 1 45%;
+  box-sizing: border-box;
 }
 .containerBox2 .feriado {
-  color: blue;
+  background-color: blue;
+  color: white;
+  padding: 1em;
+  margin: 0.5em;
+  flex: 1 1 45%;
+  box-sizing: border-box;
+}
+.containerBox2 .eliminar-historial {
+  background-color: #14805c;
+  color: #fafafa;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.containerBox2 .eliminar-historial:hover {
+  background-color: darkred;
+}
+.containerBox2 .eliminar-recibo {
+  background-color: #fafafa;
+  padding: 0.5em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.containerBox2 .eliminar-recibo img {
+  text-align: center;
+  padding: 0 20px;
+  width: 20px;
+  /* Ancho deseado de la imagen */
+  height: auto;
+  /* Altura automática para mantener la proporción */
+}
+.containerBox2 .eliminar-recibo:hover {
+  background-color: red;
+}
+.containerBox2 .eliminar-recibo:active {
+  background-color: red;
 }
 .containerBox2 label {
   display: inline-block;
@@ -577,19 +645,72 @@ button {
   max-width: 400px;
   margin: 50px auto;
   background-color: #f9f9f9;
+  padding-bottom: 25px;
 }
 
-.actualizacion {
-  margin: 1em auto;
-  border: 2px solid rgb(82, 79, 79);
-  border-radius: 10px;
-  padding: 10px;
+/* TABLAS ESTILOS */
+/* Estilos para la tabla de resultados */
+.ResultadosCalculo {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.ResultadosCalculo th,
+.ResultadosCalculo td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #dddddd;
+}
+
+.ResultadosCalculo thead {
+  background-color: #f2f2f2;
+}
+
+.ResultadosCalculo th {
   text-align: center;
-  max-width: 400px;
-  color: rgb(56, 55, 55);
-  background-color: #bbcbf8;
+  background-color: #14805c;
+  color: white;
+  border: 1px solid #dddddd;
 }
 
+.ResultadosCalculo tbody td {
+  text-align: right;
+}
+
+.ResultadosCalculo tfoot {
+  background-color: #f2f2f2;
+}
+
+.ResultadosCalculo tfoot td {
+  text-align: right;
+  font-weight: bold;
+}
+
+.ResultadosCalculo tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.ResultadosCalculo tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+.ResultadosCalculo td[colspan="2"] {
+  font-weight: bold;
+  text-align: right;
+  background-color: #f2f2f2;
+}
+
+.ResultadosCalculo td:nth-child(3),
+.ResultadosCalculo td:nth-child(4) {
+  font-weight: normal;
+  text-align: right;
+}
+
+/* TABLAS ESTILOS */
+/* Anuncio "EL SANTIA" */
 .anuncioPrivado {
   display: none;
   width: 100%;
@@ -603,6 +724,44 @@ button {
   justify-content: center;
 }
 
+/* Anuncio "EL SANTIA" */
+/* Sweet Alert2 */
+.swal2-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.swal2-popup {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.swal2-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+
+.swal2-title {
+  font-size: 2em;
+}
+
+.swal2-content {
+  font-size: 1.5em;
+}
+
+/* Sweet Alert2 */
 /* FIN sueldoneto main */
 /* Inicio de pesos */
 .financial-main {
@@ -740,6 +899,14 @@ button {
     width: 11em;
     height: 13em;
   }
+  .horasExtra {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sabadoM,
+  .feriado {
+    flex: 1 1 100%;
+  }
 }
 @media only screen and (max-width: 650px) {
   .anuncioPrivado {
@@ -776,6 +943,9 @@ button {
   .box3 {
     height: 150px;
     font-size: 0.8em;
+  }
+  .containerBox2 {
+    margin: 0em;
   }
 }
 @media (max-width: 480px) {

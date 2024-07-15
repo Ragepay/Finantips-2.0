@@ -108,6 +108,16 @@
     height: 13em;
   }
 
+  .horasExtra {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sabadoM,
+  .feriado {
+    flex: 1 1 100%;
+  }
+
 }
 
 @media only screen and (max-width: 650px) {
@@ -153,6 +163,10 @@
   .box3 {
     height: 150px;
     font-size: 0.8em;
+  }
+
+  .containerBox2 {
+    margin: 0em;
   }
 
 }
