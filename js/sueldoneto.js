@@ -27,7 +27,7 @@ let recibos = JSON.parse(localStorage.getItem('recibos')) || [];
 
 
 
-function calcularSueldo() {
+async function calcularSueldo() {
 
     //  Categorias con su respectivo aumento.
     let tm16m = 918760 * AUMENTO;
@@ -248,7 +248,7 @@ function calcularSueldo() {
 
     }
 
-    if ((sueldoBruto > maxCargasSociales) && (chequearSindicato == false)) {
+    if ((sueldoBruto > maxCargasSociales) && (chequearSindicato() == false)) {
         jubilacion = maxCargasSociales * 0.11;
         ley = maxCargasSociales * 0.03;
         obraSocial = maxCargasSociales * 0.03;
@@ -368,7 +368,7 @@ function calcularSueldo() {
         document.getElementById("resultados").innerHTML = `
         <div class="caja-resultados">
 
-            <h3>Resultados</h3>
+            
 
             <table class="ResultadosCalculo">
                 <thead>
@@ -447,7 +447,7 @@ function calcularSueldo() {
                     <tr>
                         <td colspan="2">IIGG</td>
                         <td></td>
-                        <td>-${recibo.retencion.toFixed(2)}</td>
+                        <td style="color:red;">-${recibo.retencion.toFixed(2)}</td>
                     </tr>
                 </tbody>
 
@@ -478,8 +478,8 @@ function calcularSueldo() {
     }
 
     mostrarResultados();
-    mostrarHistorialRecibos();
-    Swal.fire({
+    
+    /*Swal.fire({
         title: '¿Desea hacer un screenshot?',
         imageUrl: "../img/ejemploScreen.png",
         imageAlt: 'Imagen de ejemplo',
@@ -499,17 +499,17 @@ function calcularSueldo() {
             takeScreenshot();
         }
     });
+    */
 
     
     document.getElementById('donar-container').innerHTML = `
 
     <div class="donar-container">
     ¡Apoya nuestro trabajo para seguir actualizando!
-    </div>
-    <a class="boton4"  href="https://link.mercadopago.com.ar/finantips" target="_blank">¡Donar!</a>
-                    
+    <a class="boton4"  href="https://link.mercadopago.com.ar/finantips" target="_blank">¡Donar!</a>   
+    </div>           
     `;
-    
+   mostrarHistorialRecibos();
 }
 
 // Función para mostrar el historial de recibos
@@ -522,10 +522,10 @@ function mostrarHistorialRecibos() {
     } else {
         historialHTML += `
         <div class="caja-resultados">
-            <table class="ResultadosCalculo">
-        `;
+            `;
         recibos.forEach(recibo => {
             historialHTML += `
+            <table class="ResultadosCalculo">
                     <thead >
                         <tr>
                             <th colspan="2">Categoria: ${recibo.categoria}</th>
@@ -602,7 +602,7 @@ function mostrarHistorialRecibos() {
                         <tr>
                             <td colspan="2">IIGG</td>
                             <td></td>
-                            <td>-${recibo.retencion.toFixed(2)}</td>
+                            <td style="color:red;">-${recibo.retencion.toFixed(2)}</td>
                         </tr>
                         <tr>
                             <td colspan="2">Sueldo Bruto</td>
@@ -614,25 +614,42 @@ function mostrarHistorialRecibos() {
                         </tr>
                         <tr>
                             <td colspan="4">
-                                <div class="item-historial">
+                                <div id="item-historial">
                                     <button id="eliminar-recibo" class="eliminar-recibo" onclick="eliminarRecibo(${recibo.id})" style="text-align: center;">
-                                        <img src="../img/basurero.png" alt="Eliminar">
+                                        ELIMINAR
                                     </button>
                                 </div>
                             </td>
                         </tr>
                     </tbody>
-                </div>
+                </table> 
             `;
         });
         historialHTML += `
             </div>    
-            </table> 
+            
                     <div>
                         <button id="eliminar-historial" class="eliminar-historial" onclick="eliminarHistorial()">Eliminar Historial</button>
                     </div>`;
     }
     document.getElementById('historial-recibos').innerHTML = historialHTML;
+
+    function takeScreenshot() {
+        console.log("Ejecutando takeScreenshot");
+        const element = document.getElementById('resultados'); // Cambia por el ID correcto
+        if (!element) {
+            console.error('El elemento no existe');
+            return;
+        }
+        console.log('Elemento encontrado:', element);
+    
+        html2canvas(element).then(canvas => {
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'ReciboSueldo(Finantips).png';
+            link.click();
+        });
+    }
 }
 
 
@@ -667,22 +684,7 @@ function habilitarInput() {
 
 }
 
-function takeScreenshot() {
-    console.log("Ejecutando takeScreenshot");
-    const element = document.getElementById('resultados'); // Cambia por el ID correcto
-    if (!element) {
-        console.error('El elemento no existe');
-        return;
-    }
-    console.log('Elemento encontrado:', element);
 
-    html2canvas(element).then(canvas => {
-        const link = document.createElement('a');
-        link.href = canvas.toDataURL('image/png');
-        link.download = 'ReciboSueldo(Finantips).png';
-        link.click();
-    });
-}
 
 
 // Cargar historial al cargar la página
@@ -696,3 +698,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
