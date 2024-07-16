@@ -451,7 +451,7 @@ async function calcularSueldo() {
                         <td>-${recibo.retencionValesComedor.toFixed(2)}</td>
                     </tr>
                     <tr>
-                        <td colspan="2">IIGG</td>
+                        <td colspan="2">Impuesto a las Ganancias</td>
                         <td></td>
                         <td style="color:red;">-${recibo.retencion.toFixed(2)}</td>
                     </tr>
@@ -611,7 +611,7 @@ function mostrarHistorialRecibos() {
                             <td>-${recibo.retencionValesComedor.toFixed(2)}</td>
                         </tr>
                         <tr>
-                            <td colspan="2">IIGG</td>
+                            <td colspan="2">Impuesto a las Ganancias</td>
                             <td></td>
                             <td style="color:red;">-${recibo.retencion.toFixed(2)}</td>
                         </tr>
@@ -667,20 +667,45 @@ function takeScreenshot() {
 */
 
 function eliminarRecibo(id) {
-    // Filtrar el array recibos para excluir el recibo con el ID dado.
-    recibos = recibos.filter(recibo => recibo.id !== id);
+    Swal.fire({
+        title: '¿Desea eliminar?',
+        text: 'No se podra revertir la acción.',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No',
+    }).then((result) => {
+        if (result.isConfirmed) {
 
-    // Actualizar el localStorage con el nuevo array de recibos.
-    localStorage.setItem('recibos', JSON.stringify(recibos));
+            // Filtrar el array recibos para excluir el recibo con el ID dado.
+            recibos = recibos.filter(recibo => recibo.id !== id);
 
-    // Volver a mostrar el historial actualizado.
-    mostrarHistorialRecibos();
+            // Actualizar el localStorage con el nuevo array de recibos.
+            localStorage.setItem('recibos', JSON.stringify(recibos));
+
+        }
+        mostrarHistorialRecibos()
+    });
+    mostrarHistorialRecibos()
 }
 
 function eliminarHistorial() {
-    console.log("Ejecutando eliminarHisotrial")
-    localStorage.removeItem("recibos");
-    recibos = [];
+    Swal.fire({
+        title: '¿Estas seguro que deseas eliminar todo el historial?',
+        text: 'No se podra revertir la acción.',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            //  Eliminar la clave "recibos" del local storage.
+            localStorage.removeItem("recibos");
+            //  Vaciar el array de objetos.
+            recibos = [];
+        }
+        mostrarHistorialRecibos()
+    });
     mostrarHistorialRecibos();
 }
 
@@ -708,4 +733,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
-
