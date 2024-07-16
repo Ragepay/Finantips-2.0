@@ -4,7 +4,7 @@
 .containerBox2 {
   text-align: center;
   margin: 1em;
-  margin-bottom: 2em ;
+  margin-bottom: 2em;
   padding: 1em;
   border-radius: 1em;
   justify-content: center;
@@ -82,6 +82,12 @@
       border: 2px solid $colorverde;
       border-radius: 3px;
     }
+
+    .downloadFile{
+      height: 40px;
+      width: 40px;
+    }
+
   }
 
   .horasExtra {
@@ -157,7 +163,6 @@
 
   }
 
-
   label {
     display: inline-block;
     width: 200px;
@@ -194,7 +199,6 @@ button {
   margin-top: 1em;
   margin-bottom: 1em;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
 }
 
 .boton4:hover {

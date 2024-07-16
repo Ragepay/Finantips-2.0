@@ -24,9 +24,6 @@ const valesComedorTotal = 22 * 827;
 // Declaracion de array y obtencion de elementos guardados en localStorage.
 let recibos = JSON.parse(localStorage.getItem('recibos')) || [];
 
-
-
-
 async function calcularSueldo() {
 
     //  Categorias con su respectivo aumento.
@@ -368,10 +365,7 @@ async function calcularSueldo() {
     function mostrarResultados() {
         document.getElementById("resultados").innerHTML = `
         <div class="caja-resultados">
-
-            
-
-            <table class="ResultadosCalculo">
+            <table class="ResultadosCalculo" id="Resultado${recibo.id}">
                 <thead>
                     <tr>
                         <th colspan="2">Categoria: ${recibo.categoria}</th>
@@ -479,34 +473,16 @@ async function calcularSueldo() {
                     <div id="feriado">${recibo.feriado.toFixed(2)}</div>
                 </div>
             </div>
+            
         </div>
         `;
     }
-
-    mostrarResultados();
-
-    /*Swal.fire({
-        title: '¿Desea hacer un screenshot?',
-        imageUrl: "../img/ejemploScreen.png",
-        imageAlt: 'Imagen de ejemplo',
-        icon: 'question',
-        showCancelButton: true,
-        confirmButtonText: 'Sí',
-        cancelButtonText: 'No',
-        customClass: {
-            container: 'swal2-container',
-            popup: 'swal2-modal',
-            title: 'swal2-title',
-            content: 'swal2-content',
-            image: 'swal2-image'
-        }
-    }).then((result) => {
-        if (result.isConfirmed) {
-            takeScreenshot();
-        }
-    });
+     /*
+        <button class="boton4" id="botonCapturar">
+            <img src="../img/file.png" alt="Descaargar Recibo" class="downloadFile">
+        </button>
     */
-
+    mostrarResultados();
 
     document.getElementById('donar-container').innerHTML = `
 
@@ -647,24 +623,7 @@ function mostrarHistorialRecibos() {
 
 
 }
-/*
-function takeScreenshot() {
-    console.log("Ejecutando takeScreenshot");
-    const element = document.getElementById('resultados'); // Cambia por el ID correcto
-    if (!element) {
-        console.error('El elemento no existe');
-        return;
-    }
-    console.log('Elemento encontrado:', element);
 
-    html2canvas(element).then(canvas => {
-        const link = document.createElement('a');
-        link.href = canvas.toDataURL('image/png');
-        link.download = 'ReciboSueldo(Finantips).png';
-        link.click();
-    });
-}
-*/
 
 function eliminarRecibo(id) {
     Swal.fire({
