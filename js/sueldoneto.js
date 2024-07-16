@@ -63,7 +63,7 @@ async function calcularSueldo() {
 
 
     //  Categoria y asignación de sueldoBase y base para otros calculos. Default para ingresar sueldo bruto de fuera de convenio.
-    //---------------------------------------------------------------------------------------------------------------------------
+    //------------------------- --------------------------------------------------------------------------------------------------
     switch (categoria) {
         case "T/M 0-6":
             sueldoBase = tm16m;
