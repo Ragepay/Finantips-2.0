@@ -533,6 +533,10 @@ footer .footer-left ul li a:hover {
   border: 2px solid #14805c;
   border-radius: 3px;
 }
+.containerBox2 .caja-resultados .downloadFile {
+  height: 40px;
+  width: 40px;
+}
 .containerBox2 .horasExtra {
   display: flex;
   justify-content: space-between;

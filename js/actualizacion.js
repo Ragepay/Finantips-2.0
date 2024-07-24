@@ -1,4 +1,3 @@
-
 // Fecha de actualizacion.
 //-----------------------------------------------------------------------
 const fechadeUltimaActualizacion = document.getElementById("fecha");
@@ -14,6 +13,11 @@ function formatDate(date) {
 const currentDate = new Date();
 fechadeUltimaActualizacion.innerText = formatDate(currentDate);
 //-----------------------------------------------------------------------
+
 //  Ultiam version.
+//-----------------------------------------------------------------------
 const ultimaVersion = document.getElementById("version");
-ultimaVersion.innerText = "Version: 1.4.8";
+ultimaVersion.innerText = "Version: 1.4.9";
+//-----------------------------------------------------------------------
+
+//  VARIABLES DE CALCULO
