@@ -88,17 +88,17 @@
                 <div class="formulario-box">
                     <label>¿Casado?:</label>
                     <div>
-                        <input type="radio" id="conyugeSi" name="conyuge" value="si" >
+                        <input type="radio" id="conyugeSi" name="conyuge" value="si" onchange="calcularSueldo()">
                         <label for="conyugeSi">Sí</label>
                     </div>
                     <div>
-                        <input type="radio" id="conyugeNo" name="conyuge" value="no" >
+                        <input type="radio" id="conyugeNo" name="conyuge" value="no" onchange="calcularSueldo()">
                         <label for="conyugeNo">No</label>
                     </div>
                 </div>
                 <div class="formulario-box">
                     <label for="hijos">HIJOS:</label>
-                    <select id="hijos" name="hijos" >
+                    <select id="hijos" name="hijos" onchange="calcularSueldo()">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
