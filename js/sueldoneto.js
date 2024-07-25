@@ -4,7 +4,7 @@
 const AUMENTO = 1.2248 * 1.0913;
 
 // Maxima retencion de las cargas sociales.
-const maxCargasSociales = 2359712.22;
+const maxCargasSociales = 2467787.04;
 
 // calcularsueldo.com const maxCargasSociales = 2265033.81;
 
