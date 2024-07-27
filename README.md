@@ -44,6 +44,5 @@
 
 ## URL
 
-```bash
 https://finantips.netlify.app/
 
