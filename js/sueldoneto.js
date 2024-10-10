@@ -1,10 +1,10 @@
 /* Declaracion de variables que van a ser actualizadas. */
 //----------------------------------------------------------------------------------
 // Aumento de    Mayo  | Julio  
-const AUMENTO = 1.2248 * 1.0913;
+const AUMENTO = 1.2248 * 1.0913 * 1.1216;
 
-// Maxima retencion de las cargas sociales.
-const maxCargasSociales = 2467787.04;
+// Maxima retencion de las cargas sociales (Sueldo Bruto).
+const maxCargasSociales = 2567238.86;
 
 // calcularsueldo.com const maxCargasSociales = 2265033.81;
 
@@ -18,7 +18,7 @@ const hijo = 122341.33;
 let minimoImponible = minimoNoImponible + deduccionEspecial;
 
 //  Retencion vales de comedro.
-const valesComedorTotal = 22 * 827;
+const valesComedorTotal = 22 * 827 * 1.04 * 1.042;
 //----------------------------------------------------------------------------------
 
 // Declaracion de array y obtencion de elementos guardados en localStorage.
@@ -477,11 +477,11 @@ async function calcularSueldo() {
         </div>
         `;
     }
-     /*
-        <button class="boton4" id="botonCapturar">
-            <img src="../img/file.png" alt="Descaargar Recibo" class="downloadFile">
-        </button>
-    */
+    /*
+       <button class="boton4" id="botonCapturar">
+           <img src="../img/file.png" alt="Descaargar Recibo" class="downloadFile">
+       </button>
+   */
     mostrarResultados();
 
     document.getElementById('donar-container').innerHTML = `
