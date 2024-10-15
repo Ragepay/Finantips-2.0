@@ -1,7 +1,7 @@
 /* Declaracion de variables que van a ser actualizadas. */
 //----------------------------------------------------------------------------------
 // Aumento de    Mayo  | Julio  
-const AUMENTO = 1.2248 * 1.0913 * 1.1216;
+const AUMENTO = 1.2248 * 1.0913 * 1.1288;
 
 // Maxima retencion de las cargas sociales (Sueldo Bruto).
 const maxCargasSociales = 2567238.86;
