@@ -303,10 +303,7 @@ async function calcularSueldo() {
     }
 
     // Construccion calculo de retencion con escalas.
-
-
     const escala = [...escalaActualizada];
-    console.log(escala)
     const numRet = [5, 9, 12, 15, 19, 23, 27, 31, 35];
 
     let retencion = 0;
@@ -326,13 +323,15 @@ async function calcularSueldo() {
         }
     }
 
+
     if (isNaN(retencion)) {
         retencion = 0;
     }
-
+    
+    // Le restamso la retencion al sueldo Neto.
+    sueldoNeto -= retencion;
+    
     //  Creacion de los Objetos "reciboSueldo" por propiedad que ingrese, para poder almacenar y mostar por localstorage.
-
-
     function ReciboSueldo(categoria, id, salarioBase, presentismo, produtivdad, plusMantenimiento, horasNocturnas, horas50, horas200, antiguedad, retencionValesComedor, jubilacion, ley, obraSocial, aporteSindical, sueldoBruto, sueldoNeto, sabadoM, feriado, retencion) {
         this.categoria = categoria || "Sin categoria";
         this.id = id;
