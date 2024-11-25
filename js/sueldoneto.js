@@ -9,13 +9,17 @@ const maxCargasSociales = 2567238.86;
 // calcularsueldo.com const maxCargasSociales = 2265033.81;
 
 // Minimos no Imponibles de Impuesto a las ganancias.
-const minimoNoImponible = 257586.25;
-const deduccionEspecial = 1236414.00;
+const minimoNoImponible = 269048.84;//257586.25;
+const deduccionEspecial = 1291434.42;//1236414.00;
 
 // Valores de deduccion de hijo, Conyuge y minino Imponible.
-const conyuge = 242594.4;
-const hijo = 122341.33;
+const conyuge = 253390.04;//242594.4;
+const hijo = 127785.52;//122341.33;
 let minimoImponible = minimoNoImponible + deduccionEspecial;
+
+// Escalas de Ganancias.
+let escalaActualizada = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2025000, 3037500, 1000000000000];
+escalaActualizada = escalaActualizada.map(valor => valor * 1.0445);
 
 //  Retencion vales de comedro.
 const valesComedorTotal = 22 * 827 * 1.04 * 1.042;
@@ -301,7 +305,8 @@ async function calcularSueldo() {
     // Construccion calculo de retencion con escalas.
 
 
-    const escala = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2050000, 3037500, 1000000000000000];
+    const escala = [...escalaActualizada];
+    console.log(escala)
     const numRet = [5, 9, 12, 15, 19, 23, 27, 31, 35];
 
     let retencion = 0;

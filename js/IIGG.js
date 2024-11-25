@@ -2,16 +2,21 @@
 //----------------------------------------------------------------------------------
 // Maxima retencion de las cargas sociales.
 //const maxCargasSociales = 2359712.22;
-const maxCargasSociales = 2467787.04;
+const maxCargasSociales = 2567238.86;
 
 /* Impuesto a las Ganancias */
 // Minimos no Imponibles de Impuesto a las ganancias.
-const minimoNoImponible = 257586.25;
-const deduccionEspecial = 1236414.00;
+const minimoNoImponible = 269048.84;//257586.25;
+const deduccionEspecial = 1291434.42;//1236414.00;
+
 // Valores de deduccion de hijo, Conyuge y minino Imponible.
 const conyuge = 242594.4;
 const hijo = 122341.33;
 let minimoImponible = minimoNoImponible + deduccionEspecial;
+
+// Escalas de Ganancias.
+let escalaActualizada = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2025000, 3037500, 1000000000000];
+escalaActualizada = escalaActualizada.map(valor => valor * 1.0445);
 //----------------------------------------------------------------------------------
 
 //  Funcion Principal.
@@ -144,7 +149,7 @@ function calcularSueldo() {
     // Construccion calculo de retencion con escalas.
 
 
-    const escala = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2050000, 3037500, 1000000000000000];
+    const escala = [...escalaActualizada];
     const numRet = [5, 9, 12, 15, 19, 23, 27, 31, 35];
 
     let retencion = 0;
