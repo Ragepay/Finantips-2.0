@@ -2,7 +2,7 @@
 //----------------------------------------------------------------------------------
 // Maxima retencion de las cargas sociales.
 //const maxCargasSociales = 2359712.22;
-const maxCargasSociales = 2567238.86;
+const maxCargasSociales = 2910574.49;
 
 /* Impuesto a las Ganancias */
 // Minimos no Imponibles de Impuesto a las ganancias.
@@ -10,8 +10,8 @@ const minimoNoImponible = 269048.84;//257586.25;
 const deduccionEspecial = 1291434.42;//1236414.00;
 
 // Valores de deduccion de hijo, Conyuge y minino Imponible.
-const conyuge = 242594.4;
-const hijo = 122341.33;
+const conyuge = 253390.04;//242594.4;
+const hijo = 127785.52;//122341.33;
 let minimoImponible = minimoNoImponible + deduccionEspecial;
 
 // Escalas de Ganancias.
