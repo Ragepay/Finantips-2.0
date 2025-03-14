@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch scss/main.scss css/styles.css"
+    "sass": "sass --watch scss/main.scss css/styles.css",
+    "push": "git add . && git commit -m \"Actualizacion de ganancias.\" && git push"
   },
   "keywords": [],
   "author": "",

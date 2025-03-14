@@ -1,28 +1,30 @@
 /* Declaracion de variables que van a ser actualizadas. */
 //----------------------------------------------------------------------------------
-// Aumento de    Mayo  | Julio  | Octubre | Enero
-const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882;
+// Aumento de    Mayo  | Julio  | Octubre | Enero | Marzo
+const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0742;
+// AUMENTO de GANANCIAS EN GENERAL
+const aumentoGanancias = 1 * 1.212997982076;
 
 // Maxima retencion de las cargas sociales (Sueldo Bruto).
-const maxCargasSociales = 2910574.49;
+const maxCargasSociales = 3055220.44;
 
 // calcularsueldo.com const maxCargasSociales = 2265033.81;
 
 // Minimos no Imponibles de Impuesto a las ganancias.
-const minimoNoImponible = 269048.84;//257586.25;
-const deduccionEspecial = 1291434.42;//1236414.00;
+const minimoNoImponible = 269048.84 * aumentoGanancias;//257586.25;
+const deduccionEspecial = 1291434.42 * aumentoGanancias;//1236414.00;
 
 // Valores de deduccion de hijo, Conyuge y minino Imponible.
-const conyuge = 253390.04;//242594.4;
-const hijo = 127785.52;//122341.33;
+const conyuge = 253390.04 * aumentoGanancias;//242594.4;
+const hijo = 127785.52 * aumentoGanancias;//122341.33;
 let minimoImponible = minimoNoImponible + deduccionEspecial;
 
 // Escalas de Ganancias.
 let escalaActualizada = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2025000, 3037500, 1000000000000];
-escalaActualizada = escalaActualizada.map(valor => valor * 1.0445);
+escalaActualizada = escalaActualizada.map(valor => valor * 1.0445 * aumentoGanancias);
 
 //  Retencion vales de comedro.
-const valesComedorTotal = 22 * 827 * 1.04 * 1.042;
+const valesComedorTotal = 22 * 827 * 1.04 * 1.042 * 1.1563;
 //----------------------------------------------------------------------------------
 
 // Declaracion de array y obtencion de elementos guardados en localStorage.
@@ -327,10 +329,10 @@ async function calcularSueldo() {
     if (isNaN(retencion)) {
         retencion = 0;
     }
-    
+
     // Le restamso la retencion al sueldo Neto.
     sueldoNeto -= retencion;
-    
+
     //  Creacion de los Objetos "reciboSueldo" por propiedad que ingrese, para poder almacenar y mostar por localstorage.
     function ReciboSueldo(categoria, id, salarioBase, presentismo, produtivdad, plusMantenimiento, horasNocturnas, horas50, horas200, antiguedad, retencionValesComedor, jubilacion, ley, obraSocial, aporteSindical, sueldoBruto, sueldoNeto, sabadoM, feriado, retencion) {
         this.categoria = categoria || "Sin categoria";

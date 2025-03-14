@@ -2,21 +2,24 @@
 //----------------------------------------------------------------------------------
 // Maxima retencion de las cargas sociales.
 //const maxCargasSociales = 2359712.22;
-const maxCargasSociales = 2910574.49;
+const maxCargasSociales = 3055220.44;
+
+// AUMENTO de GANANCIAS EN GENERAL
+const AUMENTO = 1 * 1.212997982076;
 
 /* Impuesto a las Ganancias */
 // Minimos no Imponibles de Impuesto a las ganancias.
-const minimoNoImponible = 269048.84;//257586.25;
-const deduccionEspecial = 1291434.42;//1236414.00;
+const minimoNoImponible = 269048.84 * AUMENTO;//257586.25;
+const deduccionEspecial = 1291434.42 * AUMENTO;//1236414.00;
 
 // Valores de deduccion de hijo, Conyuge y minino Imponible.
-const conyuge = 253390.04;//242594.4;
-const hijo = 127785.52;//122341.33;
+const conyuge = 253390.04 * AUMENTO;//242594.4;
+const hijo = 127785.52 * AUMENTO;//122341.33;
 let minimoImponible = minimoNoImponible + deduccionEspecial;
 
 // Escalas de Ganancias.
 let escalaActualizada = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2025000, 3037500, 1000000000000];
-escalaActualizada = escalaActualizada.map(valor => valor * 1.0445);
+escalaActualizada = escalaActualizada.map(valor => valor * 1.0445 * AUMENTO);
 //----------------------------------------------------------------------------------
 
 //  Funcion Principal.
@@ -174,11 +177,11 @@ function calcularSueldo() {
     if (isNaN(retencion)) {
         retencion = 0;
     }
-    
+
 
     let alicuota = 0.00;
     alicuota = (retencion / sueldoBruto) * 100;
-    
+
 
     if (isNaN(alicuota)) {
         alicuota = 0.00;
