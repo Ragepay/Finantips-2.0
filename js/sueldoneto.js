@@ -1,7 +1,7 @@
 /* Declaracion de variables que van a ser actualizadas. */
 //----------------------------------------------------------------------------------
-// Aumento de    Mayo  | Julio  | Octubre | Enero | Marzo
-const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0742;
+// Aumento de    Mayo  | Julio  | Octubre | Enero | Abril
+const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882;
 // AUMENTO de GANANCIAS EN GENERAL
 const aumentoGanancias = 1 * 1.212997982076;
 
