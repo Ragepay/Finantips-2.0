@@ -17,7 +17,7 @@ fechadeUltimaActualizacion.innerText = formatDate(currentDate);
 //  Ultiam version.
 //-----------------------------------------------------------------------
 const ultimaVersion = document.getElementById("version");
-ultimaVersion.innerText = "Version: 1.5.0";
+ultimaVersion.innerText = "Version: 1.5.2";
 //-----------------------------------------------------------------------
 
 //  VARIABLES DE CALCULO
