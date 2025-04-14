@@ -2,7 +2,7 @@
 //----------------------------------------------------------------------------------
 // Maxima retencion de las cargas sociales.
 //const maxCargasSociales = 2359712.22;
-const maxCargasSociales = 3055220.44;
+const maxCargasSociales = 3128545.73;
 
 // AUMENTO de GANANCIAS EN GENERAL
 const AUMENTO = 1 * 1.212997982076;
