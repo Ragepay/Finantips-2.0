@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Este es el proyecto final del curso \"Desarrollo web\" de CoderHouse.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch scss/main.scss css/styles.css",
-    "push": "git add . && git commit -m \"Actualizacion de ganancias.\" && git push"
+    "push": "git add . && git commit -m \"Cargas sociales y aumento de Toyota Jul 25'.\" && git push"
   },
   "keywords": [],
   "author": "",

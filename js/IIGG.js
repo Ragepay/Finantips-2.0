@@ -1,8 +1,9 @@
+// Importacion de variables de actualizacion de ganancias y cargas sociales.
+
 /* Declaracion de variables que van a ser actualizadas. */
 //----------------------------------------------------------------------------------
 // Maxima retencion de las cargas sociales.
-//const maxCargasSociales = 2359712.22;
-const maxCargasSociales = 3128545.73;
+const maxCargasSociales = 3385490.05;
 
 // AUMENTO de GANANCIAS EN GENERAL
 const AUMENTO = 1 * 1.212997982076;

@@ -1,12 +1,14 @@
+
+
 /* Declaracion de variables que van a ser actualizadas. */
 //----------------------------------------------------------------------------------
-// Aumento de    Mayo  | Julio  | Octubre | Enero | Abril
-const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 *1.0832;
+// Aumento de    Mayo  | Julio  | Octubre | Enero | Abril | Julio
+const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0832 * 1.0605;
 // AUMENTO de GANANCIAS EN GENERAL
 const aumentoGanancias = 1 * 1.212997982076;
 
 // Maxima retencion de las cargas sociales (Sueldo Bruto).
-const maxCargasSociales = 3128545.73;
+const maxCargasSociales = 3385490.05;
 
 // calcularsueldo.com const maxCargasSociales = 2265033.81;
 
