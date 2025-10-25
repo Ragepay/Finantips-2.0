@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch scss/main.scss css/styles.css",
-    "push": "git add . && git commit -m \"Cargas sociales y aumento de Toyota Octubre 25'.\" && git push"
+    "push": "git add . && git commit -m \"feat: boton de escala salarial externa. fix: estilos en css.\" && git push"
   },
   "keywords": [],
   "author": "",

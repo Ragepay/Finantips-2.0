@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Estilos para el header */
 body {
   background-color: #fafafa;
@@ -52,13 +53,17 @@ header .boton button {
   color: #14805c;
   padding: 9px 25px;
   background-color: #fafafa;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
 header .boton button:hover {
-  transform: scale(1.15);
+  background-color: #14805c;
+  color: #fafafa;
+  border: 2px solid #fafafa;
+  transform: scale(1.08);
+  box-shadow: 0 4px 8px rgba(20, 128, 92, 0.3);
 }
 
 #cotizacionesDolar {
@@ -140,13 +145,13 @@ footer .footer-left ul li a:hover {
   text-decoration: underline;
 }
 
-.footer-right {
-  flex: 1;
-}
 .footer-right h3 {
   color: #e4e3e3;
   font-size: 1.5em;
   margin-bottom: 10px;
+}
+.footer-right {
+  flex: 1;
 }
 .footer-right ul {
   list-style: none;
@@ -732,6 +737,41 @@ button {
   max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
+}
+
+.btn-escalas a {
+  display: inline-block;
+  background: #14805c;
+  color: #fafafa;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 10px rgba(20, 128, 92, 0.25);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn-escalas a::after {
+  content: "↗";
+  margin-left: 8px;
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
+.btn-escalas a:hover {
+  background: #fafafa;
+  color: #14805c;
+  border: 2px solid #14805c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(20, 128, 92, 0.4);
+}
+
+.btn-escalas a:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(20, 128, 92, 0.3);
 }
 
 /* Anuncio "EL SANTIA" */

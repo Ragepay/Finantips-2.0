@@ -64,13 +64,17 @@ header {
             color: $colorverde;
             padding: 9px 25px;
             background-color: $colorblanco;
-            border: none;
+            border: 2px solid transparent;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease 0s;
 
             &:hover{
-                transform: scale(1.15);
+                background-color: $colorverde;
+                color: $colorblanco;
+                border: 2px solid $colorblanco;
+                transform: scale(1.08);
+                box-shadow: 0 4px 8px rgba(20, 128, 92, 0.3);
             }
         }
     }

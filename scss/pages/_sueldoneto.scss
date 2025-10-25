@@ -304,5 +304,41 @@ button {
   box-sizing: border-box;
 }
 
+.btn-escalas a {
+  display: inline-block;
+  background: $colorverde;
+  color: $colorblanco;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 10px rgba(20, 128, 92, 0.25);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn-escalas a::after {
+  content: "↗";
+  margin-left: 8px;
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
+.btn-escalas a:hover {
+  background: $colorblanco;
+  color: $colorverde;
+  border: 2px solid $colorverde;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(20, 128, 92, 0.4);
+}
+
+.btn-escalas a:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(20, 128, 92, 0.3);
+}
+
+
 /* Anuncio "EL SANTIA" */
 /* FIN sueldoneto main */
