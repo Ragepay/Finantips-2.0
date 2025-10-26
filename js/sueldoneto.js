@@ -1,32 +1,21 @@
-
+/* Importación de variables centralizadas desde actualizacion.js */
+import {
+    AUMENTO,
+    maxCargasSociales,
+    minimoNoImponible,
+    deduccionEspecial,
+    conyuge,
+    hijo,
+    escalaActualizada,
+    valesComedorTotal
+} from './actualizacion.js';
 
 /* Declaracion de variables que van a ser actualizadas. */
 //----------------------------------------------------------------------------------
-// Aumento de    Mayo  | Julio  | Octubre | Enero | Abril | Julio | Octubre
-const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0832 * 1.0605 * 1.0609;
-// AUMENTO de GANANCIAS EN GENERAL
-const aumentoGanancias = 1 * 1.212997982076;
 
-// Maxima retencion de las cargas sociales (Sueldo Bruto).
-const maxCargasSociales = 3571608.54;
 
-// calcularsueldo.com const maxCargasSociales = 2265033.81;
-
-// Minimos no Imponibles de Impuesto a las ganancias.
-const minimoNoImponible = 269048.84 * aumentoGanancias;//257586.25;
-const deduccionEspecial = 1291434.42 * aumentoGanancias;//1236414.00;
-
-// Valores de deduccion de hijo, Conyuge y minino Imponible.
-const conyuge = 253390.04 * aumentoGanancias;//242594.4;
-const hijo = 127785.52 * aumentoGanancias;//122341.33;
+// Variables calculadas basadas en las importadas
 let minimoImponible = minimoNoImponible + deduccionEspecial;
-
-// Escalas de Ganancias.
-let escalaActualizada = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2025000, 3037500, 1000000000000];
-escalaActualizada = escalaActualizada.map(valor => valor * 1.0445 * aumentoGanancias);
-
-//  Retencion vales de comedro.
-const valesComedorTotal = 22 * 827 * 1.04 * 1.042 * 1.1563;
 //----------------------------------------------------------------------------------
 
 // Declaracion de array y obtencion de elementos guardados en localStorage.
@@ -632,7 +621,6 @@ function mostrarHistorialRecibos() {
 
 }
 
-
 function eliminarRecibo(id) {
     Swal.fire({
         title: '¿Desea eliminar?',
@@ -689,8 +677,15 @@ function habilitarInput() {
 
 }
 
+
+
 // Cargar historial al cargar la página
 document.addEventListener('DOMContentLoaded', function () {
+    // Exponer las funciones al ámbito global PRIMERO
+    window.eliminarRecibo = eliminarRecibo;
+    window.eliminarHistorial = eliminarHistorial;
+    window.habilitarInput = habilitarInput;
+    
     mostrarHistorialRecibos();
     const botonCalcular = document.getElementById('calcularSueldo');
 
@@ -700,3 +695,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+// Exponer las funciones al ámbito global para que funcionen con onclick
+// IMPORTANTE: Esto debe ir después de que las funciones estén definidas
+window.eliminarRecibo = eliminarRecibo;
+window.eliminarHistorial = eliminarHistorial;
+window.habilitarInput = habilitarInput;

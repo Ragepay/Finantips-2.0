@@ -1,25 +1,35 @@
-// Importacion de variables de actualizacion de ganancias y cargas sociales.
+/* Importación de variables centralizadas desde actualizacion.js */
+import {
+    maxCargasSociales,
+    minimoNoImponible,
+    deduccionEspecial,
+    conyuge,
+    hijo,
+    maxAlquileresDeducibles,
+    escalaActualizada
+} from './actualizacion.js';
 
 /* Declaracion de variables que van a ser actualizadas. */
 //----------------------------------------------------------------------------------
+/*
 // Maxima retencion de las cargas sociales.
 const maxCargasSociales = 3571608.54;
 // AUMENTO de GANANCIAS EN GENERAL
-const AUMENTO = 1 * 1.212997982076;
-
-/* Impuesto a las Ganancias */
+const AUMENTO = 1 * 1.212997982076
 // Minimos no Imponibles de Impuesto a las ganancias.
 const minimoNoImponible = 269048.84 * AUMENTO;//257586.25;
 const deduccionEspecial = 1291434.42 * AUMENTO;//1236414.00;
-
 // Valores de deduccion de hijo, Conyuge y minino Imponible.
 const conyuge = 253390.04 * AUMENTO;//242594.4;
 const hijo = 127785.52 * AUMENTO;//122341.33;
-let minimoImponible = minimoNoImponible + deduccionEspecial;
-
 // Escalas de Ganancias.
 let escalaActualizada = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2025000, 3037500, 1000000000000];
 escalaActualizada = escalaActualizada.map(valor => valor * 1.0445 * AUMENTO);
+*/
+
+
+// Variables calculadas basadas en las importadas
+let minimoImponible = minimoNoImponible + deduccionEspecial;
 //----------------------------------------------------------------------------------
 
 //  Funcion Principal.
@@ -95,6 +105,7 @@ function calcularSueldo() {
     // Conyuge, Hijos y Otras Deducciones.
     let conyugeSi = document.getElementById("conyugeSi");
     let hijos = document.getElementById("hijos").value;
+    let alquiler = document.getElementById("alquiler").value;
     let otrasDeducciones = parseFloat(document.getElementById("otrasDeducciones").value);
 
     if (isNaN(otrasDeducciones)) {
@@ -103,6 +114,11 @@ function calcularSueldo() {
 
     let conyugeDeduccion;
     let hijosDeducciones = hijos * hijo;
+    let alquilerDeduccion = alquiler * 0.4;
+
+    if (alquilerDeduccion > maxAlquileresDeducibles) {
+        alquilerDeduccion = maxAlquileresDeducibles;
+    }
 
     if (conyugeSi.checked) {
         // Si se seleccionó "Sí" sumar el
@@ -112,7 +128,8 @@ function calcularSueldo() {
     }
 
     //  Calculo del minimo no imponible.
-    let montoImponible = sueldoBruto - minimoImponible - jubilacion - ley - obraSocial - sindicatoTotal - otrasDeducciones - conyugeDeduccion;
+    let montoImponible = sueldoBruto - minimoImponible - jubilacion - ley - obraSocial - sindicatoTotal - otrasDeducciones - conyugeDeduccion - alquilerDeduccion;
+    
 
 
     switch (hijos) {
@@ -190,7 +207,7 @@ function calcularSueldo() {
     //  Creacion de los Objetos "reciboSueldo" por propiedad que ingrese, para poder almacenar y mostar por localstorage.
     sueldoNeto -= retencion;
 
-    function ReciboSueldo(id, jubilacion, ley, obraSocial, aporteSindical, sueldoBruto, sueldoNeto, retencion, hijos, conyuge, otrasDeducciones, montoImponible, alicuotaMarginal) {
+    function ReciboSueldo(id, jubilacion, ley, obraSocial, aporteSindical, sueldoBruto, sueldoNeto, retencion, hijos, conyuge, otrasDeducciones, montoImponible, alicuotaMarginal, alquilerDeduccion) {
         this.id = id;
         this.jubilacion = jubilacion || 0;
         this.ley = ley || 0;
@@ -204,11 +221,12 @@ function calcularSueldo() {
         this.otrasDeducciones = otrasDeducciones || 0;
         this.montoImponible = montoImponible || 0;
         this.alicuotaMarginal = alicuotaMarginal || 0;
+        this.alquilerDeduccion = alquilerDeduccion || 0;
     }
 
     //  Creacion del Objeto literal y despues se almacena en el array de objetos.
     let id = Date.now();
-    const recibo = new ReciboSueldo(id, jubilacion, ley, obraSocial, sindicatoTotal, sueldoBruto, sueldoNeto, retencion, hijosDeducciones, conyugeDeduccion, otrasDeducciones, montoImponible, alicuotaMarginal)
+    const recibo = new ReciboSueldo(id, jubilacion, ley, obraSocial, sindicatoTotal, sueldoBruto, sueldoNeto, retencion, hijosDeducciones, conyugeDeduccion, otrasDeducciones, montoImponible, alicuotaMarginal, alquilerDeduccion)
 
 
     // Mostrar los resultados en el formulario.
@@ -272,6 +290,11 @@ function calcularSueldo() {
                         <td colspan="2">Hijos:</td>
                         <td></td>
                         <td>-${recibo.hijos.toLocaleString('es-ES')}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Alquiler:</td>
+                        <td></td>
+                        <td>-${recibo.alquilerDeduccion.toLocaleString('es-ES')}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Otras Deducciones</td>
