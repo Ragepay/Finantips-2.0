@@ -1,7 +1,5 @@
 //  VARIABLES DE CALCULO CENTRALIZADAS
 //-----------------------------------------------------------------------
-/* Variables actualizadas que se exportan a otros módulos */
-
 // Aumento de:    Mayo |  Julio | Octubre| Enero  | Abril  | Julio  | Octubre
 const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0832 * 1.0605 * 1.0609;
 
@@ -26,20 +24,25 @@ const escalaActualizada = escala.map(valor => valor * 1.0445 * aumentoGanancias)
 
 // Retencion vales de comedor.
 const valesComedorTotal = 22 * 827 * 1.04 * 1.042 * 1.1563; // 22.746,73
+//-----------------------------------------------------------------------
 
-// EXPORTACIONES NOMBRADAS
-export {
-    AUMENTO,
-    maxCargasSociales,
-    aumentoGanancias,
-    minimoNoImponible,
-    deduccionEspecial,
-    conyuge,
-    hijo,
-    maxAlquileresDeducibles,
-    escalaActualizada,
-    valesComedorTotal
-};
+//  MENSAJE DE ACTUALIZACIÓN DINÁMICO
+//-----------------------------------------------------------------------
+// Mensaje de actualización centralizado
+export const mensajeActualizacion = "Incluido el aumento de Octubre del 6,09%.";
+
+// Función para cargar el mensaje de actualización en cualquier página
+export function cargarMensajeActualizacion() {
+    const elementoActualizacion = document.getElementById("actualizacion");
+    if (elementoActualizacion) {
+        elementoActualizacion.textContent = mensajeActualizacion;
+    }
+}
+
+// Cargar automáticamente cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function () {
+    cargarMensajeActualizacion();
+});
 //-----------------------------------------------------------------------
 
 
@@ -71,22 +74,16 @@ ultimaVersion.innerText = "Version: 1.6.0";
 
 
 
-//  MENSAJE DE ACTUALIZACIÓN DINÁMICO
-//-----------------------------------------------------------------------
-// Mensaje de actualización centralizado
-export const mensajeActualizacion = "Incluido el aumento de Octubre del 6,09%.";
-
-// Función para cargar el mensaje de actualización en cualquier página
-export function cargarMensajeActualizacion() {
-    const elementoActualizacion = document.getElementById("actualizacion");
-    if (elementoActualizacion) {
-        elementoActualizacion.textContent = mensajeActualizacion;
-    }
-}
-
-// Cargar automáticamente cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function () {
-    cargarMensajeActualizacion();
-});
-//-----------------------------------------------------------------------
-
+//  EXPORTACION DE VARIABLES
+export {
+    AUMENTO,
+    maxCargasSociales,
+    aumentoGanancias,
+    minimoNoImponible,
+    deduccionEspecial,
+    conyuge,
+    hijo,
+    maxAlquileresDeducibles,
+    escalaActualizada,
+    valesComedorTotal
+};
