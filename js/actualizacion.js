@@ -23,7 +23,7 @@ const escala = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2025000, 303
 const escalaActualizada = escala.map(valor => valor * 1.0445 * aumentoGanancias);
 
 // Retencion vales de comedor.
-const valesComedorTotal = 22 * 827 * 1.04 * 1.042 * 1.1563; // 22.746,73
+const valesComedorTotal = 22 * 1471; // 32.362
 //-----------------------------------------------------------------------
 
 //  MENSAJE DE ACTUALIZACIÓN DINÁMICO
