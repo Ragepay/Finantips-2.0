@@ -7,7 +7,7 @@ const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0832 * 1.0605 * 1.0609;
 const maxCargasSociales = 3571608.54; // 3.571.608,54
 
 // AUMENTO de GANANCIAS EN GENERAL
-const aumentoGanancias = 1.212997982076; // 1.212997982076
+const aumentoGanancias = 1.30456087005;
 
 // Mínimos no Imponibles de Impuesto a las Ganancias
 const minimoNoImponible = 269048.84 * aumentoGanancias; // 326.624,37
