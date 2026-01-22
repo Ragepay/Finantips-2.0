@@ -1,12 +1,12 @@
 //  VARIABLES DE CALCULO CENTRALIZADAS
 //-----------------------------------------------------------------------
-// Aumento de:    Mayo |  Julio | Octubre| Enero  | Abril  | Julio  | Octubre
-const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0832 * 1.0605 * 1.0609;
+// Aumento de:    Mayo |  Julio | Octubre| Enero  | Abril  | Julio  | Octubre | Enero 26'
+const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0832 * 1.0605 * 1.0609 * 1.0769;
 
 // Maxima retencion de las cargas sociales (Sueldo Bruto).
-const maxCargasSociales = 3571608.54; // 3.571.608,54
+const maxCargasSociales = 3731212.01; // 3.571.608,54
 
-// AUMENTO de GANANCIAS EN GENERAL
+// AUMENTO de GANANCIAS EN GENERAL desde ?
 const aumentoGanancias = 1.212997982076; // 1.212997982076
 
 // Mínimos no Imponibles de Impuesto a las Ganancias
@@ -23,13 +23,13 @@ const escala = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2025000, 303
 const escalaActualizada = escala.map(valor => valor * 1.0445 * aumentoGanancias);
 
 // Retencion vales de comedor.
-const valesComedorTotal = 22 * 1471; // 32.362
+const valesComedorTotal = 22 * 2652; // 58.344
 //-----------------------------------------------------------------------
 
 //  MENSAJE DE ACTUALIZACIÓN DINÁMICO
 //-----------------------------------------------------------------------
 // Mensaje de actualización centralizado
-export const mensajeActualizacion = "Incluido el aumento de Octubre del 6,09%.";
+export const mensajeActualizacion = "Incluido el aumento de Enero 26' del 7,69%.";
 
 // Función para cargar el mensaje de actualización en cualquier página
 export function cargarMensajeActualizacion() {
@@ -69,7 +69,7 @@ fechadeUltimaActualizacion.innerText = formatDate(currentDate);
 //-----------------------------------------------------------------------
 // Actualizar la versión aquí
 const ultimaVersion = document.getElementById("version");
-ultimaVersion.innerText = "Version: 1.6.0";
+ultimaVersion.innerText = "Version: 1.6.1";
 //-----------------------------------------------------------------------
 
 
