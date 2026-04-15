@@ -20,7 +20,4 @@ for (let i = 0; i < escala.length; i++) {
     }
 }
 
-console.log("La retención es: " + retencion);
-
-//FUNCIONAAAAA
 

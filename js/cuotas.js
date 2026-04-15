@@ -19,7 +19,6 @@ function Comparar() {
     for (let i = 1; i <= cantidadCuotas; i++) {
         let saldo = monto * ( 1 + tasaMensual) - cuota;
         monto = saldo;
-        console.log(monto);
     }
 
     // Calcu
