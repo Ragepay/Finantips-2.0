@@ -256,12 +256,12 @@ function calcularSueldo() {
                         <td></td>
                     </tr>
                     <tr>
-                        <td colspan="2">Deduccion Especial</td>
+                        <td colspan="2">Deducción Especial</td>
                         <td></td>
                         <td>-${deduccionEspecial.toLocaleString('es-ES')}</td>
                     </tr>
                     <tr>
-                        <td colspan="2">Minimo No Imponible</td>
+                        <td colspan="2">Mínimo No Imponible</td>
                         <td></td>
                         <td>-${minimoNoImponible.toLocaleString('es-ES')}</td>
                     </tr>
@@ -286,7 +286,7 @@ function calcularSueldo() {
                         <td>-${recibo.aporteSindical.toLocaleString('es-ES')}</td>
                     </tr>
                     <tr>
-                        <td colspan="2">Conyugue</td>
+                        <td colspan="2">Cónyuge</td>
                         <td></td>
                         <td>-${recibo.conyuge.toLocaleString('es-ES')}</td>
                     </tr>
@@ -314,15 +314,15 @@ function calcularSueldo() {
 
                 <tfoot>
                     <tr>
-                        <td colspan="2">Retencion Mensual</td>
+                        <td colspan="2">Retención Mensual</td>
                         <td colspan="2" style=" text-align: center; color:red;">-${recibo.retencion.toLocaleString('es-ES')}</td>
                     </tr>
                     <tr>
-                        <td colspan="2">Alicuota Marginal</td>
+                        <td colspan="2">Alícuota Marginal</td>
                         <td colspan="2" style=" text-align: center;">${recibo.alicuotaMarginal}%</td>
                     </tr>
                     <tr>
-                        <td colspan="2">Alicuota</td>
+                        <td colspan="2">Alícuota</td>
                         <td colspan="2" style=" text-align: center;">${alicuota.toFixed(2)}%</td>
                     </tr>
                     <tr>

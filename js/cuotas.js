@@ -34,7 +34,7 @@ function Comparar() {
         
     } else{
         // Te conviene precio Financiado.
-        comentario = "Te conviene comprar en cuotas sin interes."
+        comentario = "Te conviene comprar en cuotas sin interés."
     }
 
     // Muestra los resultados

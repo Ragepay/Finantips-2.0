@@ -68,7 +68,9 @@ document.addEventListener('DOMContentLoaded', function () {
 const FECHA_ACTUALIZACION = "21/04/2026";
 
 const fechadeUltimaActualizacion = document.getElementById("fecha");
-fechadeUltimaActualizacion.innerText = `Actualizado: ${FECHA_ACTUALIZACION}`;
+if (fechadeUltimaActualizacion) {
+    fechadeUltimaActualizacion.innerText = `Actualizado: ${FECHA_ACTUALIZACION}`;
+}
 //-----------------------------------------------------------------------
 
 

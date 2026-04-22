@@ -396,15 +396,16 @@ footer img {
 
 /* ── CALCULADORAS ───────────────────────────────────────────────────── */
 .container-box {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.25rem;
   padding: 3.5rem 2rem;
   max-width: 1100px;
   margin: 0 auto;
 }
 .container-box h2 {
-  grid-column: 1/-1;
+  width: 100%;
   font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   color: #14805c;
   font-weight: 700;
@@ -412,7 +413,7 @@ footer img {
   margin: 0 0 1.25rem;
   letter-spacing: -0.02em;
 }
-.container-box .box1, .container-box .box2, .container-box .box3 {
+.container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4 {
   position: relative;
   overflow: hidden;
   border-radius: 22px;
@@ -428,8 +429,10 @@ footer img {
   transition: all 0.22s ease;
   cursor: pointer;
   height: 320px;
+  flex: 0 0 300px;
+  width: 300px;
 }
-.container-box .box1 h3, .container-box .box2 h3, .container-box .box3 h3 {
+.container-box .box1 h3, .container-box .box2 h3, .container-box .box3 h3, .container-box .box4 h3 {
   position: relative;
   z-index: 1;
   color: #fafafa;
@@ -439,11 +442,11 @@ footer img {
   margin: 0 0 0.75rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
-.container-box .box1 .boton, .container-box .box2 .boton, .container-box .box3 .boton {
+.container-box .box1 .boton, .container-box .box2 .boton, .container-box .box3 .boton, .container-box .box4 .boton {
   position: relative;
   z-index: 1;
 }
-.container-box .box1 .boton button, .container-box .box2 .boton button, .container-box .box3 .boton button {
+.container-box .box1 .boton button, .container-box .box2 .boton button, .container-box .box3 .boton button, .container-box .box4 .boton button {
   font-weight: 700;
   color: #14805c;
   padding: 0.6rem 1.75rem;
@@ -455,15 +458,15 @@ footer img {
   font-size: 1.05rem;
   letter-spacing: 0.02em;
 }
-.container-box .box1 .boton button:hover, .container-box .box2 .boton button:hover, .container-box .box3 .boton button:hover {
+.container-box .box1 .boton button:hover, .container-box .box2 .boton button:hover, .container-box .box3 .boton button:hover, .container-box .box4 .boton button:hover {
   background: #0d5c42;
   color: #fafafa;
 }
-.container-box .box1 .boton button, .container-box .box2 .boton button, .container-box .box3 .boton button {
+.container-box .box1 .boton button, .container-box .box2 .boton button, .container-box .box3 .boton button, .container-box .box4 .boton button {
   font-size: 0.88rem;
   padding: 0.5rem 1.5rem;
 }
-.container-box .box1::after, .container-box .box2::after, .container-box .box3::after {
+.container-box .box1::after, .container-box .box2::after, .container-box .box3::after, .container-box .box4::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -471,11 +474,11 @@ footer img {
   border-radius: 22px;
   transition: all 0.22s ease;
 }
-.container-box .box1:hover, .container-box .box2:hover, .container-box .box3:hover {
+.container-box .box1:hover, .container-box .box2:hover, .container-box .box3:hover, .container-box .box4:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 24px rgba(20, 128, 92, 0.3);
 }
-.container-box .box1:hover::after, .container-box .box2:hover::after, .container-box .box3:hover::after {
+.container-box .box1:hover::after, .container-box .box2:hover::after, .container-box .box3:hover::after, .container-box .box4:hover::after {
   background: linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, 0.78) 100%);
 }
 .container-box .box1 {
@@ -486,6 +489,9 @@ footer img {
 }
 .container-box .box3 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url(../img/fotoImpuestoGanancias.jpeg);
+}
+.container-box .box4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url(../img/Pesos.jpg);
 }
 
 /* ── FIN CALCULADORAS ────────────────────────────────────────────────── */
@@ -963,6 +969,30 @@ button {
 /* ── IIGG ────────────────────────────────────────────────────────────── */
 /* Comparte estilos de .containerBox2 y .formulario-box de _sueldoneto.scss */
 /* ── FIN IIGG ────────────────────────────────────────────────────────── */
+/* ── INFLACION ───────────────────────────────────────────────────────── */
+.explicacionInflacion {
+  max-width: 760px;
+  margin: 3.5rem auto;
+  padding: 2rem 3.5rem;
+  background: #fafafa;
+  border-left: 4px solid #14805c;
+  border-radius: 0 14px 14px 0;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07), 0 2px 12px rgba(0, 0, 0, 0.04);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6b7280;
+}
+.explicacionInflacion h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #14805c;
+  margin: 0 0 0.75rem;
+}
+.explicacionInflacion p {
+  margin: 0;
+}
+
+/* ── FIN INFLACION ───────────────────────────────────────────────────── */
 /* ── MEDIA QUERIES ───────────────────────────────────────────────────── */
 /* ── 1200px: pantallas grandes ───────────────────────────────────────── */
 @media only screen and (max-width: 1200px) {
@@ -978,26 +1008,18 @@ button {
   .container-box {
     padding: 2rem;
   }
-  .container-box .box1, .container-box .box2, .container-box .box3 {
+  .container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4 {
     height: 280px;
+    flex: 0 0 260px;
+    width: 260px;
   }
 }
 /* ── 1000px: pantallas medianas ──────────────────────────────────────── */
 @media only screen and (max-width: 1000px) {
-  .container-box {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .container-box h2 {
-    grid-column: 1/-1;
-  }
-  .container-box .box3 {
-    grid-column: 1/-1;
-    max-width: 520px;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .container-box .box1, .container-box .box2, .container-box .box3 {
+  .container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4 {
     height: 250px;
+    flex: 0 0 calc(50% - 0.75rem);
+    width: calc(50% - 0.75rem);
   }
   .financial-main {
     margin: 2rem;
@@ -1116,17 +1138,12 @@ button {
     font-size: 0.92rem;
   }
   .container-box {
-    grid-template-columns: 1fr;
     padding: 1.25rem;
   }
-  .container-box .box1, .container-box .box2, .container-box .box3, .container-box h2 {
-    grid-column: 1/-1;
-  }
-  .container-box .box3 {
-    max-width: 100%;
-  }
-  .container-box .box1, .container-box .box2, .container-box .box3 {
+  .container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4 {
     height: 200px;
+    flex: 0 0 100%;
+    width: 100%;
   }
   .containerBox2 {
     margin: 1.25rem 0.35rem;

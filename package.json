@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch scss/main.scss css/styles.css",
-    "push": "git add . && git commit -m \"feat: Nuevo SEO, agregamos nueva calculadora y algunos fixes.\" && git push"
+    "push": "git add . && git commit -m \"fix: fix exahustivo. No puedo eliminar o eliminar historial de sueldos.\" && git push"
   },
   "keywords": [],
   "author": "",

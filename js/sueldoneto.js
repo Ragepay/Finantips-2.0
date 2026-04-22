@@ -222,8 +222,14 @@ function calcularSueldo() {
 
 
     sueldoBruto = sueldoBase + antiguedadTotal + horas50Total + horas200Total + horasNocturnasTotal + calcularMantenimiento() + calcularProductividad() + calcularPresentismo();
-    let sabadoM = (7 * ((base / a) * (1.5) * (1.04 + 0.01 * (antiguedad - 1)))) + (1.5 * ((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1))));
-    let feriado = 8.5 * (((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1))));
+    let sabadoM, feriado;
+    if (antiguedad == 0) {
+        sabadoM = (7 * (base / a) * 1.5) + (1.5 * (base / a) * 4);
+        feriado = 8.5 * (base / a) * 4;
+    } else {
+        sabadoM = (7 * ((base / a) * (1.5) * (1.04 + 0.01 * (antiguedad - 1)))) + (1.5 * ((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1))));
+        feriado = 8.5 * (((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1))));
+    }
 
 
     //  Sueldo Neto.
@@ -477,7 +483,7 @@ function calcularSueldo() {
 
             <div class="horasExtra">
                 <div class="sabadoM">
-                    <label for="sabadoM">Produccion Sábado de mañana:</label>
+                    <label for="sabadoM">Producción Sábado de mañana:</label>
                     <div id="sabadoM">${recibo.sabadoM.toFixed(2)}</div>
                 </div>
                 <div class="feriado">
@@ -549,8 +555,8 @@ function mostrarHistorialRecibos() {
                             <td></td>
                         </tr>
                         <tr>
-                            <td colspan="2">Horas Nocturnas</td>
-                            <td>${recibo.horasNocturnas.toFixed(2)}</td>
+                            <td colspan="2">Mantenimiento</td>
+                            <td>${recibo.plusMantenimiento.toFixed(2)}</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -646,21 +652,15 @@ function eliminarRecibo(id) {
         cancelButtonText: 'No',
     }).then((result) => {
         if (result.isConfirmed) {
-
-            // Filtrar el array recibos para excluir el recibo con el ID dado.
             recibos = recibos.filter(recibo => recibo.id !== id);
-
-            // Actualizar el localStorage con el nuevo array de recibos.
             try {
                 localStorage.setItem('recibos', JSON.stringify(recibos));
             } catch {
                 console.warn("No se pudo guardar en localStorage.");
             }
-
         }
-        mostrarHistorialRecibos()
+        mostrarHistorialRecibos();
     });
-    mostrarHistorialRecibos()
 }
 
 function eliminarHistorial() {
@@ -673,19 +673,16 @@ function eliminarHistorial() {
         cancelButtonText: 'No',
     }).then((result) => {
         if (result.isConfirmed) {
-            //  Eliminar la clave "recibos" del local storage.
             localStorage.removeItem("recibos");
-            //  Vaciar el array de objetos.
             recibos = [];
         }
-        mostrarHistorialRecibos()
+        mostrarHistorialRecibos();
     });
-    mostrarHistorialRecibos();
 }
 
 function habilitarInput() {
-    categoria = document.getElementById("categoria");
-    datoInput = document.getElementById("sueldoBruto");
+    const categoria = document.getElementById("categoria");
+    const datoInput = document.getElementById("sueldoBruto");
 
     if (categoria.value !== "") {
         datoInput.disabled = true;
@@ -698,25 +695,12 @@ function habilitarInput() {
 
 
 
-// Cargar historial al cargar la página
-document.addEventListener('DOMContentLoaded', function () {
-    // Exponer las funciones al ámbito global PRIMERO
-    window.eliminarRecibo = eliminarRecibo;
-    window.eliminarHistorial = eliminarHistorial;
-    window.habilitarInput = habilitarInput;
-    
-    mostrarHistorialRecibos();
-    const botonCalcular = document.getElementById('calcularSueldo');
-
-    // Agregar un event listener para el evento click
-    botonCalcular.addEventListener('click', function () {
-        calcularSueldo(); // Llamar a la función calcularSueldo() cuando se haga clic en el botón
-    });
-
-});
-
-// Exponer las funciones al ámbito global para que funcionen con onclick
-// IMPORTANTE: Esto debe ir después de que las funciones estén definidas
+// Exponer funciones al ámbito global para onclick en HTML dinámico
 window.eliminarRecibo = eliminarRecibo;
 window.eliminarHistorial = eliminarHistorial;
 window.habilitarInput = habilitarInput;
+
+document.addEventListener('DOMContentLoaded', function () {
+    mostrarHistorialRecibos();
+    document.getElementById('calcularSueldo').addEventListener('click', calcularSueldo);
+});

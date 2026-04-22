@@ -5,6 +5,13 @@ function calcularPlazoFijo() {
   let tasaInteres = parseFloat(document.getElementById("inputTasaInteres").value);
   let meses = parseInt(document.getElementById("inputMeses").value);
   let interesCompuesto = document.getElementById("inputInteresCompuesto").checked;
+
+  if (isNaN(monto) || monto <= 0 || isNaN(tasaInteres) || tasaInteres <= 0 || isNaN(meses) || meses <= 0) {
+    document.getElementById("ganancias").textContent = "";
+    document.getElementById("montoTotal").textContent = "";
+    return;
+  }
+
   let ganancias;
 
   // Calcular las ganancias.
