@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch scss/main.scss css/styles.css",
-    "push": "git add . && git commit -m \"fix: fix exahustivo. No puedo eliminar o eliminar historial de sueldos.\" && git push"
+    "push": "git add . && git commit -m \"fix: Botones eliminar y eliminar historial. Feat: Descarga de recibos\" && git push"
   },
   "keywords": [],
   "author": "",

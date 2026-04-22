@@ -747,6 +747,23 @@ footer img {
   background: #e53935;
   border-color: #e53935;
 }
+.containerBox2 #item-historial .descargar-recibo {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  margin-left: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.22s ease;
+}
+.containerBox2 #item-historial .descargar-recibo:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+.containerBox2 #item-historial .descargar-recibo img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
 
 /* Spans de sabadoM y feriado en resultados */
 #sabadoM, #feriado {

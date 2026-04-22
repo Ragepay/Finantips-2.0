@@ -178,6 +178,26 @@
         border-color: #e53935;
       }
     }
+
+    .descargar-recibo {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.3rem;
+      margin-left: 0.5rem;
+      border-radius: $border-radius-sm;
+      transition: $transition;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.08);
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+        display: block;
+      }
+    }
   }
 }
 

@@ -525,7 +525,7 @@ function mostrarHistorialRecibos() {
             `;
         recibos.forEach(recibo => {
             historialHTML += `
-            <table class="ResultadosCalculo">
+            <table class="ResultadosCalculo" id="tabla-recibo-${recibo.id}">
                     <thead >
                         <tr>
                             <th colspan="2">Categoria: ${recibo.categoria}</th>
@@ -541,103 +541,117 @@ function mostrarHistorialRecibos() {
                     <tbody>
                         <tr>
                             <td colspan="2">Salario Base</td>
-                            <td>${recibo.salarioBase.toFixed(2)}</td>
+                            <td>${(recibo.salarioBase || 0).toFixed(2)}</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td colspan="2">Presentismo</td>
-                            <td>${recibo.presentismo.toFixed(2)}</td>
+                            <td>${(recibo.presentismo || 0).toFixed(2)}</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td colspan="2">Productividad</td>
-                            <td>${recibo.productividad.toFixed(2)}</td>
+                            <td>${(recibo.productividad || 0).toFixed(2)}</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td colspan="2">Mantenimiento</td>
-                            <td>${recibo.plusMantenimiento.toFixed(2)}</td>
+                            <td>${(recibo.plusMantenimiento || 0).toFixed(2)}</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td colspan="2">Horas Nocturnas</td>
-                            <td>${recibo.horasNocturnas.toFixed(2)}</td>
+                            <td>${(recibo.horasNocturnas || 0).toFixed(2)}</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td colspan="2">Horas 50%</td>
-                            <td>${recibo.horas50.toFixed(2)}</td>
+                            <td>${(recibo.horas50 || 0).toFixed(2)}</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td colspan="2">Horas 200%</td>
-                            <td>${recibo.horas200.toFixed(2)}</td>
+                            <td>${(recibo.horas200 || 0).toFixed(2)}</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td colspan="2">Antigüedad</td>
-                            <td>${recibo.antiguedad.toFixed(2)}</td>
+                            <td>${(recibo.antiguedad || 0).toFixed(2)}</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td colspan="2">Jubilación</td>
                             <td></td>
-                            <td>-${recibo.jubilacion.toFixed(2)}</td>
+                            <td>-${(recibo.jubilacion || 0).toFixed(2)}</td>
                         </tr>
                         <tr>
                             <td colspan="2">Ley 19032</td>
                             <td></td>
-                            <td>-${recibo.ley.toFixed(2)}</td>
+                            <td>-${(recibo.ley || 0).toFixed(2)}</td>
                         </tr>
                         <tr>
                             <td colspan="2">Obra Social</td>
                             <td></td>
-                            <td>-${recibo.obraSocial.toFixed(2)}</td>
+                            <td>-${(recibo.obraSocial || 0).toFixed(2)}</td>
                         </tr>
                         <tr>
                             <td colspan="2">SMATA</td>
                             <td></td>
-                            <td>-${recibo.aporteSindical.toFixed(2)}</td>
+                            <td>-${(recibo.aporteSindical || 0).toFixed(2)}</td>
                         </tr>
                         <tr>
                             <td colspan="2">Vales de Comedor</td>
                             <td></td>
-                            <td>-${recibo.retencionValesComedor.toFixed(2)}</td>
+                            <td>-${(recibo.retencionValesComedor || 0).toFixed(2)}</td>
                         </tr>
                         <tr>
                             <td colspan="2">Impuesto a las Ganancias</td>
                             <td></td>
-                            <td style="color:red;">-${recibo.retencion.toFixed(2)}</td>
+                            <td style="color:red;">-${(recibo.retencion || 0).toFixed(2)}</td>
                         </tr>
                         <tr>
                             <td colspan="2">Sueldo Bruto</td>
-                            <td colspan="2" style=" text-align: center;">${recibo.sueldoBruto.toFixed(2)}</td>
+                            <td colspan="2" style=" text-align: center;">${(recibo.sueldoBruto || 0).toFixed(2)}</td>
                         </tr>
                         <tr>
                             <td colspan="2">Sueldo Neto</td>
-                            <td colspan="2" style=" text-align: center;">${recibo.sueldoNeto.toFixed(2)}</td>
+                            <td colspan="2" style=" text-align: center;">${(recibo.sueldoNeto || 0).toFixed(2)}</td>
                         </tr>
                         <tr>
                             <td colspan="4">
                                 <div id="item-historial">
-                                    <button id="eliminar-recibo" class="eliminar-recibo" onclick="eliminarRecibo(${recibo.id})" style="text-align: center;">
+                                    <button type="button" class="eliminar-recibo" data-id="${recibo.id}" style="text-align: center;">
                                         ELIMINAR
+                                    </button>
+                                    <button type="button" class="descargar-recibo" data-id="${recibo.id}" title="Descargar recibo como imagen">
+                                        <img src="../img/file.png" alt="Descargar" style="width:22px; height:22px; vertical-align:middle;">
                                     </button>
                                 </div>
                             </td>
                         </tr>
                     </tbody>
-                </table> 
+                </table>
             `;
         });
         historialHTML += `
-            </div>    
-            
+            </div>
+
                     <div>
-                        <button id="eliminar-historial" class="eliminar-historial" onclick="eliminarHistorial()">Eliminar Historial</button>
+                        <button type="button" class="eliminar-historial" id="eliminar-historial">Eliminar Historial</button>
                     </div>`;
     }
     document.getElementById('historial-recibos').innerHTML = historialHTML;
+
+    document.querySelectorAll('.eliminar-recibo[data-id]').forEach(btn => {
+        btn.addEventListener('click', () => eliminarRecibo(Number(btn.dataset.id)));
+    });
+    document.querySelectorAll('.descargar-recibo[data-id]').forEach(btn => {
+        btn.addEventListener('click', () => descargarRecibo(Number(btn.dataset.id)));
+    });
+    const btnEliminarHistorial = document.getElementById('eliminar-historial');
+    if (btnEliminarHistorial) {
+        btnEliminarHistorial.addEventListener('click', eliminarHistorial);
+    }
 
 
 }
@@ -695,12 +709,25 @@ function habilitarInput() {
 
 
 
+async function descargarRecibo(id) {
+    const tabla = document.getElementById(`tabla-recibo-${id}`);
+    if (!tabla) return;
+    const canvas = await html2canvas(tabla, { scale: 2, backgroundColor: '#ffffff' });
+    const link = document.createElement('a');
+    link.download = `recibo-${new Date(id).toLocaleDateString('es-AR').replace(/\//g, '-')}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+}
+
 // Exponer funciones al ámbito global para onclick en HTML dinámico
 window.eliminarRecibo = eliminarRecibo;
 window.eliminarHistorial = eliminarHistorial;
 window.habilitarInput = habilitarInput;
 
 document.addEventListener('DOMContentLoaded', function () {
+    window.eliminarRecibo = eliminarRecibo;
+    window.eliminarHistorial = eliminarHistorial;
+    window.habilitarInput = habilitarInput;
     mostrarHistorialRecibos();
     document.getElementById('calcularSueldo').addEventListener('click', calcularSueldo);
 });
