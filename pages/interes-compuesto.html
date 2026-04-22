@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculá el crecimiento de tu inversión con interés compuesto. Simulá aportes mensuales, distintas tasas y frecuencias de capitalización.">
+  <meta name="keywords" content="interés compuesto, calculadora inversión, capitalización, aportes mensuales, tasa de interés, finanzas personales, finantips">
+  <meta name="google-adsense-account" content="ca-pub-1304377583650825">
+  <title>Calculadora de Interés Compuesto | FinanTips</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1304377583650825"
+    crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4862KRVMTP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4862KRVMTP');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculadora de Interés Compuesto | FinanTips">
+  <meta property="og:description" content="Calculá el crecimiento de tu inversión con interés compuesto. Simulá aportes mensuales, distintas tasas y frecuencias de capitalización.">
+  <meta property="og:url" content="https://finantips.netlify.app/pages/interes-compuesto.html">
+  <meta property="og:image" content="https://finantips.netlify.app/img/Logo + Finantips.png">
+  <meta property="og:locale" content="es_AR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de Interés Compuesto | FinanTips">
+  <meta name="twitter:description" content="Calculá el crecimiento de tu inversión con interés compuesto. Simulá aportes mensuales, distintas tasas y frecuencias de capitalización.">
+  <link rel="canonical" href="https://finantips.netlify.app/pages/interes-compuesto.html">
+</head>
+
+<body>
+
+  <header></header>
+
+  <main>
+    <section id="cotizacionesDolar">
+      <iframe class="item-iframe-blue" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-blue" frameborder="0"></iframe>
+      <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-mep" frameborder="0"></iframe>
+      <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-contado-con-liquidacion" frameborder="0"></iframe>
+      <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-bancos-y-casas-de-cambio" frameborder="0"></iframe>
+    </section>
+
+    <section>
+      <div class="containerBox2">
+
+        <h1>Calculadora de Interés Compuesto</h1>
+        <p class="ic-descripcion">Simulá cómo crece tu inversión en el tiempo con aportes periódicos y distintas tasas de capitalización. Los campos marcados con <strong>*</strong> son obligatorios.</p>
+
+        <form id="ic-form">
+
+          <div class="ic-paso">
+            <div class="ic-paso-header">Paso 1 — Capital inicial</div>
+            <div class="ic-paso-body">
+              <div class="formulario-box">
+                <label for="icPrincipal">Inversión inicial *</label>
+                <input type="number" id="icPrincipal" min="0" step="0.01" placeholder="1000000">
+              </div>
+              <p class="ic-hint">Monto que tenés disponible para invertir hoy.</p>
+            </div>
+          </div>
+
+          <div class="ic-paso">
+            <div class="ic-paso-header">Paso 2 — Contribución mensual</div>
+            <div class="ic-paso-body">
+              <div class="formulario-box">
+                <label for="icPmt">Aporte mensual</label>
+                <input type="number" id="icPmt" step="0.01" placeholder="0">
+              </div>
+              <p class="ic-hint">Opcional. Usá un valor negativo para simular retiros mensuales.</p>
+            </div>
+          </div>
+
+          <div class="ic-paso">
+            <div class="ic-paso-header">Paso 3 — Plazo</div>
+            <div class="ic-paso-body">
+              <div class="formulario-box">
+                <label for="icAños">Cantidad de años *</label>
+                <input type="number" id="icAños" min="1" max="100" step="1" placeholder="10">
+              </div>
+            </div>
+          </div>
+
+          <div class="ic-paso">
+            <div class="ic-paso-header">Paso 4 — Tasa de interés</div>
+            <div class="ic-paso-body">
+              <div class="formulario-box">
+                <label for="icTasa">Tasa anual estimada (%) *</label>
+                <input type="number" id="icTasa" min="0" step="0.01" placeholder="40">
+              </div>
+              <div class="formulario-box">
+                <label for="icVarianza">Varianza (±%)</label>
+                <input type="number" id="icVarianza" min="0" step="0.01" placeholder="0">
+              </div>
+              <p class="ic-hint">La varianza muestra una comparativa para tasa − varianza, tasa y tasa + varianza.</p>
+            </div>
+          </div>
+
+          <div class="ic-paso">
+            <div class="ic-paso-header">Paso 5 — Frecuencia de capitalización</div>
+            <div class="ic-paso-body">
+              <div class="formulario-box">
+                <label for="icFrecuencia">Capitalizar</label>
+                <select id="icFrecuencia">
+                  <option value="1">Anualmente</option>
+                  <option value="2">Semestralmente</option>
+                  <option value="4">Trimestralmente</option>
+                  <option value="12" selected>Mensualmente</option>
+                  <option value="52">Semanalmente</option>
+                  <option value="365">Diariamente</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <p id="icError" class="ic-error"></p>
+
+          <div class="ic-botones">
+            <button type="button" id="icCalcular" class="boton4">Calcular</button>
+            <button type="button" id="icRestablecer" class="boton4 boton-restablecer">Restablecer</button>
+          </div>
+
+        </form>
+
+        <div id="icResultados"></div>
+
+      </div>
+    </section>
+
+    <div class="explicacionInteresCompuesto">
+      <div class="tituloExplicacion">
+        <h2>¿Cómo funciona el interés compuesto?</h2>
+      </div>
+      <p>
+        El interés compuesto es el mecanismo por el cual los intereses generados en cada período se suman al capital y, a su vez, generan nuevos intereses en los períodos siguientes. A diferencia del interés simple —donde los intereses siempre se calculan sobre el capital original—, en el interés compuesto la base de cálculo crece con el tiempo.<br><br>
+        La fórmula base es: <strong>VF = CI × (1 + r/n)^(n×t)</strong>, donde <em>CI</em> es el capital inicial, <em>r</em> la tasa anual, <em>n</em> la frecuencia de capitalización y <em>t</em> el plazo en años. Cuando se agregan aportes periódicos, cada aporte también se capitaliza por el tiempo restante de la inversión.<br><br>
+        La <strong>frecuencia de capitalización</strong> determina cuántas veces por año se calculan y acumulan los intereses. Capitalizar mensualmente produce más intereses que hacerlo anualmente con la misma tasa nominal, porque los intereses se reinvierten antes.<br><br>
+        La <strong>varianza</strong> permite ver cómo cambia el resultado final si la tasa real resulta ser mayor o menor a la estimada, útil para planificar con margen de incertidumbre.
+      </p>
+    </div>
+  </main>
+
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  </script>
+  <script type="module" src="../js/components.js"></script>
+  <script type="module" src="../js/actualizacion.js"></script>
+  <script type="module" src="../js/interescompuesto.js"></script>
+
+</body>
+
+</html>
