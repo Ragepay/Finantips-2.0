@@ -123,7 +123,7 @@ async function calcularSueldo() {
     function calcularProductividad() {
         let radioProductividadSi = document.getElementById("productividadSi");
         if (radioProductividadSi.checked) {
-            return sueldoBase * 0.15
+            return sueldoBase * 0.14
         }
         return 0
     }
@@ -131,7 +131,7 @@ async function calcularSueldo() {
     function calcularPresentismo() {
         let radioPresentismoSi = document.getElementById("presentismoSi");
         if (radioPresentismoSi.checked) {
-            return sueldoBase * 0.15
+            return sueldoBase * 0.14
         }
         return 0
     }
@@ -222,7 +222,7 @@ async function calcularSueldo() {
         jubilacion = sueldoBruto * 0.11;
         ley = sueldoBruto * 0.03;
         obraSocial = sueldoBruto * 0.03;
-        sindicatoTotal = sueldoBruto * 0.04;
+        sindicatoTotal = sueldoBruto * 0.05;
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - sindicatoTotal - valesComedorTotal;
     }
 
@@ -237,7 +237,7 @@ async function calcularSueldo() {
         jubilacion = maxCargasSociales * 0.11;
         ley = maxCargasSociales * 0.03;
         obraSocial = maxCargasSociales * 0.03;
-        sindicatoTotal = sueldoBruto * 0.04;
+        sindicatoTotal = sueldoBruto * 0.05;
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - sindicatoTotal - valesComedorTotal;
 
     }
