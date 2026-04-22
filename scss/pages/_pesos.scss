@@ -1,57 +1,46 @@
-/* Inicio de pesos */
+/* ── PESOS ───────────────────────────────────────────────────────────── */
 
 .financial-main {
-    margin: 3em;
-    border-radius: 1em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 2em;
-    border: 5px solid $colorverde;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-
-    @media only screen and (max-width: 768px) {
-        flex-direction: column;
-        align-items: center;
-    }
+  margin: $spacing-xl $spacing-lg;
+  border-radius: $border-radius-lg;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-md;
+  padding: $spacing-xl $spacing-lg;
+  background: $colorblanco;
+  border: 1.5px solid $color-border;
+  box-shadow: $shadow-sm;
 }
 
 .instrument {
-    background-color: $colorblanco;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-    width: calc(33.33% - 20px);
+  @include card;
+  width: calc(33.33% - $spacing-md);
+  min-width: 220px;
+  text-align: center;
 
-    @media only screen and (max-width: 1024px) {
-        width: calc(50% - 20px);
-    }
-
-    @media only screen and (max-width: 768px) {
-        width: calc(100% - 20px);
-    }
-}
-
-.instrument img {
+  img {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto $spacing-sm;
     max-width: 100%;
-}
+    height: 120px;
+    object-fit: cover;
+    border-radius: $border-radius-sm;
+  }
 
-.instrument h2 {
+  h2 {
     color: $colorverde;
-    font-size: 1.2rem;
-    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: $font-weight-bold;
+    margin: 0 0 $spacing-xs;
+  }
+
+  p {
+    color: $colorgris;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin: 0;
+  }
 }
 
-.instrument p {
-    color: #333;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-top: 10px;
-}
-
-
-
-/* Fin de Pesos */
+/* ── FIN PESOS ───────────────────────────────────────────────────────── */

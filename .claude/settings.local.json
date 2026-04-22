@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3 -)"
+      "Bash(python3 -)",
+      "Bash(npx sass *)",
+      "Bash(grep -v \"DEPRECATION WARNING\\\\|@import rules\\\\|More info\\\\|sass-lang\\\\|scss\\\\\\\\\\\\\\\\main\\\\|root stylesheet\\\\|│\\\\|╷\\\\|╵\\\\|^ \")",
+      "Bash(grep -v \"^$\")",
+      "Bash(grep -v \"DEPRECATION\\\\|@import\\\\|More info\\\\|sass-lang\\\\|scss\\\\\\\\\\\\\\\\main\\\\|root stylesheet\\\\|│\\\\|╷\\\\|╵\\\\|repetitive\")"
     ]
   }
 }

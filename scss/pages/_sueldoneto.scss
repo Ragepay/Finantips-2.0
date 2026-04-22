@@ -1,344 +1,319 @@
-/* Inicio sueldoneto main */
+/* ── SUELDONETO ─────────────────────────────────────────────────────── */
 
-
+/* Contenedor principal de formularios (compartido con IIGG, cuotas, plazofijo) */
 .containerBox2 {
-  text-align: center;
-  margin: 1em;
-  margin-bottom: 2em;
-  padding: 1em;
-  border-radius: 1em;
-  justify-content: center;
+  max-width: 880px;
+  margin: $spacing-xl auto;
+  padding: $spacing-xl;
+  border-radius: $border-radius-lg;
   display: flex;
   flex-direction: column;
-  border: 5px solid $colorverde;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   align-items: center;
+  background: $colorblanco;
+  border: 1.5px solid $color-border;
+  box-shadow: $shadow-md;
 
   form {
-    max-width: 800px;
+    max-width: 780px;
     width: 100%;
-    align-items: center;
-    margin-bottom: 15px;
-    font-family: Arial, sans-serif;
-  }
-
-  .actualizacion {
-    margin: 1em auto;
-    border: 2px solid rgb(82, 79, 79);
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    max-width: 400px;
-    color: rgb(56, 55, 55);
-    background-color: #bbcbf8;
   }
 
   h1 {
-    font-size: 2em;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     color: $colorverde;
-    padding-bottom: 0.5em;
-    border-bottom: 3px solid $colorverde;
+    font-weight: $font-weight-bold;
+    margin: 0 0 $spacing-md;
+    padding-bottom: $spacing-sm;
+    border-bottom: 3px solid $colorverde-light;
+    letter-spacing: -0.01em;
+    width: 100%;
+    text-align: center;
   }
 
   h2 {
-    margin-top: 1em;
-    font-size: 1.6em;
+    font-size: 1.15rem;
     color: $colorverde;
-    padding-bottom: 1.5em;
-    text-decoration: underline;
-    font-weight: 500;
-
+    font-weight: $font-weight-bold;
+    margin: $spacing-lg 0 $spacing-xs;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid $colorverde-light;
   }
 
   h3 {
-    margin-top: 1em;
-    font-size: 1.6em;
+    font-size: 1.05rem;
     color: $colorverde;
-    padding-bottom: 1.5em;
-    text-decoration: underline;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
+    margin: $spacing-md 0 $spacing-xs;
   }
 
+  .actualizacion {
+    display: inline-block;
+    margin: $spacing-sm auto $spacing-md;
+    border: 1.5px solid #b0c4de;
+    border-radius: $border-radius-sm;
+    padding: 0.5rem 1.2rem;
+    font-size: $font-size-sm;
+    color: #3b5080;
+    background: #e8eef8;
+    font-weight: $font-weight-medium;
+  }
 
   .formulario-box {
-    margin-top: 1.5em;
-    padding-bottom: 0.5em;
-    border-bottom: 2px solid lightgrey;
-    flex-direction: column;
+    display: flex;
     align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    padding: $spacing-sm 0;
+    border-bottom: 1px solid $color-border;
     width: 100%;
+
+    label {
+      display: inline-block;
+      min-width: 200px;
+      font-weight: $font-weight-medium;
+      font-size: 0.95rem;
+      color: $coloroscuro;
+      text-align: left;
+    }
+
+    select,
+    input[type="number"] {
+      flex: 1;
+      min-width: 160px;
+      padding: 0.55rem 0.9rem;
+      border: 2px solid $color-border;
+      border-radius: $border-radius-sm;
+      font-size: 0.95rem;
+      font-family: $font-family;
+      color: $coloroscuro;
+      background: white;
+      transition: $transition;
+      outline: none;
+
+      &:focus {
+        border-color: $colorverde;
+        box-shadow: 0 0 0 3px rgba(20,128,92,0.1);
+      }
+    }
+
+    input[type="radio"] {
+      accent-color: $colorverde;
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+    }
   }
 
   .caja-resultados {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: $colorgris-light;
+    padding: $spacing-lg;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-md;
+    margin-bottom: $spacing-lg;
+    box-shadow: $shadow-sm;
+    width: 100%;
 
-    .ResultadosCalculo {
-      border: 2px solid $colorverde;
-      border-radius: 3px;
-    }
-
-    .downloadFile{
-      height: 40px;
-      width: 40px;
-    }
-
+    .downloadFile { height: 36px; width: 36px; }
   }
 
   .horasExtra {
     display: flex;
     justify-content: space-between;
-    margin: 1.5em;
+    gap: $spacing-sm;
+    margin: $spacing-md 0;
     flex-wrap: wrap;
   }
 
   .sabadoM {
-    background-color: chocolate;
+    background: linear-gradient(135deg, #c0613a, #e07850);
     color: white;
-    padding: 1em;
-    margin: 0.5em;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-sm;
     flex: 1 1 45%;
+    font-weight: $font-weight-medium;
     box-sizing: border-box;
   }
 
   .feriado {
-    background-color: blue;
+    background: linear-gradient(135deg, #3b5cb8, #5272d4);
     color: white;
-    padding: 1em;
-    margin: 0.5em;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-sm;
     flex: 1 1 45%;
+    font-weight: $font-weight-medium;
     box-sizing: border-box;
   }
 
   .eliminar-historial {
-    background-color: $colorverde;
+    background: $colorverde;
     color: $colorblanco;
-    padding: 0.5em 1em;
+    padding: 0.45rem 1rem;
     border: none;
-    border-radius: 5px;
+    border-radius: $border-radius-sm;
     cursor: pointer;
+    font-size: $font-size-sm;
+    transition: $transition;
 
-    &:hover {
-      background-color: #ff4d4d;
-    }
-
-    &:active {
-      background-color: #ff4d4d;
-    }
+    &:hover, &:active { background: #e53935; }
   }
 
   #item-historial {
     display: flex;
-    align-content: center;
     align-items: center;
     justify-content: center;
     height: auto;
 
     .eliminar-recibo {
       color: $colorblanco;
-      background-color: $colorverde;
-      padding: 0.5em;
+      background: $colorverde;
+      padding: 0.45rem 0.9rem;
       border: 1px solid $colorverde;
-      border-radius: 5px;
-      max-width: 200px;
+      border-radius: $border-radius-sm;
       cursor: pointer;
+      font-size: $font-size-sm;
+      transition: $transition;
 
-      &:hover {
-        background-color: #ff4d4d;
-        color: $colorblanco;
-        border: 1px solid $colorblanco;
-      }
-
-      &:active {
-        background-color: #ff4d4d;
-        color: $colorblanco;
-        border: 1px solid $colorblanco;
+      &:hover, &:active {
+        background: #e53935;
+        border-color: #e53935;
       }
     }
-
   }
-
-  label {
-    display: inline-block;
-    width: 200px;
-    font-weight: bold;
-  }
-
 }
 
-/* Estilo para los resultados span con ID sabadoM y feriado */
-#sabadoM,
-#feriado {
-  font-style: italic;
-}
+/* Spans de sabadoM y feriado en resultados */
+#sabadoM, #feriado { font-style: italic; }
 
+/* Inputs globales de calculadoras */
 select,
 input[type="number"],
 input[type="radio"],
 button {
   padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  font-size: 14px;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-sm;
+  font-size: 0.92rem;
+  font-family: $font-family;
 }
 
+/* Botón principal de calcular */
 .boton4 {
-  font-weight: 700;
-  color: $colorblanco;
-  padding: 12px 35px;
-  background-color: $colorverde;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  @include btn-primary;
+  padding: 0.8rem 2.5rem;
+  margin: $spacing-md 0;
+  font-size: 1rem;
 }
 
-.boton4:hover {
-  transform: scale(1.1);
-}
-
+/* Contenedor donación */
 .donar-container {
-  margin: 50px auto;
+  margin: $spacing-xl auto;
   display: flex;
   flex-direction: column;
-  border: 2px solid $colorverde;
-  border-radius: 10px;
-  padding: 20px;
+  border: 1.5px solid $color-border;
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
   align-items: center;
-  background-color: #f9f9f9;
+  background: $colorverde-light;
+  gap: $spacing-sm;
 }
 
-/* TABLAS ESTILOS */
-/* Estilos para la tabla de resultados */
+/* ── TABLA DE RESULTADOS ─────────────────────────────────────────────── */
 .ResultadosCalculo {
   width: 100%;
-  margin: 20px 0;
+  margin: $spacing-md 0;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-family: $font-family;
+  font-size: 0.88rem;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+
+  th, td {
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+  }
+
+  thead { background: $colorverde; }
+
+  th {
+    text-align: center;
+    background: $colorverde;
+    color: white;
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.02em;
+    border-color: rgba(255,255,255,0.15);
+  }
+
+  tbody td { text-align: right; }
+
+  tfoot {
+    background: $colorgris-light;
+    td { text-align: right; font-weight: $font-weight-bold; }
+  }
+
+  tbody tr:nth-child(even) { background: #f8faf9; }
+  tbody tr:hover { background: #e4f0eb; transition: $transition; }
+
+  td[colspan="2"] {
+    font-weight: $font-weight-bold;
+    text-align: right;
+    background: #f2f2f2;
+  }
+
+  td:nth-child(3), td:nth-child(4) {
+    font-weight: normal;
+    text-align: right;
+  }
 }
 
-
-
-.ResultadosCalculo th,
-.ResultadosCalculo td {
-  padding: 8px;
-  text-align: left;
-  border: 1px solid #dddddd;
-}
-
-.ResultadosCalculo thead {
-  background-color: #f2f2f2;
-}
-
-.ResultadosCalculo th {
-  text-align: center;
-  background-color: $colorverde;
-  color: white;
-  border: 1px solid #dddddd;
-}
-
-.ResultadosCalculo tbody td {
-  text-align: right;
-}
-
-.ResultadosCalculo tfoot {
-  background-color: #f2f2f2;
-}
-
-.ResultadosCalculo tfoot td {
-  text-align: right;
-  font-weight: bold;
-}
-
-.ResultadosCalculo tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.ResultadosCalculo tbody tr:hover {
-  background-color: #e0e0e0;
-}
-
-.ResultadosCalculo td[colspan="2"] {
-  font-weight: bold;
-  text-align: right;
-  background-color: #f2f2f2;
-}
-
-.ResultadosCalculo td:nth-child(3),
-.ResultadosCalculo td:nth-child(4) {
-  font-weight: normal;
-  text-align: right;
-}
-
-/* TABLAS ESTILOS */
-
-/* Anuncio "EL SANTIA" */
+/* Anuncio "El Santia" */
 .anuncioPrivado {
   display: none;
   width: 100%;
-  height: auto;
   cursor: pointer;
-
-  img {
-    width: 100%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-  }
+  img { width: 100%; height: auto; }
 }
 
 .anunciofijo {
   text-align: center;
-  padding: 20px;
+  padding: $spacing-lg;
   max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
-.btn-escalas a {
-  display: inline-block;
-  background: $colorverde;
-  color: $colorblanco;
-  text-decoration: none;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  padding: 12px 24px;
-  border-radius: 50px;
-  border: 2px solid transparent;
-  box-shadow: 0 4px 10px rgba(20, 128, 92, 0.25);
-  transition: all 0.3s ease;
-  position: relative;
+/* Botón escala salarial */
+.btn-escalas {
+  margin: $spacing-sm 0 $spacing-md;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: $colorverde;
+    color: $colorblanco;
+    text-decoration: none;
+    font-weight: $font-weight-bold;
+    font-family: $font-family;
+    padding: 0.65rem 1.6rem;
+    border-radius: $border-radius-pill;
+    border: 2px solid transparent;
+    box-shadow: $shadow-green;
+    transition: $transition;
+    font-size: 0.95rem;
+
+    &::after { content: "↗"; font-size: 0.85em; opacity: 0.8; }
+
+    &:hover {
+      background: $colorblanco;
+      color: $colorverde;
+      border-color: $colorverde;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(20,128,92,0.35);
+    }
+  }
 }
 
-.btn-escalas a::after {
-  content: "↗";
-  margin-left: 8px;
-  font-size: 0.9em;
-  opacity: 0.85;
-}
-
-.btn-escalas a:hover {
-  background: $colorblanco;
-  color: $colorverde;
-  border: 2px solid $colorverde;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(20, 128, 92, 0.4);
-}
-
-.btn-escalas a:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 8px rgba(20, 128, 92, 0.3);
-}
-
-
-/* Anuncio "EL SANTIA" */
-/* FIN sueldoneto main */
+/* ── FIN SUELDONETO ──────────────────────────────────────────────────── */

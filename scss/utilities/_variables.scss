@@ -1,26 +1,44 @@
 // ── COLORES ───────────────────────────────────────────────────────────
-$colorverde:   #14805c;
-$colorblanco:  #fafafa;
-$coloroscuro:  #252525;
-$colorgris:    #adadad;
+$colorverde:         #14805c;
+$colorverde-dark:    #0d5c42;
+$colorverde-light:   #e8f5f0;
+$colorblanco:        #fafafa;
+$coloroscuro:        #1a1a2e;
+$colorgris:          #6b7280;
+$colorgris-light:    #f3f4f6;
+$color-border:       #d1e8df;
 
 // ── TIPOGRAFÍA ────────────────────────────────────────────────────────
-$font-size-base:   1rem;
-$font-size-sm:     0.8em;
-$font-size-md:     1.2em;
-$font-size-lg:     1.5em;
-$font-weight-bold: 700;
+$font-family:        'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-size-base:     1rem;
+$font-size-sm:       0.85rem;
+$font-size-md:       1.05rem;
+$font-size-lg:       1.35rem;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold:   700;
 
 // ── ESPACIADO ─────────────────────────────────────────────────────────
-$spacing-xs:  5px;
-$spacing-sm:  10px;
-$spacing-md:  15px;
-$spacing-lg:  20px;
-$spacing-xl:  30px;
+$spacing-xs:   0.35rem;
+$spacing-sm:   0.75rem;
+$spacing-md:   1.25rem;
+$spacing-lg:   2rem;
+$spacing-xl:   3.5rem;
 
 // ── BORDES ────────────────────────────────────────────────────────────
-$border-radius-md:   1em;
+$border-radius-sm:   8px;
+$border-radius-md:   14px;
+$border-radius-lg:   22px;
 $border-radius-pill: 50px;
+
+// ── SOMBRAS ───────────────────────────────────────────────────────────
+$shadow-sm:    0 1px 6px rgba(0,0,0,0.07), 0 2px 12px rgba(0,0,0,0.04);
+$shadow-md:    0 4px 16px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+$shadow-lg:    0 10px 40px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08);
+$shadow-green: 0 6px 24px rgba(20,128,92,0.30);
+
+// ── TRANSICIÓN ────────────────────────────────────────────────────────
+$transition: all 0.22s ease;
 
 // ── BREAKPOINTS ───────────────────────────────────────────────────────
 $bp-xl:  1200px;

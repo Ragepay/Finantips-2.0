@@ -1,1029 +1,1184 @@
 @charset "UTF-8";
-/* Estilos para el header */
-body {
-  background-color: #fafafa;
+/* ── RESET BASE ─────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
+body {
+  background-color: #f3f4f6;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1a1a2e;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────────────── */
 header {
-  background-color: #14805c;
-  color: #fafafa;
-  margin: 0px;
-  padding: 10px;
+  background: #14805c;
+  padding: 0 3.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 5px Black;
+  height: 66px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 header .logo {
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+header .logo img {
+  height: 38px;
+  width: auto;
+  transition: all 0.22s ease;
 }
 header .logo img:hover {
-  transform: scale(1.15);
-}
-header a img {
-  margin: 20px;
-  height: 4.5vh;
-  transition: all 0.3s;
-  margin-left: 30px;
-}
-header nav {
-  margin-right: 30px;
+  opacity: 0.88;
+  transform: scale(1.04);
 }
 header nav ul {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 2rem;
   align-items: center;
-  justify-content: center;
-  margin: 20px;
+  margin: 0;
+  padding: 0;
 }
 header nav ul li {
   list-style: none;
 }
 header nav ul li a {
-  color: #fafafa;
+  color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 0.97rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.22s ease;
 }
 header nav ul li a:hover {
-  text-decoration: underline;
+  color: #fafafa;
+  border-bottom-color: rgba(255, 255, 255, 0.65);
+}
+header nav ul li a.boton {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+header nav ul li a.boton:hover {
+  border-bottom: none;
 }
 header .boton button {
-  font-weight: 700;
-  color: #14805c;
-  padding: 9px 25px;
-  background-color: #fafafa;
-  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fafafa;
+  border: 2px solid rgba(255, 255, 255, 0.55);
   border-radius: 50px;
+  padding: 0.5rem 1.4rem;
+  font-weight: 700;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.3s ease 0s;
+  transition: all 0.22s ease;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(4px);
 }
 header .boton button:hover {
-  background-color: #14805c;
-  color: #fafafa;
-  border: 2px solid #fafafa;
-  transform: scale(1.08);
-  box-shadow: 0 4px 8px rgba(20, 128, 92, 0.3);
+  background: #fafafa;
+  color: #14805c;
+  border-color: #fafafa;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(20, 128, 92, 0.3);
 }
 
+/* ── COTIZACIONES DÓLAR ──────────────────────────────────────────────── */
 #cotizacionesDolar {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 2em;
-  margin-bottom: 3.5em;
+  gap: 1.25rem;
+  padding: 2rem 3.5rem;
+  background: #f3f4f6;
+  border-bottom: 1px solid #d1e8df;
 }
 
-.item-iframe, .item-iframe-blue {
-  margin: 1em;
+.item-iframe,
+.item-iframe-blue {
   width: 15em;
-  height: 15em;
-  border-radius: 20px;
-  border: 1px solid #14805c;
-  transition: transform 0.3s ease;
+  height: 16.5em;
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: all 0.22s ease;
+  background: white;
 }
-.item-iframe:hover, .item-iframe-blue:hover {
-  transform: scale(1.1);
+.item-iframe:hover,
+.item-iframe-blue:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* FIN de Header */
-/*Footer*/
+/* ── FIN HEADER ─────────────────────────────────────────────────────── */
+/* ── FOOTER ─────────────────────────────────────────────────────────── */
 footer {
-  background-color: #14805c;
-  padding: 20px 0;
+  background: linear-gradient(160deg, #0a4d35 0%, #0d5c42 60%, #14805c 100%);
   color: #fafafa;
-  font-size: 1em;
-  box-shadow: 20px 0px 0px 0px;
+  padding-top: 3.5rem;
+}
+footer .footer-logo {
+  text-align: center;
+  padding-bottom: 2rem;
+  margin: 0 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+footer .footer-logo .footer-finantips {
+  width: 180px;
+  height: auto;
+  opacity: 0.92;
+  transition: all 0.22s ease;
+}
+footer .footer-logo .footer-finantips:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+footer .footer-content {
+  display: flex;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+  gap: 3.5rem;
+  flex-wrap: wrap;
 }
 footer img {
   width: 1.5em;
   height: auto;
 }
-footer .Mercadopago {
-  width: 10em;
-  height: auto;
-}
-footer .footer-logo {
-  text-align: center;
-  border: 1px #fafafa;
-}
-footer .footer-finantips {
-  width: 40vw;
-  height: auto;
-}
-footer .footer-content {
-  display: flex;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-  flex-wrap: wrap;
-}
-footer .footer-left {
-  flex: 1;
-}
-footer .footer-left h3 {
-  color: #e4e3e3;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-footer .footer-left ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-footer .footer-left ul li {
-  list-style: none;
-  margin-bottom: 5px;
-}
-footer .footer-left ul li a {
-  color: #252525;
-  text-decoration: none;
-}
-footer .footer-left ul li a:hover {
-  text-decoration: underline;
-}
 
-.footer-right h3 {
-  color: #e4e3e3;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
+.footer-left,
 .footer-right {
   flex: 1;
+  min-width: 180px;
 }
+.footer-left h3,
+.footer-right h3 {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 0 0 1.25rem;
+}
+.footer-left ul,
 .footer-right ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+.footer-left ul li,
 .footer-right ul li {
-  margin-bottom: 5px;
+  margin-bottom: 0.75rem;
 }
+.footer-left ul li a,
 .footer-right ul li a {
-  color: #252525;
+  color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.22s ease;
 }
+.footer-left ul li a:hover,
 .footer-right ul li a:hover {
-  text-decoration: underline;
+  color: #fafafa;
+  transform: translateX(3px);
+}
+.footer-left ul li a img,
+.footer-right ul li a img {
+  width: 1.5em;
+  height: auto;
+}
+.footer-left ul li a img.Mercadopago,
+.footer-right ul li a img.Mercadopago {
+  width: 9em;
+  height: auto;
 }
 
 .footer-bottom {
-  background-color: #111111;
-  padding: 10px;
+  background: rgba(0, 0, 0, 0.28);
+  padding: 1.25rem 2rem;
   text-align: center;
-  font-size: 1em;
-  text-align: center;
-  color: #adadad;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.footer-bottom p {
+  margin: 0 0 0.25rem;
 }
 .footer-bottom .footer-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.25rem;
 }
-.footer-bottom .version {
-  margin-right: 10px;
-}
+.footer-bottom .version,
 .footer-bottom .fecha {
-  margin-left: 10px;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
 }
 
-/* FIN Footer */
-/* Index main*/
+/* ── FIN FOOTER ─────────────────────────────────────────────────────── */
+/* ── INDEX MAIN ─────────────────────────────────────────────────────── */
 .container {
+  background: linear-gradient(145deg, #14805c 0%, #0d5c42 100%);
   display: flex;
-  width: auto;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
   flex-direction: column;
-  background-color: #14805c;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3.5rem 2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
 .container h2 {
-  font-size: 6.5vw;
+  font-size: clamp(1.7rem, 5vw, 3rem);
   color: #fafafa;
-  font-weight: bold;
+  font-weight: 700;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 .container p {
-  font-size: 2em;
-  color: #fafafa;
-  max-width: 1200px;
-  margin: 2em;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
 }
 .container button {
-  font-weight: 700;
-  color: #14805c;
-  padding: 9px 25px;
-  margin: 1em;
-  background-color: #fafafa;
+  background: #14805c;
+  color: #fafafa;
   border: none;
   border-radius: 50px;
+  padding: 0.75rem 2.2rem;
+  font-weight: 700;
+  font-size: 1.05rem;
   cursor: pointer;
-  transition: all 0.3s ease 0s;
+  transition: all 0.22s ease;
+  letter-spacing: 0.03em;
 }
 .container button:hover {
-  transform: scale(1.1);
+  background: #0d5c42;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(20, 128, 92, 0.3);
 }
-
-#containerInformacion div h3 {
+.container button {
+  background: #fafafa;
   color: #14805c;
-  font-size: 7vh;
+  font-size: 1rem;
+  padding: 0.8rem 2.4rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+.container button:hover {
+  background: #1a1a2e;
+  color: #fafafa;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 #sectionInformacion {
-  margin: 6em 1em 6em 1em;
+  padding: 3.5rem 2rem;
+  background: #f3f4f6;
 }
 
 #containerInformacion {
+  display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 860px;
+  margin: 0 auto;
+}
+#containerInformacion div h3 {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  color: #fafafa;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .dolar {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/Dolares.JPG);
-  border-radius: 1em;
-  margin: 1em 0em;
-  padding: 30px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  flex: 1;
+  min-width: 260px;
+  max-width: 400px;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%), url(../img/Dolares.JPG);
+  background-size: cover;
+  background-position: center;
+  border-radius: 22px;
+  padding: 3.5rem 2rem 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 260px;
+  transition: all 0.22s ease;
 }
-
+.dolar:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
 .dolar .boton button {
   font-weight: 700;
   color: #14805c;
-  padding: 9px 25px;
+  padding: 0.6rem 1.75rem;
   background-color: #fafafa;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease 0s;
+  transition: all 0.22s ease;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
 }
-
 .dolar .boton button:hover {
-  transform: scale(1.1);
+  background: #0d5c42;
+  color: #fafafa;
+}
+.dolar .boton button:hover {
+  background: #14805c;
+  color: #fafafa;
 }
 
 .pesos {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/Pesos.jpg);
+  flex: 1;
+  min-width: 260px;
+  max-width: 400px;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%), url(../img/Pesos.jpg);
+  background-size: cover;
   background-position: center;
-  border-radius: 1em;
-  margin: 1em 0em;
-  padding: 30px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  border-radius: 22px;
+  padding: 3.5rem 2rem 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 260px;
+  transition: all 0.22s ease;
 }
-
+.pesos:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
 .pesos .boton button {
   font-weight: 700;
   color: #14805c;
-  padding: 9px 25px;
+  padding: 0.6rem 1.75rem;
   background-color: #fafafa;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease 0s;
+  transition: all 0.22s ease;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
 }
-
 .pesos .boton button:hover {
-  transform: scale(1.1);
+  background: #0d5c42;
+  color: #fafafa;
+}
+.pesos .boton button:hover {
+  background: #14805c;
+  color: #fafafa;
 }
 
-/*FIN de Index main*/
-/* calculadoras main */
+/* ── CALCULADORAS ───────────────────────────────────────────────────── */
 .container-box {
-  text-align: center;
-  margin: 1em;
-  margin-bottom: 2em;
-  padding: 2em;
-  border: 5px solid #14805c;
-  border-radius: 1em;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.3);
+  gap: 1.25rem;
+  padding: 3.5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 .container-box h2 {
-  color: #14805c;
-  font-size: 4.5vw;
-  height: auto;
-  font-weight: bold;
-  grid-column: 1/4;
-}
-.container-box .box1,
-.container-box .box2,
-.container-box .box3 {
-  width: auto;
-  border-radius: 1em;
-  background-size: cover;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  transition: 0.5s;
+  grid-column: 1/-1;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   color: #14805c;
   font-weight: 700;
-  margin: 15px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  height: 500px;
+  text-align: center;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
 }
-.container-box .box1 h3,
-.container-box .box2 h3,
-.container-box .box3 h3 {
+.container-box .box1, .container-box .box2, .container-box .box3 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2rem;
+  margin: 0.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: all 0.22s ease;
+  cursor: pointer;
+  height: 320px;
+}
+.container-box .box1 h3, .container-box .box2 h3, .container-box .box3 h3 {
+  position: relative;
+  z-index: 1;
+  color: #fafafa;
+  font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+.container-box .box1 .boton, .container-box .box2 .boton, .container-box .box3 .boton {
+  position: relative;
+  z-index: 1;
+}
+.container-box .box1 .boton button, .container-box .box2 .boton button, .container-box .box3 .boton button {
+  font-weight: 700;
   color: #14805c;
-  font-size: 2vw;
-  height: auto;
-  font-weight: bold;
-  grid-column: 1/4;
+  padding: 0.6rem 1.75rem;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
 }
-.container-box .box1:hover {
-  transform: scale(1.02);
+.container-box .box1 .boton button:hover, .container-box .box2 .boton button:hover, .container-box .box3 .boton button:hover {
+  background: #0d5c42;
+  color: #fafafa;
 }
-.container-box .box2:hover {
-  transform: scale(1.02);
+.container-box .box1 .boton button, .container-box .box2 .boton button, .container-box .box3 .boton button {
+  font-size: 0.88rem;
+  padding: 0.5rem 1.5rem;
 }
-.container-box .box3:hover {
-  transform: scale(1.02);
+.container-box .box1::after, .container-box .box2::after, .container-box .box3::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.65) 100%);
+  border-radius: 22px;
+  transition: all 0.22s ease;
+}
+.container-box .box1:hover, .container-box .box2:hover, .container-box .box3:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 24px rgba(20, 128, 92, 0.3);
+}
+.container-box .box1:hover::after, .container-box .box2:hover::after, .container-box .box3:hover::after {
+  background: linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, 0.78) 100%);
 }
 .container-box .box1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../img/fotoSueldoNeto.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url(../img/fotoSueldoNeto.jpg);
 }
 .container-box .box2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../img/fotoPlazoFijo.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url(../img/fotoPlazoFijo.jpeg);
 }
 .container-box .box3 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../img/fotoImpuestoGanancias.jpeg);
-}
-.container-box .box1 .boton button {
-  font-weight: 700;
-  color: #14805c;
-  padding: 9px 25px;
-  background-color: #fafafa;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  font-size: 1.2em;
-}
-.container-box .box1 .boton button:hover {
-  transform: scale(1.1);
-}
-.container-box .box2 .boton button {
-  font-weight: 700;
-  color: #14805c;
-  padding: 9px 25px;
-  background-color: #fafafa;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  font-size: 1.2em;
-}
-.container-box .box2 .boton button:hover {
-  transform: scale(1.1);
-}
-.container-box .box3 .boton button {
-  font-weight: 700;
-  color: #14805c;
-  padding: 9px 25px;
-  background-color: #fafafa;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  font-size: 1.2em;
-}
-.container-box .box3 .boton button:hover {
-  transform: scale(1.1);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url(../img/fotoImpuestoGanancias.jpeg);
 }
 
-/* FIN de calculadoras */
-/*Inicio cuotas mian */
+/* ── FIN CALCULADORAS ────────────────────────────────────────────────── */
+/* ── CUOTAS ─────────────────────────────────────────────────────────── */
 .explicacionImpuesto {
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.1em;
-  margin: 2em;
-  margin-bottom: 5em;
+  max-width: 760px;
+  margin: 3.5rem auto;
+  padding: 2rem 3.5rem;
+  background: #fafafa;
+  border-left: 4px solid #14805c;
+  border-radius: 0 14px 14px 0;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07), 0 2px 12px rgba(0, 0, 0, 0.04);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6b7280;
+}
+.explicacionImpuesto p {
+  margin: 0;
 }
 
-.tituloExplicacion {
-  font-size: 1.3em;
+.tituloExplicacion h2,
+.tituloInteresCompuesto h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #14805c;
+  margin: 0 0 0.75rem;
 }
 
-/*FIN cuotas main*/
-/* Inicio plazofijo main */
+/* ── FIN CUOTAS ──────────────────────────────────────────────────────── */
+/* ── PLAZO FIJO ─────────────────────────────────────────────────────── */
+.interesCompuesto {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #d1e8df;
+  font-weight: 500;
+  font-size: 1.05rem;
+  width: 100%;
+}
 .interesCompuesto input[type=checkbox] {
   appearance: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
   width: 20px;
   height: 20px;
+  flex-shrink: 0;
   border: 2px solid #14805c;
-  border-radius: 4px;
+  border-radius: 5px;
   outline: none;
-  transition: background-color 0.3s;
+  cursor: pointer;
+  transition: all 0.22s ease;
 }
-
 .interesCompuesto input[type=checkbox]:checked {
   background-color: #14805c;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l3 3 5-6' stroke='white' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.interesCompuesto {
-  margin-left: 10px;
-  font-weight: bold;
-  margin-top: 1.5em;
-  border-bottom: 2px solid lightgrey;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.explicacionPlazoFijo {
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.1em;
-  margin: 2em;
-  margin-bottom: 5em;
-}
-
-.tituloExplicacion {
-  font-size: 1.3em;
-}
-
+.explicacionPlazoFijo,
 .explicacionInteresCompuesto {
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.1em;
-  margin: 2em;
-  margin-bottom: 5em;
+  max-width: 760px;
+  margin: 3.5rem auto;
+  padding: 2rem 3.5rem;
+  background: #fafafa;
+  border-left: 4px solid #14805c;
+  border-radius: 0 14px 14px 0;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07), 0 2px 12px rgba(0, 0, 0, 0.04);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6b7280;
+}
+.explicacionPlazoFijo p,
+.explicacionInteresCompuesto p {
+  margin: 0;
 }
 
-.tituloInteresCompuesto {
-  font-size: 1.3em;
+.tituloExplicacion h2,
+.tituloInteresCompuesto h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #14805c;
+  margin: 0 0 0.75rem;
 }
 
-/* FIN plazofijo main */
-/* Inicio sueldoneto main */
+/* ── FIN PLAZO FIJO ──────────────────────────────────────────────────── */
+/* ── SUELDONETO ─────────────────────────────────────────────────────── */
+/* Contenedor principal de formularios (compartido con IIGG, cuotas, plazofijo) */
 .containerBox2 {
-  text-align: center;
-  margin: 1em;
-  margin-bottom: 2em;
-  padding: 1em;
-  border-radius: 1em;
-  justify-content: center;
+  max-width: 880px;
+  margin: 3.5rem auto;
+  padding: 3.5rem;
+  border-radius: 22px;
   display: flex;
   flex-direction: column;
-  border: 5px solid #14805c;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   align-items: center;
+  background: #fafafa;
+  border: 1.5px solid #d1e8df;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 .containerBox2 form {
-  max-width: 800px;
+  max-width: 780px;
   width: 100%;
-  align-items: center;
-  margin-bottom: 15px;
-  font-family: Arial, sans-serif;
-}
-.containerBox2 .actualizacion {
-  margin: 1em auto;
-  border: 2px solid rgb(82, 79, 79);
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-  max-width: 400px;
-  color: rgb(56, 55, 55);
-  background-color: #bbcbf8;
 }
 .containerBox2 h1 {
-  font-size: 2em;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   color: #14805c;
-  padding-bottom: 0.5em;
-  border-bottom: 3px solid #14805c;
+  font-weight: 700;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #e8f5f0;
+  letter-spacing: -0.01em;
+  width: 100%;
+  text-align: center;
 }
 .containerBox2 h2 {
-  margin-top: 1em;
-  font-size: 1.6em;
+  font-size: 1.15rem;
   color: #14805c;
-  padding-bottom: 1.5em;
-  text-decoration: underline;
-  font-weight: 500;
+  font-weight: 700;
+  margin: 2rem 0 0.35rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #e8f5f0;
 }
 .containerBox2 h3 {
-  margin-top: 1em;
-  font-size: 1.6em;
+  font-size: 1.05rem;
   color: #14805c;
-  padding-bottom: 1.5em;
-  text-decoration: underline;
+  font-weight: 500;
+  margin: 1.25rem 0 0.35rem;
+}
+.containerBox2 .actualizacion {
+  display: inline-block;
+  margin: 0.75rem auto 1.25rem;
+  border: 1.5px solid #b0c4de;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.85rem;
+  color: #3b5080;
+  background: #e8eef8;
   font-weight: 500;
 }
 .containerBox2 .formulario-box {
-  margin-top: 1.5em;
-  padding-bottom: 0.5em;
-  border-bottom: 2px solid lightgrey;
-  flex-direction: column;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #d1e8df;
   width: 100%;
 }
-.containerBox2 .caja-resultados {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.containerBox2 .formulario-box label {
+  display: inline-block;
+  min-width: 200px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  text-align: left;
 }
-.containerBox2 .caja-resultados .ResultadosCalculo {
-  border: 2px solid #14805c;
-  border-radius: 3px;
+.containerBox2 .formulario-box select,
+.containerBox2 .formulario-box input[type=number] {
+  flex: 1;
+  min-width: 160px;
+  padding: 0.55rem 0.9rem;
+  border: 2px solid #d1e8df;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1a1a2e;
+  background: white;
+  transition: all 0.22s ease;
+  outline: none;
+}
+.containerBox2 .formulario-box select:focus,
+.containerBox2 .formulario-box input[type=number]:focus {
+  border-color: #14805c;
+  box-shadow: 0 0 0 3px rgba(20, 128, 92, 0.1);
+}
+.containerBox2 .formulario-box input[type=radio] {
+  accent-color: #14805c;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+.containerBox2 .caja-resultados {
+  background: #f3f4f6;
+  padding: 2rem;
+  border: 1px solid #d1e8df;
+  border-radius: 14px;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07), 0 2px 12px rgba(0, 0, 0, 0.04);
+  width: 100%;
 }
 .containerBox2 .caja-resultados .downloadFile {
-  height: 40px;
-  width: 40px;
+  height: 36px;
+  width: 36px;
 }
 .containerBox2 .horasExtra {
   display: flex;
   justify-content: space-between;
-  margin: 1.5em;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
   flex-wrap: wrap;
 }
 .containerBox2 .sabadoM {
-  background-color: chocolate;
+  background: linear-gradient(135deg, #c0613a, #e07850);
   color: white;
-  padding: 1em;
-  margin: 0.5em;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
   flex: 1 1 45%;
+  font-weight: 500;
   box-sizing: border-box;
 }
 .containerBox2 .feriado {
-  background-color: blue;
+  background: linear-gradient(135deg, #3b5cb8, #5272d4);
   color: white;
-  padding: 1em;
-  margin: 0.5em;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
   flex: 1 1 45%;
+  font-weight: 500;
   box-sizing: border-box;
 }
 .containerBox2 .eliminar-historial {
-  background-color: #14805c;
+  background: #14805c;
   color: #fafafa;
-  padding: 0.5em 1em;
+  padding: 0.45rem 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.22s ease;
 }
-.containerBox2 .eliminar-historial:hover {
-  background-color: #ff4d4d;
-}
-.containerBox2 .eliminar-historial:active {
-  background-color: #ff4d4d;
+.containerBox2 .eliminar-historial:hover, .containerBox2 .eliminar-historial:active {
+  background: #e53935;
 }
 .containerBox2 #item-historial {
   display: flex;
-  align-content: center;
   align-items: center;
   justify-content: center;
   height: auto;
 }
 .containerBox2 #item-historial .eliminar-recibo {
   color: #fafafa;
-  background-color: #14805c;
-  padding: 0.5em;
+  background: #14805c;
+  padding: 0.45rem 0.9rem;
   border: 1px solid #14805c;
-  border-radius: 5px;
-  max-width: 200px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.22s ease;
 }
-.containerBox2 #item-historial .eliminar-recibo:hover {
-  background-color: #ff4d4d;
-  color: #fafafa;
-  border: 1px solid #fafafa;
-}
-.containerBox2 #item-historial .eliminar-recibo:active {
-  background-color: #ff4d4d;
-  color: #fafafa;
-  border: 1px solid #fafafa;
-}
-.containerBox2 label {
-  display: inline-block;
-  width: 200px;
-  font-weight: bold;
+.containerBox2 #item-historial .eliminar-recibo:hover, .containerBox2 #item-historial .eliminar-recibo:active {
+  background: #e53935;
+  border-color: #e53935;
 }
 
-/* Estilo para los resultados span con ID sabadoM y feriado */
-#sabadoM,
-#feriado {
+/* Spans de sabadoM y feriado en resultados */
+#sabadoM, #feriado {
   font-style: italic;
 }
 
+/* Inputs globales de calculadoras */
 select,
 input[type=number],
 input[type=radio],
 button {
   padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  font-size: 14px;
+  border: 1px solid #d1e8df;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+/* Botón principal de calcular */
 .boton4 {
-  font-weight: 700;
+  background: #14805c;
   color: #fafafa;
-  padding: 12px 35px;
-  background-color: #14805c;
   border: none;
   border-radius: 50px;
+  padding: 0.75rem 2.2rem;
+  font-weight: 700;
+  font-size: 1.05rem;
   cursor: pointer;
-  transition: all 0.3s ease 0s;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.22s ease;
+  letter-spacing: 0.03em;
 }
-
 .boton4:hover {
-  transform: scale(1.1);
+  background: #0d5c42;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(20, 128, 92, 0.3);
+}
+.boton4 {
+  padding: 0.8rem 2.5rem;
+  margin: 1.25rem 0;
+  font-size: 1rem;
 }
 
+/* Contenedor donación */
 .donar-container {
-  margin: 50px auto;
+  margin: 3.5rem auto;
   display: flex;
   flex-direction: column;
-  border: 2px solid #14805c;
-  border-radius: 10px;
-  padding: 20px;
+  border: 1.5px solid #d1e8df;
+  border-radius: 14px;
+  padding: 2rem;
   align-items: center;
-  background-color: #f9f9f9;
+  background: #e8f5f0;
+  gap: 0.75rem;
 }
 
-/* TABLAS ESTILOS */
-/* Estilos para la tabla de resultados */
+/* ── TABLA DE RESULTADOS ─────────────────────────────────────────────── */
 .ResultadosCalculo {
   width: 100%;
-  margin: 20px 0;
+  margin: 1.25rem 0;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.88rem;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07), 0 2px 12px rgba(0, 0, 0, 0.04);
 }
-
-.ResultadosCalculo th,
-.ResultadosCalculo td {
-  padding: 8px;
+.ResultadosCalculo th, .ResultadosCalculo td {
+  padding: 0.6rem 0.8rem;
   text-align: left;
-  border: 1px solid #dddddd;
+  border: 1px solid #e0e0e0;
 }
-
 .ResultadosCalculo thead {
-  background-color: #f2f2f2;
+  background: #14805c;
 }
-
 .ResultadosCalculo th {
   text-align: center;
-  background-color: #14805c;
+  background: #14805c;
   color: white;
-  border: 1px solid #dddddd;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-color: rgba(255, 255, 255, 0.15);
 }
-
 .ResultadosCalculo tbody td {
   text-align: right;
 }
-
 .ResultadosCalculo tfoot {
-  background-color: #f2f2f2;
+  background: #f3f4f6;
 }
-
 .ResultadosCalculo tfoot td {
   text-align: right;
-  font-weight: bold;
+  font-weight: 700;
 }
-
 .ResultadosCalculo tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background: #f8faf9;
 }
-
 .ResultadosCalculo tbody tr:hover {
-  background-color: #e0e0e0;
+  background: #e4f0eb;
+  transition: all 0.22s ease;
 }
-
 .ResultadosCalculo td[colspan="2"] {
-  font-weight: bold;
+  font-weight: 700;
   text-align: right;
-  background-color: #f2f2f2;
+  background: #f2f2f2;
 }
-
-.ResultadosCalculo td:nth-child(3),
-.ResultadosCalculo td:nth-child(4) {
+.ResultadosCalculo td:nth-child(3), .ResultadosCalculo td:nth-child(4) {
   font-weight: normal;
   text-align: right;
 }
 
-/* TABLAS ESTILOS */
-/* Anuncio "EL SANTIA" */
+/* Anuncio "El Santia" */
 .anuncioPrivado {
   display: none;
   width: 100%;
-  height: auto;
   cursor: pointer;
 }
 .anuncioPrivado img {
   width: 100%;
   height: auto;
-  align-items: center;
-  justify-content: center;
 }
 
 .anunciofijo {
   text-align: center;
-  padding: 20px;
+  padding: 2rem;
   max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
+/* Botón escala salarial */
+.btn-escalas {
+  margin: 0.75rem 0 1.25rem;
+}
 .btn-escalas a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   background: #14805c;
   color: #fafafa;
   text-decoration: none;
-  font-weight: 600;
-  font-family: "Inter", sans-serif;
-  padding: 12px 24px;
+  font-weight: 700;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  padding: 0.65rem 1.6rem;
   border-radius: 50px;
   border: 2px solid transparent;
-  box-shadow: 0 4px 10px rgba(20, 128, 92, 0.25);
-  transition: all 0.3s ease;
-  position: relative;
+  box-shadow: 0 6px 24px rgba(20, 128, 92, 0.3);
+  transition: all 0.22s ease;
+  font-size: 0.95rem;
 }
-
 .btn-escalas a::after {
   content: "↗";
-  margin-left: 8px;
-  font-size: 0.9em;
-  opacity: 0.85;
+  font-size: 0.85em;
+  opacity: 0.8;
 }
-
 .btn-escalas a:hover {
   background: #fafafa;
   color: #14805c;
-  border: 2px solid #14805c;
+  border-color: #14805c;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(20, 128, 92, 0.4);
+  box-shadow: 0 6px 20px rgba(20, 128, 92, 0.35);
 }
 
-.btn-escalas a:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 8px rgba(20, 128, 92, 0.3);
-}
-
-/* Anuncio "EL SANTIA" */
-/* FIN sueldoneto main */
-/* Inicio de pesos */
+/* ── FIN SUELDONETO ──────────────────────────────────────────────────── */
+/* ── DÓLARES ─────────────────────────────────────────────────────────── */
+/* Comparte los estilos de .financial-main e .instrument definidos en _pesos.scss */
+/* ── FIN DÓLARES ─────────────────────────────────────────────────────── */
+/* ── PESOS ───────────────────────────────────────────────────────────── */
 .financial-main {
-  margin: 3em;
-  border-radius: 1em;
+  margin: 3.5rem 2rem;
+  border-radius: 22px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 2em;
-  border: 5px solid #14805c;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-}
-@media only screen and (max-width: 768px) {
-  .financial-main {
-    flex-direction: column;
-    align-items: center;
-  }
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 3.5rem 2rem;
+  background: #fafafa;
+  border: 1.5px solid #d1e8df;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07), 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .instrument {
-  background-color: #fafafa;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  padding: 20px;
-  width: calc(33.33% - 20px);
+  background: #fafafa;
+  border-radius: 14px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07), 0 2px 12px rgba(0, 0, 0, 0.04);
+  padding: 2rem;
+  border: 1px solid #d1e8df;
+  transition: all 0.22s ease;
 }
-@media only screen and (max-width: 1024px) {
-  .instrument {
-    width: calc(50% - 20px);
-  }
+.instrument:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
 }
-@media only screen and (max-width: 768px) {
-  .instrument {
-    width: calc(100% - 20px);
-  }
+.instrument {
+  width: calc(33.33% - 1.25rem);
+  min-width: 220px;
+  text-align: center;
 }
-
 .instrument img {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 0.75rem;
   max-width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
 }
-
 .instrument h2 {
   color: #14805c;
-  font-size: 1.2rem;
-  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
 }
-
 .instrument p {
-  color: #333;
-  font-weight: bold;
-  font-size: 1rem;
-  margin-top: 10px;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0;
 }
 
-/* Fin de Pesos */
-/* Media Querys */
+/* ── FIN PESOS ───────────────────────────────────────────────────────── */
+/* ── IIGG ────────────────────────────────────────────────────────────── */
+/* Comparte estilos de .containerBox2 y .formulario-box de _sueldoneto.scss */
+/* ── FIN IIGG ────────────────────────────────────────────────────────── */
+/* ── MEDIA QUERIES ───────────────────────────────────────────────────── */
+/* ── 1200px: pantallas grandes ───────────────────────────────────────── */
 @media only screen and (max-width: 1200px) {
   header {
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 0 2rem;
   }
   header nav ul {
-    gap: 20px;
+    gap: 1.25rem;
   }
   header nav ul li a {
-    font-size: 2.5vw;
+    font-size: 0.9rem;
   }
-  .container p {
-    font-size: 1.2em;
+  .container-box {
+    padding: 2rem;
   }
-}
-@media only screen and (min-width: 1200px) {
-  footer {
-    font-size: 1.2em;
-  }
-  footer img {
-    width: 2em;
-    height: auto;
+  .container-box .box1, .container-box .box2, .container-box .box3 {
+    height: 280px;
   }
 }
+/* ── 1000px: pantallas medianas ──────────────────────────────────────── */
 @media only screen and (max-width: 1000px) {
-  main .container-box {
-    display: flex;
-    flex-direction: column;
+  .container-box {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .container-box .box1,
-  .container-box .box2,
+  .container-box h2 {
+    grid-column: 1/-1;
+  }
   .container-box .box3 {
+    grid-column: 1/-1;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .container-box .box1, .container-box .box2, .container-box .box3 {
     height: 250px;
-    width: auto;
   }
-  .container-box .box1 h3,
-  .container-box .box2 h3,
-  .container-box .box3 h3 {
-    font-size: 4vw;
+  .financial-main {
+    margin: 2rem;
   }
-}
-@media (min-width: 977px) {
-  #sectionInformacion {
-    display: flex;
-    justify-content: center;
-    height: 70vh;
-  }
-  #containerInformacion {
-    display: contents;
-    align-items: center;
-  }
-  #containerInformacion .dolar {
-    padding: 9em;
-    margin: 2em;
-    background-position: center;
-  }
-  #containerInformacion .pesos {
-    padding: 9em;
-    margin: 2em;
-    background-position: center;
+  .instrument {
+    width: calc(50% - 0.75rem);
   }
 }
-@media only screen and (max-width: 960px) {
-  .container p {
-    font-size: 1em;
+/* ── 768px: tablets ──────────────────────────────────────────────────── */
+@media only screen and (max-width: 768px) {
+  header {
+    padding: 0 1.25rem;
   }
-}
-@media only screen and (max-width: 900px) {
-  .Mercadopago {
-    width: 7em;
-    height: auto;
+  header nav ul {
+    gap: 0.75rem;
   }
-}
-@media (max-width: 768px) {
+  header nav ul li a {
+    font-size: 0.85rem;
+  }
+  #cotizacionesDolar {
+    padding: 1.25rem;
+    gap: 0.75rem;
+  }
   .item-iframe, .item-iframe-blue {
     width: 11em;
-    height: 13em;
+    height: 12em;
+  }
+  .container {
+    padding: 2rem 1.25rem;
+  }
+  #sectionInformacion {
+    padding: 2rem 1.25rem;
+  }
+  #containerInformacion {
+    gap: 1.25rem;
+  }
+  .dolar, .pesos {
+    min-height: 220px;
+  }
+  .containerBox2 {
+    padding: 2rem 1.25rem;
+    margin: 2rem 0.75rem;
+  }
+  .containerBox2 .formulario-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .containerBox2 .formulario-box label {
+    min-width: unset;
+    width: 100%;
+  }
+  .containerBox2 .formulario-box select, .containerBox2 .formulario-box input[type=number] {
+    width: 100%;
   }
   .horasExtra {
     flex-direction: column;
-    align-items: center;
   }
-  .sabadoM,
-  .feriado {
+  .sabadoM, .feriado {
     flex: 1 1 100%;
   }
-}
-@media only screen and (max-width: 650px) {
-  .anuncioPrivado {
-    display: block;
+  .financial-main {
+    padding: 2rem 0.75rem;
+    flex-direction: column;
+    align-items: center;
   }
-  header a img {
-    height: 4vh;
+  .instrument {
+    width: 100%;
+    max-width: 480px;
+  }
+  footer .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  footer .footer-logo {
+    margin: 0 1.25rem;
+  }
+  .footer-finantips {
+    width: 140px !important;
+  }
+}
+/* ── 480px: móviles ──────────────────────────────────────────────────── */
+@media only screen and (max-width: 480px) {
+  header {
+    height: auto;
+    padding: 0.75rem 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  header .logo img {
+    height: 32px;
   }
   header nav ul {
-    gap: 15px;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   header nav ul li a {
-    font-size: 3vw;
-  }
-  .containerBox2 {
-    margin: 1em;
-  }
-  .financial-main {
-    margin: 1em;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .anuncioPrivado {
-    display: block;
-  }
-  .container p {
-    font-size: 0.8em;
-  }
-  main .container-box h2 {
-    font-size: 7vw;
-  }
-  .box1,
-  .box2,
-  .box3 {
-    height: 150px;
-    font-size: 0.8em;
-  }
-  .containerBox2 {
-    margin: 0.4em;
-    margin-bottom: 1.2em;
-  }
-}
-@media (max-width: 480px) {
-  .anuncioPrivado {
-    display: block;
+    font-size: 0.8rem;
   }
   #cotizacionesDolar {
-    margin-top: 1em;
-    margin-bottom: 2.5em;
+    gap: 0.35rem;
   }
   .item-iframe {
     display: none;
   }
   .item-iframe-blue {
-    width: auto;
-    height: 15em;
+    width: 100%;
+    max-width: 320px;
+    height: 14em;
+  }
+  .container h2 {
+    font-size: 1.6rem;
+  }
+  .container p {
+    font-size: 0.92rem;
+  }
+  .container-box {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+  .container-box .box1, .container-box .box2, .container-box .box3, .container-box h2 {
+    grid-column: 1/-1;
+  }
+  .container-box .box3 {
+    max-width: 100%;
+  }
+  .container-box .box1, .container-box .box2, .container-box .box3 {
+    height: 200px;
   }
   .containerBox2 {
-    margin: 0.2em;
-    margin-bottom: 1em;
+    margin: 1.25rem 0.35rem;
+    padding: 1.25rem 0.75rem;
+    border-radius: 14px;
   }
-}
-@media only screen and (max-width: 480px) {
+  .boton4 {
+    width: 100%;
+    padding: 0.8rem 1rem;
+  }
+  .ResultadosCalculo {
+    font-size: 0.78rem;
+  }
+  .ResultadosCalculo th, .ResultadosCalculo td {
+    padding: 0.4rem;
+  }
+  .explicacionImpuesto,
+  .explicacionPlazoFijo,
+  .explicacionInteresCompuesto {
+    padding: 1.25rem;
+    margin: 2rem 0.75rem;
+  }
+  .footer-left, .footer-right {
+    min-width: 100%;
+  }
+  .financial-main {
+    margin: 1.25rem 0.35rem;
+    padding: 1.25rem 0.75rem;
+  }
+  .instrument img {
+    height: 90px;
+  }
   .anuncioPrivado {
     display: block;
   }
-  .footer-finantips {
-    width: 55vw;
-    height: auto;
-    margin: 20px;
-  }
-  .footer-left,
-  .footer-right {
-    margin: 20px;
+}
+/* ── 413px: móviles pequeños ─────────────────────────────────────────── */
+@media only screen and (max-width: 413px) {
+  header nav ul {
+    gap: 0.35rem;
   }
   header nav ul li a {
-    font-size: 0.8em;
+    font-size: 0.75rem;
+  }
+  .dolar, .pesos {
+    min-width: 100%;
+    min-height: 200px;
+  }
+  .sabadoM, .feriado {
+    font-size: 0.85rem;
   }
 }
-@media (max-width: 413px) {
-  .anuncioPrivado {
-    display: block;
-  }
-  .containerBox3 {
-    text-align: left;
-    margin: 4em;
-    padding: 1.5em;
-    border: 5px solid #14805c;
-    border-radius: 1em;
-  }
-}
-@media (max-width: 353px) {
-  .anuncioPrivado {
-    display: block;
-  }
-  #cotizacionesDolar {
-    margin-top: 1em;
-    margin-bottom: 2.5em;
-  }
-  .item-iframe {
-    width: 8.5em;
-    height: 13em;
-    margin: 0.5em;
-  }
-}
+/* ── FIN MEDIA QUERIES ───────────────────────────────────────────────── */
 
 /*# sourceMappingURL=styles.css.map */

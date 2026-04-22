@@ -1,110 +1,126 @@
-/* Estilos para el header */
-
+/* ── RESET BASE ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
-    background-color: $colorblanco;
-  }
-
-header {
-    background-color: $colorverde;
-    color: #fafafa;
-    margin: 0px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 5px Black;
-
-    .logo{
-        cursor: pointer;
-
-        img:hover{
-            transform: scale(1.15);
-        }
-    }
-
-    a {
-        img{
-            margin: 20px;
-            height: 4.5vh;
-            transition: all 0.3s;
-            margin-left: 30px;
-        }
-    }
-    nav{
-        margin-right: 30px;
-
-        ul{
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            align-items: center;
-            justify-content: center;
-            margin: 20px;
-
-            li{
-                list-style: none;
-                a{
-                    
-                    color: $colorblanco;
-                    text-decoration: none;
-                    font-size: 1.5rem; 
-                    &:hover{
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
-    }
-
-    .boton{
-
-        button{
-            font-weight: 700;
-            color: $colorverde;
-            padding: 9px 25px;
-            background-color: $colorblanco;
-            border: 2px solid transparent;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease 0s;
-
-            &:hover{
-                background-color: $colorverde;
-                color: $colorblanco;
-                border: 2px solid $colorblanco;
-                transform: scale(1.08);
-                box-shadow: 0 4px 8px rgba(20, 128, 92, 0.3);
-            }
-        }
-    }
+  background-color: $colorgris-light;
+  font-family: $font-family;
+  color: $coloroscuro;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* ── HEADER ─────────────────────────────────────────────────────────── */
+header {
+  background: $colorverde;
+  padding: 0 $spacing-xl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 66px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.20);
 
-
-// Cotizaciones Dolar, es parte del header pero no esta dentro.
-
-#cotizacionesDolar {
+  .logo {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    margin-top: 2em;
-    margin-bottom: 3.5em;
+    flex-shrink: 0;
+
+    img {
+      height: 38px;
+      width: auto;
+      transition: $transition;
+
+      &:hover { opacity: 0.88; transform: scale(1.04); }
+    }
   }
 
-  .item-iframe, .item-iframe-blue {
-        margin: 1em;
-        width: 15em;
-        height: 15em;
-        border-radius: 20px;
-        border: 1px solid $colorverde;
-        transition: transform 0.3s ease;
-        
-        &:hover {
-            transform: scale(1.1);
-        }
-        
-      }
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: $spacing-lg;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 
-  /* FIN de Header */
+    li { list-style: none; }
+
+    li a {
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      font-size: 0.97rem;
+      font-weight: $font-weight-medium;
+      letter-spacing: 0.01em;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: $transition;
+
+      &:hover {
+        color: $colorblanco;
+        border-bottom-color: rgba(255,255,255,0.65);
+      }
+    }
+
+    // El link del botón no debe tener subrayado
+    li a.boton {
+      border-bottom: none;
+      padding-bottom: 0;
+      &:hover { border-bottom: none; }
+    }
+  }
+
+  .boton button {
+    background: rgba(255,255,255,0.15);
+    color: $colorblanco;
+    border: 2px solid rgba(255,255,255,0.55);
+    border-radius: $border-radius-pill;
+    padding: 0.5rem 1.4rem;
+    font-weight: $font-weight-bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: $transition;
+    letter-spacing: 0.03em;
+    backdrop-filter: blur(4px);
+
+    &:hover {
+      background: $colorblanco;
+      color: $colorverde;
+      border-color: $colorblanco;
+      transform: translateY(-1px);
+      box-shadow: $shadow-green;
+    }
+  }
+}
+
+/* ── COTIZACIONES DÓLAR ──────────────────────────────────────────────── */
+#cotizacionesDolar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  padding: $spacing-lg $spacing-xl;
+  background: $colorgris-light;
+  border-bottom: 1px solid $color-border;
+}
+
+.item-iframe,
+.item-iframe-blue {
+  width: 15em;
+  height: 16.5em;
+  border-radius: $border-radius-md;
+  border: none;
+  box-shadow: $shadow-md;
+  transition: $transition;
+  background: white;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+/* ── FIN HEADER ─────────────────────────────────────────────────────── */

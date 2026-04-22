@@ -1,15 +1,26 @@
-/*Inicio cuotas mian */
+/* ── CUOTAS ─────────────────────────────────────────────────────────── */
 
-  .explicacionImpuesto{
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.1em;
-    margin: 2em;
-    margin-bottom: 5em;
-  }
+.explicacionImpuesto {
+  max-width: 760px;
+  margin: $spacing-xl auto;
+  padding: $spacing-lg $spacing-xl;
+  background: $colorblanco;
+  border-left: 4px solid $colorverde;
+  border-radius: 0 $border-radius-md $border-radius-md 0;
+  box-shadow: $shadow-sm;
+  font-size: $font-size-base;
+  line-height: 1.75;
+  color: $colorgris;
 
-  .tituloExplicacion{
-    font-size: 1.3em;
-  }
+  p { margin: 0; }
+}
 
-/*FIN cuotas main*/
+.tituloExplicacion h2,
+.tituloInteresCompuesto h2 {
+  font-size: 1.25rem;
+  font-weight: $font-weight-bold;
+  color: $colorverde;
+  margin: 0 0 $spacing-sm;
+}
+
+/* ── FIN CUOTAS ──────────────────────────────────────────────────────── */

@@ -1,263 +1,134 @@
-/* Media Querys */
+/* ── MEDIA QUERIES ───────────────────────────────────────────────────── */
 
-@media only screen and (max-width: 1200px) {
-
+/* ── 1200px: pantallas grandes ───────────────────────────────────────── */
+@include respond-to($bp-xl) {
   header {
+    padding: 0 $spacing-lg;
+    nav ul { gap: $spacing-md; }
+    nav ul li a { font-size: 0.9rem; }
+  }
+
+  .container-box {
+    padding: $spacing-lg;
+    .box1, .box2, .box3 { height: 280px; }
+  }
+}
+
+/* ── 1000px: pantallas medianas ──────────────────────────────────────── */
+@include respond-to($bp-lg) {
+  .container-box {
+    grid-template-columns: repeat(2, 1fr);
+    h2 { grid-column: 1 / -1; }
+    .box3 { grid-column: auto; max-width: none; margin: 0; width: auto; }
+    .box1, .box2, .box3 { height: 250px; }
+  }
+
+  .financial-main { margin: $spacing-lg; }
+
+  .instrument { width: calc(50% - $spacing-sm); }
+}
+
+/* ── 768px: tablets ──────────────────────────────────────────────────── */
+@include respond-to($bp-md) {
+  header {
+    padding: 0 $spacing-md;
+    nav ul { gap: $spacing-sm; }
+    nav ul li a { font-size: 0.85rem; }
+  }
+
+  #cotizacionesDolar { padding: $spacing-md; gap: $spacing-sm; }
+
+  .item-iframe, .item-iframe-blue { width: 11em; height: 12em; }
+
+  .container { padding: $spacing-lg $spacing-md; }
+
+  #sectionInformacion { padding: $spacing-lg $spacing-md; }
+
+  #containerInformacion { gap: $spacing-md; }
+
+  .dolar, .pesos { min-height: 220px; }
+
+  .containerBox2 {
+    padding: $spacing-lg $spacing-md;
+    margin: $spacing-lg $spacing-sm;
+    .formulario-box {
+      flex-direction: column;
+      align-items: flex-start;
+      label { min-width: unset; width: 100%; }
+      select, input[type="number"] { width: 100%; }
+    }
+  }
+
+  .horasExtra { flex-direction: column; }
+  .sabadoM, .feriado { flex: 1 1 100%; }
+
+  .financial-main { padding: $spacing-lg $spacing-sm; flex-direction: column; align-items: center; }
+
+  .instrument { width: 100%; max-width: 480px; }
+
+  footer .footer-content { flex-direction: column; gap: $spacing-lg; padding: $spacing-lg; }
+  footer .footer-logo { margin: 0 $spacing-md; }
+  .footer-finantips { width: 140px !important; }
+}
+
+/* ── 480px: móviles ──────────────────────────────────────────────────── */
+@include respond-to($bp-sm) {
+  header {
+    height: auto;
+    padding: $spacing-sm $spacing-md;
     flex-wrap: wrap;
-    justify-content: center;
+    gap: $spacing-sm;
 
-    nav ul {
-      gap: 20px;
-
-      li a {
-        font-size: 2.5vw;
-      }
-    }
+    .logo img { height: 32px; }
+    nav ul { gap: $spacing-sm; flex-wrap: wrap; justify-content: center; }
+    nav ul li a { font-size: 0.8rem; }
   }
 
-  .container p {
-    font-size: 1.2em;
-  }
+  #cotizacionesDolar { gap: $spacing-xs; }
+  .item-iframe { display: none; }
+  .item-iframe-blue { width: 100%; max-width: 320px; height: 14em; }
 
-}
+  .container h2 { font-size: 1.6rem; }
+  .container p { font-size: 0.92rem; }
 
-@media only screen and (min-width:1200px) {
-
-  footer {
-    font-size: 1.2em;
-
-    img {
-      width: 2em;
-      height: auto;
-    }
-  }
-}
-
-@media only screen and (max-width:1000px) {
-
-  main .container-box {
-    display: flex;
-    flex-direction: column;
-
-  }
-
-.container-box .box1,
-.container-box .box2,
-.container-box .box3 {
-
-    height: 250px;
-    width: auto;
-
-    h3{
-      font-size: 4vw;
-    }
-  }
-
-}
-
-@media (min-width: 977px) {
-
-  #sectionInformacion {
-    display: flex;
-    justify-content: center;
-    height: 70vh;
-
-  }
-
-  #containerInformacion {
-    display: contents;
-    align-items: center;
-  }
-
-  #containerInformacion .dolar {
-    padding: 9em;
-    margin: 2em;
-    background-position: center;
-
-  }
-
-  #containerInformacion .pesos {
-    padding: 9em;
-    margin: 2em;
-    background-position: center;
-  }
-
-}
-
-@media only screen and (max-width:960px) {
-
-  .container p {
-    font-size: 1em;
-  }
-
-}
-
-@media only screen and (max-width:900px) {
-
-  .Mercadopago {
-    width: 7em;
-    height: auto;
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .item-iframe, .item-iframe-blue {
-    width: 11em;
-    height: 13em;
-  }
-
-  .horasExtra {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sabadoM,
-  .feriado {
-    flex: 1 1 100%;
-  }
-
-}
-
-@media only screen and (max-width: 650px) {
-  .anuncioPrivado {
-    display: block;
-  }
-
-  header a img {
-    height: 4vh;
-  }
-
-  header nav ul {
-    gap: 15px;
-  }
-
-  header nav ul li a {
-    font-size: 3vw;
-  }
-  .containerBox2{
-    margin: 1em;
-  }
-  .financial-main {
-    margin: 1em;
-  }
-}
-
-@media only screen and (max-width:600px) {
-  .anuncioPrivado {
-    display: block;
-    
-  }
-
-  .container p {
-    font-size: 0.8em;
-  }
-
-  main .container-box h2 {
-    font-size: 7vw;
-  }
-
-  .box1,
-  .box2,
-  .box3 {
-    height: 150px;
-    font-size: 0.8em;
+  .container-box {
+    grid-template-columns: 1fr;
+    padding: $spacing-md;
+    .box1, .box2, .box3, h2 { grid-column: 1 / -1; }
+    .box3 { max-width: 100%; }
+    .box1, .box2, .box3 { height: 200px; }
   }
 
   .containerBox2 {
-    margin: 0.4em;
-    margin-bottom: 1.2em ;
+    margin: $spacing-md $spacing-xs;
+    padding: $spacing-md $spacing-sm;
+    border-radius: $border-radius-md;
   }
 
+  .boton4 { width: 100%; padding: 0.8rem 1rem; }
+
+  .ResultadosCalculo { font-size: 0.78rem; th, td { padding: 0.4rem; } }
+
+  .explicacionImpuesto,
+  .explicacionPlazoFijo,
+  .explicacionInteresCompuesto { padding: $spacing-md; margin: $spacing-lg $spacing-sm; }
+
+  .footer-left, .footer-right { min-width: 100%; }
+
+  .financial-main { margin: $spacing-md $spacing-xs; padding: $spacing-md $spacing-sm; }
+  .instrument img { height: 90px; }
+
+  .anuncioPrivado { display: block; }
 }
 
-@media (max-width: 480px) {
-  .anuncioPrivado {
-    display: block;
-  
-  }
+/* ── 413px: móviles pequeños ─────────────────────────────────────────── */
+@include respond-to($bp-xs) {
+  header nav ul { gap: 0.35rem; }
+  header nav ul li a { font-size: 0.75rem; }
 
-  #cotizacionesDolar {
-    margin-top: 1em;
-    margin-bottom: 2.5em;
+  .dolar, .pesos { min-width: 100%; min-height: 200px; }
 
-  }
-
-  .item-iframe {
-    display: none;
-  }
-  .item-iframe-blue {
-    width: auto;
-    height: 15em;
-    
-  }
-
-  .containerBox2 {
-    margin: 0.2em;
-    margin-bottom: 1em ;
-  }
-
+  .sabadoM, .feriado { font-size: 0.85rem; }
 }
 
-@media only screen and (max-width:480px) {
-  .anuncioPrivado {
-    display: block;
-    
-  }
-
-  .footer-finantips {
-    width: 55vw;
-    height: auto;
-    margin: 20px;
-  }
-
-  .footer-left,
-  .footer-right {
-    margin: 20px;
-  }
-
-  header nav ul li a {
-    font-size: 0.8em;
-  }
-
-}
-
-@media (max-width: 413px) {
-
-  .anuncioPrivado {
-    display: block;
-  }
-
-  .containerBox3 {
-    text-align: left;
-    margin: 4em;
-    padding: 1.5em;
-    border: 5px solid #14805c;
-    border-radius: 1em;
-  }
-
-  
-
-}
-
-@media (max-width: 353px) {
-  .anuncioPrivado {
-    display: block;
-  }
-
-  
-
-  #cotizacionesDolar {
-    margin-top: 1em;
-    margin-bottom: 2.5em;
-
-  }
-
-  .item-iframe {
-    width: 8.5em;
-    height: 13em;
-    margin: 0.5em;
-  }
-
-}
+/* ── FIN MEDIA QUERIES ───────────────────────────────────────────────── */

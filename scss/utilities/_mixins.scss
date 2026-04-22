@@ -1,34 +1,94 @@
 @mixin box {
-  width: auto;
-  border-radius: $border-radius-md;
+  position: relative;
+  overflow: hidden;
+  border-radius: $border-radius-lg;
   background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  align-content: center;
-  transition: 0.5s;
-  color: $colorverde;
-  font-weight: $font-weight-bold;
-  margin: $spacing-md;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  justify-content: flex-end;
+  padding: $spacing-lg;
+  margin: $spacing-sm;
+  box-shadow: $shadow-md;
+  transition: $transition;
+  cursor: pointer;
 }
 
 @mixin boxhover {
-    transform: scale(1.02);
+  transform: translateY(-6px);
+  box-shadow: $shadow-green;
 }
 
 @mixin boxboton {
-    font-weight: $font-weight-bold;
-    color: $colorverde;
-    padding: $spacing-xs + 4px $spacing-xl - 5px;
-    background-color: $colorblanco;
-    border: none;
-    border-radius: $border-radius-pill;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $colorverde;
+  padding: 0.6rem 1.75rem;
+  background-color: $colorblanco;
+  border: none;
+  border-radius: $border-radius-pill;
+  cursor: pointer;
+  transition: $transition;
+  font-size: $font-size-md;
+  letter-spacing: 0.02em;
+
+  &:hover {
+    background: $colorverde-dark;
+    color: $colorblanco;
+  }
 }
 
-// Uso: @include respond-to($bp-md) { ... }
+@mixin card {
+  background: $colorblanco;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-sm;
+  padding: $spacing-lg;
+  border: 1px solid $color-border;
+  transition: $transition;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-3px);
+  }
+}
+
+@mixin btn-primary {
+  background: $colorverde;
+  color: $colorblanco;
+  border: none;
+  border-radius: $border-radius-pill;
+  padding: 0.75rem 2.2rem;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-md;
+  cursor: pointer;
+  transition: $transition;
+  letter-spacing: 0.03em;
+
+  &:hover {
+    background: $colorverde-dark;
+    transform: translateY(-2px);
+    box-shadow: $shadow-green;
+  }
+}
+
+@mixin input-style {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid $color-border;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-base;
+  font-family: $font-family;
+  color: $coloroscuro;
+  background: white;
+  transition: $transition;
+  outline: none;
+
+  &:focus {
+    border-color: $colorverde;
+    box-shadow: 0 0 0 3px rgba(20, 128, 92, 0.12);
+  }
+}
+
 @mixin respond-to($breakpoint) {
   @media only screen and (max-width: $breakpoint) {
     @content;

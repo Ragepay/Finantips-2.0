@@ -1,133 +1,106 @@
-  /*Footer*/
+/* ── FOOTER ─────────────────────────────────────────────────────────── */
+footer {
+  background: linear-gradient(160deg, #0a4d35 0%, $colorverde-dark 60%, $colorverde 100%);
+  color: $colorblanco;
+  padding-top: $spacing-xl;
 
-  footer {
-    background-color: $colorverde;
-    padding: 20px 0;
-    color: $colorblanco;
-    font-size: 1em;
-    box-shadow: 20px 0px 0px 0px;
-
-    img {
-      width: 1.5em;
-      height: auto;
-    }
-
-    .Mercadopago {
-      width: 10em;
-      height: auto;
-    }
-
-    .footer-logo {
-      text-align: center;
-      border: 1px $colorblanco;
-    }
+  .footer-logo {
+    text-align: center;
+    padding-bottom: $spacing-lg;
+    margin: 0 $spacing-xl;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
 
     .footer-finantips {
-
-      width: 40vw;
+      width: 180px;
       height: auto;
-    }
+      opacity: 0.92;
+      transition: $transition;
 
-    .footer-content {
-
-      display: flex;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 20px;
-      text-align: center;
-      flex-wrap: wrap;
-    }
-
-    .footer-left {
-      flex: 1;
-
-      h3 {
-        color: #e4e3e3;
-        font-size: 1.5em;
-        margin-bottom: 10px;
-      }
-
-      ul {
-
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        li {
-          list-style: none;
-          margin-bottom: 5px;
-
-          a {
-            color: #252525;
-            text-decoration: none;
-
-            &:hover{
-              text-decoration: underline;
-            }
-
-          }
-        }
-      }
-
+      &:hover { opacity: 1; transform: scale(1.03); }
     }
   }
 
-  .footer-right {
+  .footer-content {
+    display: flex;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: $spacing-xl $spacing-lg;
+    gap: $spacing-xl;
+    flex-wrap: wrap;
+  }
 
-    h3 {
-      color: #e4e3e3;
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
+  img {
+    width: 1.5em;
+    height: auto;
+  }
+}
 
-    flex: 1;
+.footer-left,
+.footer-right {
+  flex: 1;
+  min-width: 180px;
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+  h3 {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.72rem;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin: 0 0 $spacing-md;
+  }
 
-      li {
-        margin-bottom: 5px;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-        a {
-          color: #252525;
-          text-decoration: none;
+    li {
+      margin-bottom: $spacing-sm;
 
-          &:hover{
-            text-decoration: underline;
-          }
+      a {
+        color: rgba(255,255,255,0.82);
+        text-decoration: none;
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        transition: $transition;
 
+        &:hover {
+          color: $colorblanco;
+          transform: translateX(3px);
         }
 
+        img { width: 1.5em; height: auto; }
+        img.Mercadopago { width: 9em; height: auto; }
       }
-
     }
+  }
+}
 
+.footer-bottom {
+  background: rgba(0,0,0,0.28);
+  padding: $spacing-md $spacing-lg;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.40);
+  border-top: 1px solid rgba(255,255,255,0.06);
+
+  p { margin: 0 0 0.25rem; }
+
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-md;
+    margin-top: 0.25rem;
   }
 
-  .footer-bottom {
-    background-color: #111111;
-    padding: 10px;
-    text-align: center;
-    font-size: 1em;
-    text-align: center;
-    color: #adadad;
-
-    .footer-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .version {
-      margin-right: 10px;
-    }
-
-    .fecha {
-      margin-left: 10px;
-    }
-
+  .version,
+  .fecha {
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
   }
+}
 
-  /* FIN Footer */
+/* ── FIN FOOTER ─────────────────────────────────────────────────────── */
