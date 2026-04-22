@@ -18,7 +18,7 @@
     letter-spacing: -0.02em;
   }
 
-  .box1, .box2, .box3, .box4, .box5 {
+  .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8 {
     @include box;
     height: 280px;
     margin: 0;
@@ -70,6 +70,9 @@
   .box3 { background-image: url(../img/fotoImpuestoGanancias.jpeg); }
   .box4 { background-image: url(../img/Pesos.jpg); }
   .box5 { background-image: url(../img/fotoImpuestoGanancias.jpeg); }
+  .box6 { background-image: url(../img/fotoSueldoNeto.jpg); }
+  .box7 { background-image: url(../img/Dolares.jpg); }
+  .box8 { background-image: url(../img/fotoImpuestoGanancias.jpeg); }
 
   /* Tablet */
   @media (max-width: $bp-md) {

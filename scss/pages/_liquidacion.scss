@@ -1,0 +1,159 @@
+/* ── LIQUIDACIÓN FINAL ──────────────────────────────────────────────── */
+
+.liq-error {
+  color: #c0392b;
+  font-weight: $font-weight-medium;
+  margin-top: $spacing-md;
+  text-align: center;
+}
+
+/* Resultado principal */
+.liq-resultado {
+  margin-top: $spacing-lg;
+  padding: $spacing-lg;
+  background: $colorblanco;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-md;
+  border-top: 4px solid $colorverde;
+}
+
+.liq-header {
+  margin-bottom: $spacing-lg;
+}
+
+.liq-causa-badge {
+  display: inline-block;
+  background: $colorverde;
+  color: #fff;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $border-radius-pill;
+  margin-bottom: $spacing-sm;
+  letter-spacing: 0.02em;
+}
+
+.liq-antiguedad {
+  font-size: $font-size-sm;
+  color: $colorgris;
+  line-height: 1.6;
+}
+
+/* Tabla de conceptos */
+.liq-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-base;
+  margin-bottom: $spacing-md;
+
+  thead tr {
+    background: $colorverde-light;
+  }
+
+  th {
+    padding: $spacing-sm $spacing-md;
+    text-align: left;
+    font-weight: $font-weight-bold;
+    color: $colorverde;
+    border-bottom: 2px solid $colorverde;
+    font-size: $font-size-sm;
+
+    &:last-child { text-align: right; }
+  }
+
+  tbody tr {
+    border-bottom: 1px solid $color-border;
+    transition: $transition;
+
+    &:hover { background: $colorverde-light; }
+  }
+
+  td {
+    padding: $spacing-sm $spacing-md;
+    color: $coloroscuro;
+    vertical-align: middle;
+
+    &:last-child {
+      text-align: right;
+      font-weight: $font-weight-medium;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+
+  .liq-detalle {
+    font-size: $font-size-sm;
+    color: $colorgris;
+  }
+
+  tfoot .liq-total {
+    td {
+      padding-top: $spacing-md;
+      border-top: 2px solid $colorverde;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-lg;
+      color: $colorverde;
+      border-bottom: none;
+
+      &:last-child { text-align: right; }
+    }
+  }
+}
+
+.liq-nota {
+  font-size: $font-size-sm;
+  color: $colorgris;
+  line-height: 1.6;
+  padding: $spacing-md;
+  background: $colorgris-light;
+  border-radius: $border-radius-sm;
+  margin: 0;
+}
+
+/* Explicación */
+.explicacionLiquidacion {
+  max-width: 760px;
+  margin: $spacing-xl auto;
+  padding: $spacing-lg $spacing-xl;
+  background: $colorblanco;
+  border-left: 4px solid $colorverde;
+  border-radius: 0 $border-radius-md $border-radius-md 0;
+  box-shadow: $shadow-sm;
+  font-size: $font-size-base;
+  line-height: 1.75;
+  color: $colorgris;
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: $font-weight-bold;
+    color: $colorverde;
+    margin: 0 0 $spacing-sm;
+  }
+
+  p { margin: 0; }
+}
+
+/* Responsive */
+@media (max-width: $bp-sm) {
+  .liq-resultado {
+    padding: $spacing-md;
+  }
+
+  .liq-tabla {
+    font-size: $font-size-sm;
+
+    th, td {
+      padding: $spacing-xs $spacing-sm;
+    }
+
+    .liq-detalle { display: none; } /* ocultar detalle en mobile para no romper layout */
+  }
+
+  .explicacionLiquidacion {
+    padding: $spacing-md;
+    margin-left: $spacing-sm;
+    margin-right: $spacing-sm;
+  }
+}
+
+/* ── FIN LIQUIDACIÓN FINAL ──────────────────────────────────────────── */

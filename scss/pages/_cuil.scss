@@ -1,0 +1,107 @@
+/* ── CUIL ────────────────────────────────────────────────────────────── */
+
+.cuil-error {
+  color: #c0392b;
+  font-weight: $font-weight-medium;
+  margin-top: $spacing-md;
+  text-align: center;
+}
+
+.cuil-resultado {
+  margin-top: $spacing-lg;
+  padding: $spacing-lg;
+  background: $colorblanco;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-md;
+  border-top: 4px solid $colorverde;
+  text-align: center;
+}
+
+.cuil-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.cuil-genero-badge {
+  background: $colorverde;
+  color: #fff;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $border-radius-pill;
+  letter-spacing: 0.02em;
+}
+
+.cuil-dni-label {
+  font-size: $font-size-sm;
+  color: $colorgris;
+  font-variant-numeric: tabular-nums;
+}
+
+.cuil-numero {
+  margin: $spacing-md 0;
+}
+
+.cuil-valor {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: $font-weight-bold;
+  color: $coloroscuro;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.cuil-nota {
+  display: block;
+  font-size: $font-size-sm;
+  color: $colorgris;
+  margin-top: $spacing-xs;
+}
+
+.cuil-explicacion {
+  font-size: $font-size-sm;
+  color: $colorgris;
+  margin: $spacing-md 0 0;
+  padding-top: $spacing-md;
+  border-top: 1px solid $color-border;
+}
+
+/* Explicación */
+.explicacionCUIL {
+  max-width: 760px;
+  margin: $spacing-xl auto;
+  padding: $spacing-lg $spacing-xl;
+  background: $colorblanco;
+  border-left: 4px solid $colorverde;
+  border-radius: 0 $border-radius-md $border-radius-md 0;
+  box-shadow: $shadow-sm;
+  font-size: $font-size-base;
+  line-height: 1.75;
+  color: $colorgris;
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: $font-weight-bold;
+    color: $colorverde;
+    margin: 0 0 $spacing-sm;
+  }
+
+  p { margin: 0; }
+}
+
+@media (max-width: $bp-sm) {
+  .cuil-valor { font-size: 1.8rem; }
+
+  .explicacionCUIL {
+    padding: $spacing-md;
+    margin-left: $spacing-sm;
+    margin-right: $spacing-sm;
+  }
+}
+
+/* ── FIN CUIL ────────────────────────────────────────────────────────── */

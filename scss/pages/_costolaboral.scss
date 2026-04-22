@@ -1,0 +1,192 @@
+/* ── COSTO LABORAL ──────────────────────────────────────────────────── */
+
+.costo-input-nota {
+  display: block;
+  font-size: $font-size-sm;
+  color: $colorgris;
+  margin-top: $spacing-xs;
+}
+
+.costo-error {
+  color: #c0392b;
+  font-weight: $font-weight-medium;
+  margin-top: $spacing-md;
+  text-align: center;
+}
+
+/* Tabla de resultados */
+.costo-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: $spacing-lg;
+  font-size: $font-size-base;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+
+  thead tr th {
+    background: $colorverde;
+    color: #fff;
+    padding: $spacing-md $spacing-lg;
+    text-align: left;
+    font-size: $font-size-md;
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.01em;
+  }
+
+  /* Fila de datos normal */
+  .costo-fila-dato {
+    border-bottom: 1px solid $color-border;
+    transition: $transition;
+
+    &:hover { background: $colorverde-light; }
+
+    td {
+      padding: $spacing-sm $spacing-lg;
+      color: $coloroscuro;
+
+      &:last-child {
+        text-align: right;
+        font-weight: $font-weight-medium;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  /* Encabezado de sección (Aportes / Contribuciones) */
+  .costo-seccion td {
+    background: #dce9f5;
+    color: #1a3a5c;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-sm;
+    padding: $spacing-xs $spacing-lg;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Subtotal (Sueldo Neto / Total Patronal) */
+  .costo-fila-subtotal {
+    border-bottom: 1px solid $color-border;
+
+    td {
+      padding: $spacing-sm $spacing-lg;
+      font-weight: $font-weight-bold;
+      color: $coloroscuro;
+      background: $colorgris-light;
+
+      &:last-child {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  /* Total final */
+  .costo-total td {
+    background: $colorverde;
+    color: #fff;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-md;
+    padding: $spacing-md $spacing-lg;
+
+    &:last-child {
+      text-align: right;
+      font-size: $font-size-lg;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+  }
+
+  /* Filas de porcentaje */
+  .costo-fila-pct {
+    border-bottom: 1px solid $color-border;
+
+    td {
+      padding: $spacing-sm $spacing-lg;
+      color: $colorgris;
+      font-size: $font-size-sm;
+
+      &:last-child {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+        color: $coloroscuro;
+      }
+    }
+  }
+}
+
+.costo-badge-pct {
+  display: inline-block;
+  background: $colorverde-light;
+  color: $colorverde;
+  font-weight: $font-weight-bold;
+  padding: 2px $spacing-sm;
+  border-radius: $border-radius-pill;
+  font-size: $font-size-sm;
+}
+
+.costo-nota-inline {
+  color: $colorgris;
+  font-size: $font-size-sm;
+}
+
+.costo-aclaracion {
+  font-size: $font-size-sm;
+  color: $colorgris;
+  margin-top: $spacing-md;
+  line-height: 1.6;
+  padding: $spacing-md;
+  background: $colorgris-light;
+  border-radius: $border-radius-sm;
+}
+
+/* Explicación */
+.explicacionCosto {
+  max-width: 760px;
+  margin: $spacing-xl auto;
+  padding: $spacing-lg $spacing-xl;
+  background: $colorblanco;
+  border-left: 4px solid $colorverde;
+  border-radius: 0 $border-radius-md $border-radius-md 0;
+  box-shadow: $shadow-sm;
+  font-size: $font-size-base;
+  line-height: 1.75;
+  color: $colorgris;
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: $font-weight-bold;
+    color: $colorverde;
+    margin: 0 0 $spacing-sm;
+  }
+
+  p { margin: 0; }
+}
+
+/* Responsive */
+@media (max-width: $bp-sm) {
+  .costo-tabla {
+    font-size: $font-size-sm;
+
+    thead tr th,
+    .costo-fila-dato td,
+    .costo-fila-subtotal td,
+    .costo-total td,
+    .costo-fila-pct td,
+    .costo-seccion td {
+      padding-left: $spacing-md;
+      padding-right: $spacing-md;
+    }
+  }
+
+  .explicacionCosto {
+    padding: $spacing-md;
+    margin-left: $spacing-sm;
+    margin-right: $spacing-sm;
+  }
+}
+
+/* ── FIN COSTO LABORAL ──────────────────────────────────────────────── */

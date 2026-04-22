@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculá el costo laboral total de un empleado: sueldo bruto, aportes del trabajador y contribuciones patronales. Impuesto a las Ganancias excluido.">
+  <meta name="keywords" content="costo laboral, contribuciones patronales, sueldo bruto, aportes trabajador, ART, PAMI, obra social, Argentina, empleador">
+  <meta name="google-adsense-account" content="ca-pub-1304377583650825">
+  <title>Calculadora de Costo Laboral | FinanTips</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="../js/costolaboral.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1304377583650825"
+    crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4862KRVMTP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4862KRVMTP');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculadora de Costo Laboral | FinanTips">
+  <meta property="og:description" content="Calculá el costo laboral total de un empleado: aportes, contribuciones patronales y costo total sobre neto y bruto.">
+  <meta property="og:url" content="https://finantips.netlify.app/pages/costolaboral.html">
+  <meta property="og:image" content="https://finantips.netlify.app/img/Logo + Finantips.png">
+  <meta property="og:locale" content="es_AR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de Costo Laboral | FinanTips">
+  <meta name="twitter:description" content="Calculá el costo laboral total de un empleado en Argentina.">
+  <link rel="canonical" href="https://finantips.netlify.app/pages/costolaboral.html">
+</head>
+
+<body>
+
+  <header></header>
+
+  <main>
+    <section id="cotizacionesDolar">
+      <iframe class="item-iframe-blue" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-blue"
+        frameborder="0"></iframe>
+      <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-mep"
+        frameborder="0"></iframe>
+      <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-contado-con-liquidacion"
+        frameborder="0"></iframe>
+      <iframe class="item-iframe" scrolling="no"
+        src="https://dolarhoy.com/i/cotizaciones/dolar-bancos-y-casas-de-cambio" frameborder="0"></iframe>
+    </section>
+
+    <section>
+      <div class="containerBox2">
+
+        <h1>Calculadora de Costo Laboral</h1>
+
+        <form>
+
+          <div class="formulario-box">
+            <label for="sueldoNeto">Sueldo neto a pagar:</label>
+            <input type="number" id="sueldoNeto" step="1" min="0" placeholder="Ej: 1500000">
+            <small class="costo-input-nota">(*) No incluir retención de Ganancias</small>
+          </div>
+
+          <div class="formulario-box">
+            <label for="art">Costo ART (%):</label>
+            <input type="number" id="art" step="0.01" min="0" value="3" placeholder="3">
+          </div>
+
+          <div>
+            <button id="btnCosto" type="button" class="boton4">Calcular costo</button>
+          </div>
+
+          <div id="resultadosCosto"></div>
+
+        </form>
+
+      </div>
+    </section>
+
+    <div class="explicacionCosto">
+      <h2>¿Qué es el costo laboral?</h2>
+      <p>
+        El costo laboral es el gasto total que tiene una empresa por cada empleado, que supera ampliamente el sueldo
+        neto que percibe el trabajador. Se compone de dos partes:<br><br>
+        <strong>Aportes del trabajador:</strong> son las contribuciones que el empleado realiza sobre su sueldo bruto:
+        jubilación (11%), obra social (3%) y PAMI (3%). Estas reducen el sueldo bruto para llegar al neto.<br><br>
+        <strong>Contribuciones patronales:</strong> son los cargos que paga el empleador adicionalmente al sueldo
+        bruto. Incluyen jubilación (16%), obra social (5%), PAMI (2%), asignaciones familiares (7.5%), Fondo Nacional
+        de Empleo (1.5%), seguro de vida obligatorio (0.03%) y ART (variable según actividad).<br><br>
+        En total, el costo de un empleado suele superar entre un 55% y 65% el sueldo neto que este percibe,
+        dependiendo de la alícuota de ART aplicable.
+      </p>
+    </div>
+  </main>
+
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  </script>
+
+  <script type="module" src="../js/components.js"></script>
+  <script type="module" src="../js/actualizacion.js"></script>
+
+</body>
+
+</html>
