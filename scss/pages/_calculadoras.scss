@@ -1,15 +1,16 @@
 /* ── CALCULADORAS ───────────────────────────────────────────────────── */
 
 .container-box {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: $spacing-md;
   padding: $spacing-xl $spacing-lg;
   max-width: 1100px;
   margin: 0 auto;
 
   h2 {
-    grid-column: 1 / -1;
+    width: 100%;
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
     color: $colorverde;
     font-weight: $font-weight-bold;
@@ -18,9 +19,11 @@
     letter-spacing: -0.02em;
   }
 
-  .box1, .box2, .box3 {
+  .box1, .box2, .box3, .box4 {
     @include box;
     height: 320px;
+    flex: 0 0 300px;
+    width: 300px;
 
     h3 {
       position: relative;
@@ -59,7 +62,9 @@
   }
   .box3 {
     background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url(../img/fotoImpuestoGanancias.jpeg);
-    grid-column: 2 / 3;
+  }
+  .box4 {
+    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url(../img/Pesos.jpg);
   }
 }
 

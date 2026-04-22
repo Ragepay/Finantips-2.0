@@ -37,6 +37,7 @@ document.querySelector('footer').innerHTML = `
         <li><a href="${base}pages/pesos.html">Pesos</a></li>
         <li><a href="${base}pages/dolares.html">Dólar</a></li>
         <li><a href="${base}pages/calculadoras.html">Calculadoras</a></li>
+        <li><a href="${base}pages/inflacion.html">Inflación</a></li>
         <li><a href="https://link.mercadopago.com.ar/finantips" target="_blank">Donar <img src="${base}img/iconodonar.png" alt="Donar Corazon"></a></li>
       </ul>
     </div>

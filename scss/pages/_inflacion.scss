@@ -1,0 +1,25 @@
+/* ── INFLACION ───────────────────────────────────────────────────────── */
+
+.explicacionInflacion {
+  max-width: 760px;
+  margin: $spacing-xl auto;
+  padding: $spacing-lg $spacing-xl;
+  background: $colorblanco;
+  border-left: 4px solid $colorverde;
+  border-radius: 0 $border-radius-md $border-radius-md 0;
+  box-shadow: $shadow-sm;
+  font-size: $font-size-base;
+  line-height: 1.75;
+  color: $colorgris;
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: $font-weight-bold;
+    color: $colorverde;
+    margin: 0 0 $spacing-sm;
+  }
+
+  p { margin: 0; }
+}
+
+/* ── FIN INFLACION ───────────────────────────────────────────────────── */
