@@ -712,7 +712,34 @@ function habilitarInput() {
 async function descargarRecibo(id) {
     const tabla = document.getElementById(`tabla-recibo-${id}`);
     if (!tabla) return;
+
+    // Generar QR localmente (sin petición externa, sin CORS)
+    const qr = qrcode(0, 'L');
+    qr.addData('https://finantips.netlify.app/');
+    qr.make();
+    const qrDataUrl = qr.createDataURL(4, 0);
+
+    // Agregar pie de marca temporalmente a la tabla
+    const tfoot = document.createElement('tfoot');
+    tfoot.innerHTML = `
+        <tr>
+            <td colspan="4" style="text-align:center; padding:14px 8px 10px; border-top:2px solid #14805c; background:#f5f5f5;">
+                <img src="${qrDataUrl}" style="display:block; margin:0 auto 6px; width:72px; height:72px; image-rendering:pixelated;">
+                <div style="font-size:12px; color:#444; font-family:sans-serif; margin-top:4px;">
+                    Calculado con <strong style="color:#14805c;">FinanTips</strong>
+                </div>
+                <div style="font-size:11px; color:#888; font-family:sans-serif;">
+                    finantips.netlify.app
+                </div>
+            </td>
+        </tr>
+    `;
+    tabla.appendChild(tfoot);
+
     const canvas = await html2canvas(tabla, { scale: 2, backgroundColor: '#ffffff' });
+
+    tabla.removeChild(tfoot);
+
     const link = document.createElement('a');
     link.download = `recibo-${new Date(id).toLocaleDateString('es-AR').replace(/\//g, '-')}.png`;
     link.href = canvas.toDataURL('image/png');
