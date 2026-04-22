@@ -308,7 +308,7 @@ button {
 .btn-escalas {
   margin: $spacing-sm 0 $spacing-md;
 
-  a {
+  a, button {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;

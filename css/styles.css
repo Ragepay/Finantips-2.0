@@ -396,21 +396,20 @@ footer img {
 
 /* ── CALCULADORAS ───────────────────────────────────────────────────── */
 .container-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 1.25rem;
   padding: 3.5rem 2rem;
-  max-width: 1100px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 .container-box h2 {
-  width: 100%;
+  grid-column: 1/-1;
   font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   color: #14805c;
   font-weight: 700;
   text-align: center;
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.75rem;
   letter-spacing: -0.02em;
 }
 .container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4, .container-box .box5 {
@@ -428,19 +427,23 @@ footer img {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
   transition: all 0.22s ease;
   cursor: pointer;
-  height: 320px;
-  flex: 0 0 300px;
-  width: 300px;
+  height: 280px;
+  margin: 0;
+  width: 100%; /* ocupa todo el ancho de su celda de grid */
+  justify-content: center;
+  gap: 1.25rem;
 }
 .container-box .box1 h3, .container-box .box2 h3, .container-box .box3 h3, .container-box .box4 h3, .container-box .box5 h3 {
   position: relative;
   z-index: 1;
   color: #fafafa;
-  font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+  font-size: 1.1rem;
   font-weight: 700;
   text-align: center;
-  margin: 0 0 0.75rem;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.01em;
+  line-height: 1.3;
 }
 .container-box .box1 .boton, .container-box .box2 .boton, .container-box .box3 .boton, .container-box .box4 .boton, .container-box .box5 .boton {
   position: relative;
@@ -463,14 +466,14 @@ footer img {
   color: #fafafa;
 }
 .container-box .box1 .boton button, .container-box .box2 .boton button, .container-box .box3 .boton button, .container-box .box4 .boton button, .container-box .box5 .boton button {
-  font-size: 0.88rem;
-  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  padding: 0.55rem 1.75rem;
 }
 .container-box .box1::after, .container-box .box2::after, .container-box .box3::after, .container-box .box4::after, .container-box .box5::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.65) 100%);
+  background: rgba(0, 0, 0, 0.44);
   border-radius: 22px;
   transition: all 0.22s ease;
 }
@@ -479,22 +482,40 @@ footer img {
   box-shadow: 0 6px 24px rgba(20, 128, 92, 0.3);
 }
 .container-box .box1:hover::after, .container-box .box2:hover::after, .container-box .box3:hover::after, .container-box .box4:hover::after, .container-box .box5:hover::after {
-  background: linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, 0.78) 100%);
+  background: rgba(0, 0, 0, 0.58);
 }
 .container-box .box1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url(../img/fotoSueldoNeto.jpg);
+  background-image: url(../img/fotoSueldoNeto.jpg);
 }
 .container-box .box2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url(../img/fotoPlazoFijo.jpeg);
+  background-image: url(../img/fotoPlazoFijo.jpeg);
 }
 .container-box .box3 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url(../img/fotoImpuestoGanancias.jpeg);
+  background-image: url(../img/fotoImpuestoGanancias.jpeg);
 }
 .container-box .box4 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url(../img/Pesos.jpg);
+  background-image: url(../img/Pesos.jpg);
 }
 .container-box .box5 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url(../img/fotoImpuestoGanancias.jpeg);
+  background-image: url(../img/fotoImpuestoGanancias.jpeg);
+}
+.container-box {
+  /* Tablet */
+}
+@media (max-width: 768px) {
+  .container-box {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+.container-box {
+  /* Mobile */
+}
+@media (max-width: 480px) {
+  .container-box {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }
 
 /* ── FIN CALCULADORAS ────────────────────────────────────────────────── */
@@ -900,7 +921,7 @@ button {
 .btn-escalas {
   margin: 0.75rem 0 1.25rem;
 }
-.btn-escalas a {
+.btn-escalas a, .btn-escalas button {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -916,12 +937,12 @@ button {
   transition: all 0.22s ease;
   font-size: 0.95rem;
 }
-.btn-escalas a::after {
+.btn-escalas a::after, .btn-escalas button::after {
   content: "↗";
   font-size: 0.85em;
   opacity: 0.8;
 }
-.btn-escalas a:hover {
+.btn-escalas a:hover, .btn-escalas button:hover {
   background: #fafafa;
   color: #14805c;
   border-color: #14805c;
@@ -988,6 +1009,119 @@ button {
 /* ── FIN PESOS ───────────────────────────────────────────────────────── */
 /* ── IIGG ────────────────────────────────────────────────────────────── */
 /* Comparte estilos de .containerBox2 y .formulario-box de _sueldoneto.scss */
+/* Modal escala de alícuotas */
+.escala-modal-content {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.escala-modal-header {
+  background: #14805c;
+  color: #fafafa;
+  padding: 1.25rem 2rem;
+  align-items: flex-start;
+}
+.escala-modal-header .modal-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fafafa;
+  margin: 0 0 0.35rem;
+}
+
+.escala-modal-subtitulo {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+.escala-tabla-wrap {
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+.escala-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 560px;
+}
+.escala-tabla thead tr {
+  background: #e8f5f0;
+}
+.escala-tabla th {
+  padding: 0.75rem 1.25rem;
+  text-align: right;
+  font-weight: 700;
+  color: #14805c;
+  border-bottom: 2px solid #14805c;
+  white-space: nowrap;
+}
+.escala-tabla th:first-child {
+  text-align: left;
+}
+.escala-tabla tbody tr {
+  border-bottom: 1px solid #d1e8df;
+  transition: all 0.22s ease;
+}
+.escala-tabla tbody tr:hover {
+  background: #e8f5f0;
+}
+.escala-tabla tbody tr:last-child {
+  border-bottom: none;
+  font-weight: 700;
+}
+.escala-tabla td {
+  padding: 0.75rem 1.25rem;
+  text-align: right;
+  color: #1a1a2e;
+  font-variant-numeric: tabular-nums;
+}
+.escala-tabla td:first-child {
+  text-align: left;
+}
+.escala-tabla td:nth-child(4) {
+  font-weight: 700;
+  color: #14805c;
+}
+
+.escala-nota {
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  padding: 1.25rem;
+  background: #f3f4f6;
+  border-radius: 8px;
+}
+
+.escala-modal-footer {
+  gap: 0.75rem;
+  justify-content: flex-start;
+  border-top: 1px solid #d1e8df;
+}
+
+.escala-btn-descarga {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.escala-btn-ver {
+  display: inline-block;
+  padding: 0.55rem 1.5rem;
+  border: 2px solid #14805c;
+  border-radius: 50px;
+  color: #14805c;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+.escala-btn-ver:hover {
+  background: #14805c;
+  color: #fafafa;
+}
+
 /* ── FIN IIGG ────────────────────────────────────────────────────────── */
 /* ── INFLACION ───────────────────────────────────────────────────────── */
 .explicacionInflacion {

@@ -1,3 +1,117 @@
 /* ── IIGG ────────────────────────────────────────────────────────────── */
 /* Comparte estilos de .containerBox2 y .formulario-box de _sueldoneto.scss */
+
+/* Modal escala de alícuotas */
+.escala-modal-content {
+  border: none;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+}
+
+.escala-modal-header {
+  background: $colorverde;
+  color: $colorblanco;
+  padding: $spacing-md $spacing-lg;
+  align-items: flex-start;
+
+  .modal-title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $colorblanco;
+    margin: 0 0 $spacing-xs;
+  }
+}
+
+.escala-modal-subtitulo {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+.escala-tabla-wrap {
+  overflow-x: auto;
+  margin-bottom: $spacing-md;
+}
+
+.escala-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-sm;
+  min-width: 560px;
+
+  thead tr {
+    background: $colorverde-light;
+  }
+
+  th {
+    padding: $spacing-sm $spacing-md;
+    text-align: right;
+    font-weight: $font-weight-bold;
+    color: $colorverde;
+    border-bottom: 2px solid $colorverde;
+    white-space: nowrap;
+
+    &:first-child { text-align: left; }
+  }
+
+  tbody tr {
+    border-bottom: 1px solid $color-border;
+    transition: $transition;
+
+    &:hover { background: $colorverde-light; }
+    &:last-child { border-bottom: none; font-weight: $font-weight-bold; }
+  }
+
+  td {
+    padding: $spacing-sm $spacing-md;
+    text-align: right;
+    color: $coloroscuro;
+    font-variant-numeric: tabular-nums;
+
+    &:first-child { text-align: left; }
+    &:nth-child(4) {
+      font-weight: $font-weight-bold;
+      color: $colorverde;
+    }
+  }
+}
+
+.escala-nota {
+  font-size: $font-size-sm;
+  color: $colorgris;
+  line-height: 1.6;
+  margin: 0;
+  padding: $spacing-md;
+  background: $colorgris-light;
+  border-radius: $border-radius-sm;
+}
+
+.escala-modal-footer {
+  gap: $spacing-sm;
+  justify-content: flex-start;
+  border-top: 1px solid $color-border;
+}
+
+.escala-btn-descarga {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.escala-btn-ver {
+  display: inline-block;
+  padding: 0.55rem 1.5rem;
+  border: 2px solid $colorverde;
+  border-radius: $border-radius-pill;
+  color: $colorverde;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-sm;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    background: $colorverde;
+    color: $colorblanco;
+  }
+}
+
 /* ── FIN IIGG ────────────────────────────────────────────────────────── */

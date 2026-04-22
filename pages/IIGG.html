@@ -67,6 +67,12 @@
 
             <h1>Calculadora de IIGG</h1>
 
+            <div class="btn-escalas">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#modalEscalaGanancias">
+                Ver Escala de Alícuotas
+              </button>
+            </div>
+
             <form>
                 <div class="formulario-box">
                     <label for="sueldoBruto">Ingrese Sueldo Bruto:</label>
@@ -138,6 +144,61 @@
 
 
     </main>
+
+    <!-- Modal Escala de Alícuotas -->
+    <div class="modal fade" id="modalEscalaGanancias" tabindex="-1" aria-labelledby="modalEscalaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content escala-modal-content">
+          <div class="modal-header escala-modal-header">
+            <div>
+              <h5 class="modal-title" id="modalEscalaLabel">Escalas de Alícuotas — Art. 94 LIG</h5>
+              <p class="escala-modal-subtitulo">Ganancias netas sujetas a impuesto para personas humanas y sucesiones indivisas</p>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div class="escala-tabla-wrap">
+              <table class="escala-tabla">
+                <thead>
+                  <tr>
+                    <th>Desde ($)</th>
+                    <th>Hasta ($)</th>
+                    <th>Pagarán ($)</th>
+                    <th>Más el %</th>
+                    <th>Sobre el excedente de ($)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>0,00</td><td>2.000.030,09</td><td>0,00</td><td>5%</td><td>0,00</td></tr>
+                  <tr><td>2.000.030,09</td><td>4.000.060,17</td><td>100.001,50</td><td>9%</td><td>2.000.030,09</td></tr>
+                  <tr><td>4.000.060,17</td><td>6.000.090,26</td><td>280.004,21</td><td>12%</td><td>4.000.060,17</td></tr>
+                  <tr><td>6.000.090,26</td><td>9.000.135,40</td><td>520.007,82</td><td>15%</td><td>6.000.090,26</td></tr>
+                  <tr><td>9.000.135,40</td><td>18.000.270,80</td><td>970.014,59</td><td>19%</td><td>9.000.135,40</td></tr>
+                  <tr><td>18.000.270,80</td><td>27.000.406,20</td><td>2.680.040,32</td><td>23%</td><td>18.000.270,80</td></tr>
+                  <tr><td>27.000.406,20</td><td>40.500.609,30</td><td>4.750.071,46</td><td>27%</td><td>27.000.406,20</td></tr>
+                  <tr><td>40.500.609,30</td><td>60.750.913,96</td><td>8.395.126,30</td><td>31%</td><td>40.500.609,30</td></tr>
+                  <tr><td>60.750.913,96</td><td>en adelante</td><td>14.672.720,74</td><td>35%</td><td>60.750.913,96</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="escala-nota">
+              Según Ley N° 27.743. Art. s/n a continuación del art. 102 de la Reglamentación del impuesto a las ganancias,
+              incorporado por el Decreto N° 652 del 19/07/2024. RG N° 4003, art. 7°, inc. a).<br>
+              <strong>Aplicable a remuneraciones percibidas desde el 1° de enero de 2024 hasta el 31 de agosto de 2024,
+              y a las liquidaciones finales del inc. b) del art. 21 de la RG N° 4003.</strong>
+            </p>
+          </div>
+          <div class="modal-footer escala-modal-footer">
+            <a href="../docs/EscalaGanancias.pdf" download="EscalaGanancias.pdf" class="boton4 escala-btn-descarga">
+              Descargar PDF
+            </a>
+            <a href="../docs/EscalaGanancias.pdf" target="_blank" class="escala-btn-ver">
+              Ver PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer></footer>
 
