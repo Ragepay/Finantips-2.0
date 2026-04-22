@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch scss/main.scss css/styles.css",
-    "push": "git add . && git commit -m \"feat: actualizacion de escala, cargas Sociales y de Ganancias.\" && git push"
+    "push": "git add . && git commit -m \"fix: Grandes cambios de Claude.\" && git push"
   },
   "keywords": [],
   "author": "",

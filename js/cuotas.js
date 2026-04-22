@@ -6,6 +6,10 @@ function Comparar() {
     let tnaPlazoFijo = parseFloat(document.getElementById("TNA").value);
     let comentario = " ";
 
+    if (isNaN(precioContado) || isNaN(precioCuotas) || isNaN(cantidadCuotas) || cantidadCuotas <= 0 || isNaN(tnaPlazoFijo)) {
+        document.getElementById("resultado").innerHTML = "<p>Por favor ingresá todos los valores correctamente.</p>";
+        return;
+    }
 
     // Calcula de la cuota.
     let cuota = precioCuotas / cantidadCuotas;

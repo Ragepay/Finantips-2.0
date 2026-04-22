@@ -24,6 +24,21 @@ const escalaActualizada = escala.map(valor => valor * 1.0445 * aumentoGanancias)
 
 // Retencion vales de comedor.
 const valesComedorTotal = 22 * 2652; // 58.344
+
+// ── PORCENTAJES DE CARGAS SOCIALES (ley argentina) ──────────────────
+const JUBILACION = 0.11;        // 11% — aporte jubilatorio (ley 24.241)
+const LEY_19032 = 0.03;         // 3%  — INSSJP (ley 19.032)
+const OBRA_SOCIAL = 0.03;       // 3%  — aporte obra social
+const SMATA = 0.05;             // 5%  — aporte sindical SMATA
+
+// ── CONCEPTOS REMUNERATIVOS TOYOTA ───────────────────────────────────
+const PRODUCTIVIDAD = 0.14;         // 14% del salario base
+const PRESENTISMO = 0.14;           // 14% del salario base
+const PLUS_MANTENIMIENTO = 0.26;    // 26% del salario base
+const HORAS_NOCTURNAS_COEF = 0.36;  // 36% del valor hora
+
+// ── IMPUESTO A LAS GANANCIAS ─────────────────────────────────────────
+const DEDUCCION_ALQUILER = 0.40;    // 40% del alquiler pagado (art. 85 LIG)
 //-----------------------------------------------------------------------
 
 //  MENSAJE DE ACTUALIZACIÓN DINÁMICO
@@ -49,27 +64,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // FECHA DE ACTUALIZACION
 //-----------------------------------------------------------------------
+// Actualizar esta fecha cada vez que se modifiquen los valores del convenio.
+const FECHA_ACTUALIZACION = "21/04/2026";
+
 const fechadeUltimaActualizacion = document.getElementById("fecha");
-
-function formatDate(date) {
-    const day = date.getDate();
-    const month = date.getMonth() + 1; // Los meses en JavaScript son de 0 a 11
-    const year = date.getFullYear();
-
-    return `Date: ${day}.${month}.${year}`;
-}
-
-const currentDate = new Date();
-fechadeUltimaActualizacion.innerText = formatDate(currentDate);
+fechadeUltimaActualizacion.innerText = `Actualizado: ${FECHA_ACTUALIZACION}`;
 //-----------------------------------------------------------------------
 
 
 
 //  ULTIMA VERSION
 //-----------------------------------------------------------------------
-// Actualizar la versión aquí
+// Fuente única de verdad para la versión. Actualizar solo aquí.
+const VERSION = "1.6.1";
 const ultimaVersion = document.getElementById("version");
-ultimaVersion.innerText = "Version: 1.6.1";
+if (ultimaVersion) {
+    ultimaVersion.innerText = `Version: ${VERSION}`;
+}
 //-----------------------------------------------------------------------
 
 
@@ -85,5 +96,19 @@ export {
     hijo,
     maxAlquileresDeducibles,
     escalaActualizada,
-    valesComedorTotal
+    valesComedorTotal,
+    // Porcentajes cargas sociales
+    JUBILACION,
+    LEY_19032,
+    OBRA_SOCIAL,
+    SMATA,
+    // Conceptos Toyota
+    PRODUCTIVIDAD,
+    PRESENTISMO,
+    PLUS_MANTENIMIENTO,
+    HORAS_NOCTURNAS_COEF,
+    // Ganancias
+    DEDUCCION_ALQUILER,
+    // Versión
+    VERSION
 };

@@ -1,3 +1,7 @@
+// ARCHIVO DE REFERENCIA — no está integrado en la app.
+// Sirve como backup y ejemplo standalone del algoritmo de cálculo de retenciones
+// por tramos del Impuesto a las Ganancias. Útil para probar valores manualmente.
+
 const montoImponible = 3200000;
 
 const escala = [0,100000, 200000, 300000, 450000, 900000, 1350000, 2050000, 3037500, 1000000000000000];

@@ -7,7 +7,15 @@ import {
     conyuge,
     hijo,
     escalaActualizada,
-    valesComedorTotal
+    valesComedorTotal,
+    JUBILACION,
+    LEY_19032,
+    OBRA_SOCIAL,
+    SMATA,
+    PRODUCTIVIDAD,
+    PRESENTISMO,
+    PLUS_MANTENIMIENTO,
+    HORAS_NOCTURNAS_COEF
 } from './actualizacion.js';
 
 /* Declaracion de variables que van a ser actualizadas. */
@@ -19,9 +27,14 @@ let minimoImponible = minimoNoImponible + deduccionEspecial;
 //----------------------------------------------------------------------------------
 
 // Declaracion de array y obtencion de elementos guardados en localStorage.
-let recibos = JSON.parse(localStorage.getItem('recibos')) || [];
+let recibos;
+try {
+    recibos = JSON.parse(localStorage.getItem('recibos')) || [];
+} catch {
+    recibos = [];
+}
 
-async function calcularSueldo() {
+function calcularSueldo() {
 
     //  Categorias con su respectivo aumento.
     let tm16m = 918760 * AUMENTO;
@@ -123,7 +136,7 @@ async function calcularSueldo() {
     function calcularProductividad() {
         let radioProductividadSi = document.getElementById("productividadSi");
         if (radioProductividadSi.checked) {
-            return sueldoBase * 0.14
+            return sueldoBase * PRODUCTIVIDAD
         }
         return 0
     }
@@ -131,7 +144,7 @@ async function calcularSueldo() {
     function calcularPresentismo() {
         let radioPresentismoSi = document.getElementById("presentismoSi");
         if (radioPresentismoSi.checked) {
-            return sueldoBase * 0.14
+            return sueldoBase * PRESENTISMO
         }
         return 0
     }
@@ -143,8 +156,7 @@ async function calcularSueldo() {
     function calcularMantenimiento() {
         let radioMantenimientoSi = document.getElementById("mantenimientoSi");
         if (radioMantenimientoSi.checked) {
-            return sueldoBase * 0.26
-
+            return sueldoBase * PLUS_MANTENIMIENTO
         }
         return 0
     }
@@ -197,13 +209,13 @@ async function calcularSueldo() {
 
     let horas50Total = horas50 * ((base / a) * (1.5) * (1.04 + 0.01 * (antiguedad - 1)));
     let horas200Total = horas200 * ((base / a) * (4) * (1.04 + 0.01 * (antiguedad - 1)));
-    let horasNocturnasTotal = horasNocturnas * (base / a) * 0.36 * (1.04 + 0.01 * (antiguedad - 1));
+    let horasNocturnasTotal = horasNocturnas * (base / a) * HORAS_NOCTURNAS_COEF * (1.04 + 0.01 * (antiguedad - 1));
 
     // Con antiguedad 0.
     if (antiguedad == 0) {
         horas50Total = horas50 * (base / a) * (1.5);
         horas200Total = horas200 * (base / a) * (4);
-        horasNocturnasTotal = horasNocturnas * (base / a) * 0.36;
+        horasNocturnasTotal = horasNocturnas * (base / a) * HORAS_NOCTURNAS_COEF;
     }
 
 
@@ -219,33 +231,32 @@ async function calcularSueldo() {
 
 
     if ((sueldoBruto <= maxCargasSociales) && (chequearSindicato() == true)) {
-        jubilacion = sueldoBruto * 0.11;
-        ley = sueldoBruto * 0.03;
-        obraSocial = sueldoBruto * 0.03;
-        sindicatoTotal = sueldoBruto * 0.05;
+        jubilacion = sueldoBruto * JUBILACION;
+        ley = sueldoBruto * LEY_19032;
+        obraSocial = sueldoBruto * OBRA_SOCIAL;
+        sindicatoTotal = sueldoBruto * SMATA;
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - sindicatoTotal - valesComedorTotal;
     }
 
     if ((sueldoBruto <= maxCargasSociales) && (chequearSindicato() == false)) {
-        jubilacion = sueldoBruto * 0.11;
-        ley = sueldoBruto * 0.03;
-        obraSocial = sueldoBruto * 0.03;
+        jubilacion = sueldoBruto * JUBILACION;
+        ley = sueldoBruto * LEY_19032;
+        obraSocial = sueldoBruto * OBRA_SOCIAL;
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - valesComedorTotal;
     }
 
     if ((sueldoBruto > maxCargasSociales) && (chequearSindicato() == true)) {
-        jubilacion = maxCargasSociales * 0.11;
-        ley = maxCargasSociales * 0.03;
-        obraSocial = maxCargasSociales * 0.03;
-        sindicatoTotal = sueldoBruto * 0.05;
+        jubilacion = maxCargasSociales * JUBILACION;
+        ley = maxCargasSociales * LEY_19032;
+        obraSocial = maxCargasSociales * OBRA_SOCIAL;
+        sindicatoTotal = sueldoBruto * SMATA;
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - sindicatoTotal - valesComedorTotal;
-
     }
 
     if ((sueldoBruto > maxCargasSociales) && (chequearSindicato() == false)) {
-        jubilacion = maxCargasSociales * 0.11;
-        ley = maxCargasSociales * 0.03;
-        obraSocial = maxCargasSociales * 0.03;
+        jubilacion = maxCargasSociales * JUBILACION;
+        ley = maxCargasSociales * LEY_19032;
+        obraSocial = maxCargasSociales * OBRA_SOCIAL;
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - valesComedorTotal;
     }
 
@@ -325,12 +336,12 @@ async function calcularSueldo() {
     sueldoNeto -= retencion;
 
     //  Creacion de los Objetos "reciboSueldo" por propiedad que ingrese, para poder almacenar y mostar por localstorage.
-    function ReciboSueldo(categoria, id, salarioBase, presentismo, produtivdad, plusMantenimiento, horasNocturnas, horas50, horas200, antiguedad, retencionValesComedor, jubilacion, ley, obraSocial, aporteSindical, sueldoBruto, sueldoNeto, sabadoM, feriado, retencion) {
+    function ReciboSueldo(categoria, id, salarioBase, presentismo, productividad, plusMantenimiento, horasNocturnas, horas50, horas200, antiguedad, retencionValesComedor, jubilacion, ley, obraSocial, aporteSindical, sueldoBruto, sueldoNeto, sabadoM, feriado, retencion) {
         this.categoria = categoria || "Sin categoria";
         this.id = id;
         this.salarioBase = salarioBase;
         this.presentismo = presentismo;
-        this.productividad = produtivdad;
+        this.productividad = productividad;
         this.plusMantenimiento = plusMantenimiento;
         this.horasNocturnas = horasNocturnas;
         this.horas50 = horas50;
@@ -356,7 +367,11 @@ async function calcularSueldo() {
 
 
     //  Almacenamos el array de objetos en el localStorage.
-    localStorage.setItem("recibos", JSON.stringify(recibos));
+    try {
+        localStorage.setItem("recibos", JSON.stringify(recibos));
+    } catch {
+        console.warn("No se pudo guardar en localStorage.");
+    }
 
     // Mostrar los resultados en el formulario.
     function mostrarResultados() {
@@ -636,7 +651,11 @@ function eliminarRecibo(id) {
             recibos = recibos.filter(recibo => recibo.id !== id);
 
             // Actualizar el localStorage con el nuevo array de recibos.
-            localStorage.setItem('recibos', JSON.stringify(recibos));
+            try {
+                localStorage.setItem('recibos', JSON.stringify(recibos));
+            } catch {
+                console.warn("No se pudo guardar en localStorage.");
+            }
 
         }
         mostrarHistorialRecibos()

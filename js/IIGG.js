@@ -6,7 +6,11 @@ import {
     conyuge,
     hijo,
     maxAlquileresDeducibles,
-    escalaActualizada
+    escalaActualizada,
+    JUBILACION,
+    LEY_19032,
+    OBRA_SOCIAL,
+    DEDUCCION_ALQUILER
 } from './actualizacion.js';
 
 /* Declaracion de variables que van a ser actualizadas. */
@@ -71,32 +75,32 @@ function calcularSueldo() {
     //  Calculo de las "Cargas Sociales" y Sueldo Neto.
     //----------------------------------------------------------------------------------
     if ((sueldoBruto <= maxCargasSociales) && (sindicatoSi.checked == true)) {
-        jubilacion = sueldoBruto * 0.11;
-        ley = sueldoBruto * 0.03;
-        obraSocial = sueldoBruto * 0.03;
+        jubilacion = sueldoBruto * JUBILACION;
+        ley = sueldoBruto * LEY_19032;
+        obraSocial = sueldoBruto * OBRA_SOCIAL;
         sindicatoTotal = sueldoBruto * (sindicatoPorcentaje / 100);
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - sindicatoTotal;
     }
 
     if ((sueldoBruto <= maxCargasSociales) && (sindicatoSi.checked == false)) {
-        jubilacion = sueldoBruto * 0.11;
-        ley = sueldoBruto * 0.03;
-        obraSocial = sueldoBruto * 0.03;
+        jubilacion = sueldoBruto * JUBILACION;
+        ley = sueldoBruto * LEY_19032;
+        obraSocial = sueldoBruto * OBRA_SOCIAL;
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial;
     }
 
     if ((sueldoBruto > maxCargasSociales) && (sindicatoSi.checked == true)) {
-        jubilacion = maxCargasSociales * 0.11;
-        ley = maxCargasSociales * 0.03;
-        obraSocial = maxCargasSociales * 0.03;
+        jubilacion = maxCargasSociales * JUBILACION;
+        ley = maxCargasSociales * LEY_19032;
+        obraSocial = maxCargasSociales * OBRA_SOCIAL;
         sindicatoTotal = sueldoBruto * (sindicatoPorcentaje / 100);
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial - sindicatoTotal;
     }
 
     if ((sueldoBruto > maxCargasSociales) && (sindicatoSi.checked == false)) {
-        jubilacion = maxCargasSociales * 0.11;
-        ley = maxCargasSociales * 0.03;
-        obraSocial = maxCargasSociales * 0.03;
+        jubilacion = maxCargasSociales * JUBILACION;
+        ley = maxCargasSociales * LEY_19032;
+        obraSocial = maxCargasSociales * OBRA_SOCIAL;
         sueldoNeto = sueldoBruto - jubilacion - ley - obraSocial;
     }
     //----------------------------------------------------------------------------------
@@ -114,7 +118,7 @@ function calcularSueldo() {
 
     let conyugeDeduccion;
     let hijosDeducciones = hijos * hijo;
-    let alquilerDeduccion = alquiler * 0.4;
+    let alquilerDeduccion = alquiler * DEDUCCION_ALQUILER;
 
     if (alquilerDeduccion > maxAlquileresDeducibles) {
         alquilerDeduccion = maxAlquileresDeducibles;

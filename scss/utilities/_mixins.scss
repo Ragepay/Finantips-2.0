@@ -1,14 +1,14 @@
 @mixin box {
   width: auto;
-  border-radius: 1em;
+  border-radius: $border-radius-md;
   background-size: cover;
   align-items: center;
   justify-content: center;
   align-content: center;
   transition: 0.5s;
-  color: #14805c;
-  font-weight: bold;
-  margin: 15px;
+  color: $colorverde;
+  font-weight: $font-weight-bold;
+  margin: $spacing-md;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -17,13 +17,20 @@
 }
 
 @mixin boxboton {
-    font-weight: 700;
-    color: #14805c;
-    padding: 9px 25px;
-    background-color: #fafafa;
+    font-weight: $font-weight-bold;
+    color: $colorverde;
+    padding: $spacing-xs + 4px $spacing-xl - 5px;
+    background-color: $colorblanco;
     border: none;
-    border-radius: 50px;
+    border-radius: $border-radius-pill;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    font-size: 1.2em;
+    font-size: $font-size-md;
+}
+
+// Uso: @include respond-to($bp-md) { ... }
+@mixin respond-to($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
 }

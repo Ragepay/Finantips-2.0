@@ -321,7 +321,7 @@ footer .footer-left ul li a:hover {
   align-content: center;
   transition: 0.5s;
   color: #14805c;
-  font-weight: bold;
+  font-weight: 700;
   margin: 15px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   height: 500px;
