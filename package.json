@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch scss/main.scss css/styles.css",
-    "push": "git add . && git commit -m \"feat: Calculadora de costo laboral, liquidacion final y cuil.\" && git push"
+    "push": "git add . && git commit -m \"fix: Fixes de todo un poco.\" && git push"
   },
   "keywords": [],
   "author": "",

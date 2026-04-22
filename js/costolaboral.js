@@ -1,15 +1,26 @@
-// Tasas fijas (Resolución General AFIP y LCT vigente)
-const JUBILACION_TRAB  = 0.11;
-const OBRA_SOC_TRAB    = 0.03;
-const PAMI_TRAB        = 0.03;
-const TOTAL_APORTES    = JUBILACION_TRAB + OBRA_SOC_TRAB + PAMI_TRAB; // 0.17
+import {
+  maxCargasSociales,
+  minimoNoImponible,
+  deduccionEspecial,
+  conyuge,
+  hijo,
+  maxAlquileresDeducibles,
+  escalaActualizada,
+  JUBILACION,
+  LEY_19032,
+  OBRA_SOCIAL,
+  DEDUCCION_ALQUILER
+} from './actualizacion.js';
 
-const JUBILACION_PAT   = 0.16;
-const OBRA_SOC_PAT     = 0.05;
-const PAMI_PAT         = 0.02;
-const ASIG_FAM         = 0.075;
-const FNE              = 0.015;
-const SEGURO_VIDA      = 0.0003;
+const JUBILACION_PAT = 0.16;
+const OBRA_SOC_PAT   = 0.05;
+const PAMI_PAT       = 0.02;
+const ASIG_FAM       = 0.075;
+const FNE            = 0.015;
+const SEGURO_VIDA    = 0.0003;
+const TOTAL_APORTES  = JUBILACION + LEY_19032 + OBRA_SOCIAL; // 0.17
+
+const minimoImponible = minimoNoImponible + deduccionEspecial;
 
 function fmt(n) {
   return '$' + n.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -17,6 +28,34 @@ function fmt(n) {
 
 function fmtPct(n) {
   return n.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+}
+
+function calcularGanancias(bruto, jubTrab, leyTrab, osTrab, numHijos, tienesConyuge, alquilerMensual, otrasDed) {
+  const conyugeDeduccion = tienesConyuge ? conyuge : 0;
+  const hijosDeducciones = numHijos * hijo;
+
+  let alquilerDeduccion = alquilerMensual * DEDUCCION_ALQUILER;
+  if (alquilerDeduccion > maxAlquileresDeducibles) alquilerDeduccion = maxAlquileresDeducibles;
+
+  let montoImponible = bruto - minimoImponible - jubTrab - leyTrab - osTrab
+                       - otrasDed - conyugeDeduccion - alquilerDeduccion - hijosDeducciones;
+
+  if (montoImponible < 0) montoImponible = 0;
+
+  const escala  = [...escalaActualizada];
+  const numRet  = [5, 9, 12, 15, 19, 23, 27, 31, 35];
+  let retencion = 0;
+
+  for (let i = 0; i < escala.length; i++) {
+    if (montoImponible <= escala[i]) {
+      retencion += (montoImponible - (i > 0 ? escala[i - 1] : 0)) * (numRet[i - 1] / 100);
+      break;
+    } else if (i > 0) {
+      retencion += (escala[i] - escala[i - 1]) * (numRet[i - 1] / 100);
+    }
+  }
+
+  return isNaN(retencion) ? 0 : retencion;
 }
 
 function calcularCostoLaboral() {
@@ -35,15 +74,33 @@ function calcularCostoLaboral() {
 
   const art = artPct / 100;
 
-  // Sueldo bruto a partir del neto (sin retención de ganancias)
-  const bruto = sueldoNeto / (1 - TOTAL_APORTES);
+  // Neto → Bruto respetando el tope de cargas sociales
+  // Caso 1 (sin tope): neto = bruto * (1 - 0.17)  →  bruto = neto / 0.83
+  // Caso 2 (con tope): neto = bruto - maxCS * 0.17  →  bruto = neto + maxCS * 0.17
+  let bruto = sueldoNeto / (1 - TOTAL_APORTES);
+  let baseAportes;
 
-  // Aportes del trabajador
-  const jubTrab  = bruto * JUBILACION_TRAB;
-  const osTrab   = bruto * OBRA_SOC_TRAB;
-  const pamiTrab = bruto * PAMI_TRAB;
+  if (bruto <= maxCargasSociales) {
+    baseAportes = bruto;
+  } else {
+    bruto       = sueldoNeto + maxCargasSociales * TOTAL_APORTES;
+    baseAportes = maxCargasSociales;
+  }
 
-  // Contribuciones patronales
+  const jubTrab = baseAportes * JUBILACION;
+  const leyTrab = baseAportes * LEY_19032;
+  const osTrab  = baseAportes * OBRA_SOCIAL;
+
+  // Ganancias sobre el bruto calculado
+  const numHijos        = parseInt(document.getElementById('hijos').value) || 0;
+  const tienesConyuge   = document.getElementById('conyugeSi').checked;
+  const alquilerMensual = parseFloat(document.getElementById('alquiler').value) || 0;
+  const otrasDed        = parseFloat(document.getElementById('otrasDeducciones').value) || 0;
+
+  const ganancias    = calcularGanancias(bruto, jubTrab, leyTrab, osTrab, numHijos, tienesConyuge, alquilerMensual, otrasDed);
+  const netoEfectivo = sueldoNeto - ganancias;
+
+  // Contribuciones patronales (sobre bruto completo, sin tope)
   const jubPat   = bruto * JUBILACION_PAT;
   const osPat    = bruto * OBRA_SOC_PAT;
   const pamiPat  = bruto * PAMI_PAT;
@@ -52,11 +109,14 @@ function calcularCostoLaboral() {
   const segVida  = bruto * SEGURO_VIDA;
   const artMonto = bruto * art;
 
-  const totalPatronal = jubPat + osPat + pamiPat + asigFam + fne + segVida + artMonto;
-  const costoTotal    = bruto + totalPatronal;
-
-  const costoSobreNeto  = ((costoTotal / sueldoNeto) - 1) * 100;
+  const totalPatronal   = jubPat + osPat + pamiPat + asigFam + fne + segVida + artMonto;
+  const costoTotal      = bruto + totalPatronal;
+  const costoSobreNeto  = netoEfectivo > 0 ? ((costoTotal / netoEfectivo) - 1) * 100 : 0;
   const costoSobreBruto = ((costoTotal / bruto) - 1) * 100;
+
+  const topeNota = baseAportes === maxCargasSociales
+    ? ' <span class="costo-nota-inline">(tope aplicado)</span>'
+    : '';
 
   resultEl.innerHTML = `
     <table class="costo-tabla">
@@ -73,24 +133,24 @@ function calcularCostoLaboral() {
 
         <tr class="costo-seccion"><td colspan="2">Aportes y deducciones del trabajador</td></tr>
         <tr class="costo-fila-dato">
-          <td>Jubilación (11%)</td>
-          <td>${fmt(jubTrab)}</td>
+          <td>Jubilación (11%)${topeNota}</td>
+          <td>-${fmt(jubTrab)}</td>
         </tr>
         <tr class="costo-fila-dato">
-          <td>Obra Social (3%)</td>
-          <td>${fmt(osTrab)}</td>
+          <td>Obra Social (3%)${topeNota}</td>
+          <td>-${fmt(osTrab)}</td>
         </tr>
         <tr class="costo-fila-dato">
-          <td>Ley 19032 — PAMI (3%)</td>
-          <td>${fmt(pamiTrab)}</td>
+          <td>Ley 19032 — PAMI (3%)${topeNota}</td>
+          <td>-${fmt(leyTrab)}</td>
         </tr>
         <tr class="costo-fila-dato">
           <td>Impuesto a las Ganancias</td>
-          <td>$0,00 <span class="costo-nota-inline">(*)</span></td>
+          <td>-${fmt(ganancias)}</td>
         </tr>
         <tr class="costo-fila-subtotal">
-          <td>Sueldo Neto a pagar</td>
-          <td>${fmt(sueldoNeto)}</td>
+          <td>Sueldo Neto en mano</td>
+          <td>${fmt(netoEfectivo)}</td>
         </tr>
 
         <tr class="costo-seccion"><td colspan="2">Contribuciones del empleador</td></tr>
@@ -132,7 +192,7 @@ function calcularCostoLaboral() {
           <td>${fmt(costoTotal)}</td>
         </tr>
         <tr class="costo-fila-pct">
-          <td>Costo extra sobre sueldo neto</td>
+          <td>Costo extra sobre sueldo neto en mano</td>
           <td class="costo-badge-pct">${fmtPct(costoSobreNeto)}</td>
         </tr>
         <tr class="costo-fila-pct">
@@ -141,8 +201,7 @@ function calcularCostoLaboral() {
         </tr>
       </tbody>
     </table>
-    <p class="costo-aclaracion">(*) No incluye retención de Impuesto a las Ganancias. Las tasas de contribuciones
-    patronales corresponden al régimen general. Pueden variar según actividad y tamaño de la empresa.</p>
+    <p class="costo-aclaracion">Las tasas de contribuciones patronales corresponden al régimen general. Pueden variar según actividad y tamaño de la empresa. El tope de cargas sociales vigente es ${fmt(maxCargasSociales)}.</p>
   `;
 }
 

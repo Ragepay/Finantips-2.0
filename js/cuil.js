@@ -10,7 +10,7 @@ function calcularDigitoVerificador(prefijo, dni) {
   const resto = suma % 11;
 
   if (resto === 0) return 0;
-  if (resto === 1) return prefijo === 20 ? 9 : 4; // caso especial según géneroz
+  if (resto === 1) return prefijo === 20 ? 9 : 4; // caso especial según género
   return 11 - resto;
 }
 

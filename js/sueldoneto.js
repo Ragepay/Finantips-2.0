@@ -453,7 +453,7 @@ function calcularSueldo() {
                         <td>-${recibo.obraSocial.toFixed(2)}</td>
                     </tr>
                     <tr>
-                        <td colspan="2">Smata</td>
+                        <td colspan="2">SMATA</td>
                         <td></td>
                         <td>-${recibo.aporteSindical.toFixed(2)}</td>
                     </tr>
