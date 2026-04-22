@@ -1,0 +1,270 @@
+/* ── MONOTRIBUTO ─────────────────────────────────────────────────────── */
+
+.monotributo-error {
+  color: #c0392b;
+  font-weight: $font-weight-medium;
+  margin-top: $spacing-md;
+  text-align: center;
+}
+
+/* Resultado principal */
+.monotributo-resultado {
+  margin-top: $spacing-lg;
+  padding: $spacing-lg;
+  background: $colorblanco;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-md;
+  border-top: 4px solid $colorverde;
+}
+
+.monotributo-categoria-header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+}
+
+.monotributo-letra {
+  width: 72px;
+  height: 72px;
+  border-radius: $border-radius-md;
+  background: $colorverde;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: $font-weight-bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $shadow-green;
+  flex-shrink: 0;
+}
+
+.monotributo-categoria-titulo {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $coloroscuro;
+}
+
+.monotributo-actividad {
+  font-size: $font-size-sm;
+  color: $colorgris;
+  margin-top: $spacing-xs;
+}
+
+/* Barra de progreso de ingresos */
+.monotributo-barra-wrap {
+  margin-bottom: $spacing-lg;
+}
+
+.monotributo-barra-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: $font-size-sm;
+  color: $colorgris;
+  margin-bottom: $spacing-xs;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+}
+
+.monotributo-barra {
+  width: 100%;
+  height: 10px;
+  background: $color-border;
+  border-radius: $border-radius-pill;
+  overflow: hidden;
+}
+
+.monotributo-barra-fill {
+  height: 100%;
+  background: $colorverde;
+  border-radius: $border-radius-pill;
+  transition: width 0.5s ease;
+}
+
+.monotributo-barra-pct {
+  font-size: $font-size-sm;
+  color: $colorgris;
+  margin-top: $spacing-xs;
+  margin-bottom: 0;
+}
+
+/* Tabla cuota mensual */
+.monotributo-cuota-titulo {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $coloroscuro;
+  margin-bottom: $spacing-md;
+}
+
+.monotributo-tabla-cuota {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-base;
+
+  td {
+    padding: $spacing-sm $spacing-md;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      text-align: right;
+      font-weight: $font-weight-medium;
+      color: $coloroscuro;
+    }
+  }
+
+  .monotributo-tabla-total td {
+    border-bottom: none;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-md;
+    color: $colorverde;
+    border-top: 2px solid $colorverde;
+    padding-top: $spacing-md;
+  }
+}
+
+.monotributo-vigencia {
+  font-size: $font-size-sm;
+  color: $colorgris;
+  margin-top: $spacing-md;
+  margin-bottom: 0;
+  text-align: right;
+}
+
+/* Excedido categoría K */
+.monotributo-excedido {
+  margin-top: $spacing-lg;
+  padding: $spacing-lg;
+  background: #fff8f0;
+  border-left: 4px solid #e67e22;
+  border-radius: 0 $border-radius-md $border-radius-md 0;
+  box-shadow: $shadow-sm;
+
+  .excedido-titulo {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: #c0392b;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $colorgris;
+    margin-bottom: $spacing-sm;
+
+    &:last-child { margin-bottom: 0; }
+  }
+}
+
+/* Tabla de referencia de todas las categorías */
+.monotributo-referencia {
+  max-width: 820px;
+  margin: $spacing-xl auto;
+  padding: $spacing-lg $spacing-xl;
+  background: $colorblanco;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-sm;
+}
+
+.monotributo-referencia-titulo {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $colorverde;
+  margin-bottom: $spacing-md;
+}
+
+.monotributo-referencia-nota {
+  font-size: $font-size-sm;
+  color: $colorgris;
+  margin-top: $spacing-md;
+  margin-bottom: 0;
+}
+
+#tablaTodasCategorias {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-sm;
+
+  thead tr {
+    background: $colorverde;
+    color: #fff;
+  }
+
+  th {
+    padding: $spacing-sm $spacing-md;
+    text-align: left;
+    font-weight: $font-weight-medium;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid $color-border;
+    transition: $transition;
+
+    &:hover { background: $colorverde-light; }
+
+    &:last-child { border-bottom: none; }
+  }
+
+  td {
+    padding: $spacing-sm $spacing-md;
+    color: $coloroscuro;
+
+    &:first-child {
+      color: $colorverde;
+      font-size: $font-size-md;
+    }
+
+    &:not(:first-child) {
+      font-variant-numeric: tabular-nums;
+    }
+  }
+}
+
+/* Sección explicación */
+.explicacionMonotributo {
+  max-width: 760px;
+  margin: $spacing-xl auto;
+  padding: $spacing-lg $spacing-xl;
+  background: $colorblanco;
+  border-left: 4px solid $colorverde;
+  border-radius: 0 $border-radius-md $border-radius-md 0;
+  box-shadow: $shadow-sm;
+  font-size: $font-size-base;
+  line-height: 1.75;
+  color: $colorgris;
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: $font-weight-bold;
+    color: $colorverde;
+    margin: 0 0 $spacing-sm;
+  }
+
+  p { margin: 0; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .monotributo-barra-labels {
+    flex-direction: column;
+  }
+
+  .monotributo-referencia {
+    padding: $spacing-md;
+    overflow-x: auto;
+  }
+
+  #tablaTodasCategorias {
+    min-width: 480px;
+  }
+
+  .monotributo-resultado {
+    padding: $spacing-md;
+  }
+
+  .explicacionMonotributo {
+    padding: $spacing-md;
+    margin-left: $spacing-sm;
+    margin-right: $spacing-sm;
+  }
+}
+
+/* ── FIN MONOTRIBUTO ──────────────────────────────────────────────────── */

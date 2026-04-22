@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculá tu categoría de monotributo y cuánto pagás por mes según tus ingresos. Valores actualizados desde el 01/02/2026.">
+  <meta name="keywords" content="monotributo, calculadora monotributo, categoría monotributo, cuota monotributo, AFIP, monotributista, Argentina, finanzas personales">
+  <meta name="google-adsense-account" content="ca-pub-1304377583650825">
+  <title>Calculadora de Monotributo 2026 | FinanTips</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="../js/monotributo.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1304377583650825"
+    crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4862KRVMTP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4862KRVMTP');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculadora de Monotributo 2026 | FinanTips">
+  <meta property="og:description" content="Calculá tu categoría de monotributo y cuánto pagás por mes según tus ingresos. Valores actualizados desde el 01/02/2026.">
+  <meta property="og:url" content="https://finantips.netlify.app/pages/monotributo.html">
+  <meta property="og:image" content="https://finantips.netlify.app/img/Logo + Finantips.png">
+  <meta property="og:locale" content="es_AR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de Monotributo 2026 | FinanTips">
+  <meta name="twitter:description" content="Calculá tu categoría de monotributo y cuánto pagás por mes según tus ingresos. Valores actualizados desde el 01/02/2026.">
+  <link rel="canonical" href="https://finantips.netlify.app/pages/monotributo.html">
+</head>
+
+<body>
+
+  <header></header>
+
+  <main>
+    <section id="cotizacionesDolar">
+      <iframe class="item-iframe-blue" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-blue"
+        frameborder="0"></iframe>
+      <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-mep"
+        frameborder="0"></iframe>
+      <iframe class="item-iframe" scrolling="no" src="https://dolarhoy.com/i/cotizaciones/dolar-contado-con-liquidacion"
+        frameborder="0"></iframe>
+      <iframe class="item-iframe" scrolling="no"
+        src="https://dolarhoy.com/i/cotizaciones/dolar-bancos-y-casas-de-cambio" frameborder="0"></iframe>
+    </section>
+
+    <section>
+      <div class="containerBox2">
+
+        <h1>Calculadora de Monotributo</h1>
+
+        <form>
+
+          <div class="formulario-box">
+            <label for="tipoActividad">Tipo de actividad:</label>
+            <select id="tipoActividad">
+              <option value="servicios">Locaciones / Prestaciones de Servicios</option>
+              <option value="muebles">Venta de Cosas Muebles</option>
+            </select>
+          </div>
+
+          <div class="formulario-box">
+            <label for="periodo">Período de facturación:</label>
+            <select id="periodo">
+              <option value="mensual">Mensual</option>
+              <option value="anual">Anual</option>
+            </select>
+          </div>
+
+          <div class="formulario-box">
+            <label for="inputIngresos">Ingresos brutos:</label>
+            <input type="number" id="inputIngresos" step="1" placeholder="800000" min="0">
+          </div>
+
+          <div>
+            <button type="button" onclick="calcularMonotributo()" class="boton4">Calcular categoría</button>
+          </div>
+
+          <div id="resultadosMonotributo"></div>
+
+        </form>
+
+      </div>
+    </section>
+
+    <div class="monotributo-referencia">
+      <div class="monotributo-referencia-titulo">Tabla de categorías — vigente desde 01/02/2026</div>
+      <div style="overflow-x:auto;">
+        <table id="tablaTodasCategorias"></table>
+      </div>
+      <p class="monotributo-referencia-nota">
+        La cuota mensual incluye: impuesto integrado + aportes al SIPA (jubilación) + aportes a obra social.<br>
+        La categoría se determina por el criterio que resulte más alto entre ingresos brutos, superficie afectada,
+        energía eléctrica consumida y alquileres devengados.
+      </p>
+    </div>
+
+    <div class="explicacionMonotributo">
+      <h2>¿Qué es el Monotributo?</h2>
+      <p>
+        El Monotributo es un régimen tributario simplificado para pequeños contribuyentes en Argentina. Unifica en una
+        sola cuota mensual el pago del Impuesto al Valor Agregado (IVA), el Impuesto a las Ganancias, los aportes
+        jubilatorios al SIPA y los aportes a la obra social.<br><br>
+        La categoría se determina según los ingresos brutos anuales del año calendario anterior. También se consideran
+        otros parámetros como la superficie del local, el consumo de energía eléctrica y los alquileres devengados:
+        se utiliza la categoría que corresponda al parámetro más alto.<br><br>
+        Los pequeños contribuyentes deben recategorizarse cada año en enero o julio según corresponda, analizando los
+        ingresos de los últimos 12 meses. Si los ingresos superan el límite de la categoría K, el contribuyente debe
+        inscribirse en el Régimen General (IVA + Ganancias).
+      </p>
+    </div>
+  </main>
+
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  </script>
+
+  <script type="module" src="../js/components.js"></script>
+  <script type="module" src="../js/actualizacion.js"></script>
+
+</body>
+
+</html>
