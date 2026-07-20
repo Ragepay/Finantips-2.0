@@ -238,6 +238,26 @@ Cada página sigue esta estructura:
 
 > Las librerías NO están en `node_modules`. No hay `npm install` necesario para ejecutar el proyecto.
 
+### APIs públicas de datos en vivo (sin key, con CORS)
+
+`js/components.js` consume dos APIs y renderiza los datos en cada página:
+
+| API | Endpoint | Usado para |
+|-----|----------|-----------|
+| dolarapi.com | `https://dolarapi.com/v1/dolares` | Tarjetas de cotización en `#cotizacionesDolar` (reemplazan los viejos iframes de dolarhoy) |
+| argentinadatos.com | `https://api.argentinadatos.com/v1/finanzas/...` | Panel `#indicadoresEconomicos`: inflación mensual/interanual, UVA, tasa plazo fijo (depositos30Dias), riesgo país |
+
+- El panel de indicadores se activa poniendo un `<div id="indicadoresEconomicos" data-indicadores="inflacionMensual,uva,...">` en la página. Las claves válidas están en el objeto `INDICADORES` de `components.js`.
+- ⚠️ El **BCRA no habilita CORS**, así que no se puede consumir directo desde el navegador (usar argentinadatos como fuente alternativa).
+
+### SEO y archivos relacionados
+
+- `components.js` también inyecta **datos estructurados JSON-LD** (Organization, WebSite, WebApplication y BreadcrumbList por calculadora). Para una calculadora nueva, agregar entrada en el objeto `CALCULADORAS`.
+- `pages/privacidad.html` — política de privacidad (requisito de AdSense), con estilo propio en `<style>` inline (clase `.pagina-legal`).
+- `404.html` — página de error de Netlify (rutas absolutas, `noindex`).
+- `_headers` — cabeceras de seguridad y caché de imágenes para Netlify.
+- `img/og-image.png` (1200×630) y `img/favicon.png` / `apple-touch-icon.png` — fondo verde para que el logo blanco sea visible al compartir y en la pestaña.
+
 ---
 
 ## Estilos SCSS
