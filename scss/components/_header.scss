@@ -232,4 +232,59 @@ header {
   }
 }
 
+/* Preguntas frecuentes (FAQ) */
+.faq-seccion {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-lg;
+
+  h2 {
+    text-align: center;
+    color: $colorverde;
+    font-weight: $font-weight-bold;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    letter-spacing: -0.02em;
+    margin: 0 0 $spacing-lg;
+  }
+}
+
+.faq-item {
+  background: $colorblanco;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  margin-bottom: $spacing-sm;
+  overflow: hidden;
+
+  summary {
+    cursor: pointer;
+    padding: $spacing-md;
+    font-weight: $font-weight-medium;
+    color: $coloroscuro;
+    list-style: none;
+    position: relative;
+    padding-right: 2.5rem;
+
+    &::-webkit-details-marker { display: none; }
+
+    &::after {
+      content: '+';
+      position: absolute;
+      right: $spacing-md;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.4rem;
+      color: $colorverde;
+      transition: $transition;
+    }
+  }
+
+  &[open] summary::after { content: '−'; }
+
+  .faq-respuesta {
+    padding: 0 $spacing-md $spacing-md;
+    color: #444;
+    line-height: 1.6;
+  }
+}
+
 /* ── FIN HEADER ─────────────────────────────────────────────────────── */

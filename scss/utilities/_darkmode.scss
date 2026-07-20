@@ -87,6 +87,11 @@ html[data-theme="dark"] {
     background: linear-gradient(160deg, #0d3325 0%, #0d5c42 100%) !important;
   }
 
+  /* FAQ */
+  .faq-item { background: $dark-surface !important; border-color: $dark-border; }
+  .faq-item summary { color: $dark-text; }
+  .faq-item .faq-respuesta { color: $dark-text-2; }
+
   /* Enlaces */
   a { color: $dark-green; }
   header a, footer a { color: inherit; }

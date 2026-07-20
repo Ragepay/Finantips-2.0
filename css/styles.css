@@ -219,6 +219,59 @@ header .boton button:hover {
   text-transform: capitalize;
 }
 
+/* Preguntas frecuentes (FAQ) */
+.faq-seccion {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+.faq-seccion h2 {
+  text-align: center;
+  color: #14805c;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 2rem;
+}
+
+.faq-item {
+  background: #fafafa;
+  border: 1px solid #d1e8df;
+  border-radius: 14px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.faq-item summary {
+  cursor: pointer;
+  padding: 1.25rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  list-style: none;
+  position: relative;
+  padding-right: 2.5rem;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: #14805c;
+  transition: all 0.22s ease;
+}
+.faq-item[open] summary::after {
+  content: "−";
+}
+.faq-item .faq-respuesta {
+  padding: 0 1.25rem 1.25rem;
+  color: #444;
+  line-height: 1.6;
+}
+
 /* ── FIN HEADER ─────────────────────────────────────────────────────── */
 /* ── FOOTER ─────────────────────────────────────────────────────────── */
 footer {
@@ -2600,6 +2653,19 @@ html[data-theme=dark] .explicacionInteresCompuesto,
 html[data-theme=dark] .tituloExplicacion,
 html[data-theme=dark] .tituloInteresCompuesto {
   background: linear-gradient(160deg, #0d3325 0%, #0d5c42 100%) !important;
+}
+html[data-theme=dark] {
+  /* FAQ */
+}
+html[data-theme=dark] .faq-item {
+  background: #1e2228 !important;
+  border-color: #2c333d;
+}
+html[data-theme=dark] .faq-item summary {
+  color: #e8eaed;
+}
+html[data-theme=dark] .faq-item .faq-respuesta {
+  color: #c2c7ce;
 }
 html[data-theme=dark] {
   /* Enlaces */

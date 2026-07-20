@@ -97,6 +97,48 @@ const CALCULADORAS = {
   "conversor.html":         { nombre: "Conversor Peso ↔ Dólar", desc: "Convertí pesos a dólares y viceversa con la cotización en vivo del dólar oficial, blue, MEP, CCL, tarjeta y cripto." },
 };
 
+// ── PREGUNTAS FRECUENTES (FAQ + FAQPage JSON-LD) ─────────────────────
+const FAQS = {
+  "sueldoneto.html": [
+    { p: "¿Cómo se calcula el sueldo neto?", r: "El sueldo neto surge de restarle al sueldo bruto los aportes obligatorios (jubilación 11%, ley 19.032 3% y obra social 3%) y, si corresponde, el impuesto a las ganancias. En Toyota además se descuenta el aporte sindical SMATA (5%)." },
+    { p: "¿Qué conceptos suma el sueldo bruto en Toyota?", r: "Además del salario básico de la categoría, se suman presentismo, productividad, plus por mantenimiento, antigüedad y horas extra (nocturnas, al 50% y al 100%) cuando corresponden." },
+    { p: "¿La calculadora está actualizada?", r: "Sí. Se actualiza con cada aumento del convenio y con la escala de Ganancias vigente. La fecha de última actualización figura en el pie de la página." },
+  ],
+  "IIGG.html": [
+    { p: "¿Quién paga el impuesto a las ganancias?", r: "Lo pagan los empleados en relación de dependencia cuyo sueldo neto supera el mínimo no imponible establecido por ARCA, según la escala progresiva de la 4ª categoría." },
+    { p: "¿Qué deducciones puedo computar?", r: "Cónyuge, hijos, alquiler (40% de lo pagado con tope), entre otras deducciones personales previstas en el artículo 30 de la ley." },
+    { p: "¿Cada cuánto se actualizan los valores?", r: "Las deducciones y la escala se actualizan semestralmente por el índice de precios (IPC) del INDEC." },
+  ],
+  "plazofijo.html": [
+    { p: "¿Cuál es la diferencia entre interés simple y compuesto?", r: "En el interés simple los intereses se calculan siempre sobre el capital inicial. En el compuesto, los intereses se reinvierten y generan a su vez más intereses." },
+    { p: "¿Cómo se calcula el interés de un plazo fijo?", r: "Se multiplica el capital por la TNA (tasa nominal anual) proporcional a la cantidad de días del plazo. La calculadora lo hace automáticamente." },
+  ],
+  "cuotas.html": [
+    { p: "¿Conviene pagar en cuotas o en efectivo?", r: "Depende de la tasa implícita. Si el precio financiado supera al de contado más de lo que rendiría ese dinero invertido, conviene el efectivo. La calculadora compara ambos escenarios." },
+    { p: "¿Qué es la TNA en una financiación?", r: "Es la tasa nominal anual que refleja el costo del financiamiento. A mayor TNA, más caro resulta pagar en cuotas frente al contado." },
+  ],
+  "inflacion.html": [
+    { p: "¿Qué mide esta calculadora?", r: "Muestra cómo la inflación afecta el poder adquisitivo de tu dinero a lo largo del tiempo, es decir, cuánto valdría hoy una suma del pasado o viceversa." },
+  ],
+  "interes-compuesto.html": [
+    { p: "¿Qué es el interés compuesto?", r: "Es el interés que se calcula sobre el capital más los intereses ya acumulados, lo que hace crecer la inversión de forma exponencial con el tiempo." },
+    { p: "¿Por qué conviene invertir temprano?", r: "Porque cuanto más tiempo actúa el interés compuesto, mayor es el efecto de 'intereses sobre intereses' y más crece el capital." },
+  ],
+  "monotributo.html": [
+    { p: "¿Cómo sé en qué categoría de monotributo estoy?", r: "Según tus ingresos brutos anuales, y también por la superficie afectada, energía consumida y alquileres. La calculadora te ubica en la categoría correspondiente." },
+    { p: "¿Qué incluye la cuota mensual?", r: "El impuesto integrado más los aportes jubilatorios (SIPA) y el aporte a la obra social." },
+  ],
+  "aguinaldo.html": [
+    { p: "¿Cuándo se cobra el aguinaldo?", r: "En dos cuotas: la primera en junio y la segunda en diciembre de cada año." },
+    { p: "¿Cómo se calcula el aguinaldo?", r: "Cada cuota equivale al 50% de la mejor remuneración mensual del semestre. Si no trabajaste el semestre completo, se calcula proporcional a los meses trabajados." },
+    { p: "¿Se le descuentan aportes al aguinaldo?", r: "Sí, se le aplican los mismos aportes que al sueldo (jubilación, ley 19.032 y obra social), por eso el neto es menor al bruto." },
+  ],
+  "conversor.html": [
+    { p: "¿Qué cotización usa el conversor?", r: "Usa cotizaciones en vivo del dólar en Argentina (oficial, blue, MEP, CCL, tarjeta y cripto) obtenidas de una API pública." },
+    { p: "¿Por qué el precio de compra y de venta son distintos?", r: "Al comprar dólares se usa el precio de venta y al venderlos el de compra. La diferencia entre ambos es el margen del mercado." },
+  ],
+};
+
 function inyectarJsonLd(obj) {
   const s = document.createElement('script');
   s.type = 'application/ld+json';
@@ -212,8 +254,42 @@ async function cargarCotizaciones() {
   }
 })();
 
+// ── Render de Preguntas Frecuentes ───────────────────────────────────
+function cargarFAQ() {
+  const path = window.location.pathname;
+  const archivo = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+  const faqs = FAQS[archivo];
+  const main = document.querySelector('main');
+  if (!faqs || !main) return;
+
+  const items = faqs.map(f => `
+    <details class="faq-item">
+      <summary>${f.p}</summary>
+      <div class="faq-respuesta">${f.r}</div>
+    </details>`).join('');
+
+  const seccion = document.createElement('section');
+  seccion.className = 'faq-seccion';
+  seccion.innerHTML = `<h2>Preguntas frecuentes</h2>${items}`;
+  main.appendChild(seccion);
+
+  // FAQPage JSON-LD
+  inyectarJsonLd({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.p,
+      "acceptedAnswer": { "@type": "Answer", "text": f.r }
+    }))
+  });
+}
+
 // Cargar cotizaciones en vivo (reemplaza los iframes de #cotizacionesDolar)
 cargarCotizaciones();
+
+// Renderizar preguntas frecuentes (si la página es una calculadora con FAQ)
+cargarFAQ();
 
 // Cargar panel de indicadores económicos (si la página lo incluye)
 cargarIndicadores();
