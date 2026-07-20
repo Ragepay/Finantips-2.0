@@ -1,5 +1,27 @@
 const base = window.location.pathname.includes('/pages/') ? '../' : '';
 
+// ── MODO OSCURO ──────────────────────────────────────────────────────
+// Aplicar el tema guardado lo antes posible para minimizar el parpadeo.
+const temaGuardado = localStorage.getItem('tema');
+if (temaGuardado === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+function iconoTema() {
+  return document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+}
+function alternarTema() {
+  const esOscuro = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (esOscuro) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('tema', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('tema', 'dark');
+  }
+  const btn = document.getElementById('themeToggle');
+  if (btn) btn.textContent = iconoTema();
+}
+
 // ── INDICADORES ECONÓMICOS EN VIVO (argentinadatos.com) ──────────────
 // Se muestran en un contenedor #indicadoresEconomicos con el atributo
 // data-indicadores="inflacionMensual,uva,..." (define qué mostrar por página).
@@ -206,9 +228,13 @@ document.querySelector('header').innerHTML = `
       <li><a href="${base}pages/pesos.html">Pesos</a></li>
       <li><a href="${base}pages/dolares.html">Dólares</a></li>
       <li><a href="${base}pages/calculadoras.html" class="boton"><button>Calculadoras</button></a></li>
+      <li><button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro/oscuro">${iconoTema()}</button></li>
     </ul>
   </nav>
 `;
+
+const botonTema = document.getElementById('themeToggle');
+if (botonTema) botonTema.addEventListener('click', alternarTema);
 
 document.querySelector('footer').innerHTML = `
   <div class="footer-logo">

@@ -1,0 +1,95 @@
+/* ── BOTÓN DE TEMA ───────────────────────────────────────────────────── */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: 50%;
+  transition: $transition;
+
+  &:hover { transform: scale(1.15); }
+}
+
+/* ── MODO OSCURO ─────────────────────────────────────────────────────── */
+/* Colores del tema oscuro */
+$dark-bg:       #12151a;
+$dark-surface:  #1e2228;
+$dark-accent:   #17251f;
+$dark-border:   #2c333d;
+$dark-text:     #e8eaed;
+$dark-text-2:   #c2c7ce;
+$dark-green:    #3ecf8e;
+
+html[data-theme="dark"] {
+  body { background-color: $dark-bg; color: $dark-text; }
+
+  /* Superficies claras → oscuras */
+  .containerBox2,
+  .instrument,
+  .cotiza-card,
+  .financial-main,
+  .monotributo-resultado,
+  .monotributo-tabla-cuota,
+  .liquidacion-resultado,
+  .costolaboral-resultado {
+    background: $dark-surface !important;
+    border-color: $dark-border;
+    color: $dark-text;
+  }
+
+  /* Paneles de acento (verde claro) */
+  .cotiza-card,
+  .indicador-tile,
+  .conversor-resultado,
+  .aguinaldo-principal { background: $dark-accent !important; border-color: $dark-border; }
+
+  #cotizacionesDolar { background: #171a1f; border-color: $dark-border; }
+
+  /* Texto secundario y párrafos */
+  p, li, td, th, label,
+  .conversor-detalle,
+  .aguinaldo-tabla td,
+  .cotiza-label,
+  .indicador-titulo,
+  .cotiza-fecha,
+  .indicador-sub,
+  .aguinaldo-nota { color: $dark-text-2; }
+
+  h1, h2, h3, h4, strong, .cotiza-titulo { color: $dark-text; }
+
+  /* Acentos verdes más brillantes para contraste */
+  .cotiza-monto,
+  .indicador-valor,
+  .conversor-resultado-valor,
+  .aguinaldo-valor,
+  .monotributo-letra { color: $dark-green; }
+
+  /* Formularios */
+  input, select, textarea {
+    background: $dark-bg;
+    color: $dark-text;
+    border-color: $dark-border;
+  }
+  input::placeholder { color: #6b7280; }
+
+  /* Tablas */
+  table td, table th { border-color: $dark-border; }
+
+  /* Cajas de explicación (mantienen verde, se oscurecen un poco) */
+  .explicacion,
+  .explicacionImpuesto,
+  .explicacionPlazoFijo,
+  .explicacionInteresCompuesto,
+  .tituloExplicacion,
+  .tituloInteresCompuesto {
+    background: linear-gradient(160deg, #0d3325 0%, #0d5c42 100%) !important;
+  }
+
+  /* Enlaces */
+  a { color: $dark-green; }
+  header a, footer a { color: inherit; }
+}
+
+/* ── FIN MODO OSCURO ─────────────────────────────────────────────────── */

@@ -2497,5 +2497,120 @@ button {
   }
 }
 /* ── FIN MEDIA QUERIES ───────────────────────────────────────────────── */
+/* ── BOTÓN DE TEMA ───────────────────────────────────────────────────── */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: 50%;
+  transition: all 0.22s ease;
+}
+.theme-toggle:hover {
+  transform: scale(1.15);
+}
+
+/* ── MODO OSCURO ─────────────────────────────────────────────────────── */
+/* Colores del tema oscuro */
+html[data-theme=dark] body {
+  background-color: #12151a;
+  color: #e8eaed;
+}
+html[data-theme=dark] {
+  /* Superficies claras → oscuras */
+}
+html[data-theme=dark] .containerBox2,
+html[data-theme=dark] .instrument,
+html[data-theme=dark] .cotiza-card,
+html[data-theme=dark] .financial-main,
+html[data-theme=dark] .monotributo-resultado,
+html[data-theme=dark] .monotributo-tabla-cuota,
+html[data-theme=dark] .liquidacion-resultado,
+html[data-theme=dark] .costolaboral-resultado {
+  background: #1e2228 !important;
+  border-color: #2c333d;
+  color: #e8eaed;
+}
+html[data-theme=dark] {
+  /* Paneles de acento (verde claro) */
+}
+html[data-theme=dark] .cotiza-card,
+html[data-theme=dark] .indicador-tile,
+html[data-theme=dark] .conversor-resultado,
+html[data-theme=dark] .aguinaldo-principal {
+  background: #17251f !important;
+  border-color: #2c333d;
+}
+html[data-theme=dark] #cotizacionesDolar {
+  background: #171a1f;
+  border-color: #2c333d;
+}
+html[data-theme=dark] {
+  /* Texto secundario y párrafos */
+}
+html[data-theme=dark] p, html[data-theme=dark] li, html[data-theme=dark] td, html[data-theme=dark] th, html[data-theme=dark] label,
+html[data-theme=dark] .conversor-detalle,
+html[data-theme=dark] .aguinaldo-tabla td,
+html[data-theme=dark] .cotiza-label,
+html[data-theme=dark] .indicador-titulo,
+html[data-theme=dark] .cotiza-fecha,
+html[data-theme=dark] .indicador-sub,
+html[data-theme=dark] .aguinaldo-nota {
+  color: #c2c7ce;
+}
+html[data-theme=dark] h1, html[data-theme=dark] h2, html[data-theme=dark] h3, html[data-theme=dark] h4, html[data-theme=dark] strong, html[data-theme=dark] .cotiza-titulo {
+  color: #e8eaed;
+}
+html[data-theme=dark] {
+  /* Acentos verdes más brillantes para contraste */
+}
+html[data-theme=dark] .cotiza-monto,
+html[data-theme=dark] .indicador-valor,
+html[data-theme=dark] .conversor-resultado-valor,
+html[data-theme=dark] .aguinaldo-valor,
+html[data-theme=dark] .monotributo-letra {
+  color: #3ecf8e;
+}
+html[data-theme=dark] {
+  /* Formularios */
+}
+html[data-theme=dark] input, html[data-theme=dark] select, html[data-theme=dark] textarea {
+  background: #12151a;
+  color: #e8eaed;
+  border-color: #2c333d;
+}
+html[data-theme=dark] input::placeholder {
+  color: #6b7280;
+}
+html[data-theme=dark] {
+  /* Tablas */
+}
+html[data-theme=dark] table td, html[data-theme=dark] table th {
+  border-color: #2c333d;
+}
+html[data-theme=dark] {
+  /* Cajas de explicación (mantienen verde, se oscurecen un poco) */
+}
+html[data-theme=dark] .explicacion,
+html[data-theme=dark] .explicacionImpuesto,
+html[data-theme=dark] .explicacionPlazoFijo,
+html[data-theme=dark] .explicacionInteresCompuesto,
+html[data-theme=dark] .tituloExplicacion,
+html[data-theme=dark] .tituloInteresCompuesto {
+  background: linear-gradient(160deg, #0d3325 0%, #0d5c42 100%) !important;
+}
+html[data-theme=dark] {
+  /* Enlaces */
+}
+html[data-theme=dark] a {
+  color: #3ecf8e;
+}
+html[data-theme=dark] header a, html[data-theme=dark] footer a {
+  color: inherit;
+}
+
+/* ── FIN MODO OSCURO ─────────────────────────────────────────────────── */
 
 /*# sourceMappingURL=styles.css.map */
