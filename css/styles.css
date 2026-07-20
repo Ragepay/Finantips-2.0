@@ -272,6 +272,16 @@ header .boton button:hover {
   line-height: 1.6;
 }
 
+/* Datos clave de instrumentos (páginas Pesos/Dólares) */
+.instrument-datos {
+  margin-top: 0.75rem !important;
+  padding-top: 0.75rem;
+  border-top: 1px solid #d1e8df;
+  font-size: 0.85rem !important;
+  color: #6b7280 !important;
+  line-height: 1.5;
+}
+
 /* ── FIN HEADER ─────────────────────────────────────────────────────── */
 /* ── FOOTER ─────────────────────────────────────────────────────────── */
 footer {
@@ -2484,7 +2494,11 @@ button {
     gap: 0.75rem;
   }
   .cotiza-card {
-    flex-basis: calc(50% - 0.75rem);
+    flex-basis: 100%;
+  }
+  .indicadores-seccion, .faq-seccion {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
   .container h2 {
     font-size: 1.6rem;
@@ -2666,6 +2680,34 @@ html[data-theme=dark] .faq-item summary {
 }
 html[data-theme=dark] .faq-item .faq-respuesta {
   color: #c2c7ce;
+}
+html[data-theme=dark] {
+  /* Contraste de totales/importes en tablas de resultados */
+}
+html[data-theme=dark] .aguinaldo-total td {
+  color: #e8eaed;
+}
+html[data-theme=dark] .monotributo-tabla-cuota td:last-child {
+  color: #e8eaed;
+}
+html[data-theme=dark] .monotributo-tabla-total td {
+  color: #3ecf8e;
+}
+html[data-theme=dark] {
+  /* Paneles que quedaban claros */
+}
+html[data-theme=dark] .monotributo-referencia,
+html[data-theme=dark] .monotributo-excedido {
+  background: #1e2228 !important;
+  border-color: #2c333d;
+  color: #e8eaed;
+}
+html[data-theme=dark] {
+  /* Datos clave de instrumentos */
+}
+html[data-theme=dark] .instrument-datos {
+  color: #c2c7ce !important;
+  border-top-color: #2c333d;
 }
 html[data-theme=dark] {
   /* Enlaces */

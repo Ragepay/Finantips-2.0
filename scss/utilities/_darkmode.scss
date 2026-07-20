@@ -92,6 +92,18 @@ html[data-theme="dark"] {
   .faq-item summary { color: $dark-text; }
   .faq-item .faq-respuesta { color: $dark-text-2; }
 
+  /* Contraste de totales/importes en tablas de resultados */
+  .aguinaldo-total td { color: $dark-text; }
+  .monotributo-tabla-cuota td:last-child { color: $dark-text; }
+  .monotributo-tabla-total td { color: $dark-green; }
+
+  /* Paneles que quedaban claros */
+  .monotributo-referencia,
+  .monotributo-excedido { background: $dark-surface !important; border-color: $dark-border; color: $dark-text; }
+
+  /* Datos clave de instrumentos */
+  .instrument-datos { color: $dark-text-2 !important; border-top-color: $dark-border; }
+
   /* Enlaces */
   a { color: $dark-green; }
   header a, footer a { color: inherit; }

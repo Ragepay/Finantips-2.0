@@ -77,7 +77,8 @@
   }
 
   #cotizacionesDolar { gap: $spacing-sm; }
-  .cotiza-card { flex-basis: calc(50% - #{$spacing-sm}); }
+  .cotiza-card { flex-basis: 100%; }
+  .indicadores-seccion, .faq-seccion { padding-left: $spacing-md; padding-right: $spacing-md; }
 
   .container h2 { font-size: 1.6rem; }
   .container p { font-size: 0.92rem; }
