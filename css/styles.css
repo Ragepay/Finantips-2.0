@@ -106,20 +106,117 @@ header .boton button:hover {
   border-bottom: 1px solid #d1e8df;
 }
 
-.item-iframe,
-.item-iframe-blue {
-  width: 15em;
-  height: 16.5em;
+/* Tarjetas de cotización (datos en vivo de dolarapi.com) */
+.cotiza-card {
+  flex: 0 1 220px;
+  background: #fafafa;
   border-radius: 14px;
-  border: none;
+  border: 1px solid #d1e8df;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+  padding: 1.25rem 1.25rem 0.75rem;
   transition: all 0.22s ease;
-  background: white;
+  text-align: center;
 }
-.item-iframe:hover,
-.item-iframe-blue:hover {
+.cotiza-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.cotiza-card .cotiza-titulo {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.01em;
+}
+.cotiza-card .cotiza-valores {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.cotiza-card .cotiza-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 80px;
+}
+.cotiza-card .cotiza-monto {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #14805c;
+  line-height: 1.1;
+}
+.cotiza-card .cotiza-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+}
+.cotiza-card .cotiza-fecha {
+  margin: 0.75rem 0 0;
+  font-size: 0.72rem;
+  color: #6b7280;
+}
+
+.cotiza-cargando {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Panel de indicadores económicos en vivo */
+.indicadores-seccion {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 0;
+}
+.indicadores-seccion h2 {
+  text-align: center;
+  color: #14805c;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 2rem;
+}
+
+.indicadores-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.indicador-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 2rem 1.25rem;
+  background: #e8f5f0;
+  border: 1px solid #d1e8df;
+  border-radius: 14px;
+  transition: all 0.22s ease;
+}
+.indicador-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+.indicador-tile .indicador-titulo {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.indicador-tile .indicador-valor {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0d5c42;
+  line-height: 1.1;
+}
+.indicador-tile .indicador-sub {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: capitalize;
 }
 
 /* ── FIN HEADER ─────────────────────────────────────────────────────── */
@@ -2124,19 +2221,9 @@ button {
   .container-box {
     padding: 2rem;
   }
-  .container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4 {
-    height: 280px;
-    flex: 0 0 260px;
-    width: 260px;
-  }
 }
 /* ── 1000px: pantallas medianas ──────────────────────────────────────── */
 @media only screen and (max-width: 1000px) {
-  .container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4 {
-    height: 250px;
-    flex: 0 0 calc(50% - 0.75rem);
-    width: calc(50% - 0.75rem);
-  }
   .financial-main {
     margin: 2rem;
   }
@@ -2159,9 +2246,8 @@ button {
     padding: 1.25rem;
     gap: 0.75rem;
   }
-  .item-iframe, .item-iframe-blue {
-    width: 11em;
-    height: 12em;
+  .cotiza-card {
+    flex-basis: 180px;
   }
   .container {
     padding: 2rem 1.25rem;
@@ -2237,15 +2323,10 @@ button {
     font-size: 0.8rem;
   }
   #cotizacionesDolar {
-    gap: 0.35rem;
+    gap: 0.75rem;
   }
-  .item-iframe {
-    display: none;
-  }
-  .item-iframe-blue {
-    width: 100%;
-    max-width: 320px;
-    height: 14em;
+  .cotiza-card {
+    flex-basis: calc(50% - 0.75rem);
   }
   .container h2 {
     font-size: 1.6rem;
@@ -2256,10 +2337,8 @@ button {
   .container-box {
     padding: 1.25rem;
   }
-  .container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4 {
+  .container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4, .container-box .box5, .container-box .box6, .container-box .box7, .container-box .box8 {
     height: 200px;
-    flex: 0 0 100%;
-    width: 100%;
   }
   .containerBox2 {
     margin: 1.25rem 0.35rem;

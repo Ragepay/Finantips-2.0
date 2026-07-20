@@ -10,16 +10,11 @@
 
   .container-box {
     padding: $spacing-lg;
-    .box1, .box2, .box3, .box4 { height: 280px; flex: 0 0 260px; width: 260px; }
   }
 }
 
 /* ── 1000px: pantallas medianas ──────────────────────────────────────── */
 @include respond-to($bp-lg) {
-  .container-box {
-    .box1, .box2, .box3, .box4 { height: 250px; flex: 0 0 calc(50% - #{$spacing-sm}); width: calc(50% - #{$spacing-sm}); }
-  }
-
   .financial-main { margin: $spacing-lg; }
 
   .instrument { width: calc(50% - $spacing-sm); }
@@ -35,7 +30,7 @@
 
   #cotizacionesDolar { padding: $spacing-md; gap: $spacing-sm; }
 
-  .item-iframe, .item-iframe-blue { width: 11em; height: 12em; }
+  .cotiza-card { flex-basis: 180px; }
 
   .container { padding: $spacing-lg $spacing-md; }
 
@@ -81,16 +76,15 @@
     nav ul li a { font-size: 0.8rem; }
   }
 
-  #cotizacionesDolar { gap: $spacing-xs; }
-  .item-iframe { display: none; }
-  .item-iframe-blue { width: 100%; max-width: 320px; height: 14em; }
+  #cotizacionesDolar { gap: $spacing-sm; }
+  .cotiza-card { flex-basis: calc(50% - #{$spacing-sm}); }
 
   .container h2 { font-size: 1.6rem; }
   .container p { font-size: 0.92rem; }
 
   .container-box {
     padding: $spacing-md;
-    .box1, .box2, .box3, .box4 { height: 200px; flex: 0 0 100%; width: 100%; }
+    .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8 { height: 200px; }
   }
 
   .containerBox2 {

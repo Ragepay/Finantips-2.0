@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch scss/main.scss css/styles.css",
-    "push": "git add . && git commit -m \"feat: Actualiza Ganancias 2do sem 2026, tope cargas sociales, aumento Toyota jul 26' (6,88%); SEO con datos estructurados JSON-LD y politica de privacidad.\" && git push"
+    "push": "git add . && git commit -m \"feat: Actualiza Ganancias 2do sem 2026, cargas sociales, aumento Toyota y escala Monotributo; SEO (JSON-LD + privacidad), og:image, fix grilla, cotizaciones en vivo (dolarapi) e indicadores economicos (argentinadatos).\" && git push"
   },
   "keywords": [],
   "author": "",

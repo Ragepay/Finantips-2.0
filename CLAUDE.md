@@ -210,7 +210,7 @@ Cada página sigue esta estructura:
 <body>
   <header></header>  <!-- ← Vacío, lo llena components.js -->
   <main>
-    <section id="cotizacionesDolar"> <!-- iframes de dolarhoy.com --> </section>
+    <section id="cotizacionesDolar"></section> <!-- lo llena components.js con datos en vivo de dolarapi.com -->
     <section> <!-- formulario y resultados --> </section>
     <div class="explicacion..."> <!-- explicación del cálculo --> </div>
   </main>

@@ -1,5 +1,59 @@
 const base = window.location.pathname.includes('/pages/') ? '../' : '';
 
+// ── INDICADORES ECONÓMICOS EN VIVO (argentinadatos.com) ──────────────
+// Se muestran en un contenedor #indicadoresEconomicos con el atributo
+// data-indicadores="inflacionMensual,uva,..." (define qué mostrar por página).
+const API_AR = "https://api.argentinadatos.com/v1/finanzas";
+
+async function jsonUltimo(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  const d = await r.json();
+  return Array.isArray(d) ? d[d.length - 1] : d;
+}
+
+function fmtPorcentaje(v) {
+  return Number(v).toLocaleString("es-AR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + "%";
+}
+
+function fmtMesAnio(fechaISO) {
+  const d = new Date(fechaISO);
+  if (isNaN(d)) return "";
+  return d.toLocaleDateString("es-AR", { month: "long", year: "numeric" });
+}
+
+function fmtFechaCorta(fechaISO) {
+  const d = new Date(fechaISO);
+  if (isNaN(d)) return "";
+  return d.toLocaleDateString("es-AR", { day: "2-digit", month: "2-digit", year: "numeric" });
+}
+
+const INDICADORES = {
+  inflacionMensual: async () => { const u = await jsonUltimo(`${API_AR}/indices/inflacion`); return { titulo: "Inflación mensual", valor: fmtPorcentaje(u.valor), sub: fmtMesAnio(u.fecha) }; },
+  inflacionInteranual: async () => { const u = await jsonUltimo(`${API_AR}/indices/inflacionInteranual`); return { titulo: "Inflación interanual", valor: fmtPorcentaje(u.valor), sub: fmtMesAnio(u.fecha) }; },
+  uva: async () => { const u = await jsonUltimo(`${API_AR}/indices/uva`); return { titulo: "Valor UVA", valor: formatearPeso(u.valor), sub: fmtFechaCorta(u.fecha) }; },
+  plazoFijo: async () => { const u = await jsonUltimo(`${API_AR}/tasas/depositos30Dias`); return { titulo: "Plazo fijo (TNA prom.)", valor: fmtPorcentaje(u.valor), sub: "30 días · promedio BCRA" }; },
+  riesgoPais: async () => { const u = await jsonUltimo(`${API_AR}/indices/riesgo-pais/ultimo`); return { titulo: "Riesgo país", valor: Number(u.valor).toLocaleString("es-AR") + " pb", sub: fmtFechaCorta(u.fecha) }; },
+};
+
+async function cargarIndicadores() {
+  const cont = document.getElementById("indicadoresEconomicos");
+  if (!cont) return;
+  const claves = (cont.dataset.indicadores || "").split(",").map(s => s.trim()).filter(Boolean);
+  if (!claves.length) return;
+  cont.innerHTML = `<p class="cotiza-cargando">Cargando indicadores…</p>`;
+  const resultados = await Promise.allSettled(claves.map(k => INDICADORES[k] ? INDICADORES[k]() : Promise.reject()));
+  const tarjetas = resultados
+    .filter(r => r.status === "fulfilled")
+    .map(r => `
+      <article class="indicador-tile">
+        <span class="indicador-titulo">${r.value.titulo}</span>
+        <span class="indicador-valor">${r.value.valor}</span>
+        <span class="indicador-sub">${r.value.sub}</span>
+      </article>`).join("");
+  cont.innerHTML = tarjetas || `<p class="cotiza-cargando">No se pudieron cargar los indicadores.</p>`;
+}
+
 // ── SEO: DATOS ESTRUCTURADOS (JSON-LD) ───────────────────────────────
 // Se inyectan automáticamente en cada página. Para agregar una calculadora
 // nueva, sumá una entrada en CALCULADORAS con su nombre y descripción.
@@ -24,6 +78,64 @@ function inyectarJsonLd(obj) {
   s.type = 'application/ld+json';
   s.textContent = JSON.stringify(obj);
   document.head.appendChild(s);
+}
+
+// ── COTIZACIONES DEL DÓLAR (API pública dolarapi.com) ────────────────
+// Reemplaza los iframes de dolarhoy por tarjetas propias con datos en vivo.
+const COTIZACIONES_MOSTRAR = [
+  { casa: "blue",            titulo: "Dólar Blue" },
+  { casa: "bolsa",           titulo: "Dólar Bolsa (MEP)" },
+  { casa: "contadoconliqui", titulo: "Dólar CCL" },
+  { casa: "oficial",         titulo: "Dólar Oficial" },
+];
+
+function formatearPeso(valor) {
+  return "$" + Number(valor).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function tiempoDesde(fechaISO) {
+  const diffMs = Date.now() - new Date(fechaISO).getTime();
+  if (isNaN(diffMs) || diffMs < 0) return "";
+  const min = Math.floor(diffMs / 60000);
+  if (min < 1) return "hace instantes";
+  if (min < 60) return `hace ${min} min`;
+  const hs = Math.floor(min / 60);
+  if (hs < 24) return `hace ${hs} h`;
+  return `hace ${Math.floor(hs / 24)} d`;
+}
+
+async function cargarCotizaciones() {
+  const cont = document.getElementById("cotizacionesDolar");
+  if (!cont) return;
+  cont.innerHTML = `<p class="cotiza-cargando">Cargando cotizaciones…</p>`;
+  try {
+    const resp = await fetch("https://dolarapi.com/v1/dolares");
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
+    const data = await resp.json();
+    const porCasa = Object.fromEntries(data.map(d => [d.casa, d]));
+    const tarjetas = COTIZACIONES_MOSTRAR.map(({ casa, titulo }) => {
+      const d = porCasa[casa];
+      if (!d) return "";
+      return `
+        <article class="cotiza-card">
+          <h3 class="cotiza-titulo">${titulo}</h3>
+          <div class="cotiza-valores">
+            <div class="cotiza-item">
+              <span class="cotiza-monto">${formatearPeso(d.compra)}</span>
+              <span class="cotiza-label">Compra</span>
+            </div>
+            <div class="cotiza-item">
+              <span class="cotiza-monto">${formatearPeso(d.venta)}</span>
+              <span class="cotiza-label">Venta</span>
+            </div>
+          </div>
+          <p class="cotiza-fecha">Actualizado ${tiempoDesde(d.fechaActualizacion)}</p>
+        </article>`;
+    }).join("");
+    cont.innerHTML = tarjetas || `<p class="cotiza-cargando">No hay cotizaciones disponibles.</p>`;
+  } catch (err) {
+    cont.innerHTML = `<p class="cotiza-cargando">No se pudieron cargar las cotizaciones en este momento.</p>`;
+  }
 }
 
 (function estructurarSEO() {
@@ -75,6 +187,12 @@ function inyectarJsonLd(obj) {
     });
   }
 })();
+
+// Cargar cotizaciones en vivo (reemplaza los iframes de #cotizacionesDolar)
+cargarCotizaciones();
+
+// Cargar panel de indicadores económicos (si la página lo incluye)
+cargarIndicadores();
 
 document.querySelector('header').innerHTML = `
   <a class="logo" href="${base}index.html">
