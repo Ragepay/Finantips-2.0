@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#14805c">
+  <meta name="robots" content="noindex, follow">
+  <title>Página no encontrada (404) | FinanTips</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .error-404 {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      gap: 1rem;
+    }
+    .error-404 .codigo { font-size: clamp(4rem, 15vw, 8rem); font-weight: 700; color: #14805c; line-height: 1; margin: 0; }
+    .error-404 h1 { font-size: clamp(1.3rem, 4vw, 2rem); color: #1a1a2e; margin: 0; }
+    .error-404 p { color: #6b7280; max-width: 480px; margin: 0; }
+    .error-404 .acciones { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
+    .error-404 a { text-decoration: none; }
+    .error-404 button {
+      background: #14805c; color: #fff; border: none; border-radius: 999px;
+      padding: 0.7rem 1.8rem; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.2s;
+    }
+    .error-404 button.secundario { background: transparent; color: #14805c; border: 1px solid #14805c; }
+    .error-404 button:hover { opacity: 0.9; transform: translateY(-2px); }
+  </style>
+</head>
+
+<body>
+  <header></header>
+
+  <main>
+    <section class="error-404">
+      <p class="codigo">404</p>
+      <h1>Ups… no encontramos esta página</h1>
+      <p>Puede que el enlace esté roto o que la página se haya movido. Probá con una de nuestras calculadoras.</p>
+      <div class="acciones">
+        <a href="/index.html"><button>Ir al inicio</button></a>
+        <a href="/pages/calculadoras.html"><button class="secundario">Ver calculadoras</button></a>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script type="module" src="/js/components.js"></script>
+  <script type="module" src="/js/actualizacion.js"></script>
+</body>
+
+</html>
