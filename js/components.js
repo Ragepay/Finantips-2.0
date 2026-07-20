@@ -71,6 +71,8 @@ const CALCULADORAS = {
   "liquidacion.html":       { nombre: "Calculadora de Liquidación Final", desc: "Calculá tu liquidación final: días trabajados, SAC, vacaciones no gozadas e indemnización." },
   "costolaboral.html":      { nombre: "Calculadora de Costo Laboral", desc: "Calculá el costo laboral total de un empleado incluyendo cargas patronales." },
   "cuil.html":              { nombre: "Calculadora de CUIL", desc: "Obtené el CUIL a partir del DNI y el sexo." },
+  "aguinaldo.html":         { nombre: "Calculadora de Aguinaldo (SAC)", desc: "Calculá tu aguinaldo bruto y neto según el mejor sueldo del semestre, con cálculo proporcional." },
+  "conversor.html":         { nombre: "Conversor Peso ↔ Dólar", desc: "Convertí pesos a dólares y viceversa con la cotización en vivo del dólar oficial, blue, MEP, CCL, tarjeta y cripto." },
 };
 
 function inyectarJsonLd(obj) {

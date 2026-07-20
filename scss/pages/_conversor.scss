@@ -1,0 +1,42 @@
+/* ── CONVERSOR PESO ↔ DÓLAR ──────────────────────────────────────────── */
+
+.conversor-resultado {
+  margin-top: $spacing-lg;
+  padding: $spacing-lg;
+  background: $colorverde-light;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  text-align: center;
+
+  .conversor-resultado-label {
+    display: block;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $colorgris;
+    margin-bottom: $spacing-xs;
+  }
+
+  .conversor-resultado-valor {
+    display: block;
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
+    font-weight: $font-weight-bold;
+    color: $colorverde-dark;
+    line-height: 1.1;
+  }
+
+  .conversor-detalle {
+    margin: $spacing-md 0 0;
+    color: #333;
+    font-size: 0.95rem;
+  }
+
+  .conversor-tasa {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 0.82rem;
+    color: $colorgris;
+  }
+}
+
+/* ── FIN CONVERSOR ───────────────────────────────────────────────────── */

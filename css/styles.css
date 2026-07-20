@@ -509,7 +509,7 @@ footer img {
   margin: 0 0 0.75rem;
   letter-spacing: -0.02em;
 }
-.container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4, .container-box .box5, .container-box .box6, .container-box .box7, .container-box .box8 {
+.container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4, .container-box .box5, .container-box .box6, .container-box .box7, .container-box .box8, .container-box .box9, .container-box .box10 {
   position: relative;
   overflow: hidden;
   border-radius: 22px;
@@ -530,7 +530,7 @@ footer img {
   justify-content: center;
   gap: 1.25rem;
 }
-.container-box .box1 h3, .container-box .box2 h3, .container-box .box3 h3, .container-box .box4 h3, .container-box .box5 h3, .container-box .box6 h3, .container-box .box7 h3, .container-box .box8 h3 {
+.container-box .box1 h3, .container-box .box2 h3, .container-box .box3 h3, .container-box .box4 h3, .container-box .box5 h3, .container-box .box6 h3, .container-box .box7 h3, .container-box .box8 h3, .container-box .box9 h3, .container-box .box10 h3 {
   position: relative;
   z-index: 1;
   color: #fafafa;
@@ -542,11 +542,11 @@ footer img {
   letter-spacing: 0.01em;
   line-height: 1.3;
 }
-.container-box .box1 .boton, .container-box .box2 .boton, .container-box .box3 .boton, .container-box .box4 .boton, .container-box .box5 .boton, .container-box .box6 .boton, .container-box .box7 .boton, .container-box .box8 .boton {
+.container-box .box1 .boton, .container-box .box2 .boton, .container-box .box3 .boton, .container-box .box4 .boton, .container-box .box5 .boton, .container-box .box6 .boton, .container-box .box7 .boton, .container-box .box8 .boton, .container-box .box9 .boton, .container-box .box10 .boton {
   position: relative;
   z-index: 1;
 }
-.container-box .box1 .boton button, .container-box .box2 .boton button, .container-box .box3 .boton button, .container-box .box4 .boton button, .container-box .box5 .boton button, .container-box .box6 .boton button, .container-box .box7 .boton button, .container-box .box8 .boton button {
+.container-box .box1 .boton button, .container-box .box2 .boton button, .container-box .box3 .boton button, .container-box .box4 .boton button, .container-box .box5 .boton button, .container-box .box6 .boton button, .container-box .box7 .boton button, .container-box .box8 .boton button, .container-box .box9 .boton button, .container-box .box10 .boton button {
   font-weight: 700;
   color: #14805c;
   padding: 0.6rem 1.75rem;
@@ -558,15 +558,15 @@ footer img {
   font-size: 1.05rem;
   letter-spacing: 0.02em;
 }
-.container-box .box1 .boton button:hover, .container-box .box2 .boton button:hover, .container-box .box3 .boton button:hover, .container-box .box4 .boton button:hover, .container-box .box5 .boton button:hover, .container-box .box6 .boton button:hover, .container-box .box7 .boton button:hover, .container-box .box8 .boton button:hover {
+.container-box .box1 .boton button:hover, .container-box .box2 .boton button:hover, .container-box .box3 .boton button:hover, .container-box .box4 .boton button:hover, .container-box .box5 .boton button:hover, .container-box .box6 .boton button:hover, .container-box .box7 .boton button:hover, .container-box .box8 .boton button:hover, .container-box .box9 .boton button:hover, .container-box .box10 .boton button:hover {
   background: #0d5c42;
   color: #fafafa;
 }
-.container-box .box1 .boton button, .container-box .box2 .boton button, .container-box .box3 .boton button, .container-box .box4 .boton button, .container-box .box5 .boton button, .container-box .box6 .boton button, .container-box .box7 .boton button, .container-box .box8 .boton button {
+.container-box .box1 .boton button, .container-box .box2 .boton button, .container-box .box3 .boton button, .container-box .box4 .boton button, .container-box .box5 .boton button, .container-box .box6 .boton button, .container-box .box7 .boton button, .container-box .box8 .boton button, .container-box .box9 .boton button, .container-box .box10 .boton button {
   font-size: 0.9rem;
   padding: 0.55rem 1.75rem;
 }
-.container-box .box1::after, .container-box .box2::after, .container-box .box3::after, .container-box .box4::after, .container-box .box5::after, .container-box .box6::after, .container-box .box7::after, .container-box .box8::after {
+.container-box .box1::after, .container-box .box2::after, .container-box .box3::after, .container-box .box4::after, .container-box .box5::after, .container-box .box6::after, .container-box .box7::after, .container-box .box8::after, .container-box .box9::after, .container-box .box10::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -574,11 +574,11 @@ footer img {
   border-radius: 22px;
   transition: all 0.22s ease;
 }
-.container-box .box1:hover, .container-box .box2:hover, .container-box .box3:hover, .container-box .box4:hover, .container-box .box5:hover, .container-box .box6:hover, .container-box .box7:hover, .container-box .box8:hover {
+.container-box .box1:hover, .container-box .box2:hover, .container-box .box3:hover, .container-box .box4:hover, .container-box .box5:hover, .container-box .box6:hover, .container-box .box7:hover, .container-box .box8:hover, .container-box .box9:hover, .container-box .box10:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 24px rgba(20, 128, 92, 0.3);
 }
-.container-box .box1:hover::after, .container-box .box2:hover::after, .container-box .box3:hover::after, .container-box .box4:hover::after, .container-box .box5:hover::after, .container-box .box6:hover::after, .container-box .box7:hover::after, .container-box .box8:hover::after {
+.container-box .box1:hover::after, .container-box .box2:hover::after, .container-box .box3:hover::after, .container-box .box4:hover::after, .container-box .box5:hover::after, .container-box .box6:hover::after, .container-box .box7:hover::after, .container-box .box8:hover::after, .container-box .box9:hover::after, .container-box .box10:hover::after {
   background: rgba(0, 0, 0, 0.58);
 }
 .container-box .box1 {
@@ -604,6 +604,12 @@ footer img {
 }
 .container-box .box8 {
   background-image: url(../img/fotoImpuestoGanancias.jpeg);
+}
+.container-box .box9 {
+  background-image: url(../img/Dolares.jpg);
+}
+.container-box .box10 {
+  background-image: url(../img/Pesos.jpg);
 }
 .container-box {
   /* Tablet */
@@ -2206,6 +2212,105 @@ button {
   }
 }
 /* ── FIN CUIL ────────────────────────────────────────────────────────── */
+/* ── CONVERSOR PESO ↔ DÓLAR ──────────────────────────────────────────── */
+.conversor-resultado {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #e8f5f0;
+  border: 1px solid #d1e8df;
+  border-radius: 14px;
+  text-align: center;
+}
+.conversor-resultado .conversor-resultado-label {
+  display: block;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+  margin-bottom: 0.35rem;
+}
+.conversor-resultado .conversor-resultado-valor {
+  display: block;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  font-weight: 700;
+  color: #0d5c42;
+  line-height: 1.1;
+}
+.conversor-resultado .conversor-detalle {
+  margin: 1.25rem 0 0;
+  color: #333;
+  font-size: 0.95rem;
+}
+.conversor-resultado .conversor-tasa {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+/* ── FIN CONVERSOR ───────────────────────────────────────────────────── */
+/* ── AGUINALDO (SAC) ─────────────────────────────────────────────────── */
+.aguinaldo-error {
+  color: #b00020;
+  font-weight: 500;
+  margin-top: 1.25rem;
+}
+
+.aguinaldo-resultado {
+  margin-top: 2rem;
+}
+.aguinaldo-resultado .aguinaldo-principal {
+  text-align: center;
+  padding: 2rem;
+  background: #e8f5f0;
+  border: 1px solid #d1e8df;
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+}
+.aguinaldo-resultado .aguinaldo-label {
+  display: block;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+  margin-bottom: 0.35rem;
+}
+.aguinaldo-resultado .aguinaldo-valor {
+  display: block;
+  font-size: clamp(1.9rem, 6vw, 2.8rem);
+  font-weight: 700;
+  color: #0d5c42;
+  line-height: 1.1;
+}
+.aguinaldo-resultado .aguinaldo-tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+.aguinaldo-resultado .aguinaldo-tabla td {
+  padding: 0.7rem 0.5rem;
+  border-bottom: 1px solid #d1e8df;
+  color: #333;
+}
+.aguinaldo-resultado .aguinaldo-tabla td:last-child {
+  text-align: right;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.aguinaldo-resultado .aguinaldo-tabla .aguinaldo-total td {
+  border-bottom: none;
+  border-top: 2px solid #14805c;
+  font-weight: 700;
+  color: #1a1a2e;
+  font-size: 1.05rem;
+}
+.aguinaldo-resultado .aguinaldo-nota {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ── FIN AGUINALDO ───────────────────────────────────────────────────── */
 /* ── MEDIA QUERIES ───────────────────────────────────────────────────── */
 /* ── 1200px: pantallas grandes ───────────────────────────────────────── */
 @media only screen and (max-width: 1200px) {
@@ -2337,7 +2442,7 @@ button {
   .container-box {
     padding: 1.25rem;
   }
-  .container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4, .container-box .box5, .container-box .box6, .container-box .box7, .container-box .box8 {
+  .container-box .box1, .container-box .box2, .container-box .box3, .container-box .box4, .container-box .box5, .container-box .box6, .container-box .box7, .container-box .box8, .container-box .box9, .container-box .box10 {
     height: 200px;
   }
   .containerBox2 {

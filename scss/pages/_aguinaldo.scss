@@ -1,0 +1,70 @@
+/* ── AGUINALDO (SAC) ─────────────────────────────────────────────────── */
+
+.aguinaldo-error {
+  color: #b00020;
+  font-weight: $font-weight-medium;
+  margin-top: $spacing-md;
+}
+
+.aguinaldo-resultado {
+  margin-top: $spacing-lg;
+
+  .aguinaldo-principal {
+    text-align: center;
+    padding: $spacing-lg;
+    background: $colorverde-light;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-md;
+    margin-bottom: $spacing-md;
+  }
+
+  .aguinaldo-label {
+    display: block;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $colorgris;
+    margin-bottom: $spacing-xs;
+  }
+
+  .aguinaldo-valor {
+    display: block;
+    font-size: clamp(1.9rem, 6vw, 2.8rem);
+    font-weight: $font-weight-bold;
+    color: $colorverde-dark;
+    line-height: 1.1;
+  }
+
+  .aguinaldo-tabla {
+    width: 100%;
+    border-collapse: collapse;
+
+    td {
+      padding: 0.7rem 0.5rem;
+      border-bottom: 1px solid $color-border;
+      color: #333;
+    }
+    td:last-child {
+      text-align: right;
+      font-weight: $font-weight-medium;
+      white-space: nowrap;
+    }
+
+    .aguinaldo-total td {
+      border-bottom: none;
+      border-top: 2px solid $colorverde;
+      font-weight: $font-weight-bold;
+      color: $coloroscuro;
+      font-size: 1.05rem;
+    }
+  }
+
+  .aguinaldo-nota {
+    margin-top: $spacing-md;
+    font-size: 0.85rem;
+    color: $colorgris;
+    line-height: 1.5;
+  }
+}
+
+/* ── FIN AGUINALDO ───────────────────────────────────────────────────── */
