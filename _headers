@@ -1,0 +1,12 @@
+# Cabeceras HTTP para Netlify
+# https://docs.netlify.com/routing/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Imágenes: cambian poco, se pueden cachear varios días
+/img/*
+  Cache-Control: public, max-age=604800

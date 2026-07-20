@@ -195,10 +195,10 @@ cargarCotizaciones();
 cargarIndicadores();
 
 document.querySelector('header').innerHTML = `
-  <a class="logo" href="${base}index.html">
-    <img src="${base}img/Logo + Finantips.png" alt="Logo de Finantips">
+  <a class="logo" href="${base}index.html" aria-label="FinanTips - Inicio">
+    <img src="${base}img/Logo + Finantips.png" alt="Logo de FinanTips" width="160" height="40">
   </a>
-  <nav>
+  <nav aria-label="Navegación principal">
     <ul>
       <li><a href="${base}index.html">Inicio</a></li>
       <li><a href="${base}pages/pesos.html">Pesos</a></li>
