@@ -17,17 +17,14 @@ function Comparar() {
     // Calculo del interes mensual.
     let tasaMensual = tnaPlazoFijo / 12 / 100;
 
-    let monto = precioCuotas;
-
-    // Ciclo de la cantidad de cuotas
+    // Costo real de pagar en cuotas = valor presente de cada cuota descontada
+    // a la tasa del plazo fijo (lo que te rendiría ese dinero si lo invirtieras).
+    let valorPresente = 0;
     for (let i = 1; i <= cantidadCuotas; i++) {
-        let saldo = monto * ( 1 + tasaMensual) - cuota;
-        monto = saldo;
+        valorPresente += cuota / Math.pow(1 + tasaMensual, i);
     }
+    precioCuotas = valorPresente;
 
-    // Calcu
-    precioCuotas -= monto;
-    
     if (precioContado < precioCuotas){
         // Te conviene precio Contado.
         comentario = "Te conviene comprar al contado/efectivo."

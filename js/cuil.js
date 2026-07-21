@@ -1,17 +1,24 @@
-function calcularDigitoVerificador(prefijo, dni) {
+function restoModulo11(prefijo, dni) {
   const coef   = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];
   const numero = String(prefijo) + String(dni).padStart(8, '0');
   let suma = 0;
-
   for (let i = 0; i < 10; i++) {
     suma += parseInt(numero[i]) * coef[i];
   }
+  return suma % 11;
+}
 
-  const resto = suma % 11;
+// Devuelve { prefijo, dv, nota? } aplicando el caso especial del prefijo 23.
+// Si el resto es 1, el dígito daría 10 (inválido): se reasigna el prefijo 23
+// y se recalcula el verificador (regla de ANSES/ARCA).
+function calcularCuilPrefijo(prefijoBase, dni) {
+  const resto = restoModulo11(prefijoBase, dni);
+  if (resto === 0) return { prefijo: prefijoBase, dv: 0 };
+  if (resto !== 1) return { prefijo: prefijoBase, dv: 11 - resto };
 
-  if (resto === 0) return 0;
-  if (resto === 1) return prefijo === 20 ? 9 : 4; // caso especial según género
-  return 11 - resto;
+  const resto23 = restoModulo11(23, dni);
+  const dv23 = resto23 === 0 ? 0 : resto23 === 1 ? 9 : 11 - resto23;
+  return { prefijo: 23, dv: dv23, nota: 'Prefijo 23 (caso especial)' };
 }
 
 function formatCUIL(prefijo, dni, dv) {
@@ -33,16 +40,9 @@ function calcularCUIL() {
   // Prefijos según género
   const prefijos = genero === 'M' ? [20] : genero === 'F' ? [27] : [20, 27];
 
-  const resultados = prefijos.map(prefijo => {
-    let dv = calcularDigitoVerificador(prefijo, dni);
-
-    // Si el dígito verificador da 11 (caso inválido), probar con prefijo 23
-    if (dv === 11) {
-      const dv23 = calcularDigitoVerificador(23, dni);
-      return { prefijo: 23, dv: dv23, cuil: formatCUIL(23, dni, dv23), nota: 'Prefijo 23 (indistinto)' };
-    }
-
-    return { prefijo, dv, cuil: formatCUIL(prefijo, dni, dv) };
+  const resultados = prefijos.map(prefijoBase => {
+    const { prefijo, dv, nota } = calcularCuilPrefijo(prefijoBase, dni);
+    return { prefijo, dv, cuil: formatCUIL(prefijo, dni, dv), nota };
   });
 
   const generoLabel = { M: 'Masculino', F: 'Femenino', X: 'No binario / Extranjero' }[genero];

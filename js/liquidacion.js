@@ -45,8 +45,9 @@ function calcularLiquidacion() {
   if (meses < 0) { años--; meses += 12; }
   if (años < 0)  años = 0;
 
-  // Fracción mayor a 3 meses cuenta como año completo (Art. 245 LCT)
-  const añosIndem = Math.max(años + (meses > 3 ? 1 : 0), 2);
+  // Fracción mayor a 3 meses cuenta como año completo (Art. 245 LCT).
+  // La indemnización no puede ser inferior a 1 mes de sueldo (mínimo legal).
+  const añosIndem = Math.max(años + (meses > 3 ? 1 : 0), 1);
 
   // ── INDEMNIZACIÓN POR ANTIGÜEDAD (Art. 245) ───────────────────────────────
   let indemnizacion     = 0;
