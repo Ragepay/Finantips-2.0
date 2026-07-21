@@ -1,5 +1,15 @@
 /* ── RESET BASE ─────────────────────────────────────────────────────── */
+/* Reboot mínimo (equivalente a lo que aportaba Bootstrap) para mantener el
+   espaciado base ahora que Bootstrap solo se carga en la página de IIGG. */
 *, *::before, *::after { box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 0.5rem; line-height: 1.2; }
+p { margin-top: 0; margin-bottom: 1rem; }
+ul, ol { margin-top: 0; margin-bottom: 1rem; padding-left: 2rem; }
+img, svg { vertical-align: middle; }
+button { font-family: inherit; font-size: inherit; line-height: inherit; }
+table { border-collapse: collapse; }
+a { text-decoration: none; }
 
 body {
   background-color: $colorgris-light;
