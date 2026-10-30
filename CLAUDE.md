@@ -119,12 +119,12 @@ const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0832 * 1.0605 * 1.0609 * 1
 | `LEY_19032` | 0.03 | 3% — INSSJP (PAMI) |
 | `OBRA_SOCIAL` | 0.03 | 3% — Aporte obra social |
 | `SMATA` | 0.05 | 5% — Aporte sindical SMATA |
-| `PRODUCTIVIDAD` | 0.14 | 14% del salario base Toyota |
+| `PRODUCTIVIDAD` | 0.16 | 16% del salario base Toyota (default del selector 6%-16%) |
 | `PRESENTISMO` | 0.14 | 14% del salario base Toyota |
 | `PLUS_MANTENIMIENTO` | 0.26 | 26% del salario base Toyota |
 | `HORAS_NOCTURNAS_COEF` | 0.36 | Coeficiente horas nocturnas |
 | `DEDUCCION_ALQUILER` | 0.40 | 40% del alquiler (art. 85 LIG) |
-| `VERSION` | "1.7.0" | Versión de la aplicación |
+| `VERSION` | "1.7.1" | Versión de la aplicación |
 
 ### Cómo aplicar una actualización
 
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 ### Detalle por archivo JS
 
 **`sueldoneto.js`** — La calculadora más compleja.
-- Importa: AUMENTO, maxCargasSociales, minimoNoImponible, deduccionEspecial, conyuge, hijo, escalaActualizada, valesComedorTotal, JUBILACION, LEY_19032, OBRA_SOCIAL, SMATA, PRODUCTIVIDAD, PRESENTISMO, PLUS_MANTENIMIENTO, HORAS_NOCTURNAS_COEF
+- Importa: AUMENTO, maxCargasSociales, minimoNoImponible, deduccionEspecial, conyuge, hijo, escalaActualizada, valesComedorTotal, JUBILACION, LEY_19032, OBRA_SOCIAL, SMATA, PRESENTISMO, PLUS_MANTENIMIENTO, HORAS_NOCTURNAS_COEF
 - Categorías Toyota: T/M (16m, 7-12m), T/M1-T/M3b, T/L1-T/L3 (calculadas con `AUMENTO`)
 - Persiste historial en `localStorage` con clave `"recibos"` (array de objetos `ReciboSueldo`)
 - Permite descargar cada recibo como imagen PNG usando `html2canvas` + `qrcode-generator`

@@ -12,7 +12,6 @@ import {
     LEY_19032,
     OBRA_SOCIAL,
     SMATA,
-    PRODUCTIVIDAD,
     PRESENTISMO,
     PLUS_MANTENIMIENTO,
     HORAS_NOCTURNAS_COEF
@@ -36,12 +35,12 @@ const CATEGORIAS = {
     "T/L 3 A": 1835811,
 };
 
-// Divisor mensual para obtener el valor hora.
-const HORAS_MES = 192.025294117647;
+// Divisor mensual para obtener el valor hora (verificado con la escala salarial SMATA oct-dic 2026, docs/).
+const HORAS_MES = 192;
 
 // Clave de localStorage para recordar los datos del formulario (independiente de "recibos").
 const CLAVE_DATOS_FORM = "datosSueldoNeto";
-const RADIOS_FORM = ["productividad", "presentismo", "mantenimiento", "sindicato", "conyuge"];
+const RADIOS_FORM = ["presentismo", "mantenimiento", "sindicato", "conyuge"];
 
 // Formato monetario argentino: 1.234.567,89
 const fmt = v => (v || 0).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -77,7 +76,8 @@ function calcularSueldo() {
     const valorHora = sueldoBase / HORAS_MES;
 
     //  Productividad, presentismo y plus mantenimiento.
-    const productividad = estaMarcado("productividadSi") ? sueldoBase * PRODUCTIVIDAD : 0;
+    // Productividad variable del 6% al 16% según la escala oficial (0 = no cobra).
+    const productividad = sueldoBase * (leerNumero("productividad") / 100);
     const presentismo = estaMarcado("presentismoSi") ? sueldoBase * PRESENTISMO : 0;
     const plusMantenimiento = estaMarcado("mantenimientoSi") ? sueldoBase * PLUS_MANTENIMIENTO : 0;
 
@@ -87,7 +87,7 @@ function calcularSueldo() {
     const factorAntiguedad = antiguedad === 0 ? 1 : 1.04 + 0.01 * (antiguedad - 1);
     const antiguedadTotal = sueldoBase * (factorAntiguedad - 1);
 
-    // Horas Extra
+    // Horas Extra. Las de 200% se pagan x4 porque incluyen el franco compensatorio.
     const horas50Total = leerNumero("horas-50") * valorHora * 1.5 * factorAntiguedad;
     const horas200Total = leerNumero("horas-200") * valorHora * 4 * factorAntiguedad;
     const horasNocturnasTotal = leerNumero("horas-nocturnas") * valorHora * HORAS_NOCTURNAS_COEF * factorAntiguedad;
@@ -355,6 +355,7 @@ function guardarDatosFormulario() {
         categoria: document.getElementById("categoria").value,
         antiguedad: document.getElementById("antigüedad").value,
         hijos: document.getElementById("hijos").value,
+        productividad: document.getElementById("productividad").value,
     };
     RADIOS_FORM.forEach(nombre => {
         const marcado = document.querySelector(`input[name="${nombre}"]:checked`);
@@ -379,6 +380,13 @@ function restaurarDatosFormulario() {
     if (CATEGORIAS[datos.categoria]) document.getElementById("categoria").value = datos.categoria;
     if (datos.antiguedad) document.getElementById("antigüedad").value = datos.antiguedad;
     if (datos.hijos) document.getElementById("hijos").value = datos.hijos;
+    // Datos guardados antes del selector de porcentaje: "no" = no cobra, "si" = valor por defecto (16%).
+    const selectProductividad = document.getElementById("productividad");
+    if (datos.productividad === "no") {
+        selectProductividad.value = "0";
+    } else if ([...selectProductividad.options].some(op => op.value === datos.productividad)) {
+        selectProductividad.value = datos.productividad;
+    }
     RADIOS_FORM.forEach(nombre => {
         const radio = document.querySelector(`input[name="${nombre}"][value="${datos[nombre]}"]`);
         if (radio) radio.checked = true;

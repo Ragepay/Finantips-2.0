@@ -32,7 +32,7 @@ const OBRA_SOCIAL = 0.03;       // 3%  — aporte obra social
 const SMATA = 0.05;             // 5%  — aporte sindical SMATA
 
 // ── CONCEPTOS REMUNERATIVOS TOYOTA ───────────────────────────────────
-const PRODUCTIVIDAD = 0.14;         // 14% del salario base
+const PRODUCTIVIDAD = 0.16;         // 16% del salario base (en Sueldo Neto es un selector del 6% al 16%, default 16%)
 const PRESENTISMO = 0.14;           // 14% del salario base
 const PLUS_MANTENIMIENTO = 0.26;    // 26% del salario base
 const HORAS_NOCTURNAS_COEF = 0.36;  // 36% del valor hora
@@ -78,7 +78,7 @@ if (fechadeUltimaActualizacion) {
 //  ULTIMA VERSION
 //-----------------------------------------------------------------------
 // Fuente única de verdad para la versión. Actualizar solo aquí.
-const VERSION = "1.7.0";
+const VERSION = "1.7.1";
 const ultimaVersion = document.getElementById("version");
 if (ultimaVersion) {
     ultimaVersion.innerText = `Version: ${VERSION}`;
