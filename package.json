@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch scss/main.scss css/styles.css",
-    "push": "git add . && git commit -m \"feat: Actualiza Ganancias 2do sem 2026, cargas sociales, aumento Toyota y escala Monotributo; SEO (JSON-LD + privacidad), og:image, fix grilla, cotizaciones en vivo (dolarapi) e indicadores economicos (argentinadatos).\" && git push"
+    "push": "git add . && git commit -m \"feat: Aumento Toyota Octubre 26' (6,02%) y tope de cargas sociales Noviembre 26' (4.861.685,38 - Res. ANSeS 304/2026). Ganancias 2do sem 2026 verificado. Version 1.6.3.\" && git push"
   },
   "keywords": [],
   "author": "",

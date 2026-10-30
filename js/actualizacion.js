@@ -1,10 +1,10 @@
 //  VARIABLES DE CALCULO CENTRALIZADAS
 //-----------------------------------------------------------------------
-// Aumento de:    Mayo |  Julio | Octubre| Enero  | Abril  | Julio  | Octubre |Enero 26'|Abril 26'|Julio 26'
-const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0832 * 1.0605 * 1.0609 * 1.0769 * 1.0917 * 1.0688;
+// Aumento de:    Mayo |  Julio | Octubre| Enero  | Abril  | Julio  | Octubre |Enero 26'|Abril 26'|Julio 26'|Octubre 26'
+const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0832 * 1.0605 * 1.0609 * 1.0769 * 1.0917 * 1.0688 * 1.0602;
 
 // Maxima retencion de las cargas sociales (Sueldo Bruto).
-const maxCargasSociales = 4414652.38; // 4.414.652,38 (tope base imponible - Res. ANSeS)
+const maxCargasSociales = 4861685.38; // 4.861.685,38 (tope base imponible nov 2026 - Res. ANSeS 304/2026)
 
 // AUMENTO de GANANCIAS EN GENERAL (ARCA jul-dic 2026, actualización IPC 2º semestre)
 const aumentoGanancias = 1.8644915176;
@@ -44,7 +44,7 @@ const DEDUCCION_ALQUILER = 0.40;    // 40% del alquiler pagado (art. 85 LIG)
 //  MENSAJE DE ACTUALIZACIÓN DINÁMICO
 //-----------------------------------------------------------------------
 // Mensaje de actualización centralizado
-export const mensajeActualizacion = "Incluido el aumento de Julio 26' del 6,88% y la escala de Ganancias del 2º semestre 2026.";
+export const mensajeActualizacion = "Incluido el aumento de Octubre 26' del 6,02%, el tope de cargas sociales de Noviembre 26' y la escala de Ganancias del 2º semestre 2026.";
 
 // Función para cargar el mensaje de actualización en cualquier página
 export function cargarMensajeActualizacion() {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // FECHA DE ACTUALIZACION
 //-----------------------------------------------------------------------
 // Actualizar esta fecha cada vez que se modifiquen los valores del convenio.
-const FECHA_ACTUALIZACION = "20/07/2026";
+const FECHA_ACTUALIZACION = "30/10/2026";
 
 const fechadeUltimaActualizacion = document.getElementById("fecha");
 if (fechadeUltimaActualizacion) {
@@ -78,7 +78,7 @@ if (fechadeUltimaActualizacion) {
 //  ULTIMA VERSION
 //-----------------------------------------------------------------------
 // Fuente única de verdad para la versión. Actualizar solo aquí.
-const VERSION = "1.6.2";
+const VERSION = "1.6.3";
 const ultimaVersion = document.getElementById("version");
 if (ultimaVersion) {
     ultimaVersion.innerText = `Version: ${VERSION}`;
