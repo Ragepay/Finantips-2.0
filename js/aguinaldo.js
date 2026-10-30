@@ -1,7 +1,10 @@
 // Calculadora de Aguinaldo (SAC - Sueldo Anual Complementario)
 // SAC = (mejor remuneración mensual del semestre / 2) × (meses trabajados / 6)
 // Aportes del empleado sobre el aguinaldo: 11% jubilación + 3% ley 19.032 + 3% obra social = 17%
-const APORTES_AGUINALDO = 0.17;
+// La base máxima de aportes del SAC es el 50% del tope mensual, proporcional a los meses trabajados.
+import { maxCargasSociales, JUBILACION, LEY_19032, OBRA_SOCIAL } from './actualizacion.js';
+
+const APORTES_AGUINALDO = JUBILACION + LEY_19032 + OBRA_SOCIAL;
 
 function fmtPesosAg(num) {
   return "$ " + Number(num).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -20,7 +23,9 @@ function calcularAguinaldo() {
   if (meses > 6) meses = 6;
 
   const bruto = (mejorSueldo / 2) * (meses / 6);
-  const aportes = bruto * APORTES_AGUINALDO;
+  const topeSAC = (maxCargasSociales / 2) * (meses / 6);
+  const conTope = bruto > topeSAC;
+  const aportes = Math.min(bruto, topeSAC) * APORTES_AGUINALDO;
   const neto = bruto - aportes;
 
   resultadoEl.innerHTML = `
@@ -47,6 +52,7 @@ function calcularAguinaldo() {
       </table>
       <p class="aguinaldo-nota">
         ${meses < 6 ? `Cálculo proporcional por <strong>${meses}</strong> ${meses === 1 ? "mes" : "meses"} trabajados en el semestre. ` : ""}
+        ${conTope ? `Los aportes se calcularon sobre el tope de ${fmtPesosAg(topeSAC)} (50% de la base imponible máxima). ` : ""}
         El SAC es el 50% de la mejor remuneración mensual del semestre. Valor orientativo.
       </p>
     </div>

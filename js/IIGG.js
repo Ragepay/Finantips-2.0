@@ -13,27 +13,11 @@ import {
     DEDUCCION_ALQUILER
 } from './actualizacion.js';
 
-/* Declaracion de variables que van a ser actualizadas. */
-//----------------------------------------------------------------------------------
-/*
-// Maxima retencion de las cargas sociales.
-const maxCargasSociales = 3571608.54;
-// AUMENTO de GANANCIAS EN GENERAL
-const AUMENTO = 1 * 1.212997982076
-// Minimos no Imponibles de Impuesto a las ganancias.
-const minimoNoImponible = 269048.84 * AUMENTO;//257586.25;
-const deduccionEspecial = 1291434.42 * AUMENTO;//1236414.00;
-// Valores de deduccion de hijo, Conyuge y minino Imponible.
-const conyuge = 253390.04 * AUMENTO;//242594.4;
-const hijo = 127785.52 * AUMENTO;//122341.33;
-// Escalas de Ganancias.
-let escalaActualizada = [0, 100000, 200000, 300000, 450000, 900000, 1350000, 2025000, 3037500, 1000000000000];
-escalaActualizada = escalaActualizada.map(valor => valor * 1.0445 * AUMENTO);
-*/
-
-
 // Variables calculadas basadas en las importadas
 let minimoImponible = minimoNoImponible + deduccionEspecial;
+
+// Formato monetario argentino: 1.234.567,89
+const fmt = v => (v || 0).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 //----------------------------------------------------------------------------------
 
 //  Funcion Principal.
@@ -109,7 +93,11 @@ function calcularSueldo() {
     // Conyuge, Hijos y Otras Deducciones.
     let conyugeSi = document.getElementById("conyugeSi");
     let hijos = document.getElementById("hijos").value;
-    let alquiler = document.getElementById("alquiler").value;
+    let alquiler = parseFloat(document.getElementById("alquiler").value);
+
+    if (isNaN(alquiler)) {
+        alquiler = 0;
+    }
     let otrasDeducciones = parseFloat(document.getElementById("otrasDeducciones").value);
 
     if (isNaN(otrasDeducciones)) {
@@ -252,62 +240,62 @@ function calcularSueldo() {
                 <tbody>
                     <tr>
                         <td colspan="2">Sueldo Bruto</td>
-                        <td>${recibo.sueldoBruto.toLocaleString('es-ES')}</td>
+                        <td>${fmt(recibo.sueldoBruto)}</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td colspan="2">Deducción Especial</td>
                         <td></td>
-                        <td>-${deduccionEspecial.toLocaleString('es-ES')}</td>
+                        <td>-${fmt(deduccionEspecial)}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Mínimo No Imponible</td>
                         <td></td>
-                        <td>-${minimoNoImponible.toLocaleString('es-ES')}</td>
+                        <td>-${fmt(minimoNoImponible)}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Jubilación</td>
                         <td></td>
-                        <td>-${recibo.jubilacion.toLocaleString('es-ES')}</td>
+                        <td>-${fmt(recibo.jubilacion)}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Ley 19032</td>
                         <td></td>
-                        <td>-${recibo.ley.toLocaleString('es-ES')}</td>
+                        <td>-${fmt(recibo.ley)}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Obra Social</td>
                         <td></td>
-                        <td>-${recibo.obraSocial.toLocaleString('es-ES')}</td>
+                        <td>-${fmt(recibo.obraSocial)}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Sindicato</td>
                         <td></td>
-                        <td>-${recibo.aporteSindical.toLocaleString('es-ES')}</td>
+                        <td>-${fmt(recibo.aporteSindical)}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Cónyuge</td>
                         <td></td>
-                        <td>-${recibo.conyuge.toLocaleString('es-ES')}</td>
+                        <td>-${fmt(recibo.conyuge)}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Hijos:</td>
                         <td></td>
-                        <td>-${recibo.hijos.toLocaleString('es-ES')}</td>
+                        <td>-${fmt(recibo.hijos)}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Alquiler:</td>
                         <td></td>
-                        <td>-${recibo.alquilerDeduccion.toLocaleString('es-ES')}</td>
+                        <td>-${fmt(recibo.alquilerDeduccion)}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Otras Deducciones</td>
                         <td></td>
-                        <td>-${recibo.otrasDeducciones.toLocaleString('es-ES')}</td>
+                        <td>-${fmt(recibo.otrasDeducciones)}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Monto Imponible</td>
-                        <td colspan="2" style=" text-align: center;">${recibo.montoImponible.toLocaleString('es-ES')}</td>
+                        <td colspan="2" style=" text-align: center;">${fmt(recibo.montoImponible)}</td>
                     </tr>
                     
                 </tbody>
@@ -315,7 +303,7 @@ function calcularSueldo() {
                 <tfoot>
                     <tr>
                         <td colspan="2">Retención Mensual</td>
-                        <td colspan="2" style=" text-align: center; color:red;">-${recibo.retencion.toLocaleString('es-ES')}</td>
+                        <td colspan="2" style=" text-align: center; color:red;">-${fmt(recibo.retencion)}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Alícuota Marginal</td>
@@ -327,7 +315,7 @@ function calcularSueldo() {
                     </tr>
                     <tr>
                         <td colspan="2">Sueldo Neto</td>
-                        <td colspan="2" style=" text-align: center;">${recibo.sueldoNeto.toLocaleString('es-ES')}</td>
+                        <td colspan="2" style=" text-align: center;">${fmt(recibo.sueldoNeto)}</td>
                     </tr>
                 </tfoot>
             </table>
@@ -341,7 +329,7 @@ function calcularSueldo() {
     document.getElementById('donar-container').innerHTML = `
     <div class="donar-container">
     ¡Apoya nuestro trabajo para seguir actualizando!
-    <a class="boton4"  href="https://link.mercadopago.com.ar/finantips" target="_blank">¡Donar!</a>   
+    <a class="boton4"  href="https://link.mercadopago.com.ar/finantips" target="_blank" rel="noopener">¡Donar!</a>   
     </div>           
     `;
 }
@@ -353,6 +341,16 @@ document.addEventListener('DOMContentLoaded', function () {
     botonCalcular.addEventListener('click', function () {
         calcularSueldo(); // Llamar a la función calcularSueldo() cuando se haga clic en el botón
     });
+
+    // Recalcular en vivo al cambiar cónyuge o hijos, solo si ya se mostró un resultado.
+    function recalcularSiHayResultado() {
+        if (document.getElementById('resultados').innerHTML.trim()) {
+            calcularSueldo();
+        }
+    }
+    document.getElementById('conyugeSi').addEventListener('change', recalcularSiHayResultado);
+    document.getElementById('conyugeNo').addEventListener('change', recalcularSiHayResultado);
+    document.getElementById('hijos').addEventListener('change', recalcularSiHayResultado);
 });
 
 

@@ -124,7 +124,7 @@ const AUMENTO = 1.2248 * 1.0913 * 1.1288 * 1.0882 * 1.0832 * 1.0605 * 1.0609 * 1
 | `PLUS_MANTENIMIENTO` | 0.26 | 26% del salario base Toyota |
 | `HORAS_NOCTURNAS_COEF` | 0.36 | Coeficiente horas nocturnas |
 | `DEDUCCION_ALQUILER` | 0.40 | 40% del alquiler (art. 85 LIG) |
-| `VERSION` | "1.6.1" | Versión de la aplicación |
+| `VERSION` | "1.7.0" | Versión de la aplicación |
 
 ### Cómo aplicar una actualización
 
@@ -233,7 +233,6 @@ Cada página sigue esta estructura:
 | Inter (Google Fonts) | — | Todas | Tipografía |
 | SweetAlert2 | @11 | sueldoneto.html | Diálogos de confirmación al eliminar recibos |
 | html2canvas | 1.4.1 | sueldoneto.html | Captura la tabla del recibo como imagen PNG |
-| jsPDF | 2.5.1 | sueldoneto.html | (Disponible, no activo actualmente) |
 | qrcode-generator | 1.4.4 | sueldoneto.html | Genera QR local (sin CORS) para pie de recibo descargado |
 
 > Las librerías NO están en `node_modules`. No hay `npm install` necesario para ejecutar el proyecto.
@@ -284,11 +283,13 @@ Breakpoints para calculadoras en `_mediaquerys.scss` (contenedor de cards):
 
 ## LocalStorage
 
-Solo `sueldoneto.js` usa localStorage.
+`sueldoneto.js` guarda el historial y los datos del formulario; `components.js` guarda el tema (claro/oscuro).
 
 | Clave | Tipo | Contenido |
 |-------|------|-----------|
 | `"recibos"` | Array JSON | Historial de objetos `ReciboSueldo` |
+| `"datosSueldoNeto"` | Objeto JSON | Últimos datos del formulario de Sueldo Neto (categoría, antigüedad, hijos, radios). No incluye horas extra |
+| `"tema"` | `"dark"` / `"light"` | Tema elegido. Si no existe, se usa la preferencia del sistema |
 
 **⚠️ Nunca cambiar la clave `"recibos"`** — borraría el historial de todos los usuarios.
 
@@ -305,7 +306,7 @@ El objeto `ReciboSueldo` tiene: `id` (timestamp), `categoria`, `salarioBase`, `p
 - **Funciones en `onclick` HTML**: deben asignarse a `window.funcion = funcion`. Pero preferir `addEventListener` sobre atributos `onclick` en HTML dinámico (más robusto con módulos).
 - **Botones dentro de `<form>`**: siempre `type="button"` para evitar submit accidental.
 - **Validación numérica**: `if (isNaN(valor)) { valor = 0; }` en todos los inputs.
-- **Formato monetario**: siempre `.toFixed(2)` para valores en pesos.
+- **Formato monetario**: 2 decimales con separador de miles argentino: `v.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })` (cada archivo define su helper `fmt`/`fmtPesos`). Para datos viejos del historial usar `(valor || 0)`.
 
 ### SCSS/CSS
 - Compilar después de cada cambio: `npm run sass`

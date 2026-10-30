@@ -1,3 +1,8 @@
+// Formato monetario argentino: 1.234.567,89
+function fmtPesos(num) {
+  return num.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
 function calcularPlazoFijo() {
 
   // Obtener los valores ingresados por el usuario.
@@ -23,6 +28,6 @@ function calcularPlazoFijo() {
   let montoTotal = monto + ganancias;
 
   // Mostrar los resultados.
-  document.getElementById("ganancias").textContent = " $ " + ganancias.toFixed(2);
-  document.getElementById("montoTotal").textContent = " $ " + montoTotal.toFixed(2);
+  document.getElementById("ganancias").textContent = " $ " + fmtPesos(ganancias);
+  document.getElementById("montoTotal").textContent = " $ " + fmtPesos(montoTotal);
 }

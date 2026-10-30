@@ -78,7 +78,7 @@ if (fechadeUltimaActualizacion) {
 //  ULTIMA VERSION
 //-----------------------------------------------------------------------
 // Fuente única de verdad para la versión. Actualizar solo aquí.
-const VERSION = "1.6.3";
+const VERSION = "1.7.0";
 const ultimaVersion = document.getElementById("version");
 if (ultimaVersion) {
     ultimaVersion.innerText = `Version: ${VERSION}`;

@@ -963,13 +963,13 @@ footer img {
 .containerBox2 .eliminar-historial:hover, .containerBox2 .eliminar-historial:active {
   background: #e53935;
 }
-.containerBox2 #item-historial {
+.containerBox2 .item-historial {
   display: flex;
   align-items: center;
   justify-content: center;
   height: auto;
 }
-.containerBox2 #item-historial .eliminar-recibo {
+.containerBox2 .item-historial .eliminar-recibo {
   color: #fafafa;
   background: #14805c;
   padding: 0.45rem 0.9rem;
@@ -979,11 +979,11 @@ footer img {
   font-size: 0.85rem;
   transition: all 0.22s ease;
 }
-.containerBox2 #item-historial .eliminar-recibo:hover, .containerBox2 #item-historial .eliminar-recibo:active {
+.containerBox2 .item-historial .eliminar-recibo:hover, .containerBox2 .item-historial .eliminar-recibo:active {
   background: #e53935;
   border-color: #e53935;
 }
-.containerBox2 #item-historial .descargar-recibo {
+.containerBox2 .item-historial .descargar-recibo {
   background: transparent;
   border: none;
   cursor: pointer;
@@ -992,10 +992,10 @@ footer img {
   border-radius: 8px;
   transition: all 0.22s ease;
 }
-.containerBox2 #item-historial .descargar-recibo:hover {
+.containerBox2 .item-historial .descargar-recibo:hover {
   background: rgba(0, 0, 0, 0.08);
 }
-.containerBox2 #item-historial .descargar-recibo img {
+.containerBox2 .item-historial .descargar-recibo img {
   width: 24px;
   height: 24px;
   display: block;
@@ -2757,5 +2757,3 @@ html[data-theme=dark] header a, html[data-theme=dark] footer a {
 }
 
 /* ── FIN MODO OSCURO ─────────────────────────────────────────────────── */
-
-/*# sourceMappingURL=styles.css.map */

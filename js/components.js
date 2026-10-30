@@ -2,9 +2,19 @@ const base = window.location.pathname.includes('/pages/') ? '../' : '';
 
 // ── MODO OSCURO ──────────────────────────────────────────────────────
 // Aplicar el tema guardado lo antes posible para minimizar el parpadeo.
-const temaGuardado = localStorage.getItem('tema');
-if (temaGuardado === 'dark') {
+// Si el usuario nunca eligió, se respeta la preferencia del sistema operativo.
+let temaGuardado = null;
+try {
+  temaGuardado = localStorage.getItem('tema');
+} catch { /* navegación privada o almacenamiento bloqueado */ }
+const sistemaOscuro = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+if (temaGuardado === 'dark' || (temaGuardado === null && sistemaOscuro)) {
   document.documentElement.setAttribute('data-theme', 'dark');
+}
+function guardarTema(tema) {
+  try {
+    localStorage.setItem('tema', tema);
+  } catch { /* navegación privada o almacenamiento bloqueado */ }
 }
 function iconoTema() {
   return document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
@@ -13,10 +23,10 @@ function alternarTema() {
   const esOscuro = document.documentElement.getAttribute('data-theme') === 'dark';
   if (esOscuro) {
     document.documentElement.removeAttribute('data-theme');
-    localStorage.setItem('tema', 'light');
+    guardarTema('light');
   } else {
     document.documentElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('tema', 'dark');
+    guardarTema('dark');
   }
   const btn = document.getElementById('themeToggle');
   if (btn) btn.textContent = iconoTema();
@@ -322,9 +332,9 @@ document.querySelector('footer').innerHTML = `
     <div class="footer-left">
       <h3>Información de contacto</h3>
       <ul>
-        <li><a href="mailto:benjapey99@gmail.com" target="_blank">E-mail <img src="${base}img/iconogmail.png" alt="Logo Gmail"></a></li>
-        <li><a href="https://wa.link/bctsbq" target="_blank">Whatsapp <img src="${base}img/iconowhatsapp.png" alt="Logo whatsapp"></a></li>
-        <li><a href="https://link.mercadopago.com.ar/finantips" target="_blank">
+        <li><a href="mailto:benjapey99@gmail.com" target="_blank" rel="noopener">E-mail <img src="${base}img/iconogmail.png" alt="Logo Gmail"></a></li>
+        <li><a href="https://wa.link/bctsbq" target="_blank" rel="noopener">Whatsapp <img src="${base}img/iconowhatsapp.png" alt="Logo whatsapp"></a></li>
+        <li><a href="https://link.mercadopago.com.ar/finantips" target="_blank" rel="noopener">
           <img class="Mercadopago" src="${base}img/iconomercadopago.png" alt="Logo Mercadopago">
         </a></li>
       </ul>
@@ -336,12 +346,12 @@ document.querySelector('footer').innerHTML = `
         <li><a href="${base}pages/dolares.html">Dólar</a></li>
         <li><a href="${base}pages/calculadoras.html">Calculadoras</a></li>
         <li><a href="${base}pages/privacidad.html">Política de privacidad</a></li>
-        <li><a href="https://link.mercadopago.com.ar/finantips" target="_blank">Donar <img src="${base}img/iconodonar.png" alt="Donar Corazon"></a></li>
+        <li><a href="https://link.mercadopago.com.ar/finantips" target="_blank" rel="noopener">Donar <img src="${base}img/iconodonar.png" alt="Donar Corazon"></a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>Todos los derechos reservados &copy; 2024-2026</p>
+    <p>Todos los derechos reservados &copy; 2024-${new Date().getFullYear()}</p>
     <div class="footer-container">
       <div class="version" id="version"></div>
       <div class="fecha" id="fecha"></div>

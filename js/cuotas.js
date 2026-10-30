@@ -1,3 +1,8 @@
+// Formato monetario argentino: 1.234.567,89
+function fmtPesos(num) {
+    return num.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
 
 function Comparar() {
     let precioContado = parseFloat(document.getElementById("contado").value);
@@ -31,13 +36,13 @@ function Comparar() {
         
     } else{
         // Te conviene precio Financiado.
-        comentario = "Te conviene comprar en cuotas sin interés."
+        comentario = "Te conviene comprar en cuotas: invirtiendo el dinero al plazo fijo, las cuotas te salen más baratas que el contado."
     }
 
     // Muestra los resultados
     let resultadoHTML = "<h2>Comparativa</h2>";
-    resultadoHTML += "<p>Costo total Efectivo: $" + precioContado.toFixed(2) + "</p>";
-    resultadoHTML += "<p>Costo total Financiado: $" + precioCuotas.toFixed(2) + "</p>";
+    resultadoHTML += "<p>Costo total Efectivo: $" + fmtPesos(precioContado) + "</p>";
+    resultadoHTML += "<p>Costo real Financiado (valor presente): $" + fmtPesos(precioCuotas) + "</p>";
     resultadoHTML += "<p>" + comentario + "</p>";
     
     document.getElementById("resultado").innerHTML = resultadoHTML;

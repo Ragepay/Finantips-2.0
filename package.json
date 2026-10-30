@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch scss/main.scss css/styles.css",
-    "push": "git add . && git commit -m \"feat: Aumento Toyota Octubre 26' (6,02%) y tope de cargas sociales Noviembre 26' (4.861.685,38 - Res. ANSeS 304/2026). Ganancias 2do sem 2026 verificado. Version 1.6.3.\" && git push"
+    "push": "git add . && git commit -m \"feat: Version 1.7.0 - fix errores en Sueldo Neto e IIGG (conyuge/hijos y calcular sin categoria), tope de cargas sociales en Aguinaldo, recibo descargado sin botones; montos con separador de miles, Sueldo Neto recuerda los datos y trae valores por defecto, IIGG recalcula en vivo, modo oscuro segun el sistema; quita jsPDF y defer en librerias.\" && git push"
   },
   "keywords": [],
   "author": "",
